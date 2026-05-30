@@ -2,6 +2,18 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with this repository.
 
+## Automation in this repo
+
+This repo ships with Claude Code skills and slash commands in `.claude/`:
+
+- **Skills** (auto-invoked): `add-question`, `add-coding-problem`, `add-behavioral`,
+  `add-real-interview`, `review-answer`, `sync-index`.
+- **Commands** (manual): `/new-question`, `/new-problem`, `/new-behavioral`,
+  `/new-interview`, `/review`, `/practice`, `/sync-index`.
+- **Agents**: `@interview-coach` for mock interview sessions.
+
+Prefer using these over ad-hoc instructions to keep content consistent.
+
 ## Project Overview
 
 This is a **personal knowledge base and study resource for .NET Software Engineer interview preparation**. The repository collects, organizes, and explains the most common interview questions, practical coding tasks, system design problems, and real-world experience scenarios encountered when interviewing for .NET developer roles (Middle / Senior / Lead).
