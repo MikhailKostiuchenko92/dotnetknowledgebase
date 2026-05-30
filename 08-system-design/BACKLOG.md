@@ -23,18 +23,18 @@ When a question is created, mark it `[x]` and add a link to the file.
 
 ## Progress
 
-**Total:** 0 / 120
-**By difficulty:** 🟢 0/24 · 🟡 0/54 · 🔴 0/42
+**Total:** 5 / 120
+**By difficulty:** 🟢 2/24 · 🟡 3/54 · 🔴 0/42
 
 ---
 
 ## 1. Fundamentals & Core Concepts
 
-- [ ] 🟢 `scalability-vs-performance.md` — Horizontal vs vertical scaling, throughput vs latency, when each matters
-- [ ] 🟢 `availability-vs-consistency.md` — The availability/consistency trade-off, SLAs, "nines" of availability (99.9% etc.)
-- [ ] 🟡 `cap-theorem.md` — CAP theorem, CP vs AP systems, network partition tolerance, practical examples
-- [ ] 🟡 `pacelc-theorem.md` — Extension of CAP: latency vs consistency trade-off even without partition
-- [ ] 🟡 `eventual-consistency.md` — What it means, read-your-writes, monotonic reads, causal consistency
+- [x] 🟢 [`scalability-vs-performance.md`](./scalability-vs-performance.md) — Horizontal vs vertical scaling, throughput vs latency, when each matters
+- [x] 🟢 [`availability-vs-consistency.md`](./availability-vs-consistency.md) — The availability/consistency trade-off, SLAs, "nines" of availability (99.9% etc.)
+- [x] 🟡 [`cap-theorem.md`](./cap-theorem.md) — CAP theorem, CP vs AP systems, network partition tolerance, practical examples
+- [x] 🟡 [`pacelc-theorem.md`](./pacelc-theorem.md) — Extension of CAP: latency vs consistency trade-off even without partition
+- [x] 🟡 [`eventual-consistency.md`](./eventual-consistency.md) — What it means, read-your-writes, monotonic reads, causal consistency
 - [ ] 🔴 `strong-vs-eventual-consistency-patterns.md` — CRDT, vector clocks, last-write-wins, conflict resolution
 - [ ] 🟡 `latency-numbers.md` — L1/L2 cache, RAM, SSD, network round trips — orders of magnitude every engineer should know
 - [ ] 🟢 `single-points-of-failure.md` — Identifying SPOFs, redundancy strategies, active-active vs active-passive
