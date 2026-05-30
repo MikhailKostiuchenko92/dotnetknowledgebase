@@ -57,4 +57,13 @@ _Questions are organized by sub-topic. See [BACKLOG.md](./BACKLOG.md) for the fu
 - [task-based-ui-and-cqrs.md](./task-based-ui-and-cqrs.md) — Intention-revealing commands, CRUD vs task-based UX, REST sub-resources
 
 ### §4 Event Sourcing
+- [event-driven-projections.md](./event-driven-projections.md) — Catch-up vs persistent subscriptions, competing consumers, projection reset
+- [event-schema-evolution.md](./event-schema-evolution.md) — Upcasters, versioned event names, forward/backward compatibility
+- [event-sourcing-and-cqrs.md](./event-sourcing-and-cqrs.md) — Complementary but independent, when to combine, decision framework
 - [event-sourcing-fundamentals.md](./event-sourcing-fundamentals.md) — Append-only event log, state reconstruction, audit trail, replay benefits
+- [event-sourcing-in-dotnet.md](./event-sourcing-in-dotnet.md) — EventStoreDB, Marten (PostgreSQL), custom SQL — comparison and selection
+- [event-sourcing-pitfalls.md](./event-sourcing-pitfalls.md) — Stale projections, long streams, wrong granularity, GDPR
+- [event-sourcing-vs-traditional.md](./event-sourcing-vs-traditional.md) — Audit trail, temporal queries, debugging advantages, operational cost
+- [event-store-design.md](./event-store-design.md) — Events table schema, stream versioning, optimistic concurrency, global position
+- [projections-and-read-models.md](./projections-and-read-models.md) — Sync vs async projections, catch-up subscriptions, rebuild strategy
+- [snapshots-in-event-sourcing.md](./snapshots-in-event-sourcing.md) — Snapshot strategies, threshold-based, schema versioning, load mechanics

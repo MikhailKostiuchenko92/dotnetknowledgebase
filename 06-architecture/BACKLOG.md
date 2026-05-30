@@ -23,8 +23,8 @@ When a question is created, mark it `[x]` and add a link to the file.
 
 ## Progress
 
-**Total:** 50 / 106
-**By difficulty:** 🟢 10/21 · 🟡 23/47 · 🔴 17/38
+**Total:** 60 / 106
+**By difficulty:** 🟢 11/21 · 🟡 27/47 · 🔴 22/38
 
 ---
 
@@ -88,15 +88,15 @@ When a question is created, mark it `[x]` and add a link to the file.
 ## §4 Event Sourcing
 
 - [x] 🟢 [`event-sourcing-fundamentals.md`](./event-sourcing-fundamentals.md) — Store events not state, replay to rebuild, append-only log, audit built-in
-- [ ] 🟡 `event-store-design.md` — Events table schema, optimistic concurrency with stream version, aggregate streams
-- [ ] 🟡 `projections-and-read-models.md` — Synchronous vs async projections, catch-up subscriptions, projection rebuilds
-- [ ] 🟡 `event-sourcing-in-dotnet.md` — EventStoreDB, Marten (PostgreSQL), custom implementation patterns
-- [ ] 🟡 `snapshots-in-event-sourcing.md` — When to snapshot, snapshot strategy, loading state with and without snapshot
-- [ ] 🔴 `event-sourcing-vs-traditional.md` — Audit log benefit, temporal queries, debugging advantages, operational complexity cost
-- [ ] 🔴 `event-schema-evolution.md` — Upcasting, versioned events, forward/backward compatibility, schema registry
-- [ ] 🔴 `event-sourcing-pitfalls.md` — Stale projections in UI, long streams, wrong granularity, testing complexity
-- [ ] 🔴 `event-sourcing-and-cqrs.md` — Complementary but independent — can use each without the other, when to combine
-- [ ] 🔴 `event-driven-projections.md` — Catch-up vs persistent subscriptions, competing consumers, projection reset strategy
+- [x] 🟡 [`event-store-design.md`](./event-store-design.md) — Events table schema, optimistic concurrency with stream version, aggregate streams
+- [x] 🟡 [`projections-and-read-models.md`](./projections-and-read-models.md) — Synchronous vs async projections, catch-up subscriptions, projection rebuilds
+- [x] 🟡 [`event-sourcing-in-dotnet.md`](./event-sourcing-in-dotnet.md) — EventStoreDB, Marten (PostgreSQL), custom implementation patterns
+- [x] 🟡 [`snapshots-in-event-sourcing.md`](./snapshots-in-event-sourcing.md) — When to snapshot, snapshot strategy, loading state with and without snapshot
+- [x] 🔴 [`event-sourcing-vs-traditional.md`](./event-sourcing-vs-traditional.md) — Audit log benefit, temporal queries, debugging advantages, operational complexity cost
+- [x] 🔴 [`event-schema-evolution.md`](./event-schema-evolution.md) — Upcasting, versioned events, forward/backward compatibility, schema registry
+- [x] 🔴 [`event-sourcing-pitfalls.md`](./event-sourcing-pitfalls.md) — Stale projections in UI, long streams, wrong granularity, testing complexity
+- [x] 🔴 [`event-sourcing-and-cqrs.md`](./event-sourcing-and-cqrs.md) — Complementary but independent — can use each without the other, when to combine
+- [x] 🔴 [`event-driven-projections.md`](./event-driven-projections.md) — Catch-up vs persistent subscriptions, competing consumers, projection reset strategy
 
 ---
 
