@@ -23,8 +23,8 @@ When a question is created, mark it `[x]` and add a link to the file.
 
 ## Progress
 
-**Total:** 30 / 112
-**By difficulty:** 🟢 7/24 · 🟡 15/56 · 🔴 8/32
+**Total:** 40 / 112
+**By difficulty:** 🟢 10/24 · 🟡 21/56 · 🔴 8/32
 
 ---
 
@@ -68,16 +68,16 @@ When a question is created, mark it `[x]` and add a link to the file.
 
 ## §3 Memory Model & Value Types (14 questions)
 
-- [ ] 🟢 `value-types-vs-reference-types.md` — Stack vs heap allocation, copy semantics, struct vs class decision guide
-- [ ] 🟢 `boxing-and-unboxing.md` — IL box/unbox instructions, interface boxing, performance impact, avoiding with generics
-- [ ] 🟢 `readonly-struct.md` — readonly struct keyword, in parameters, defensive copy elimination, guidelines
-- [ ] 🟡 `struct-design-guidelines.md` — When to use struct, immutability, 16-byte guideline, IEquatable\<T\> implementation
-- [ ] 🟡 `ref-structs.md` — ref struct constraints, stack-only types, Span\<T\> as ref struct, async restriction
-- [ ] 🟡 `span-t-and-memory-t.md` — Span\<T\> vs Memory\<T\> vs ReadOnlySpan\<T\>, slicing without allocation, stackalloc spans
-- [ ] 🟡 `arraypool-and-memorypool.md` — System.Buffers ArrayPool\<T\>, MemoryPool\<T\>, renting/returning, allocation avoidance
-- [ ] 🟡 `record-structs.md` — record struct vs record class, value equality, with-expressions, positional syntax
-- [ ] 🟡 `memory-t-and-imemoryowner.md` — IMemoryOwner\<T\>, MemoryPool\<T\>, ownership and lifetime, pipeline buffers
-- [ ] 🟡 `string-interning-and-memory.md` — String.Intern, string pool, string.IsInterned, when it helps vs hurts
+- [x] 🟢 [value-types-vs-reference-types.md](./value-types-vs-reference-types.md) — Stack vs heap allocation, copy semantics, struct vs class decision guide
+- [x] 🟢 [boxing-and-unboxing.md](./boxing-and-unboxing.md) — IL box/unbox instructions, interface boxing, performance impact, avoiding with generics
+- [x] 🟢 [readonly-struct.md](./readonly-struct.md) — readonly struct keyword, in parameters, defensive copy elimination, guidelines
+- [x] 🟡 [struct-design-guidelines.md](./struct-design-guidelines.md) — When to use struct, immutability, 16-byte guideline, IEquatable\<T\> implementation
+- [x] 🟡 [ref-structs.md](./ref-structs.md) — ref struct constraints, stack-only types, Span\<T\> as ref struct, async restriction
+- [x] 🟡 [span-t-and-memory-t.md](./span-t-and-memory-t.md) — Span\<T\> vs Memory\<T\> vs ReadOnlySpan\<T\>, slicing without allocation, stackalloc spans
+- [x] 🟡 [arraypool-and-memorypool.md](./arraypool-and-memorypool.md) — System.Buffers ArrayPool\<T\>, MemoryPool\<T\>, renting/returning, allocation avoidance
+- [x] 🟡 [record-structs.md](./record-structs.md) — record struct vs record class, value equality, with-expressions, positional syntax
+- [x] 🟡 [memory-t-and-imemoryowner.md](./memory-t-and-imemoryowner.md) — IMemoryOwner\<T\>, MemoryPool\<T\>, ownership and lifetime, pipeline buffers
+- [x] 🟡 [string-interning-and-memory.md](./string-interning-and-memory.md) — String.Intern, string pool, string.IsInterned, when it helps vs hurts
 - [ ] 🔴 `memory-layout-of-objects.md` — Object header, sync block index, MethodTable pointer, field layout, EEClass
 - [ ] 🔴 `struct-layout-and-packing.md` — StructLayoutAttribute, LayoutKind.Explicit/Sequential, FieldOffset, packing, blittability
 - [ ] 🔴 `stackalloc-and-inline-arrays.md` — stackalloc with Span\<T\>, stack overflow risk, inline arrays (C# 12), SkipLocalsInit

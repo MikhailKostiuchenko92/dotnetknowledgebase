@@ -39,3 +39,14 @@ _No questions added yet. Use the [question template](../_templates/question-temp
 - [pinned-object-heap.md](./pinned-object-heap.md) — POH, pinned array allocation, long-lived I/O buffers
 - [suppress-finalize.md](./suppress-finalize.md) — Why SuppressFinalize exists, Dispose pattern, SafeHandle guidance
 - [weak-references.md](./weak-references.md) — WeakReference<T>, TrackResurrection, ConditionalWeakTable, caches
+### §3 Memory Model & Value Types
+- [arraypool-and-memorypool.md](./arraypool-and-memorypool.md) — System.Buffers ArrayPool<T> and MemoryPool<T>, renting/returning, and allocation avoidance
+- [boxing-and-unboxing.md](./boxing-and-unboxing.md) — IL box/unbox instructions, implicit boxing sites, and performance impact
+- [memory-t-and-imemoryowner.md](./memory-t-and-imemoryowner.md) — Memory<T>, IMemoryOwner<T>, ownership, disposal, and async-safe buffers
+- [readonly-struct.md](./readonly-struct.md) — readonly struct, in parameters, and defensive-copy avoidance
+- [record-structs.md](./record-structs.md) — record struct vs record class, value equality, and with expressions
+- [ref-structs.md](./ref-structs.md) — stack-only ef struct rules, Span<T>, and async restrictions
+- [span-t-and-memory-t.md](./span-t-and-memory-t.md) — Span<T> vs Memory<T>, slicing, ReadOnlySpan<T>, and stackalloc
+- [string-interning-and-memory.md](./string-interning-and-memory.md) — String interning, intern pool lifetime, and controlled pooling alternatives
+- [struct-design-guidelines.md](./struct-design-guidelines.md) — When to use structs, the 16-byte guideline, and equality design
+- [value-types-vs-reference-types.md](./value-types-vs-reference-types.md) — Stack vs heap caveats, copy semantics, and struct-vs-class trade-offs
