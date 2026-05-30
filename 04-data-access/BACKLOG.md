@@ -23,8 +23,8 @@ When a question is created, mark it `[x]` and add a link to the file.
 
 ## Progress
 
-**Total:** 30 / 94
-**By difficulty:** 🟢 7/18 · 🟡 14/43 · 🔴 9/33
+**Total:** 40 / 94
+**By difficulty:** 🟢 9/18 · 🟡 18/43 · 🔴 13/33
 
 ---
 
@@ -70,26 +70,26 @@ When a question is created, mark it `[x]` and add a link to the file.
 - [x] 🟡 [`dbcontext-pooling.md`](./dbcontext-pooling.md) — AddDbContextPool, pool size config, limitations (no per-request state), connection pool vs context pool
 - [x] 🔴 [`change-tracker-performance.md`](./change-tracker-performance.md) — DetectChanges cost, AutoDetectChangesEnabled, high-throughput import patterns
 - [x] 🔴 [`bulk-operations.md`](./bulk-operations.md) — EF Core Extensions, SqlBulkCopy, raw INSERT … SELECT, Z.EntityFramework trade-offs
-- [ ] 🔴 `ef-core-vs-dapper-performance.md` — Benchmark breakdown, change tracking + materialization overhead, hybrid CQRS pattern
-- [ ] 🔴 `connection-resilience.md` — EnableRetryOnFailure, IExecutionStrategy, transient fault handling, Azure SQL recommendations
+- [x] 🔴 [`ef-core-vs-dapper-performance.md`](./ef-core-vs-dapper-performance.md) — Benchmark breakdown, change tracking + materialization overhead, hybrid CQRS pattern
+- [x] 🔴 [`connection-resilience.md`](./connection-resilience.md) — EnableRetryOnFailure, IExecutionStrategy, transient fault handling, Azure SQL recommendations
 
 ---
 
 ## §4 EF Core Change Tracking
 
-- [ ] 🟢 `change-tracking-overview.md` — How EF Core tracks entities, entity states: Added / Modified / Deleted / Unchanged / Detached
-- [ ] 🟡 `entity-states.md` — EntityState transitions, Attach vs Add vs Update, disconnected entities, stub entity trick
-- [ ] 🟡 `detecting-changes.md` — DetectChanges, automatic detection, ChangeTracker.AutoDetectChangesEnabled, cost at scale
-- [ ] 🟡 `update-patterns.md` — Tracked update vs disconnected patch, full load vs selective property modification
-- [ ] 🔴 `concurrency-tokens.md` — [ConcurrencyCheck], rowversion/[Timestamp], DbUpdateConcurrencyException, merge strategies
-- [ ] 🔴 `savechanges-interceptors.md` — ISaveChangesInterceptor, audit trail implementation, soft delete on SaveChanges
+- [x] 🟢 [`change-tracking-overview.md`](./change-tracking-overview.md) — How EF Core tracks entities, entity states: Added / Modified / Deleted / Unchanged / Detached
+- [x] 🟡 [`entity-states.md`](./entity-states.md) — EntityState transitions, Attach vs Add vs Update, disconnected entities, stub entity trick
+- [x] 🟡 [`detecting-changes.md`](./detecting-changes.md) — DetectChanges, automatic detection, ChangeTracker.AutoDetectChangesEnabled, cost at scale
+- [x] 🟡 [`update-patterns.md`](./update-patterns.md) — Tracked update vs disconnected patch, full load vs selective property modification
+- [x] 🔴 [`concurrency-tokens.md`](./concurrency-tokens.md) — [ConcurrencyCheck], rowversion/[Timestamp], DbUpdateConcurrencyException, merge strategies
+- [x] 🔴 [`savechanges-interceptors.md`](./savechanges-interceptors.md) — ISaveChangesInterceptor, audit trail implementation, soft delete on SaveChanges
 
 ---
 
 ## §5 Transactions & Concurrency
 
-- [ ] 🟢 `transaction-basics.md` — ACID, implicit transaction on SaveChanges, manual BeginTransactionAsync, rollback on exception
-- [ ] 🟡 `manual-transactions-ef-core.md` — IDbContextTransaction, shared connection between contexts, savepoints
+- [x] 🟢 [`transaction-basics.md`](./transaction-basics.md) — ACID, implicit transaction on SaveChanges, manual BeginTransactionAsync, rollback on exception
+- [x] 🟡 [`manual-transactions-ef-core.md`](./manual-transactions-ef-core.md) — IDbContextTransaction, shared connection between contexts, savepoints
 - [ ] 🟡 `optimistic-concurrency.md` — Rowversion column, handling DbUpdateConcurrencyException, last-write-wins vs retry
 - [ ] 🟡 `pessimistic-concurrency.md` — SELECT … FOR UPDATE, UPDLOCK/ROWLOCK hints in raw SQL, when pessimistic wins
 - [ ] 🟡 `isolation-levels.md` — Read Uncommitted / Committed / Repeatable Read / Serializable / Snapshot — dirty/phantom/non-repeatable reads

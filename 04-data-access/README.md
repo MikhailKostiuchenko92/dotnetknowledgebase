@@ -43,3 +43,17 @@ _Questions are organized by sub-topic. See [BACKLOG.md](./BACKLOG.md) for the fu
 - [eager-vs-lazy-vs-explicit-loading.md](./eager-vs-lazy-vs-explicit-loading.md) — Include (eager), lazy proxies, explicit LoadAsync — when each fits
 - [ef-core-logging-and-diagnostics.md](./ef-core-logging-and-diagnostics.md) — SQL logging, TagWith, IDbCommandInterceptor, MiniProfiler integration
 - [n-plus-one-problem.md](./n-plus-one-problem.md) — What N+1 is, detection via SQL logging, fixing with Include or projections
+- [ef-core-vs-dapper-performance.md](./ef-core-vs-dapper-performance.md) — Performance comparison, overhead sources, when Dapper wins, hybrid CQRS
+- [connection-resilience.md](./connection-resilience.md) — EnableRetryOnFailure, IExecutionStrategy, transient faults, Azure SQL
+
+### §4 EF Core Change Tracking
+- [change-tracking-overview.md](./change-tracking-overview.md) — Entity states, identity map, snapshot detection, SaveChanges lifecycle
+- [concurrency-tokens.md](./concurrency-tokens.md) — [ConcurrencyCheck], [Timestamp]/rowversion, DbUpdateConcurrencyException, merge strategies
+- [detecting-changes.md](./detecting-changes.md) — DetectChanges, AutoDetectChangesEnabled, O(n) cost, manual detection
+- [entity-states.md](./entity-states.md) — EntityState transitions, Add/Attach/Update, disconnected entities, stub entity trick
+- [savechanges-interceptors.md](./savechanges-interceptors.md) — ISaveChangesInterceptor, audit trail, soft delete, domain event dispatch
+- [update-patterns.md](./update-patterns.md) — Tracked update, db.Update, selective attach, SetValues, PATCH endpoints
+
+### §5 Transactions & Concurrency
+- [manual-transactions-ef-core.md](./manual-transactions-ef-core.md) — IDbContextTransaction, shared connection/transaction, Dapper interop, savepoints
+- [transaction-basics.md](./transaction-basics.md) — ACID properties, implicit SaveChanges transaction, BeginTransactionAsync, rollback
