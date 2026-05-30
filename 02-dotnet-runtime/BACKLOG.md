@@ -23,8 +23,8 @@ When a question is created, mark it `[x]` and add a link to the file.
 
 ## Progress
 
-**Total:** 82 / 112
-**By difficulty:** 🟢 17/24 · 🟡 41/56 · 🔴 24/32
+**Total:** 98 / 112
+**By difficulty:** 🟢 21/24 · 🟡 49/56 · 🔴 28/32
 
 ---
 
@@ -140,27 +140,27 @@ When a question is created, mark it `[x]` and add a link to the file.
 
 ## §7 Exception Handling Internals (8 questions)
 
-- [ ] 🟢 `exception-design-guidelines.md` — Exception hierarchy, custom exception classes, message quality, when to catch vs rethrow
-- [ ] 🟢 `throw-vs-rethrow.md` — throw ex (resets stack trace) vs throw (preserves), ExceptionDispatchInfo.Capture
-- [ ] 🟡 `clr-exception-model.md` — SEH under the hood, exception objects on heap, two-pass handling (filter then handle)
-- [ ] 🟡 `exception-filters.md` — when clause in catch, IL filter blocks, logging without catching, idempotent filters
-- [ ] 🟡 `aggregate-exception.md` — AggregateException, Flatten(), Handle(), Parallel/WhenAll context, async unwrapping
-- [ ] 🟡 `exception-performance.md` — Cost of throw/catch, Result\<T\> pattern, throw helper static methods, hot path avoidance
-- [ ] 🔴 `structured-exception-handling.md` — Windows SEH, hardware exceptions, AccessViolationException, HandleProcessCorruptedStateExceptions
-- [ ] 🔴 `stack-overflow-and-oom.md` — StackOverflowException (non-catchable), OutOfMemoryException, environment limits, process exit
+- [x] 🟢 [`exception-design-guidelines.md`](./exception-design-guidelines.md) — Exception hierarchy, custom exception classes, message quality, when to catch vs rethrow
+- [x] 🟢 [`throw-vs-rethrow.md`](./throw-vs-rethrow.md) — throw ex (resets stack trace) vs throw (preserves), ExceptionDispatchInfo.Capture
+- [x] 🟡 [`clr-exception-model.md`](./clr-exception-model.md) — SEH under the hood, exception objects on heap, two-pass handling (filter then handle)
+- [x] 🟡 [`exception-filters.md`](./exception-filters.md) — when clause in catch, IL filter blocks, logging without catching, idempotent filters
+- [x] 🟡 [`aggregate-exception.md`](./aggregate-exception.md) — AggregateException, Flatten(), Handle(), Parallel/WhenAll context, async unwrapping
+- [x] 🟡 [`exception-performance.md`](./exception-performance.md) — Cost of throw/catch, Result\<T\> pattern, throw helper static methods, hot path avoidance
+- [x] 🔴 [`structured-exception-handling.md`](./structured-exception-handling.md) — Windows SEH, hardware exceptions, AccessViolationException, HandleProcessCorruptedStateExceptions
+- [x] 🔴 [`stack-overflow-and-oom.md`](./stack-overflow-and-oom.md) — StackOverflowException (non-catchable), OutOfMemoryException, environment limits, process exit
 
 ---
 
 ## §8 Interop & P/Invoke (8 questions)
 
-- [ ] 🟢 `pinvoke-fundamentals.md` — DllImport attribute, platform invoke mechanics, entry point resolution, calling conventions
-- [ ] 🟡 `marshalling-types.md` — Blittable vs non-blittable types, MarshalAs, string marshalling (ANSI/Unicode/UTF8), arrays
-- [ ] 🟡 `safehandle.md` — SafeHandle\<T\> hierarchy, CriticalFinalizerObject, reliable cleanup, vs raw IntPtr
-- [ ] 🟡 `com-interop.md` — RCW/CCW, ComImport, IUnknown AddRef/Release, COM apartments, Marshal.ReleaseComObject
-- [ ] 🟡 `unsafe-and-fixed-context.md` — unsafe keyword, fixed statement, pointer types, pinning for P/Invoke
-- [ ] 🔴 `libraryimport-and-source-gen.md` — LibraryImport (.NET 7+), source-generated marshalling, why it's better than DllImport
-- [ ] 🔴 `native-aot-interop.md` — UnmanagedCallersOnly, C-callable export, embedding .NET in native apps, NativeAOT limitations
-- [ ] 🔴 `comwrappers-api.md` — ComWrappers (.NET 5+), source-generated COM (.NET 8+), replacing built-in COM interop
+- [x] 🟢 [`pinvoke-fundamentals.md`](./pinvoke-fundamentals.md) — DllImport attribute, platform invoke mechanics, entry point resolution, calling conventions
+- [x] 🟡 [`marshalling-types.md`](./marshalling-types.md) — Blittable vs non-blittable types, MarshalAs, string marshalling (ANSI/Unicode/UTF8), arrays
+- [x] 🟡 [`safehandle.md`](./safehandle.md) — SafeHandle hierarchy, CriticalFinalizerObject, reliable cleanup, vs raw IntPtr
+- [x] 🟡 [`com-interop.md`](./com-interop.md) — RCW/CCW, ComImport, IUnknown AddRef/Release, COM apartments, Marshal.ReleaseComObject
+- [x] 🟡 [`unsafe-and-fixed-context.md`](./unsafe-and-fixed-context.md) — unsafe keyword, fixed statement, pointer types, pinning for P/Invoke
+- [x] 🔴 [`function-pointers-in-csharp.md`](./function-pointers-in-csharp.md) — delegate* unmanaged<...>, calling conventions, SuppressGCTransition, high-performance callbacks
+- [x] 🔴 [`source-generated-pinvoke.md`](./source-generated-pinvoke.md) — LibraryImport (.NET 7+), source-generated marshalling, why it's better than DllImport
+- [x] 🔴 [`native-memory-management.md`](./native-memory-management.md) — NativeMemory, HGlobal/CoTaskMem, MemoryMarshal.AsBytes, lifetime and ownership
 
 ---
 

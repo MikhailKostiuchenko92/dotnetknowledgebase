@@ -99,3 +99,23 @@ Browse the index below for available runtime questions. Use the [question templa
 - [async-state-machine.md](./async-state-machine.md) — generated `IAsyncStateMachine`, `MoveNext`, builders, and allocation behavior
 - [async-context-propagation.md](./async-context-propagation.md) — `AsyncLocal<T>`, `ExecutionContext`, flow suppression, and tracing context
 - [deadlock-in-async.md](./deadlock-in-async.md) — classic `.Result`/`.Wait()` deadlocks, why they happen, and how to avoid them
+
+### §7 Exception Handling Internals
+- [exception-design-guidelines.md](./exception-design-guidelines.md) — Exception hierarchy, custom exceptions, message quality, and boundary handling
+- [throw-vs-rethrow.md](./throw-vs-rethrow.md) — `throw;` vs `throw ex;`, stack-trace preservation, and `ExceptionDispatchInfo`
+- [clr-exception-model.md](./clr-exception-model.md) — SEH integration, heap allocation, two-pass handling, and IL clauses
+- [exception-filters.md](./exception-filters.md) — `catch ... when`, first-pass filter evaluation, logging without catching, and idempotency
+- [aggregate-exception.md](./aggregate-exception.md) — `AggregateException`, `Flatten()`, `Handle()`, and `Task.WhenAll` behavior
+- [exception-performance.md](./exception-performance.md) — Throw cost, hot-path guidance, `TryXxx`, results, and throw helpers
+- [structured-exception-handling.md](./structured-exception-handling.md) — Windows SEH, corrupted-state exceptions, and `AccessViolationException`
+- [stack-overflow-and-oom.md](./stack-overflow-and-oom.md) — `StackOverflowException`, `OutOfMemoryException`, and mitigation strategies
+
+### §8 Interop & P/Invoke
+- [pinvoke-fundamentals.md](./pinvoke-fundamentals.md) — `DllImport`, `LibraryImport`, entry points, calling conventions, and `NativeLibrary`
+- [marshalling-types.md](./marshalling-types.md) — Blittable vs non-blittable types, strings, arrays, and custom marshalling
+- [safehandle.md](./safehandle.md) — `SafeHandle`, critical finalization, ownership, and `DangerousGetHandle()`
+- [com-interop.md](./com-interop.md) — COM basics, RCW/CCW, apartments, explicit release, and source-generated COM
+- [unsafe-and-fixed-context.md](./unsafe-and-fixed-context.md) — `fixed`, pinning, arrays, strings, and `GCHandle` trade-offs
+- [function-pointers-in-csharp.md](./function-pointers-in-csharp.md) — `delegate*`, unmanaged call conventions, and `SuppressGCTransition`
+- [source-generated-pinvoke.md](./source-generated-pinvoke.md) — compile-time P/Invoke stubs, AOT safety, and migration from `DllImport`
+- [native-memory-management.md](./native-memory-management.md) — `NativeMemory`, HGlobal/CoTaskMem, span reinterpretation, and ownership
