@@ -23,8 +23,8 @@ When a question is created, mark it `[x]` and add a link to the file.
 
 ## Progress
 
-**Total:** 60 / 94
-**By difficulty:** 🟢 13/18 · 🟡 27/43 · 🔴 20/33
+**Total:** 70 / 94
+**By difficulty:** 🟢 15/18 · 🟡 31/43 · 🔴 24/33
 
 ---
 
@@ -125,16 +125,16 @@ When a question is created, mark it `[x]` and add a link to the file.
 
 ## §8 SQL & Query Optimization
 
-- [ ] 🟢 `indexes-overview.md` — Clustered vs non-clustered, covering index, when indexes help vs hurt writes, index selectivity
-- [ ] 🟢 `sql-join-types.md` — INNER / LEFT / RIGHT / FULL OUTER JOIN, CROSS JOIN, typical interview trap questions
-- [ ] 🟡 `query-execution-plan.md` — Reading EXPLAIN / SHOW EXECUTION PLAN, index seek vs scan, key lookup, estimated vs actual rows
-- [ ] 🟡 `ctes-and-window-functions.md` — WITH clause, ROW_NUMBER() / RANK() / DENSE_RANK(), LAG/LEAD, common interview patterns
-- [ ] 🟡 `pagination-sql.md` — OFFSET/FETCH, ROW_NUMBER trick, keyset pagination with WHERE id > @last, scale comparison
-- [ ] 🟡 `sql-vs-nosql-for-dotnet.md` — When relational is the wrong choice, document/graph/column-family alternatives, decision framework
-- [ ] 🟡 `stored-procedures-vs-orm.md` — SP: security/plan cache/portability trade-offs vs ORM abstraction, .NET usage patterns
-- [ ] 🔴 `index-design-patterns.md` — Composite index column ordering, include columns, filtered indexes, missing index DMVs
-- [ ] 🔴 `query-hints-and-optimizer.md` — NOLOCK risks (dirty reads), READPAST, UPDLOCK, FORCESEEK — when hints help vs hurt
-- [ ] 🔴 `database-partitioning.md` — Table partitioning by range/list, partition pruning, horizontal vs vertical partitioning
+- [x] 🟢 [`indexes-overview.md`](./indexes-overview.md) — Clustered vs non-clustered, covering index, when indexes help vs hurt writes, index selectivity
+- [x] 🟢 [`sql-join-types.md`](./sql-join-types.md) — INNER / LEFT / RIGHT / FULL OUTER JOIN, CROSS JOIN, typical interview trap questions
+- [x] 🟡 [`query-execution-plan.md`](./query-execution-plan.md) — Reading EXPLAIN / SHOW EXECUTION PLAN, index seek vs scan, key lookup, estimated vs actual rows
+- [x] 🟡 [`ctes-and-window-functions.md`](./ctes-and-window-functions.md) — WITH clause, ROW_NUMBER() / RANK() / DENSE_RANK(), LAG/LEAD, common interview patterns
+- [x] 🟡 [`pagination-sql.md`](./pagination-sql.md) — OFFSET/FETCH, ROW_NUMBER trick, keyset pagination with WHERE id > @last, scale comparison
+- [x] 🟡 [`sql-vs-nosql-for-dotnet.md`](./sql-vs-nosql-for-dotnet.md) — When relational is the wrong choice, document/graph/column-family alternatives, decision framework
+- [x] 🟡 [`stored-procedures-vs-orm.md`](./stored-procedures-vs-orm.md) — SP: security/plan cache/portability trade-offs vs ORM abstraction, .NET usage patterns
+- [x] 🔴 [`index-design-patterns.md`](./index-design-patterns.md) — Composite index column ordering, include columns, filtered indexes, missing index DMVs
+- [x] 🔴 [`query-hints-and-optimizer.md`](./query-hints-and-optimizer.md) — NOLOCK risks (dirty reads), READPAST, UPDLOCK, FORCESEEK — when hints help vs hurt
+- [x] 🔴 [`database-partitioning.md`](./database-partitioning.md) — Table partitioning by range/list, partition pruning, horizontal vs vertical partitioning
 - [ ] 🔴 `full-text-search.md` — SQL Server FTS vs LIKE/ILIKE, CONTAINS/FREETEXT, when to prefer Elasticsearch, .NET integration
 - [ ] 🔴 `query-performance-tuning-workflow.md` — Systematic approach: slow query log → execution plan → index → query rewrite → schema
 

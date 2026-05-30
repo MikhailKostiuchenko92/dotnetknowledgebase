@@ -81,3 +81,15 @@ _Questions are organized by sub-topic. See [BACKLOG.md](./BACKLOG.md) for the fu
 - [datareader-vs-dataset.md](./datareader-vs-dataset.md) — Streaming vs in-memory, when DataSet still has a place, performance comparison
 - [parameterized-queries.md](./parameterized-queries.md) — SQL injection prevention, SqlParameter, EF Core/Dapper safe patterns
 - [sqlbulkcopy.md](./sqlbulkcopy.md) — TDS bulk load protocol, batch size, TableLock, column mappings, transaction integration
+
+### §8 SQL & Query Optimization
+- [ctes-and-window-functions.md](./ctes-and-window-functions.md) — WITH clause, ROW_NUMBER/RANK/DENSE_RANK, LAG/LEAD, running totals
+- [database-partitioning.md](./database-partitioning.md) — Range partitioning, partition elimination, partition switching, sharding vs partitioning
+- [index-design-patterns.md](./index-design-patterns.md) — Composite index ordering, INCLUDE columns, filtered indexes, missing index DMVs
+- [indexes-overview.md](./indexes-overview.md) — Clustered vs non-clustered, covering indexes, selectivity, when indexes hurt
+- [pagination-sql.md](./pagination-sql.md) — OFFSET/FETCH vs keyset pagination, cursor encoding, EF Core implementation
+- [query-execution-plan.md](./query-execution-plan.md) — Index seek vs scan, key lookup, estimated vs actual rows, statistics
+- [query-hints-and-optimizer.md](./query-hints-and-optimizer.md) — NOLOCK dirty reads, UPDLOCK, READPAST queue pattern, FORCESEEK
+- [sql-join-types.md](./sql-join-types.md) — INNER/LEFT/RIGHT/FULL OUTER/CROSS JOIN, LEFT JOIN + WHERE trap
+- [sql-vs-nosql-for-dotnet.md](./sql-vs-nosql-for-dotnet.md) — NoSQL categories, when SQL wins, Redis/MongoDB/.NET integration
+- [stored-procedures-vs-orm.md](./stored-procedures-vs-orm.md) — Plan caching, security isolation, SP vs LINQ trade-offs, when to choose each
