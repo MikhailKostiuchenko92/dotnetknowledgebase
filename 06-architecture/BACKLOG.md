@@ -23,8 +23,8 @@ When a question is created, mark it `[x]` and add a link to the file.
 
 ## Progress
 
-**Total:** 60 / 106
-**By difficulty:** 🟢 11/21 · 🟡 27/47 · 🔴 22/38
+**Total:** 70 / 106
+**By difficulty:** 🟢 14/21 · 🟡 33/47 · 🔴 23/38
 
 ---
 
@@ -102,15 +102,15 @@ When a question is created, mark it `[x]` and add a link to the file.
 
 ## §5 Microservices Patterns
 
-- [ ] 🟢 `microservices-vs-monolith.md` — Trade-offs, Conway's law, when monolith is the right choice, common fallacies
-- [ ] 🟢 `service-decomposition-strategies.md` — Decompose by business capability vs subdomain, strangler fig, start small
-- [ ] 🟢 `inter-service-communication.md` — Sync (REST / gRPC) vs async (messaging), latency, coupling, failure modes
-- [ ] 🟡 `api-gateway-pattern.md` — BFF (Backend for Frontend), aggregation, auth offloading, YARP, Azure API Management
-- [ ] 🟡 `service-discovery.md` — Client-side vs server-side, Consul, Kubernetes DNS, health checks integration
-- [ ] 🟡 `distributed-transaction-patterns.md` — Why 2PC fails in microservices, saga, outbox, compensating transactions
-- [ ] 🟡 `strangler-fig-pattern.md` — Incrementally replacing a monolith, proxy routing, per-feature migration
-- [ ] 🟡 `sidecar-and-ambassador-patterns.md` — Cross-cutting sidecar, proxy ambassador, Dapr, Envoy use cases
-- [ ] 🟡 `service-mesh-basics.md` — Istio/Linkerd concepts, mTLS, traffic management, mesh observability
+- [x] 🟢 [`microservices-vs-monolith.md`](./microservices-vs-monolith.md) — Trade-offs, Conway's law, when monolith is the right choice, common fallacies
+- [x] 🟢 [`service-decomposition-strategies.md`](./service-decomposition-strategies.md) — Decompose by business capability vs subdomain, strangler fig, start small
+- [x] 🟢 [`inter-service-communication.md`](./inter-service-communication.md) — Sync (REST / gRPC) vs async (messaging), latency, coupling, failure modes
+- [x] 🟡 [`api-gateway-pattern.md`](./api-gateway-pattern.md) — BFF (Backend for Frontend), aggregation, auth offloading, YARP, Azure API Management
+- [x] 🟡 [`service-discovery.md`](./service-discovery.md) — Client-side vs server-side, Consul, Kubernetes DNS, health checks integration
+- [x] 🟡 [`distributed-transaction-patterns.md`](./distributed-transaction-patterns.md) — Why 2PC fails in microservices, saga, outbox, compensating transactions
+- [x] 🟡 [`strangler-fig-pattern.md`](./strangler-fig-pattern.md) — Incrementally replacing a monolith, proxy routing, per-feature migration
+- [x] 🟡 [`sidecar-and-ambassador-patterns.md`](./sidecar-and-ambassador-patterns.md) — Cross-cutting sidecar, proxy ambassador, Dapr, Envoy use cases
+- [x] 🟡 [`service-mesh-basics.md`](./service-mesh-basics.md) — Istio/Linkerd concepts, mTLS, traffic management, mesh observability
 - [ ] 🟡 `health-checks-in-microservices.md` — Readiness vs liveness vs startup probes, ASP.NET Core health checks
 - [ ] 🔴 `data-ownership-in-microservices.md` — Each service owns its DB, no shared schema, integration via events/APIs
 - [ ] 🔴 `microservices-testing-strategies.md` — Consumer-driven contracts, Pact, test pyramid for distributed systems
