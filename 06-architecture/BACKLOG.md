@@ -23,8 +23,8 @@ When a question is created, mark it `[x]` and add a link to the file.
 
 ## Progress
 
-**Total:** 30 / 106
-**By difficulty:** 🟢 6/21 · 🟡 18/47 · 🔴 6/38
+**Total:** 40 / 106
+**By difficulty:** 🟢 8/21 · 🟡 18/47 · 🔴 14/38
 
 ---
 
@@ -61,19 +61,19 @@ When a question is created, mark it `[x]` and add a link to the file.
 - [x] 🟡 [`anemic-vs-rich-domain-model.md`](./anemic-vs-rich-domain-model.md) — Fowler's anti-pattern critique, when rich model pays off, pragmatic trade-offs
 - [x] 🟡 [`context-mapping-patterns.md`](./context-mapping-patterns.md) — Published language, open-host service, customer-supplier, conformist, ACL
 - [x] 🟡 [`value-object-implementation.md`](./value-object-implementation.md) — C# record VO pattern, EF Core owned types, Money/Address/Email examples
-- [ ] 🔴 `aggregate-invariants.md` — Always-valid domain model, enforcing invariants in constructors/methods, guard clauses
-- [ ] 🔴 `large-aggregate-splitting.md` — Signs of over-sized aggregates, how to decompose, eventual consistency across boundaries
-- [ ] 🔴 `domain-model-vs-persistence-model.md` — Separate domain and EF Core models, mapping strategies, cost vs benefit
-- [ ] 🔴 `event-storming.md` — Workshop technique, domain events → commands → aggregates → bounded contexts, hotspot discovery
-- [ ] 🔴 `ddd-and-microservices.md` — One service per bounded context (usually), when to break the rule, context map to service map
-- [ ] 🔴 `ddd-anti-patterns.md` — Entity-service naming trap, database-driven design, persistence bleeding into domain
+- [x] 🔴 [`aggregate-invariants.md`](./aggregate-invariants.md) — Always-valid domain model, enforcing invariants in constructors/methods, guard clauses
+- [x] 🔴 [`large-aggregate-splitting.md`](./large-aggregate-splitting.md) — Signs of over-sized aggregates, how to decompose, eventual consistency across boundaries
+- [x] 🔴 [`domain-model-vs-persistence-model.md`](./domain-model-vs-persistence-model.md) — Separate domain and EF Core models, mapping strategies, cost vs benefit
+- [x] 🔴 [`event-storming.md`](./event-storming.md) — Workshop technique, domain events → commands → aggregates → bounded contexts, hotspot discovery
+- [x] 🔴 [`ddd-and-microservices.md`](./ddd-and-microservices.md) — One service per bounded context (usually), when to break the rule, context map to service map
+- [x] 🔴 [`ddd-anti-patterns.md`](./ddd-anti-patterns.md) — Entity-service naming trap, database-driven design, persistence bleeding into domain
 
 ---
 
 ## §3 CQRS
 
-- [ ] 🟢 `cqrs-fundamentals.md` — Command/Query Responsibility Segregation, Bertrand Meyer's CQS origin, Greg Young's evolution
-- [ ] 🟢 `command-vs-query.md` — What makes a command vs a query, void vs return value, side effects contract
+- [x] 🟢 [`cqrs-fundamentals.md`](./cqrs-fundamentals.md) — Command/Query Responsibility Segregation, Bertrand Meyer's CQS origin, Greg Young's evolution
+- [x] 🟢 [`command-vs-query.md`](./command-vs-query.md) — What makes a command vs a query, void vs return value, side effects contract
 - [ ] 🟡 `cqrs-with-mediatr.md` — IRequest / IRequestHandler, notifications, MediatR DI setup, request pipeline
 - [ ] 🟡 `cqrs-read-models.md` — Denormalized projections, separate read DB strategy, updating read models from events
 - [ ] 🟡 `cqrs-write-models.md` — Command handler loads aggregate, executes, persists, publishes domain events

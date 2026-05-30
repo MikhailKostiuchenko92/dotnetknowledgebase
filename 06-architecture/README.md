@@ -26,14 +26,24 @@ _Questions are organized by sub-topic. See [BACKLOG.md](./BACKLOG.md) for the fu
 
 ### §2 Domain-Driven Design (DDD)
 - [aggregate-design.md](./aggregate-design.md) — Aggregate root, consistency boundary, one transaction per aggregate, size rules
+- [aggregate-invariants.md](./aggregate-invariants.md) — Always-valid model, factory methods, guard clauses, state machine transitions
 - [anemic-vs-rich-domain-model.md](./anemic-vs-rich-domain-model.md) — Fowler's anti-pattern, rich model trade-offs, EF Core with private setters
 - [bounded-context.md](./bounded-context.md) — Context boundaries, same concept different meanings, identifying boundaries
 - [context-mapping-patterns.md](./context-mapping-patterns.md) — Published Language, Open Host Service, partnership, full pattern catalog
+- [ddd-and-microservices.md](./ddd-and-microservices.md) — Bounded context to service mapping, Conway's Law, when to break the rule
+- [ddd-anti-patterns.md](./ddd-anti-patterns.md) — Entity-service trap, database-driven design, persistence bleeding
 - [ddd-tactical-vs-strategic.md](./ddd-tactical-vs-strategic.md) — Strategic (bounded context, context map) vs tactical patterns (aggregate, entity, VO)
 - [domain-events.md](./domain-events.md) — Raising events in aggregates, SaveChanges dispatch, domain vs integration events
+- [domain-model-vs-persistence-model.md](./domain-model-vs-persistence-model.md) — Separate models, EF Core mapping, when to split
 - [domain-services.md](./domain-services.md) — Stateless cross-entity operations, vs application services, naming
 - [entity-vs-value-object.md](./entity-vs-value-object.md) — Identity-based vs structural equality, immutability, C# record as VO
+- [event-storming.md](./event-storming.md) — Workshop technique, Big Picture/Process/Design levels, discovering bounded contexts
+- [large-aggregate-splitting.md](./large-aggregate-splitting.md) — Signs of oversized aggregates, decomposition, eventual consistency
 - [repository-pattern.md](./repository-pattern.md) — Domain-oriented interface, aggregate root per repo, EF Core implementation
 - [specification-pattern.md](./specification-pattern.md) — ISpecification, composable queries, Ardalis.Specification, EF Core
 - [ubiquitous-language.md](./ubiquitous-language.md) — Shared vocabulary with domain experts, impact on code naming
 - [value-object-implementation.md](./value-object-implementation.md) — C# record VOs, EF Core ComplexType vs OwnsOne, Money/Address/Email
+
+### §3 CQRS
+- [command-vs-query.md](./command-vs-query.md) — Command vs query contracts, idempotency, caching, API design impact
+- [cqrs-fundamentals.md](./cqrs-fundamentals.md) — CQS origin, Greg Young CQRS, read/write model separation, spectrum
