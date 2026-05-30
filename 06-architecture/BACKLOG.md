@@ -23,8 +23,8 @@ When a question is created, mark it `[x]` and add a link to the file.
 
 ## Progress
 
-**Total:** 40 / 106
-**By difficulty:** 🟢 8/21 · 🟡 18/47 · 🔴 14/38
+**Total:** 50 / 106
+**By difficulty:** 🟢 10/21 · 🟡 23/47 · 🔴 17/38
 
 ---
 
@@ -74,20 +74,20 @@ When a question is created, mark it `[x]` and add a link to the file.
 
 - [x] 🟢 [`cqrs-fundamentals.md`](./cqrs-fundamentals.md) — Command/Query Responsibility Segregation, Bertrand Meyer's CQS origin, Greg Young's evolution
 - [x] 🟢 [`command-vs-query.md`](./command-vs-query.md) — What makes a command vs a query, void vs return value, side effects contract
-- [ ] 🟡 `cqrs-with-mediatr.md` — IRequest / IRequestHandler, notifications, MediatR DI setup, request pipeline
-- [ ] 🟡 `cqrs-read-models.md` — Denormalized projections, separate read DB strategy, updating read models from events
-- [ ] 🟡 `cqrs-write-models.md` — Command handler loads aggregate, executes, persists, publishes domain events
-- [ ] 🟡 `pipeline-behaviors.md` — IPipelineBehavior, ordering, validation/logging/caching/transaction use cases
-- [ ] 🟡 `cqrs-without-event-sourcing.md` — CQRS on a single relational DB, DB views, EF Core split for read/write
-- [ ] 🔴 `cqrs-consistency-challenges.md` — Eventual consistency between write model and read projection, stale read handling
-- [ ] 🔴 `cqrs-and-ddd.md` — Command → aggregate → domain events → projection, how DDD and CQRS compose in .NET
-- [ ] 🔴 `task-based-ui-and-cqrs.md` — Why CRUD UIs fight CQRS, intention-revealing commands, task-based UX design
+- [x] 🟡 [`cqrs-with-mediatr.md`](./cqrs-with-mediatr.md) — IRequest / IRequestHandler, notifications, MediatR DI setup, request pipeline
+- [x] 🟡 [`cqrs-read-models.md`](./cqrs-read-models.md) — Denormalized projections, separate read DB strategy, updating read models from events
+- [x] 🟡 [`cqrs-write-models.md`](./cqrs-write-models.md) — Command handler loads aggregate, executes, persists, publishes domain events
+- [x] 🟡 [`pipeline-behaviors.md`](./pipeline-behaviors.md) — IPipelineBehavior, ordering, validation/logging/caching/transaction use cases
+- [x] 🟡 [`cqrs-without-event-sourcing.md`](./cqrs-without-event-sourcing.md) — CQRS on a single relational DB, DB views, EF Core split for read/write
+- [x] 🔴 [`cqrs-consistency-challenges.md`](./cqrs-consistency-challenges.md) — Eventual consistency between write model and read projection, stale read handling
+- [x] 🔴 [`cqrs-and-ddd.md`](./cqrs-and-ddd.md) — Command → aggregate → domain events → projection, how DDD and CQRS compose in .NET
+- [x] 🔴 [`task-based-ui-and-cqrs.md`](./task-based-ui-and-cqrs.md) — Why CRUD UIs fight CQRS, intention-revealing commands, task-based UX design
 
 ---
 
 ## §4 Event Sourcing
 
-- [ ] 🟢 `event-sourcing-fundamentals.md` — Store events not state, replay to rebuild, append-only log, audit built-in
+- [x] 🟢 [`event-sourcing-fundamentals.md`](./event-sourcing-fundamentals.md) — Store events not state, replay to rebuild, append-only log, audit built-in
 - [ ] 🟡 `event-store-design.md` — Events table schema, optimistic concurrency with stream version, aggregate streams
 - [ ] 🟡 `projections-and-read-models.md` — Synchronous vs async projections, catch-up subscriptions, projection rebuilds
 - [ ] 🟡 `event-sourcing-in-dotnet.md` — EventStoreDB, Marten (PostgreSQL), custom implementation patterns

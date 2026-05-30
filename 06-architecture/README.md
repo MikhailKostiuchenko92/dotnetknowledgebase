@@ -46,4 +46,15 @@ _Questions are organized by sub-topic. See [BACKLOG.md](./BACKLOG.md) for the fu
 
 ### §3 CQRS
 - [command-vs-query.md](./command-vs-query.md) — Command vs query contracts, idempotency, caching, API design impact
+- [cqrs-and-ddd.md](./cqrs-and-ddd.md) — Command → aggregate → domain event → projection, full DDD+CQRS composition
+- [cqrs-consistency-challenges.md](./cqrs-consistency-challenges.md) — Eventual consistency, stale reads, read-after-write strategies
 - [cqrs-fundamentals.md](./cqrs-fundamentals.md) — CQS origin, Greg Young CQRS, read/write model separation, spectrum
+- [cqrs-read-models.md](./cqrs-read-models.md) — Denormalized projections, DB views, async read model updates
+- [cqrs-with-mediatr.md](./cqrs-with-mediatr.md) — IRequest/IRequestHandler, notifications, ISender vs IMediator
+- [cqrs-without-event-sourcing.md](./cqrs-without-event-sourcing.md) — Single-database CQRS, EF Core AsNoTracking + Dapper split
+- [cqrs-write-models.md](./cqrs-write-models.md) — Command handler → aggregate → persist → domain events
+- [pipeline-behaviors.md](./pipeline-behaviors.md) — IPipelineBehavior, registration order, validation/logging/caching/transaction
+- [task-based-ui-and-cqrs.md](./task-based-ui-and-cqrs.md) — Intention-revealing commands, CRUD vs task-based UX, REST sub-resources
+
+### §4 Event Sourcing
+- [event-sourcing-fundamentals.md](./event-sourcing-fundamentals.md) — Append-only event log, state reconstruction, audit trail, replay benefits
