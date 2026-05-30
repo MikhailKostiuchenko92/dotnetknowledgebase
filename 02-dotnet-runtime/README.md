@@ -75,3 +75,13 @@ Browse the index below for available runtime questions. Use the [question templa
 - [thread-vs-task.md](./thread-vs-task.md) — OS threads vs logical tasks, scheduling, and when raw Thread still matters
 - [threadpool-basics.md](./threadpool-basics.md) — CLR ThreadPool basics, worker vs I/O completion threads, and starvation risks
 - [threadpool-internals.md](./threadpool-internals.md) — Work-stealing queues, hill-climbing, thread injection, and backlog monitoring
+- [thread-local-storage.md](./thread-local-storage.md) — `ThreadLocal<T>`, `[ThreadStatic]`, initialization traps, disposal, and thread-affine resource pitfalls
+- [synchronization-context.md](./synchronization-context.md) — `SynchronizationContext`, continuation capture, UI affinity, and ASP.NET Classic vs ASP.NET Core behavior
+- [semaphoreslim-and-manualresetevent.md](./semaphoreslim-and-manualresetevent.md) — `SemaphoreSlim`, `ManualResetEventSlim`, `CountdownEvent`, `AutoResetEvent`, and when each fits
+- [concurrent-collections.md](./concurrent-collections.md) — `ConcurrentDictionary`, queues, stacks, bags, immutable snapshots, and `BlockingCollection`
+- [channel-t.md](./channel-t.md) — `System.Threading.Channels`, bounded vs unbounded queues, backpressure, and async producer-consumer pipelines
+- [reader-writer-lock.md](./reader-writer-lock.md) — `ReaderWriterLockSlim`, upgradeable reads, read-mostly workloads, and writer starvation trade-offs
+- [spinlock-and-interlocked.md](./spinlock-and-interlocked.md) — `SpinLock`, `SpinWait`, CAS loops, ABA, and when spinning beats blocking
+- [volatile-and-memory-barriers.md](./volatile-and-memory-barriers.md) — CPU reordering, `volatile`, `Volatile.Read/Write`, full fences, and visibility vs atomicity
+- [task-parallel-library-internals.md](./task-parallel-library-internals.md) — `TaskScheduler`, continuations, task creation options, work-stealing, and `ValueTask` internals
+- [parallel-and-plinq.md](./parallel-and-plinq.md) — `Parallel.For`, `Parallel.ForEachAsync`, PLINQ, ordering, and degree-of-parallelism trade-offs

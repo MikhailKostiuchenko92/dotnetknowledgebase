@@ -23,8 +23,8 @@ When a question is created, mark it `[x]` and add a link to the file.
 
 ## Progress
 
-**Total:** 60 / 112
-**By difficulty:** 🟢 15/24 · 🟡 28/56 · 🔴 17/32
+**Total:** 70 / 112
+**By difficulty:** 🟢 15/24 · 🟡 34/56 · 🔴 21/32
 
 ---
 
