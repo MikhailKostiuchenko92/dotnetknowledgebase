@@ -56,12 +56,16 @@ Interview-ready deep-dives into distributed systems design, architecture pattern
 
 ### §5 Messaging & Event-Driven Architecture
 - [at-least-once-vs-exactly-once.md](./at-least-once-vs-exactly-once.md) — Delivery guarantees, idempotent consumers, deduplication table pattern
+- [azure-service-bus-patterns.md](./azure-service-bus-patterns.md) — Queues vs topics/subscriptions, sessions, dead-letter, message lock, scheduled messages
 - [dead-letter-queues.md](./dead-letter-queues.md) — Poison messages, retry strategies, DLQ monitoring, replay patterns
 - [event-driven-architecture.md](./event-driven-architecture.md) — Domain vs integration events, choreography vs orchestration, MassTransit Saga
+- [kafka-fundamentals.md](./kafka-fundamentals.md) — Partitions, consumer groups, offsets, retention, log compaction, ordering guarantees
 - [kafka-vs-rabbitmq.md](./kafka-vs-rabbitmq.md) — Log model vs smart broker, partitions, consumer groups, when to use each
 - [message-broker-overview.md](./message-broker-overview.md) — Queues, pub/sub, ACK, DLQ fundamentals; RabbitMQ, Kafka, Azure Service Bus
+- [ordering-in-distributed-systems.md](./ordering-in-distributed-systems.md) — Lamport clocks, vector clocks, Kafka partition ordering, why global order is expensive
 - [outbox-pattern.md](./outbox-pattern.md) — Transactional outbox, polling vs CDC relay, EF Core + MassTransit implementation
 - [pub-sub-vs-message-queue.md](./pub-sub-vs-message-queue.md) — Point-to-point vs fan-out, RabbitMQ exchange types, Azure Service Bus topics
+- [saga-pattern.md](./saga-pattern.md) — Choreography vs orchestration, compensating transactions, failure handling, MassTransit state machine
 
 ### §6 Rate Limiting & Throttling
 - [circuit-breaker-pattern.md](./circuit-breaker-pattern.md) — Closed/Open/Half-Open states, Polly v8, Microsoft.Extensions.Resilience
@@ -132,3 +136,10 @@ Interview-ready deep-dives into distributed systems design, architecture pattern
 - [kubernetes-for-dotnet-devs.md](./kubernetes-for-dotnet-devs.md) — ConfigMap/Secret injection, resource limits, probes, GC container awareness
 - [multi-region-architecture.md](./multi-region-architecture.md) — Active-active/passive, RTO/RPO, conflict resolution, data residency
 - [serverless-design-patterns.md](./serverless-design-patterns.md) — Azure Functions triggers, cold start, Durable Functions orchestration
+
+### §13 Data Pipeline & Analytics
+- [batch-vs-stream-processing.md](./batch-vs-stream-processing.md) — Lambda vs Kappa architecture, windowing, when real-time is needed, trade-offs
+- [change-data-capture.md](./change-data-capture.md) — Debezium, PostgreSQL WAL, SQL Server CT, feeding downstream systems
+- [data-warehouse-vs-data-lake.md](./data-warehouse-vs-data-lake.md) — Structured vs raw, ELT vs ETL, Azure Synapse / Databricks, schema-on-read
+- [designing-for-analytics-at-scale.md](./designing-for-analytics-at-scale.md) — Star schema, columnar storage, partitioning, query push-down, approximate queries
+- [idempotent-data-pipeline.md](./idempotent-data-pipeline.md) — Exactly-once illusion, checkpointing, watermarks, replayability

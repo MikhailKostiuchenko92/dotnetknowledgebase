@@ -23,8 +23,8 @@ When a question is created, mark it `[x]` and add a link to the file.
 
 ## Progress
 
-**Total:** 105 / 120
-**By difficulty:** 🟢 13/24 · 🟡 50/54 · 🔴 42/42
+**Total:** 114 / 120
+**By difficulty:** 🟢 13/24 · 🟡 55/54 · 🔴 46/42
 
 ---
 
@@ -84,12 +84,12 @@ When a question is created, mark it `[x]` and add a link to the file.
 - [x] 🟡 [`pub-sub-vs-message-queue.md`](./pub-sub-vs-message-queue.md) — Point-to-point vs fan-out, competing consumers, Azure Service Bus vs Event Grid
 - [x] 🟡 [`at-least-once-vs-exactly-once.md`](./at-least-once-vs-exactly-once.md) — Delivery guarantees, idempotent consumers, de-duplication
 - [x] 🟡 [`kafka-vs-rabbitmq.md`](./kafka-vs-rabbitmq.md) — Kafka log model vs RabbitMQ exchanges; partitions, consumer groups, when to use each
-- [ ] 🟡 `kafka-fundamentals.md` — Partitions, consumer groups, offsets, retention, log compaction, ordering guarantees
-- [ ] 🟡 `azure-service-bus-patterns.md` — Queues vs topics, sessions, dead-letter queue, message lock, scheduled messages
+- [x] 🟡 [`kafka-fundamentals.md`](./kafka-fundamentals.md) — Partitions, consumer groups, offsets, retention, log compaction, ordering guarantees
+- [x] 🟡 [`azure-service-bus-patterns.md`](./azure-service-bus-patterns.md) — Queues vs topics, sessions, dead-letter queue, message lock, scheduled messages
 - [x] 🔴 [`outbox-pattern.md`](./outbox-pattern.md) — Transactional outbox, polling vs CDC, at-least-once delivery guarantee, EF Core implementation
-- [ ] 🔴 `saga-pattern.md` — Choreography vs orchestration, compensating transactions, failure handling, MassTransit/.NET
+- [x] 🔴 [`saga-pattern.md`](./saga-pattern.md) — Choreography vs orchestration, compensating transactions, failure handling, MassTransit/.NET
 - [x] 🔴 [`event-driven-architecture.md`](./event-driven-architecture.md) — Domain vs integration events, choreography vs orchestration, when EDA hurts
-- [ ] 🔴 `ordering-in-distributed-systems.md` — Sequence numbers, Lamport clocks, Kafka partition ordering, why global order is expensive
+- [x] 🔴 [`ordering-in-distributed-systems.md`](./ordering-in-distributed-systems.md) — Sequence numbers, Lamport clocks, Kafka partition ordering, why global order is expensive
 - [x] 🟡 [`dead-letter-queues.md`](./dead-letter-queues.md) — Poison messages, retry strategies, monitoring, alerting, requeue patterns
 
 ## 6. Rate Limiting & Throttling
@@ -171,11 +171,11 @@ When a question is created, mark it `[x]` and add a link to the file.
 
 ## 13. Data Pipeline & Analytics
 
-- [ ] 🟡 `batch-vs-stream-processing.md` — Lambda vs Kappa architecture, when real-time is needed, trade-offs
-- [ ] 🟡 `data-warehouse-vs-data-lake.md` — Structured vs raw, ELT vs ETL, Azure Synapse / Databricks, schema-on-read
-- [ ] 🔴 `change-data-capture.md` — CDC with Debezium/SQL Server CT, feeding downstream systems, latency and ordering
-- [ ] 🔴 `designing-for-analytics-at-scale.md` — Star schema, columnar storage, partitioning, query push-down, approximate queries
-- [ ] 🟡 `idempotent-data-pipeline.md` — Exactly-once processing illusion, checkpointing, watermarks, replayability
+- [x] 🟡 [`batch-vs-stream-processing.md`](./batch-vs-stream-processing.md) — Lambda vs Kappa architecture, when real-time is needed, trade-offs
+- [x] 🟡 [`data-warehouse-vs-data-lake.md`](./data-warehouse-vs-data-lake.md) — Structured vs raw, ELT vs ETL, Azure Synapse / Databricks, schema-on-read
+- [x] 🔴 [`change-data-capture.md`](./change-data-capture.md) — CDC with Debezium/SQL Server CT, feeding downstream systems, latency and ordering
+- [x] 🔴 [`designing-for-analytics-at-scale.md`](./designing-for-analytics-at-scale.md) — Star schema, columnar storage, partitioning, query push-down, approximate queries
+- [x] 🟡 [`idempotent-data-pipeline.md`](./idempotent-data-pipeline.md) — Exactly-once processing illusion, checkpointing, watermarks, replayability
 
 ---
 
