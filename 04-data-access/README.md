@@ -31,3 +31,15 @@ _Questions are organized by sub-topic. See [BACKLOG.md](./BACKLOG.md) for the fu
 - [pagination-patterns.md](./pagination-patterns.md) — Offset Skip/Take vs keyset (cursor) pagination, composite cursor pattern
 - [projections-and-select.md](./projections-and-select.md) — DTO projections, AutoMapper ProjectTo<T>, navigation JOINs without Include
 - [raw-sql-in-ef-core.md](./raw-sql-in-ef-core.md) — FromSqlRaw/Interpolated, SqlQuery<T> (.NET 7+), ExecuteSqlRaw, SQL injection safety
+- [split-queries.md](./split-queries.md) — AsSplitQuery, cartesian explosion, consistency trade-offs, global default
+- [complex-query-patterns.md](./complex-query-patterns.md) — CTEs, window functions, CROSS APPLY (EF Core 8+), hybrid raw SQL + LINQ
+
+### §3 EF Core Performance
+- [asnotracking.md](./asnotracking.md) — AsNoTracking vs AsNoTrackingWithIdentityResolution, read-only queries, identity map
+- [batching-in-ef-core.md](./batching-in-ef-core.md) — SaveChanges batching, ExecuteUpdate/Delete (.NET 7+), bulk UPDATE/DELETE
+- [bulk-operations.md](./bulk-operations.md) — SqlBulkCopy, EFCore.BulkExtensions, TVP+stored proc, decision framework
+- [change-tracker-performance.md](./change-tracker-performance.md) — DetectChanges cost, AutoDetectChangesEnabled, high-throughput import patterns
+- [dbcontext-pooling.md](./dbcontext-pooling.md) — AddDbContextPool, pool size, limitations, IDbContextFactory
+- [eager-vs-lazy-vs-explicit-loading.md](./eager-vs-lazy-vs-explicit-loading.md) — Include (eager), lazy proxies, explicit LoadAsync — when each fits
+- [ef-core-logging-and-diagnostics.md](./ef-core-logging-and-diagnostics.md) — SQL logging, TagWith, IDbCommandInterceptor, MiniProfiler integration
+- [n-plus-one-problem.md](./n-plus-one-problem.md) — What N+1 is, detection via SQL logging, fixing with Include or projections

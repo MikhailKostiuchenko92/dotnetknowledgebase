@@ -23,8 +23,8 @@ When a question is created, mark it `[x]` and add a link to the file.
 
 ## Progress
 
-**Total:** 20 / 94
-**By difficulty:** 🟢 5/18 · 🟡 10/43 · 🔴 5/33
+**Total:** 30 / 94
+**By difficulty:** 🟢 7/18 · 🟡 14/43 · 🔴 9/33
 
 ---
 
@@ -55,21 +55,21 @@ When a question is created, mark it `[x]` and add a link to the file.
 - [x] 🟡 [`compiled-queries.md`](./compiled-queries.md) — EF.CompileQuery / EF.CompileAsyncQuery, overhead of LINQ translation, when to use
 - [x] 🟡 [`pagination-patterns.md`](./pagination-patterns.md) — OFFSET/FETCH vs keyset (cursor) pagination, IQueryable, performance at high page numbers
 - [x] 🔴 [`client-side-evaluation.md`](./client-side-evaluation.md) — When EF Core falls back to client eval, how to detect via logging, avoiding memory blowups
-- [ ] 🔴 `split-queries.md` — AsSplitQuery, cartesian explosion with multi-level includes, trade-offs vs single query
-- [ ] 🔴 `complex-query-patterns.md` — CTEs and window functions via raw SQL, what EF Core LINQ can't translate, hybrid approach
+- [x] 🔴 [`split-queries.md`](./split-queries.md) — AsSplitQuery, cartesian explosion with multi-level includes, trade-offs vs single query
+- [x] 🔴 [`complex-query-patterns.md`](./complex-query-patterns.md) — CTEs and window functions via raw SQL, what EF Core LINQ can't translate, hybrid approach
 
 ---
 
 ## §3 EF Core Performance
 
-- [ ] 🟢 `asnotracking.md` — AsNoTracking, AsNoTrackingWithIdentityResolution, read-only scenarios, measured speedup
-- [ ] 🟢 `n-plus-one-problem.md` — What it is, how to detect with SQL logging / MiniProfiler, fixing with Include or projections
-- [ ] 🟡 `eager-vs-lazy-vs-explicit-loading.md` — Include (eager), lazy nav proxies, entry.Reference().Load() — when each fits
-- [ ] 🟡 `ef-core-logging-and-diagnostics.md` — SQL query logging, EnableSensitiveDataLogging, IDbCommandInterceptor for profiling
-- [ ] 🟡 `batching-in-ef-core.md` — ExecuteUpdateAsync / ExecuteDeleteAsync (.NET 7+), bulk UPDATE/DELETE, SaveChanges batching
-- [ ] 🟡 `dbcontext-pooling.md` — AddDbContextPool, pool size config, limitations (no per-request state), connection pool vs context pool
-- [ ] 🔴 `change-tracker-performance.md` — DetectChanges cost, AutoDetectChangesEnabled, high-throughput import patterns
-- [ ] 🔴 `bulk-operations.md` — EF Core Extensions, SqlBulkCopy, raw INSERT … SELECT, Z.EntityFramework trade-offs
+- [x] 🟢 [`asnotracking.md`](./asnotracking.md) — AsNoTracking, AsNoTrackingWithIdentityResolution, read-only scenarios, measured speedup
+- [x] 🟢 [`n-plus-one-problem.md`](./n-plus-one-problem.md) — What it is, how to detect with SQL logging / MiniProfiler, fixing with Include or projections
+- [x] 🟡 [`eager-vs-lazy-vs-explicit-loading.md`](./eager-vs-lazy-vs-explicit-loading.md) — Include (eager), lazy nav proxies, entry.Reference().Load() — when each fits
+- [x] 🟡 [`ef-core-logging-and-diagnostics.md`](./ef-core-logging-and-diagnostics.md) — SQL query logging, EnableSensitiveDataLogging, IDbCommandInterceptor for profiling
+- [x] 🟡 [`batching-in-ef-core.md`](./batching-in-ef-core.md) — ExecuteUpdateAsync / ExecuteDeleteAsync (.NET 7+), bulk UPDATE/DELETE, SaveChanges batching
+- [x] 🟡 [`dbcontext-pooling.md`](./dbcontext-pooling.md) — AddDbContextPool, pool size config, limitations (no per-request state), connection pool vs context pool
+- [x] 🔴 [`change-tracker-performance.md`](./change-tracker-performance.md) — DetectChanges cost, AutoDetectChangesEnabled, high-throughput import patterns
+- [x] 🔴 [`bulk-operations.md`](./bulk-operations.md) — EF Core Extensions, SqlBulkCopy, raw INSERT … SELECT, Z.EntityFramework trade-offs
 - [ ] 🔴 `ef-core-vs-dapper-performance.md` — Benchmark breakdown, change tracking + materialization overhead, hybrid CQRS pattern
 - [ ] 🔴 `connection-resilience.md` — EnableRetryOnFailure, IExecutionStrategy, transient fault handling, Azure SQL recommendations
 
