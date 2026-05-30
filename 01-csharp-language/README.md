@@ -67,9 +67,20 @@ See the [BACKLOG.md](./BACKLOG.md) for the full list of planned questions and cu
 ### Async / Await / Tasks
 
 - [async-await-fundamentals.md](./async-await-fundamentals.md) — State machine lowering, `await` suspension, synchronous fast path
+- [async-exception-handling.md](./async-exception-handling.md) — Faulted tasks, `AggregateException`, unawaited tasks, `UnobservedTaskException`
+- [async-streams-vs-channels.md](./async-streams-vs-channels.md) — Pull vs push, multi-producer/consumer, back-pressure, `BoundedChannelOptions`
+- [async-void-pitfalls.md](./async-void-pitfalls.md) — `async void` exception behavior, event-handler only rule, fire-and-forget alternatives
+- [cancellation-tokens.md](./cancellation-tokens.md) — Cooperative cancellation, `CancellationTokenSource`, linked tokens, `OperationCanceledException`
 - [configure-await-false.md](./configure-await-false.md) — Context capture, deadlock prevention, library vs app code, .NET 8 options
+- [cpu-bound-vs-io-bound-async.md](./cpu-bound-vs-io-bound-async.md) — `Task.Run` rules, thread pool usage
+- [deadlocks-with-result-and-wait.md](./deadlocks-with-result-and-wait.md) — Step-by-step deadlock anatomy, `Task.Run` bridge, safe `.Result` scenarios
+- [iasyncenumerable.md](./iasyncenumerable.md) — `await foreach`, streaming, `[EnumeratorCancellation]`, `ConfigureAwait`
+- [parallel-foreach-vs-task-whenall.md](./parallel-foreach-vs-task-whenall.md) — CPU vs I/O bound, `Parallel.ForEachAsync` (.NET 6+), throttling
+- [progress-reporting-iprogress.md](./progress-reporting-iprogress.md) — `IProgress<T>`, `Progress<T>` SC marshalling, null-safe pattern
 - [synchronization-context.md](./synchronization-context.md) — WPF/WinForms/ASP.NET Classic/Core behavior, `AsyncLocal` vs SC
+- [task-completion-source.md](./task-completion-source.md) — Callback bridge, `RunContinuationsAsynchronously`, async gate pattern
 - [task-vs-thread.md](./task-vs-thread.md) — Thread pool vs raw thread, when to use `new Thread`, `LongRunning`
 - [task-vs-valuetask.md](./task-vs-valuetask.md) — Synchronous fast path, allocation savings, single-await rule
+- [task-whenall-vs-whenany.md](./task-whenall-vs-whenany.md) — Parallel fan-out, exception aggregation, timeout pattern
 - [lambda-expressions-and-closures.md](./lambda-expressions-and-closures.md) — Closure class generation, loop-variable bug, `static` lambda
 - [multicast-delegates.md](./multicast-delegates.md) — Invocation list, return value discard, exception isolation

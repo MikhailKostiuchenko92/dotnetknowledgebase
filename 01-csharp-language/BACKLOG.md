@@ -23,8 +23,8 @@ When a question is created, mark it `[x]` and add a link to the file.
 
 ## Progress
 
-**Total:** 50 / 137
-**By difficulty:** 🟢 13/24 · 🟡 26/64 · 🔴 13/49
+**Total:** 60 / 137
+**By difficulty:** 🟢 13/24 · 🟡 32/64 · 🔴 17/49
 
 ---
 
@@ -95,16 +95,16 @@ When a question is created, mark it `[x]` and add a link to the file.
 - [x] 🔴 [`task-vs-valuetask.md`](./task-vs-valuetask.md) — When `ValueTask` helps, allocation savings, restrictions
 - [x] 🔴 [`configure-await-false.md`](./configure-await-false.md) — When/why, library vs app code, .NET 6+ behavior
 - [x] 🔴 [`synchronization-context.md`](./synchronization-context.md) — ASP.NET classic vs Core, WPF/WinForms, continuations
-- [ ] 🟡 `async-void-pitfalls.md` — Why to avoid, only-for-event-handlers rule
-- [ ] 🔴 `deadlocks-with-result-and-wait.md` — `.Result`/`.Wait()` deadlock, how to fix
-- [ ] 🟡 `cancellation-tokens.md` — Cooperative cancellation, propagation, `OperationCanceledException`
-- [ ] 🟡 `task-whenall-vs-whenany.md` — Parallel awaits, exception aggregation
-- [ ] 🟡 `parallel-foreach-vs-task-whenall.md` — CPU-bound vs IO-bound
-- [ ] 🔴 `iasyncenumerable.md` — `await foreach`, streaming data, `ConfigureAwait` on streams
-- [ ] 🔴 `task-completion-source.md` — Bridging callback APIs, `RunContinuationsAsynchronously`
-- [ ] 🟡 `async-exception-handling.md` — Where exceptions surface, unawaited tasks
-- [ ] 🟡 `progress-reporting-iprogress.md` — `IProgress<T>`, `Progress<T>`, threading guarantees
-- [ ] 🔴 `async-streams-vs-channels.md` — `IAsyncEnumerable` vs `Channel<T>`, producer/consumer
+- [x] 🟡 [`async-void-pitfalls.md`](./async-void-pitfalls.md) — Why to avoid, only-for-event-handlers rule
+- [x] 🔴 [`deadlocks-with-result-and-wait.md`](./deadlocks-with-result-and-wait.md) — `.Result`/`.Wait()` deadlock, how to fix
+- [x] 🟡 [`cancellation-tokens.md`](./cancellation-tokens.md) — Cooperative cancellation, propagation, `OperationCanceledException`
+- [x] 🟡 [`task-whenall-vs-whenany.md`](./task-whenall-vs-whenany.md) — Parallel awaits, exception aggregation
+- [x] 🟡 [`parallel-foreach-vs-task-whenall.md`](./parallel-foreach-vs-task-whenall.md) — CPU-bound vs IO-bound
+- [x] 🔴 [`iasyncenumerable.md`](./iasyncenumerable.md) — `await foreach`, streaming data, `ConfigureAwait` on streams
+- [x] 🔴 [`task-completion-source.md`](./task-completion-source.md) — Bridging callback APIs, `RunContinuationsAsynchronously`
+- [x] 🟡 [`async-exception-handling.md`](./async-exception-handling.md) — Where exceptions surface, unawaited tasks
+- [x] 🟡 [`progress-reporting-iprogress.md`](./progress-reporting-iprogress.md) — `IProgress<T>`, `Progress<T>`, threading guarantees
+- [x] 🔴 [`async-streams-vs-channels.md`](./async-streams-vs-channels.md) — `IAsyncEnumerable` vs `Channel<T>`, producer/consumer
 - [ ] 🟡 `cpu-bound-vs-io-bound-async.md` — `Task.Run` rules, why not to wrap IO
 
 ## 7. Threading & concurrency
