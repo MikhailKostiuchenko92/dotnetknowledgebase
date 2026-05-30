@@ -23,8 +23,8 @@ When a question is created, mark it `[x]` and add a link to the file.
 
 ## Progress
 
-**Total:** 50 / 94
-**By difficulty:** 🟢 11/18 · 🟡 23/43 · 🔴 16/33
+**Total:** 60 / 94
+**By difficulty:** 🟢 13/18 · 🟡 27/43 · 🔴 20/33
 
 ---
 
@@ -105,21 +105,21 @@ When a question is created, mark it `[x]` and add a link to the file.
 - [x] 🟢 [`dapper-basic-queries.md`](./dapper-basic-queries.md) — Query<T>, QuerySingleOrDefault, Execute, anonymous type parameters, DynamicParameters
 - [x] 🟡 [`dapper-multi-mapping.md`](./dapper-multi-mapping.md) — QueryAsync with splitOn, mapping JOIN results to object graph, QueryMultiple for multi-result sets
 - [x] 🟡 [`dapper-stored-procedures.md`](./dapper-stored-procedures.md) — CommandType.StoredProcedure, input/output params, DynamicParameters, RETURN value
-- [ ] 🟡 `dapper-type-handlers.md` — SqlMapper.TypeHandler<T>, mapping JSON columns, custom type conversions, Guid as binary
-- [ ] 🟡 `dapper-vs-ef-core.md` — When Dapper wins (complex SQL, read perf), when EF Core wins (CRUD, migrations), project norms
-- [ ] 🔴 `dapper-performance-tips.md` — Buffered vs unbuffered, QueryUnbuffered (.NET 7+), memory-efficient large result streaming
-- [ ] 🔴 `dapper-ef-core-hybrid.md` — EF Core for writes + Dapper for reads in CQRS, shared connection, shared transaction
+- [x] 🟡 [`dapper-type-handlers.md`](./dapper-type-handlers.md) — SqlMapper.TypeHandler<T>, mapping JSON columns, custom type conversions, Guid as binary
+- [x] 🟡 [`dapper-vs-ef-core.md`](./dapper-vs-ef-core.md) — When Dapper wins (complex SQL, read perf), when EF Core wins (CRUD, migrations), project norms
+- [x] 🔴 [`dapper-performance-tips.md`](./dapper-performance-tips.md) — Buffered vs unbuffered, QueryUnbuffered (.NET 7+), memory-efficient large result streaming
+- [x] 🔴 [`dapper-ef-core-hybrid.md`](./dapper-ef-core-hybrid.md) — EF Core for writes + Dapper for reads in CQRS, shared connection, shared transaction
 
 ---
 
 ## §7 ADO.NET
 
-- [ ] 🟢 `adonet-overview.md` — SqlConnection / SqlCommand / SqlDataReader, connection lifecycle, using/dispose, async pattern
-- [ ] 🟢 `parameterized-queries.md` — SqlParameter, why string concatenation = SQL injection, parameterization best practices
-- [ ] 🟡 `connection-pooling.md` — How .NET connection pool works, pool exhaustion symptoms, Max Pool Size, Azure SQL gotchas
-- [ ] 🟡 `datareader-vs-dataset.md` — Forward-only streaming SqlDataReader vs disconnected DataSet, when DataSet is still used
-- [ ] 🔴 `sqlbulkcopy.md` — SqlBulkCopy, batch size, table lock option, column mapping, performance vs row-by-row insert
-- [ ] 🔴 `adonet-async-patterns.md` — OpenAsync / ExecuteReaderAsync / ReadAsync, avoiding sync-over-async ADO.NET anti-patterns
+- [x] 🟢 [`adonet-overview.md`](./adonet-overview.md) — SqlConnection / SqlCommand / SqlDataReader, connection lifecycle, using/dispose, async pattern
+- [x] 🟢 [`parameterized-queries.md`](./parameterized-queries.md) — SqlParameter, why string concatenation = SQL injection, parameterization best practices
+- [x] 🟡 [`connection-pooling.md`](./connection-pooling.md) — How .NET connection pool works, pool exhaustion symptoms, Max Pool Size, Azure SQL gotchas
+- [x] 🟡 [`datareader-vs-dataset.md`](./datareader-vs-dataset.md) — Forward-only streaming SqlDataReader vs disconnected DataSet, when DataSet is still used
+- [x] 🔴 [`sqlbulkcopy.md`](./sqlbulkcopy.md) — SqlBulkCopy, batch size, table lock option, column mapping, performance vs row-by-row insert
+- [x] 🔴 [`adonet-async-patterns.md`](./adonet-async-patterns.md) — OpenAsync / ExecuteReaderAsync / ReadAsync, avoiding sync-over-async ADO.NET anti-patterns
 
 ---
 

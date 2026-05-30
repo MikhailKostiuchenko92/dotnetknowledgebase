@@ -69,3 +69,15 @@ _Questions are organized by sub-topic. See [BACKLOG.md](./BACKLOG.md) for the fu
 - [dapper-multi-mapping.md](./dapper-multi-mapping.md) — splitOn, one-to-many dedup, QueryMultiple for multiple result sets
 - [dapper-overview.md](./dapper-overview.md) — Micro-ORM philosophy, IDbConnection extension, vs EF Core comparison
 - [dapper-stored-procedures.md](./dapper-stored-procedures.md) — CommandType.StoredProcedure, output params, RETURN value, multi-result sets
+- [dapper-type-handlers.md](./dapper-type-handlers.md) — SqlMapper.TypeHandler<T>, JSON columns, Guid binary, strongly-typed ID mapping
+- [dapper-vs-ef-core.md](./dapper-vs-ef-core.md) — Decision framework, when Dapper wins, when EF Core wins, CQRS hybrid
+- [dapper-performance-tips.md](./dapper-performance-tips.md) — Buffered vs unbuffered, QueryUnbuffered, CommandDefinition, plan cache
+- [dapper-ef-core-hybrid.md](./dapper-ef-core-hybrid.md) — Shared connection factory, transaction sharing, CQRS read/write split architecture
+
+### §7 ADO.NET
+- [adonet-async-patterns.md](./adonet-async-patterns.md) — OpenAsync/ExecuteReaderAsync/ReadAsync, avoiding sync-over-async, CancellationToken
+- [adonet-overview.md](./adonet-overview.md) — SqlConnection/SqlCommand/SqlDataReader, connection lifecycle, async patterns, resource management
+- [connection-pooling.md](./connection-pooling.md) — ADO.NET pool mechanics, pool exhaustion, Max Pool Size, Azure SQL tuning
+- [datareader-vs-dataset.md](./datareader-vs-dataset.md) — Streaming vs in-memory, when DataSet still has a place, performance comparison
+- [parameterized-queries.md](./parameterized-queries.md) — SQL injection prevention, SqlParameter, EF Core/Dapper safe patterns
+- [sqlbulkcopy.md](./sqlbulkcopy.md) — TDS bulk load protocol, batch size, TableLock, column mappings, transaction integration
