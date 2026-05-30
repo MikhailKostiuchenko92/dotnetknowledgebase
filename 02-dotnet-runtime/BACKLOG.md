@@ -23,8 +23,8 @@ When a question is created, mark it `[x]` and add a link to the file.
 
 ## Progress
 
-**Total:** 40 / 112
-**By difficulty:** 🟢 10/24 · 🟡 21/56 · 🔴 8/32
+**Total:** 50 / 112
+**By difficulty:** 🟢 12/24 · 🟡 25/56 · 🔴 12/32
 
 ---
 
@@ -78,21 +78,21 @@ When a question is created, mark it `[x]` and add a link to the file.
 - [x] 🟡 [record-structs.md](./record-structs.md) — record struct vs record class, value equality, with-expressions, positional syntax
 - [x] 🟡 [memory-t-and-imemoryowner.md](./memory-t-and-imemoryowner.md) — IMemoryOwner\<T\>, MemoryPool\<T\>, ownership and lifetime, pipeline buffers
 - [x] 🟡 [string-interning-and-memory.md](./string-interning-and-memory.md) — String.Intern, string pool, string.IsInterned, when it helps vs hurts
-- [ ] 🔴 `memory-layout-of-objects.md` — Object header, sync block index, MethodTable pointer, field layout, EEClass
-- [ ] 🔴 `struct-layout-and-packing.md` — StructLayoutAttribute, LayoutKind.Explicit/Sequential, FieldOffset, packing, blittability
-- [ ] 🔴 `stackalloc-and-inline-arrays.md` — stackalloc with Span\<T\>, stack overflow risk, inline arrays (C# 12), SkipLocalsInit
-- [ ] 🔴 `unsafe-code-and-pointers.md` — unsafe context, fixed keyword, pointer arithmetic, Unsafe class, NativeMemory (.NET 6+)
+- [x] 🔴 `memory-layout-of-objects.md` — Object header, sync block index, MethodTable pointer, field layout, EEClass
+- [x] 🔴 `struct-layout-and-packing.md` — StructLayoutAttribute, LayoutKind.Explicit/Sequential, FieldOffset, packing, blittability
+- [x] 🔴 `stackalloc-and-inline-arrays.md` — stackalloc with Span\<T\>, stack overflow risk, inline arrays (C# 12), SkipLocalsInit
+- [x] 🔴 `unsafe-code-and-pointers.md` — unsafe context, fixed keyword, pointer arithmetic, Unsafe class, NativeMemory (.NET 6+)
 
 ---
 
 ## §4 JIT & Ahead-of-Time Compilation (12 questions)
 
-- [ ] 🟢 `jit-compilation-basics.md` — RyuJIT, IL → native, lazy compilation per method, code quality vs startup trade-off
-- [ ] 🟢 `ready-to-run-overview.md` — R2R images, crossgen2, partial AOT for startup, fallback to JIT, PublishReadyToRun
-- [ ] 🟡 `tiered-compilation.md` — Tier 0 / Tier 1, call counting, on-stack replacement (OSR), QuickJit, warm-up cost
-- [ ] 🟡 `jit-optimizations.md` — Inlining, loop unrolling, devirtualization, range-check elimination, dead-code elimination
-- [ ] 🟡 `code-generation-attributes.md` — MethodImplOptions.AggressiveInlining/NoInlining/NoOptimization, SkipLocalsInit, AggressiveOptimization
-- [ ] 🟡 `assembly-trimming.md` — ILLink linker, PublishTrimmed, RequiresUnreferencedCode, trim-unsafe patterns, analyzer
+- [x] 🟢 `jit-compilation-basics.md` — RyuJIT, IL → native, lazy compilation per method, code quality vs startup trade-off
+- [x] 🟢 `ready-to-run-overview.md` — R2R images, crossgen2, partial AOT for startup, fallback to JIT, PublishReadyToRun
+- [x] 🟡 `tiered-compilation.md` — Tier 0 / Tier 1, call counting, on-stack replacement (OSR), QuickJit, warm-up cost
+- [x] 🟡 `jit-optimizations.md` — Inlining, loop unrolling, devirtualization, range-check elimination, dead-code elimination
+- [x] 🟡 `code-generation-attributes.md` — MethodImplOptions.AggressiveInlining/NoInlining/NoOptimization, SkipLocalsInit, AggressiveOptimization
+- [x] 🟡 `assembly-trimming.md` — ILLink linker, PublishTrimmed, RequiresUnreferencedCode, trim-unsafe patterns, analyzer
 - [ ] 🟡 `native-aot-overview.md` — Full static compilation, no JIT at runtime, reflection limitations, size/startup benefits
 - [ ] 🔴 `native-aot-constraints.md` — RequiresDynamicCode, source-generated JSON/regex, COM not supported, cross-OS publish
 - [ ] 🔴 `on-stack-replacement.md` — OSR internals, loop hot path promotion to Tier 1, .NET 7+ counter-based triggers
