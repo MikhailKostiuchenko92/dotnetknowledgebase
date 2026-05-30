@@ -23,8 +23,8 @@ When a question is created, mark it `[x]` and add a link to the file.
 
 ## Progress
 
-**Total:** 85 / 120
-**By difficulty:** 🟢 10/24 · 🟡 41/54 · 🔴 34/42
+**Total:** 95 / 120
+**By difficulty:** 🟢 11/24 · 🟡 45/54 · 🔴 39/42
 
 ---
 
@@ -142,19 +142,19 @@ When a question is created, mark it `[x]` and add a link to the file.
 - [x] 🟢 [`load-balancing-strategies.md`](./load-balancing-strategies.md) — Round-robin, least-connections, IP-hash, weighted, health-based
 - [x] 🟡 [`connection-pooling-at-scale.md`](./connection-pooling-at-scale.md) — HTTP keep-alive, gRPC connection management, database pool sizing formula
 - [x] 🟡 [`async-io-and-throughput.md`](./async-io-and-throughput.md) — Why async matters for web servers, Kestrel thread model, I/O completion ports
-- [ ] 🔴 `backpressure-patterns.md` — Bounded queues, `Channel<T>` back-pressure, TCP receive buffer, drop vs block
-- [ ] 🔴 `cqrs-and-read-models.md` — Command/query separation, separate read DB, eventual consistency, projection rebuild
-- [ ] 🟡 `bulkhead-pattern.md` — Isolating failures, thread pool partitioning, Polly `Bulkhead`, resource limits
-- [ ] 🔴 `performance-profiling-approach.md` — Benchmark-first, PerfView, dotnet-trace, ETW, memory dumps — process for production investigation
-- [ ] 🟡 `denormalization-for-performance.md` — When to break 3NF deliberately, read-optimised schemas, materialized views
+- [x] 🔴 [`backpressure-patterns.md`](./backpressure-patterns.md) — Bounded queues, `Channel<T>` back-pressure, TCP receive buffer, drop vs block
+- [x] 🔴 [`cqrs-and-read-models.md`](./cqrs-and-read-models.md) — Command/query separation, separate read DB, eventual consistency, projection rebuild
+- [x] 🟡 [`bulkhead-pattern.md`](./bulkhead-pattern.md) — Isolating failures, thread pool partitioning, Polly `Bulkhead`, resource limits
+- [x] 🔴 [`performance-profiling-approach.md`](./performance-profiling-approach.md) — Benchmark-first, PerfView, dotnet-trace, ETW, memory dumps — process for production investigation
+- [x] 🟡 [`denormalization-for-performance.md`](./denormalization-for-performance.md) — When to break 3NF deliberately, read-optimised schemas, materialized views
 
 ## 11. Security at Scale
 
-- [ ] 🟢 `authentication-vs-authorization.md` — Identity (who) vs permission (what), OAuth2 / OIDC overview, JWT structure
-- [ ] 🟡 `jwt-design-considerations.md` — Stateless vs stateful (opaque tokens), expiry strategy, rotation, revocation
-- [ ] 🟡 `oauth2-flows-compared.md` — Authorization code + PKCE, client credentials, device flow — when to use each
-- [ ] 🔴 `secrets-management-at-scale.md` — Azure Key Vault, secret rotation, dynamic credentials (Vault), .NET integration
-- [ ] 🟡 `zero-trust-architecture.md` — Never trust/always verify, mTLS between services, workload identity, BeyondCorp
+- [x] 🟢 [`authentication-vs-authorization.md`](./authentication-vs-authorization.md) — Identity (who) vs permission (what), OAuth2 / OIDC overview, JWT structure
+- [x] 🟡 [`jwt-design-considerations.md`](./jwt-design-considerations.md) — Stateless vs stateful (opaque tokens), expiry strategy, rotation, revocation
+- [x] 🟡 [`oauth2-flows-compared.md`](./oauth2-flows-compared.md) — Authorization code + PKCE, client credentials, device flow — when to use each
+- [x] 🔴 [`secrets-management-at-scale.md`](./secrets-management-at-scale.md) — Azure Key Vault, secret rotation, dynamic credentials (Vault), .NET integration
+- [x] 🟡 [`zero-trust-architecture.md`](./zero-trust-architecture.md) — Never trust/always verify, mTLS between services, workload identity, BeyondCorp
 - [ ] 🔴 `ddos-mitigation.md` — Layer 3/4 vs Layer 7 attacks, Anycast, WAF rules, connection rate limiting, Azure DDoS Protection
 - [ ] 🟡 `pii-and-data-privacy-design.md` — GDPR right to erasure, data minimisation, pseudonymisation, audit log design
 

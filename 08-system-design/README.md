@@ -106,5 +106,17 @@ Interview-ready deep-dives into distributed systems design, architecture pattern
 
 ### §10 Performance & Scalability Patterns
 - [async-io-and-throughput.md](./async-io-and-throughput.md) — Kestrel async I/O, thread pool, I/O completion ports, Pipelines
+- [backpressure-patterns.md](./backpressure-patterns.md) — Bounded Channel<T>, drop/block/error strategies, multi-stage pipeline
+- [bulkhead-pattern.md](./bulkhead-pattern.md) — Resource isolation, Polly ConcurrencyLimiter, SemaphoreSlim partitioning
 - [connection-pooling-at-scale.md](./connection-pooling-at-scale.md) — SocketsHttpHandler, DB pool sizing formula, PgBouncer
+- [cqrs-and-read-models.md](./cqrs-and-read-models.md) — Command/query separation, projections, MediatR, eventual consistency
+- [denormalization-for-performance.md](./denormalization-for-performance.md) — Materialised views, inline scalars, EF Core computed columns
 - [load-balancing-strategies.md](./load-balancing-strategies.md) — Round-robin, least-connections, consistent hashing, L4 vs L7
+- [performance-profiling-approach.md](./performance-profiling-approach.md) — dotnet-trace, dotnet-counters, dotnet-dump, BenchmarkDotNet workflow
+
+### §11 Security at Scale
+- [authentication-vs-authorization.md](./authentication-vs-authorization.md) — AuthN vs AuthZ, claims-based identity, ASP.NET Core policies
+- [jwt-design-considerations.md](./jwt-design-considerations.md) — RS256/ES256, expiry, refresh tokens, revocation, deny-list
+- [oauth2-flows-compared.md](./oauth2-flows-compared.md) — Authorization Code + PKCE, Client Credentials, OIDC, scope design
+- [secrets-management-at-scale.md](./secrets-management-at-scale.md) — Azure Key Vault, Managed Identity, CSI driver, zero-downtime rotation
+- [zero-trust-architecture.md](./zero-trust-architecture.md) — mTLS, workload identity, SPIFFE, Istio AuthorizationPolicy
