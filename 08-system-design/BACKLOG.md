@@ -23,8 +23,8 @@ When a question is created, mark it `[x]` and add a link to the file.
 
 ## Progress
 
-**Total:** 95 / 120
-**By difficulty:** 🟢 11/24 · 🟡 45/54 · 🔴 39/42
+**Total:** 105 / 120
+**By difficulty:** 🟢 13/24 · 🟡 50/54 · 🔴 42/42
 
 ---
 
@@ -155,19 +155,19 @@ When a question is created, mark it `[x]` and add a link to the file.
 - [x] 🟡 [`oauth2-flows-compared.md`](./oauth2-flows-compared.md) — Authorization code + PKCE, client credentials, device flow — when to use each
 - [x] 🔴 [`secrets-management-at-scale.md`](./secrets-management-at-scale.md) — Azure Key Vault, secret rotation, dynamic credentials (Vault), .NET integration
 - [x] 🟡 [`zero-trust-architecture.md`](./zero-trust-architecture.md) — Never trust/always verify, mTLS between services, workload identity, BeyondCorp
-- [ ] 🔴 `ddos-mitigation.md` — Layer 3/4 vs Layer 7 attacks, Anycast, WAF rules, connection rate limiting, Azure DDoS Protection
-- [ ] 🟡 `pii-and-data-privacy-design.md` — GDPR right to erasure, data minimisation, pseudonymisation, audit log design
+- [x] 🔴 [`ddos-mitigation.md`](./ddos-mitigation.md) — Layer 3/4 vs Layer 7 attacks, Anycast, WAF rules, connection rate limiting, Azure DDoS Protection
+- [x] 🟡 [`pii-and-data-privacy-design.md`](./pii-and-data-privacy-design.md) — GDPR right to erasure, data minimisation, pseudonymisation, audit log design
 
 ## 12. Cloud-Native & Infrastructure Patterns
 
-- [ ] 🟢 `containers-and-orchestration.md` — Docker fundamentals, Kubernetes resources (Pod/Deployment/Service), why orchestration
-- [ ] 🟡 `kubernetes-for-dotnet-devs.md` — ConfigMaps, Secrets, resource limits, liveness/readiness probes, rolling update
-- [ ] 🟡 `12-factor-app.md` — The 12 factors, how .NET apps comply, environment-based config, stateless processes
-- [ ] 🔴 `infrastructure-as-code.md` — Terraform vs Bicep vs Pulumi, idempotency, state management, drift detection
-- [ ] 🟡 `blue-green-and-canary-deployments.md` — Zero-downtime strategies, feature flags vs traffic splitting, rollback
-- [ ] 🔴 `multi-region-architecture.md` — Active-active vs active-passive, data residency, global load balancing, conflict resolution
-- [ ] 🟡 `event-driven-autoscaling.md` — KEDA (.NET), scale-to-zero, queue-length-based scaling, cold start mitigation
-- [ ] 🔴 `serverless-design-patterns.md` — Azure Functions, cold start, durable orchestrations, when serverless hurts
+- [x] 🟢 [`containers-and-orchestration.md`](./containers-and-orchestration.md) — Docker fundamentals, Kubernetes resources (Pod/Deployment/Service), why orchestration
+- [x] 🟡 [`kubernetes-for-dotnet-devs.md`](./kubernetes-for-dotnet-devs.md) — ConfigMaps, Secrets, resource limits, liveness/readiness probes, rolling update
+- [x] 🟡 [`12-factor-app.md`](./12-factor-app.md) — The 12 factors, how .NET apps comply, environment-based config, stateless processes
+- [x] 🔴 [`infrastructure-as-code.md`](./infrastructure-as-code.md) — Terraform vs Bicep vs Pulumi, idempotency, state management, drift detection
+- [x] 🟡 [`blue-green-and-canary-deployments.md`](./blue-green-and-canary-deployments.md) — Zero-downtime strategies, feature flags vs traffic splitting, rollback
+- [x] 🔴 [`multi-region-architecture.md`](./multi-region-architecture.md) — Active-active vs active-passive, data residency, global load balancing, conflict resolution
+- [x] 🟡 [`event-driven-autoscaling.md`](./event-driven-autoscaling.md) — KEDA (.NET), scale-to-zero, queue-length-based scaling, cold start mitigation
+- [x] 🔴 [`serverless-design-patterns.md`](./serverless-design-patterns.md) — Azure Functions, cold start, durable orchestrations, when serverless hurts
 
 ## 13. Data Pipeline & Analytics
 

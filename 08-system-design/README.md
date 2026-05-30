@@ -116,7 +116,19 @@ Interview-ready deep-dives into distributed systems design, architecture pattern
 
 ### §11 Security at Scale
 - [authentication-vs-authorization.md](./authentication-vs-authorization.md) — AuthN vs AuthZ, claims-based identity, ASP.NET Core policies
+- [ddos-mitigation.md](./ddos-mitigation.md) — L3/L4 vs L7 attacks, Anycast, WAF, Kestrel connection limits, Azure DDoS Protection
 - [jwt-design-considerations.md](./jwt-design-considerations.md) — RS256/ES256, expiry, refresh tokens, revocation, deny-list
 - [oauth2-flows-compared.md](./oauth2-flows-compared.md) — Authorization Code + PKCE, Client Credentials, OIDC, scope design
+- [pii-and-data-privacy-design.md](./pii-and-data-privacy-design.md) — GDPR erasure, pseudonymisation, crypto-erasure in event sourcing, audit log
 - [secrets-management-at-scale.md](./secrets-management-at-scale.md) — Azure Key Vault, Managed Identity, CSI driver, zero-downtime rotation
 - [zero-trust-architecture.md](./zero-trust-architecture.md) — mTLS, workload identity, SPIFFE, Istio AuthorizationPolicy
+
+### §12 Cloud-Native & Infrastructure
+- [12-factor-app.md](./12-factor-app.md) — The 12 factors, stateless processes, config via env vars, admin processes
+- [blue-green-and-canary-deployments.md](./blue-green-and-canary-deployments.md) — Zero-downtime strategies, Nginx canary weights, Flagger, feature flags
+- [containers-and-orchestration.md](./containers-and-orchestration.md) — Docker multi-stage build, Kubernetes Deployment/Service/Ingress
+- [event-driven-autoscaling.md](./event-driven-autoscaling.md) — KEDA, Service Bus / Kafka scalers, scale-to-zero, cold start mitigation
+- [infrastructure-as-code.md](./infrastructure-as-code.md) — Terraform, Bicep, Pulumi, state management, drift detection
+- [kubernetes-for-dotnet-devs.md](./kubernetes-for-dotnet-devs.md) — ConfigMap/Secret injection, resource limits, probes, GC container awareness
+- [multi-region-architecture.md](./multi-region-architecture.md) — Active-active/passive, RTO/RPO, conflict resolution, data residency
+- [serverless-design-patterns.md](./serverless-design-patterns.md) — Azure Functions triggers, cold start, Durable Functions orchestration
