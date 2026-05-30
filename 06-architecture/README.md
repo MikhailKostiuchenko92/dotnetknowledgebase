@@ -56,6 +56,18 @@ _Questions are organized by sub-topic. See [BACKLOG.md](./BACKLOG.md) for the fu
 - [pipeline-behaviors.md](./pipeline-behaviors.md) — IPipelineBehavior, registration order, validation/logging/caching/transaction
 - [task-based-ui-and-cqrs.md](./task-based-ui-and-cqrs.md) — Intention-revealing commands, CRUD vs task-based UX, REST sub-resources
 
+### §4 Event Sourcing
+- [event-driven-projections.md](./event-driven-projections.md) — Catch-up vs persistent subscriptions, competing consumers, projection reset
+- [event-schema-evolution.md](./event-schema-evolution.md) — Upcasters, versioned event names, forward/backward compatibility
+- [event-sourcing-and-cqrs.md](./event-sourcing-and-cqrs.md) — Complementary but independent, when to combine, decision framework
+- [event-sourcing-fundamentals.md](./event-sourcing-fundamentals.md) — Append-only event log, state reconstruction, audit trail, replay benefits
+- [event-sourcing-in-dotnet.md](./event-sourcing-in-dotnet.md) — EventStoreDB, Marten (PostgreSQL), custom SQL — comparison and selection
+- [event-sourcing-pitfalls.md](./event-sourcing-pitfalls.md) — Stale projections, long streams, wrong granularity, GDPR
+- [event-sourcing-vs-traditional.md](./event-sourcing-vs-traditional.md) — Audit trail, temporal queries, debugging advantages, operational cost
+- [event-store-design.md](./event-store-design.md) — Events table schema, stream versioning, optimistic concurrency, global position
+- [projections-and-read-models.md](./projections-and-read-models.md) — Sync vs async projections, catch-up subscriptions, rebuild strategy
+- [snapshots-in-event-sourcing.md](./snapshots-in-event-sourcing.md) — Snapshot strategies, threshold-based, schema versioning, load mechanics
+
 ### §5 Microservices Patterns
 - [api-gateway-pattern.md](./api-gateway-pattern.md) — BFF, aggregation, auth offloading, YARP configuration
 - [bulkhead-and-isolation.md](./bulkhead-and-isolation.md) — Polly ConcurrencyLimiter, SemaphoreSlim isolation, sizing
@@ -75,14 +87,16 @@ _Questions are organized by sub-topic. See [BACKLOG.md](./BACKLOG.md) for the fu
 - [strangler-fig-pattern.md](./strangler-fig-pattern.md) — YARP proxy, incremental extraction, dual-write, data migration
 
 ### §6 Mediator & Pipeline Patterns
+- [command-validation-pipeline.md](./command-validation-pipeline.md) — FluentValidation + IPipelineBehavior, ValidationException vs Result pattern
+- [cross-cutting-via-pipeline.md](./cross-cutting-via-pipeline.md) — Validation, logging, caching, transaction behaviors via Decorator/AOP
 - [mediator-pattern.md](./mediator-pattern.md) — GoF Mediator, MediatR routing, decoupling controllers from handlers
-- [event-driven-projections.md](./event-driven-projections.md) — Catch-up vs persistent subscriptions, competing consumers, projection reset
-- [event-schema-evolution.md](./event-schema-evolution.md) — Upcasters, versioned event names, forward/backward compatibility
-- [event-sourcing-and-cqrs.md](./event-sourcing-and-cqrs.md) — Complementary but independent, when to combine, decision framework
-- [event-sourcing-fundamentals.md](./event-sourcing-fundamentals.md) — Append-only event log, state reconstruction, audit trail, replay benefits
-- [event-sourcing-in-dotnet.md](./event-sourcing-in-dotnet.md) — EventStoreDB, Marten (PostgreSQL), custom SQL — comparison and selection
-- [event-sourcing-pitfalls.md](./event-sourcing-pitfalls.md) — Stale projections, long streams, wrong granularity, GDPR
-- [event-sourcing-vs-traditional.md](./event-sourcing-vs-traditional.md) — Audit trail, temporal queries, debugging advantages, operational cost
-- [event-store-design.md](./event-store-design.md) — Events table schema, stream versioning, optimistic concurrency, global position
-- [projections-and-read-models.md](./projections-and-read-models.md) — Sync vs async projections, catch-up subscriptions, rebuild strategy
-- [snapshots-in-event-sourcing.md](./snapshots-in-event-sourcing.md) — Snapshot strategies, threshold-based, schema versioning, load mechanics
+- [mediatr-performance-considerations.md](./mediatr-performance-considerations.md) — Reflection overhead, allocations, benchmarks, when to avoid MediatR
+- [mediatr-setup-and-usage.md](./mediatr-setup-and-usage.md) — DI registration, IRequest/IRequestHandler, INotification, assembly scanning
+- [notification-vs-request.md](./notification-vs-request.md) — INotification fan-out vs IRequest single handler, publish vs send semantics
+
+### §7 API Design & Versioning
+- [api-versioning-in-aspnet-core.md](./api-versioning-in-aspnet-core.md) — Asp.Versioning package, version sets, MapToApiVersion, Swagger integration
+- [api-versioning-strategies.md](./api-versioning-strategies.md) — URL path, query string, header, content negotiation — trade-offs
+- [openapi-and-swagger.md](./openapi-and-swagger.md) — Swashbuckle vs NSwag, OpenAPI spec, versioned docs, client codegen
+- [rest-maturity-model.md](./rest-maturity-model.md) — Richardson maturity levels 0–3, HATEOAS in theory vs practice
+- [rest-vs-grpc.md](./rest-vs-grpc.md) — HTTP/1.1+JSON vs HTTP/2+Protobuf, streaming, browser compatibility

@@ -23,8 +23,8 @@ When a question is created, mark it `[x]` and add a link to the file.
 
 ## Progress
 
-**Total:** 80 / 106
-**By difficulty:** 🟢 15/21 · 🟡 37/47 · 🔴 28/38
+**Total:** 90 / 106
+**By difficulty:** 🟢 18/21 · 🟡 42/47 · 🔴 30/38
 
 ---
 
@@ -124,21 +124,21 @@ When a question is created, mark it `[x]` and add a link to the file.
 ## §6 Mediator & Pipeline Patterns
 
 - [x] 🟢 [`mediator-pattern.md`](./mediator-pattern.md) — GoF mediator, decoupling sender from receiver, MediatR as mediator, when to use
-- [ ] 🟡 `mediatr-setup-and-usage.md` — DI registration, IRequest/IRequestHandler, INotification, assembly scanning
-- [ ] 🟡 `cross-cutting-via-pipeline.md` — Validation, logging, caching, transaction behaviors in MediatR pipeline
-- [ ] 🟡 `notification-vs-request.md` — INotification fan-out vs IRequest single handler, publish vs send semantics
-- [ ] 🔴 `mediatr-performance-considerations.md` — Reflection overhead, micro-benchmark results, when to avoid MediatR
-- [ ] 🔴 `command-validation-pipeline.md` — FluentValidation + IPipelineBehavior, ValidationException, Result pattern alternatives
+- [x] 🟡 [`mediatr-setup-and-usage.md`](./mediatr-setup-and-usage.md) — DI registration, IRequest/IRequestHandler, INotification, assembly scanning
+- [x] 🟡 [`cross-cutting-via-pipeline.md`](./cross-cutting-via-pipeline.md) — Validation, logging, caching, transaction behaviors in MediatR pipeline
+- [x] 🟡 [`notification-vs-request.md`](./notification-vs-request.md) — INotification fan-out vs IRequest single handler, publish vs send semantics
+- [x] 🔴 [`mediatr-performance-considerations.md`](./mediatr-performance-considerations.md) — Reflection overhead, micro-benchmark results, when to avoid MediatR
+- [x] 🔴 [`command-validation-pipeline.md`](./command-validation-pipeline.md) — FluentValidation + IPipelineBehavior, ValidationException, Result pattern alternatives
 
 ---
 
 ## §7 API Design & Versioning
 
-- [ ] 🟢 `rest-maturity-model.md` — Richardson maturity levels 0–3, HATEOAS in theory vs practice, pragmatic REST
-- [ ] 🟢 `rest-vs-grpc.md` — HTTP/1.1+JSON vs HTTP/2+Protobuf, streaming, browser compatibility, when gRPC wins
-- [ ] 🟢 `api-versioning-strategies.md` — URL path, query string, header, content negotiation — trade-offs of each
-- [ ] 🟡 `api-versioning-in-aspnet-core.md` — Asp.Versioning package, version sets, MapToApiVersion, deprecation workflow
-- [ ] 🟡 `openapi-and-swagger.md` — Swashbuckle vs NSwag, OpenAPI spec, API client codegen, versioned docs
+- [x] 🟢 [`rest-maturity-model.md`](./rest-maturity-model.md) — Richardson maturity levels 0–3, HATEOAS in theory vs practice, pragmatic REST
+- [x] 🟢 [`rest-vs-grpc.md`](./rest-vs-grpc.md) — HTTP/1.1+JSON vs HTTP/2+Protobuf, streaming, browser compatibility, when gRPC wins
+- [x] 🟢 [`api-versioning-strategies.md`](./api-versioning-strategies.md) — URL path, query string, header, content negotiation — trade-offs of each
+- [x] 🟡 [`api-versioning-in-aspnet-core.md`](./api-versioning-in-aspnet-core.md) — Asp.Versioning package, version sets, MapToApiVersion, deprecation workflow
+- [x] 🟡 [`openapi-and-swagger.md`](./openapi-and-swagger.md) — Swashbuckle vs NSwag, OpenAPI spec, API client codegen, versioned docs
 - [ ] 🟡 `problem-details-rfc7807.md` — ProblemDetails, ValidationProblemDetails, IExceptionHandler (.NET 8), type URIs
 - [ ] 🟡 `backward-compatible-api-changes.md` — Safe additive changes, breaking changes, deprecation strategy, sunset header
 - [ ] 🔴 `api-contract-testing.md` — Consumer-driven contracts, Pact .NET, verifying provider without integration tests
