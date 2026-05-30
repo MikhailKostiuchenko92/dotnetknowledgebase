@@ -116,3 +116,10 @@ _Questions are organized by sub-topic. See [BACKLOG.md](./BACKLOG.md) for the fu
 
 ### §11 Testing Data Access
 - [in-memory-provider.md](./in-memory-provider.md) — EF Core InMemory provider, limitations (no SQL/transactions/constraints), when acceptable
+- [ef-core-unit-testing.md](./ef-core-unit-testing.md) — Why mocking DbContext is fragile, what to unit test vs integration test
+- [integration-test-database-setup.md](./integration-test-database-setup.md) — WebApplicationFactory + shared DB fixture, per-test isolation, migration in fixture
+- [repository-testing-patterns.md](./repository-testing-patterns.md) — Fake repos for unit tests, real provider for integration tests, test pyramid
+- [respawn-for-test-isolation.md](./respawn-for-test-isolation.md) — Respawn library to reset DB between tests, vs DROP/RECREATE, vs transaction rollback
+- [sqlite-for-testing.md](./sqlite-for-testing.md) — SQLite in-process EF Core tests, SqliteConnection keep-alive, limitations vs SQL Server
+- [test-data-builders.md](./test-data-builders.md) — Builder/Object Mother pattern, Bogus realistic fake data, persisted builders
+- [testcontainers-for-data-access.md](./testcontainers-for-data-access.md) — Real SQL Server in Docker via Testcontainers, IClassFixture, test isolation strategies

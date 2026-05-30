@@ -23,8 +23,8 @@ When a question is created, mark it `[x]` and add a link to the file.
 
 ## Progress
 
-**Total:** 90 / 94
-**By difficulty:** 🟢 18/18 · 🟡 39/43 · 🔴 33/33
+**Total:** 94 / 94
+**By difficulty:** 🟢 18/18 · 🟡 43/43 · 🔴 33/33
 
 ---
 
@@ -167,10 +167,10 @@ When a question is created, mark it `[x]` and add a link to the file.
 ## §11 Testing Data Access
 
 - [x] 🟢 [`in-memory-provider.md`](./in-memory-provider.md) — EF Core InMemory provider, what it can't do (transactions, SQL, constraints), when it's acceptable
-- [ ] 🟡 `sqlite-for-testing.md` — SQLite in-process for EF Core tests, closer to real SQL, limitations vs production SQL Server
-- [ ] 🟡 `testcontainers-for-data-access.md` — Testcontainers .NET, real SQL Server/PostgreSQL in Docker, integration test setup
-- [ ] 🟡 `repository-testing-patterns.md` — Testing repositories with a real provider vs mocking, what to test at which layer
-- [ ] 🟡 `ef-core-unit-testing.md` — Why mocking DbContext is fragile, prefer InMemory/SQLite, what's worth unit testing vs integration
-- [ ] 🔴 `integration-test-database-setup.md` — WebApplicationFactory + shared DB fixture, per-test isolation strategies, migration in fixture
-- [ ] 🔴 `test-data-builders.md` — Builder/Object Mother pattern, Bogus for realistic fake data, shared vs per-test data fixtures
-- [ ] 🔴 `respawn-for-test-isolation.md` — Respawn library to reset DB between tests, performance vs DROP/RECREATE, transaction rollback trick
+- [x] 🟡 [`sqlite-for-testing.md`](./sqlite-for-testing.md) — SQLite in-process for EF Core tests, closer to real SQL, limitations vs production SQL Server
+- [x] 🟡 [`testcontainers-for-data-access.md`](./testcontainers-for-data-access.md) — Testcontainers .NET, real SQL Server/PostgreSQL in Docker, integration test setup
+- [x] 🟡 [`repository-testing-patterns.md`](./repository-testing-patterns.md) — Testing repositories with a real provider vs mocking, what to test at which layer
+- [x] 🟡 [`ef-core-unit-testing.md`](./ef-core-unit-testing.md) — Why mocking DbContext is fragile, prefer InMemory/SQLite, what's worth unit testing vs integration
+- [x] 🔴 [`integration-test-database-setup.md`](./integration-test-database-setup.md) — WebApplicationFactory + shared DB fixture, per-test isolation strategies, migration in fixture
+- [x] 🔴 [`test-data-builders.md`](./test-data-builders.md) — Builder/Object Mother pattern, Bogus for realistic fake data, shared vs per-test data fixtures
+- [x] 🔴 [`respawn-for-test-isolation.md`](./respawn-for-test-isolation.md) — Respawn library to reset DB between tests, performance vs DROP/RECREATE, transaction rollback trick
