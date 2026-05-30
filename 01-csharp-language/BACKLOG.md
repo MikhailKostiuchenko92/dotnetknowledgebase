@@ -23,8 +23,8 @@ When a question is created, mark it `[x]` and add a link to the file.
 
 ## Progress
 
-**Total:** 60 / 137
-**By difficulty:** 🟢 13/24 · 🟡 32/64 · 🔴 17/49
+**Total:** 90 / 137
+**By difficulty:** 🟢 14/24 · 🟡 54/64 · 🔴 22/49
 
 ---
 
@@ -105,48 +105,48 @@ When a question is created, mark it `[x]` and add a link to the file.
 - [x] 🟡 [`async-exception-handling.md`](./async-exception-handling.md) — Where exceptions surface, unawaited tasks
 - [x] 🟡 [`progress-reporting-iprogress.md`](./progress-reporting-iprogress.md) — `IProgress<T>`, `Progress<T>`, threading guarantees
 - [x] 🔴 [`async-streams-vs-channels.md`](./async-streams-vs-channels.md) — `IAsyncEnumerable` vs `Channel<T>`, producer/consumer
-- [ ] 🟡 `cpu-bound-vs-io-bound-async.md` — `Task.Run` rules, why not to wrap IO
+- [x] 🟡 [`cpu-bound-vs-io-bound-async.md`](./cpu-bound-vs-io-bound-async.md) — `Task.Run` rules, why not to wrap IO
 
 ## 7. Threading & concurrency
 
-- [ ] 🟡 `thread-vs-threadpool.md` — When to create vs queue, cost of threads
-- [ ] 🟡 `lock-and-monitor.md` — Reentrancy, what `lock` compiles to, what to lock on
-- [ ] 🟡 `semaphoreslim-and-mutex.md` — Cross-process vs in-process, async-aware locking
-- [ ] 🟡 `interlocked-operations.md` — Atomic ops, `CompareExchange` patterns
-- [ ] 🔴 `volatile-and-memory-barriers.md` — Memory model, when `volatile` is/isn't enough
-- [ ] 🟡 `reader-writer-lockslim.md` — When it pays off, upgradeable locks
-- [ ] 🟡 `thread-safety-of-collections.md` — What's safe, what's not, bugs
-- [ ] 🔴 `producer-consumer-with-channel.md` — `Channel<T>` patterns, bounded vs unbounded
-- [ ] 🟡 `parallel-class-and-plinq.md` — When PLINQ helps/hurts, partitioning
-- [ ] 🔴 `thread-local-storage.md` — `ThreadLocal<T>`, `AsyncLocal<T>` differences
+- [x] 🟡 [`thread-vs-threadpool.md`](./thread-vs-threadpool.md) — When to create vs queue, cost of threads
+- [x] 🟡 [`lock-and-monitor.md`](./lock-and-monitor.md) — Reentrancy, what `lock` compiles to, what to lock on
+- [x] 🟡 [`semaphoreslim-and-mutex.md`](./semaphoreslim-and-mutex.md) — Cross-process vs in-process, async-aware locking
+- [x] 🟡 [`interlocked-operations.md`](./interlocked-operations.md) — Atomic ops, `CompareExchange` patterns
+- [x] 🔴 [`volatile-and-memory-barriers.md`](./volatile-and-memory-barriers.md) — Memory model, when `volatile` is/isn't enough
+- [x] 🟡 [`reader-writer-lockslim.md`](./reader-writer-lockslim.md) — When it pays off, upgradeable locks
+- [x] 🟡 [`thread-safety-of-collections.md`](./thread-safety-of-collections.md) — What's safe, what's not, bugs
+- [x] 🔴 [`producer-consumer-with-channel.md`](./producer-consumer-with-channel.md) — `Channel<T>` patterns, bounded vs unbounded
+- [x] 🟡 [`parallel-class-and-plinq.md`](./parallel-class-and-plinq.md) — When PLINQ helps/hurts, partitioning
+- [x] 🔴 [`thread-local-storage.md`](./thread-local-storage.md) — `ThreadLocal<T>`, `AsyncLocal<T>` differences
 
 ## 8. Exceptions
 
-- [ ] 🟢 `exception-handling-fundamentals.md` — `try/catch/finally`, exception hierarchy
-- [ ] 🟡 `exception-filters-when.md` — `catch (Ex) when (...)`, stack preservation
-- [ ] 🟡 `throw-vs-throw-ex.md` — Stack trace preservation, `ExceptionDispatchInfo`
-- [ ] 🟡 `custom-exceptions-best-practices.md` — When to create, serialization, naming
-- [ ] 🔴 `cost-of-exceptions.md` — Perf cost, control flow anti-pattern, first-chance exceptions
+- [x] 🟢 [`exception-handling-fundamentals.md`](./exception-handling-fundamentals.md) — `try/catch/finally`, exception hierarchy
+- [x] 🟡 [`exception-filters-when.md`](./exception-filters-when.md) — `catch (Ex) when (...)`, stack preservation
+- [x] 🟡 [`throw-vs-throw-ex.md`](./throw-vs-throw-ex.md) — Stack trace preservation, `ExceptionDispatchInfo`
+- [x] 🟡 [`custom-exceptions-best-practices.md`](./custom-exceptions-best-practices.md) — When to create, serialization, naming
+- [x] 🔴 [`cost-of-exceptions.md`](./cost-of-exceptions.md) — Perf cost, control flow anti-pattern, first-chance exceptions
 
 ## 9. OOP in C#
 
-- [ ] 🟢 `class-vs-struct.md` — When to choose which, semantic differences
-- [ ] 🟡 `abstract-class-vs-interface.md` — Use cases, default interface methods (C# 8+)
-- [ ] 🔴 `interface-default-implementations.md` — What's allowed, diamond problem, versioning
-- [ ] 🟡 `virtual-override-new-keywords.md` — Polymorphism, hiding vs overriding
-- [ ] 🟡 `sealed-classes-and-methods.md` — Perf and design reasons
-- [ ] 🟢 `static-classes-and-members.md` — When to use, lifetime, testability impact
-- [ ] 🟡 `extension-methods.md` — How they're resolved, pitfalls, when to avoid
-- [ ] 🟡 `partial-classes-and-methods.md` — Use cases, source generators
-- [ ] 🟡 `constructors-chaining-and-static.md` — `: this(...)`, `: base(...)`, static ctor timing
-- [ ] 🔴 `finalizer-and-dispose-pattern.md` — When to write a finalizer, full dispose pattern
+- [x] 🟢 [`class-vs-struct.md`](./class-vs-struct.md) — When to choose which, semantic differences
+- [x] 🟡 [`abstract-class-vs-interface.md`](./abstract-class-vs-interface.md) — Use cases, default interface methods (C# 8+)
+- [x] 🔴 [`interface-default-implementations.md`](./interface-default-implementations.md) — What's allowed, diamond problem, versioning
+- [x] 🟡 [`virtual-override-new-keywords.md`](./virtual-override-new-keywords.md) — Polymorphism, hiding vs overriding
+- [x] 🟡 [`sealed-classes-and-methods.md`](./sealed-classes-and-methods.md) — Perf and design reasons
+- [x] 🟢 [`static-classes-and-members.md`](./static-classes-and-members.md) — When to use, lifetime, testability impact
+- [x] 🟡 [`extension-methods.md`](./extension-methods.md) — How they're resolved, pitfalls, when to avoid
+- [x] 🟡 [`partial-classes-and-methods.md`](./partial-classes-and-methods.md) — Use cases, source generators
+- [x] 🟡 [`constructors-chaining-and-static.md`](./constructors-chaining-and-static.md) — `: this(...)`, `: base(...)`, static ctor timing
+- [x] 🔴 [`finalizer-and-dispose-pattern.md`](./finalizer-and-dispose-pattern.md) — When to write a finalizer, full dispose pattern
 
 ## 10. Records, structs, immutability
 
-- [ ] 🟡 `records-vs-classes.md` — Value equality, `with` expressions, when to use
-- [ ] 🟡 `record-struct-vs-record-class.md` — Differences, defaults, perf
-- [ ] 🟡 `readonly-struct.md` — Defensive copies, when to use
-- [ ] 🟡 `init-only-properties.md` — `init` accessors, immutability patterns
+- [x] 🟡 [`records-vs-classes.md`](./records-vs-classes.md) — Value equality, `with` expressions, when to use
+- [x] 🟡 [`record-struct-vs-record-class.md`](./record-struct-vs-record-class.md) — Differences, defaults, perf
+- [x] 🟡 [`readonly-struct.md`](./readonly-struct.md) — Defensive copies, when to use
+- [x] 🟡 [`init-only-properties.md`](./init-only-properties.md) — `init` accessors, immutability patterns
 - [ ] 🟡 `with-expressions-and-non-destructive-mutation.md` — How `with` works
 - [ ] 🟡 `value-equality-in-records.md` — Generated `Equals`/`GetHashCode`, customization
 

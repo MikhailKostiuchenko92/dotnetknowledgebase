@@ -72,7 +72,7 @@ See the [BACKLOG.md](./BACKLOG.md) for the full list of planned questions and cu
 - [async-void-pitfalls.md](./async-void-pitfalls.md) — `async void` exception behavior, event-handler only rule, fire-and-forget alternatives
 - [cancellation-tokens.md](./cancellation-tokens.md) — Cooperative cancellation, `CancellationTokenSource`, linked tokens, `OperationCanceledException`
 - [configure-await-false.md](./configure-await-false.md) — Context capture, deadlock prevention, library vs app code, .NET 8 options
-- [cpu-bound-vs-io-bound-async.md](./cpu-bound-vs-io-bound-async.md) — `Task.Run` rules, thread pool usage
+- [cpu-bound-vs-io-bound-async.md](./cpu-bound-vs-io-bound-async.md) — CPU-bound vs I/O-bound work, `Task.Run` rules, and thread pool impact
 - [deadlocks-with-result-and-wait.md](./deadlocks-with-result-and-wait.md) — Step-by-step deadlock anatomy, `Task.Run` bridge, safe `.Result` scenarios
 - [iasyncenumerable.md](./iasyncenumerable.md) — `await foreach`, streaming, `[EnumeratorCancellation]`, `ConfigureAwait`
 - [parallel-foreach-vs-task-whenall.md](./parallel-foreach-vs-task-whenall.md) — CPU vs I/O bound, `Parallel.ForEachAsync` (.NET 6+), throttling
@@ -84,3 +84,44 @@ See the [BACKLOG.md](./BACKLOG.md) for the full list of planned questions and cu
 - [task-whenall-vs-whenany.md](./task-whenall-vs-whenany.md) — Parallel fan-out, exception aggregation, timeout pattern
 - [lambda-expressions-and-closures.md](./lambda-expressions-and-closures.md) — Closure class generation, loop-variable bug, `static` lambda
 - [multicast-delegates.md](./multicast-delegates.md) — Invocation list, return value discard, exception isolation
+
+### Threading & Concurrency
+
+- [interlocked-operations.md](./interlocked-operations.md) — Atomic increments, compare-and-swap loops, and simple lock-free updates
+- [lock-and-monitor.md](./lock-and-monitor.md) — How `lock` maps to `Monitor`, reentrancy, and safe lock objects
+- [parallel-class-and-plinq.md](./parallel-class-and-plinq.md) — Data parallelism with `Parallel` APIs, PLINQ, partitioning, and trade-offs
+- [producer-consumer-with-channel.md](./producer-consumer-with-channel.md) — Async producer-consumer pipelines with bounded/unbounded channels and back-pressure
+- [reader-writer-lockslim.md](./reader-writer-lockslim.md) — Read-heavy synchronization, upgradeable reads, and when it pays off
+- [semaphoreslim-and-mutex.md](./semaphoreslim-and-mutex.md) — Async-aware throttling vs cross-process mutual exclusion
+- [thread-local-storage.md](./thread-local-storage.md) — `ThreadLocal<T>` for per-thread data vs `AsyncLocal<T>` for ambient async context
+- [thread-safety-of-collections.md](./thread-safety-of-collections.md) — Which collection types are safe to share and the common `List<T>`/`Dictionary<TKey,TValue>` races
+- [thread-vs-threadpool.md](./thread-vs-threadpool.md) — Dedicated threads vs pooled work items, cost, and API choices
+- [volatile-and-memory-barriers.md](./volatile-and-memory-barriers.md) — Visibility, reordering, acquire/release semantics, and when `volatile` is not enough
+
+### Exceptions
+
+- [cost-of-exceptions.md](./cost-of-exceptions.md) — Why throwing is expensive, first-chance exceptions, and why exceptions are not for normal control flow
+- [custom-exceptions-best-practices.md](./custom-exceptions-best-practices.md) — When custom exceptions make sense, naming, constructors, and modern .NET guidance
+- [exception-filters-when.md](./exception-filters-when.md) — `catch (...) when (...)`, pre-unwind filtering, and cleaner selective handling
+- [exception-handling-fundamentals.md](./exception-handling-fundamentals.md) — `try`/`catch`/`finally`, exception hierarchy, and when broad catches are appropriate
+- [throw-vs-throw-ex.md](./throw-vs-throw-ex.md) — Stack trace preservation, proper rethrowing, and `ExceptionDispatchInfo`
+
+### OOP in C#
+
+- [abstract-class-vs-interface.md](./abstract-class-vs-interface.md) — Shared implementation vs capability contracts, and where default interface members fit
+- [class-vs-struct.md](./class-vs-struct.md) — Value vs reference semantics, boxing, and why small immutable structs work best
+- [constructors-chaining-and-static.md](./constructors-chaining-and-static.md) — `this(...)`, `base(...)`, static constructor timing, and `beforefieldinit`
+- [extension-methods.md](./extension-methods.md) — How extension methods are resolved, namespace scope, and when instance methods win
+- [finalizer-and-dispose-pattern.md](./finalizer-and-dispose-pattern.md) — Finalizers, deterministic cleanup, `GC.SuppressFinalize`, and `SafeHandle`
+- [interface-default-implementations.md](./interface-default-implementations.md) — Allowed members, versioning benefits, dispatch rules, and diamond-style conflicts
+- [partial-classes-and-methods.md](./partial-classes-and-methods.md) — Generated code, source generators, and partial-method hooks
+- [sealed-classes-and-methods.md](./sealed-classes-and-methods.md) — Preventing inheritance, `sealed override`, and design/perf trade-offs
+- [static-classes-and-members.md](./static-classes-and-members.md) — Utility types, static field lifetime, static local functions, and testability concerns
+- [virtual-override-new-keywords.md](./virtual-override-new-keywords.md) — Runtime polymorphism, hiding vs overriding, `base`, and `sealed override`
+
+### Records, Structs & Immutability
+
+- [init-only-properties.md](./init-only-properties.md) — `init`, `required`, object initialization, and immutable models
+- [readonly-struct.md](./readonly-struct.md) — Immutability contracts, defensive copies, and `in` parameters
+- [record-struct-vs-record-class.md](./record-struct-vs-record-class.md) — Value vs reference record semantics, copying, boxing, and defaults
+- [records-vs-classes.md](./records-vs-classes.md) — Value equality, compiler-generated members, `with`, and DTO/value-object use cases
