@@ -57,3 +57,15 @@ _Questions are organized by sub-topic. See [BACKLOG.md](./BACKLOG.md) for the fu
 ### §5 Transactions & Concurrency
 - [manual-transactions-ef-core.md](./manual-transactions-ef-core.md) — IDbContextTransaction, shared connection/transaction, Dapper interop, savepoints
 - [transaction-basics.md](./transaction-basics.md) — ACID properties, implicit SaveChanges transaction, BeginTransactionAsync, rollback
+- [ambient-transactions.md](./ambient-transactions.md) — TransactionScope, async flow option, MSDTC escalation pitfalls
+- [deadlock-analysis.md](./deadlock-analysis.md) — Deadlock causes, deadlock graph, lock ordering, .NET retry on 1205
+- [distributed-transactions.md](./distributed-transactions.md) — Why 2PC fails in cloud, Saga pattern, Outbox pattern
+- [isolation-levels.md](./isolation-levels.md) — ANSI levels, dirty/phantom/non-repeatable reads, Snapshot, RCSI
+- [optimistic-concurrency.md](./optimistic-concurrency.md) — rowversion, DbUpdateConcurrencyException, merge strategies
+- [pessimistic-concurrency.md](./pessimistic-concurrency.md) — UPDLOCK/ROWLOCK hints, lock ordering, deadlock risk
+
+### §6 Dapper
+- [dapper-basic-queries.md](./dapper-basic-queries.md) — Query<T>, Execute, ExecuteScalar, DynamicParameters, async usage
+- [dapper-multi-mapping.md](./dapper-multi-mapping.md) — splitOn, one-to-many dedup, QueryMultiple for multiple result sets
+- [dapper-overview.md](./dapper-overview.md) — Micro-ORM philosophy, IDbConnection extension, vs EF Core comparison
+- [dapper-stored-procedures.md](./dapper-stored-procedures.md) — CommandType.StoredProcedure, output params, RETURN value, multi-result sets

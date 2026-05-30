@@ -23,8 +23,8 @@ When a question is created, mark it `[x]` and add a link to the file.
 
 ## Progress
 
-**Total:** 40 / 94
-**By difficulty:** 🟢 9/18 · 🟡 18/43 · 🔴 13/33
+**Total:** 50 / 94
+**By difficulty:** 🟢 11/18 · 🟡 23/43 · 🔴 16/33
 
 ---
 
@@ -90,21 +90,21 @@ When a question is created, mark it `[x]` and add a link to the file.
 
 - [x] 🟢 [`transaction-basics.md`](./transaction-basics.md) — ACID, implicit transaction on SaveChanges, manual BeginTransactionAsync, rollback on exception
 - [x] 🟡 [`manual-transactions-ef-core.md`](./manual-transactions-ef-core.md) — IDbContextTransaction, shared connection between contexts, savepoints
-- [ ] 🟡 `optimistic-concurrency.md` — Rowversion column, handling DbUpdateConcurrencyException, last-write-wins vs retry
-- [ ] 🟡 `pessimistic-concurrency.md` — SELECT … FOR UPDATE, UPDLOCK/ROWLOCK hints in raw SQL, when pessimistic wins
-- [ ] 🟡 `isolation-levels.md` — Read Uncommitted / Committed / Repeatable Read / Serializable / Snapshot — dirty/phantom/non-repeatable reads
-- [ ] 🔴 `distributed-transactions.md` — Why 2PC is impractical in cloud, DTC limitations, saga as alternative, outbox pattern
-- [ ] 🔴 `ambient-transactions.md` — TransactionScope, System.Transactions, MSDTC escalation, async + TransactionScope pitfalls
-- [ ] 🔴 `deadlock-analysis.md` — What causes SQL deadlocks, deadlock graph reading, lock ordering, retry on deadlock in .NET
+- [x] 🟡 [`optimistic-concurrency.md`](./optimistic-concurrency.md) — Rowversion column, handling DbUpdateConcurrencyException, last-write-wins vs retry
+- [x] 🟡 [`pessimistic-concurrency.md`](./pessimistic-concurrency.md) — SELECT … FOR UPDATE, UPDLOCK/ROWLOCK hints in raw SQL, when pessimistic wins
+- [x] 🟡 [`isolation-levels.md`](./isolation-levels.md) — Read Uncommitted / Committed / Repeatable Read / Serializable / Snapshot — dirty/phantom/non-repeatable reads
+- [x] 🔴 [`distributed-transactions.md`](./distributed-transactions.md) — Why 2PC is impractical in cloud, DTC limitations, saga as alternative, outbox pattern
+- [x] 🔴 [`ambient-transactions.md`](./ambient-transactions.md) — TransactionScope, System.Transactions, MSDTC escalation, async + TransactionScope pitfalls
+- [x] 🔴 [`deadlock-analysis.md`](./deadlock-analysis.md) — What causes SQL deadlocks, deadlock graph reading, lock ordering, retry on deadlock in .NET
 
 ---
 
 ## §6 Dapper
 
-- [ ] 🟢 `dapper-overview.md` — Micro-ORM philosophy, how Dapper extends IDbConnection, no change tracking, raw SQL control
-- [ ] 🟢 `dapper-basic-queries.md` — Query<T>, QuerySingleOrDefault, Execute, anonymous type parameters, DynamicParameters
-- [ ] 🟡 `dapper-multi-mapping.md` — QueryAsync with splitOn, mapping JOIN results to object graph, QueryMultiple for multi-result sets
-- [ ] 🟡 `dapper-stored-procedures.md` — CommandType.StoredProcedure, input/output params, DynamicParameters, RETURN value
+- [x] 🟢 [`dapper-overview.md`](./dapper-overview.md) — Micro-ORM philosophy, how Dapper extends IDbConnection, no change tracking, raw SQL control
+- [x] 🟢 [`dapper-basic-queries.md`](./dapper-basic-queries.md) — Query<T>, QuerySingleOrDefault, Execute, anonymous type parameters, DynamicParameters
+- [x] 🟡 [`dapper-multi-mapping.md`](./dapper-multi-mapping.md) — QueryAsync with splitOn, mapping JOIN results to object graph, QueryMultiple for multi-result sets
+- [x] 🟡 [`dapper-stored-procedures.md`](./dapper-stored-procedures.md) — CommandType.StoredProcedure, input/output params, DynamicParameters, RETURN value
 - [ ] 🟡 `dapper-type-handlers.md` — SqlMapper.TypeHandler<T>, mapping JSON columns, custom type conversions, Guid as binary
 - [ ] 🟡 `dapper-vs-ef-core.md` — When Dapper wins (complex SQL, read perf), when EF Core wins (CRUD, migrations), project norms
 - [ ] 🔴 `dapper-performance-tips.md` — Buffered vs unbuffered, QueryUnbuffered (.NET 7+), memory-efficient large result streaming
