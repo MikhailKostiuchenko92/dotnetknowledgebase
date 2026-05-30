@@ -23,8 +23,8 @@ When a question is created, mark it `[x]` and add a link to the file.
 
 ## Progress
 
-**Total:** 90 / 106
-**By difficulty:** 🟢 18/21 · 🟡 42/47 · 🔴 30/38
+**Total:** 100 / 106
+**By difficulty:** 🟢 20/21 · 🟡 47/47 · 🔴 33/38
 
 ---
 
@@ -139,21 +139,21 @@ When a question is created, mark it `[x]` and add a link to the file.
 - [x] 🟢 [`api-versioning-strategies.md`](./api-versioning-strategies.md) — URL path, query string, header, content negotiation — trade-offs of each
 - [x] 🟡 [`api-versioning-in-aspnet-core.md`](./api-versioning-in-aspnet-core.md) — Asp.Versioning package, version sets, MapToApiVersion, deprecation workflow
 - [x] 🟡 [`openapi-and-swagger.md`](./openapi-and-swagger.md) — Swashbuckle vs NSwag, OpenAPI spec, API client codegen, versioned docs
-- [ ] 🟡 `problem-details-rfc7807.md` — ProblemDetails, ValidationProblemDetails, IExceptionHandler (.NET 8), type URIs
-- [ ] 🟡 `backward-compatible-api-changes.md` — Safe additive changes, breaking changes, deprecation strategy, sunset header
-- [ ] 🔴 `api-contract-testing.md` — Consumer-driven contracts, Pact .NET, verifying provider without integration tests
-- [ ] 🔴 `graphql-vs-rest-in-dotnet.md` — Hot Chocolate, DataLoader, n+1 problem, when GraphQL complexity is justified
-- [ ] 🔴 `hypermedia-and-hateoas.md` — Level 3 REST, self-descriptive messages, Siren/HAL formats, practical ROI
+- [x] 🟡 [`problem-details-rfc7807.md`](./problem-details-rfc7807.md) — ProblemDetails, ValidationProblemDetails, IExceptionHandler (.NET 8), type URIs
+- [x] 🟡 [`backward-compatible-api-changes.md`](./backward-compatible-api-changes.md) — Safe additive changes, breaking changes, deprecation strategy, sunset header
+- [x] 🔴 [`api-contract-testing.md`](./api-contract-testing.md) — Consumer-driven contracts, Pact .NET, verifying provider without integration tests
+- [x] 🔴 [`graphql-vs-rest-in-dotnet.md`](./graphql-vs-rest-in-dotnet.md) — Hot Chocolate, DataLoader, n+1 problem, when GraphQL complexity is justified
+- [x] 🔴 [`hypermedia-and-hateoas.md`](./hypermedia-and-hateoas.md) — Level 3 REST, self-descriptive messages, Siren/HAL formats, practical ROI
 
 ---
 
 ## §8 Resilience Architecture
 
-- [ ] 🟢 `resilience-patterns-overview.md` — Retry, circuit breaker, timeout, bulkhead, fallback — the landscape of resilience
-- [ ] 🟢 `retry-pattern-design.md` — Exponential backoff, jitter, idempotency requirement, Polly v8 retry pipeline
-- [ ] 🟡 `circuit-breaker-design.md` — Closed/Open/Half-Open states, threshold tuning, Polly ResiliencePipeline
-- [ ] 🟡 `timeout-and-cancellation.md` — CancellationToken propagation, timeout policy, cascading timeout risks
-- [ ] 🟡 `fallback-and-graceful-degradation.md` — Static fallback, stale cache, degraded mode, feature flags for resilience
+- [x] 🟢 [`resilience-patterns-overview.md`](./resilience-patterns-overview.md) — Retry, circuit breaker, timeout, bulkhead, fallback — the landscape of resilience
+- [x] 🟢 [`retry-pattern-design.md`](./retry-pattern-design.md) — Exponential backoff, jitter, idempotency requirement, Polly v8 retry pipeline
+- [x] 🟡 [`circuit-breaker-design.md`](./circuit-breaker-design.md) — Closed/Open/Half-Open states, threshold tuning, Polly ResiliencePipeline
+- [x] 🟡 [`timeout-and-cancellation.md`](./timeout-and-cancellation.md) — CancellationToken propagation, timeout policy, cascading timeout risks
+- [x] 🟡 [`fallback-and-graceful-degradation.md`](./fallback-and-graceful-degradation.md) — Static fallback, stale cache, degraded mode, feature flags for resilience
 - [ ] 🔴 `resilience-in-dotnet-aspnet-core.md` — Microsoft.Extensions.Resilience, IHttpClientFactory + resilience handler
 - [ ] 🔴 `chaos-engineering-basics.md` — Chaos Monkey approach, fault injection, Azure Chaos Studio, resilience testing in CI
 - [ ] 🔴 `designing-for-partial-failure.md` — Assume everything fails, idempotent retries, compensating actions, partial success API

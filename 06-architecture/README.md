@@ -95,8 +95,20 @@ _Questions are organized by sub-topic. See [BACKLOG.md](./BACKLOG.md) for the fu
 - [notification-vs-request.md](./notification-vs-request.md) — INotification fan-out vs IRequest single handler, publish vs send semantics
 
 ### §7 API Design & Versioning
+- [api-contract-testing.md](./api-contract-testing.md) — Pact consumer-driven contracts, provider verification, CDC vs E2E
 - [api-versioning-in-aspnet-core.md](./api-versioning-in-aspnet-core.md) — Asp.Versioning package, version sets, MapToApiVersion, Swagger integration
 - [api-versioning-strategies.md](./api-versioning-strategies.md) — URL path, query string, header, content negotiation — trade-offs
+- [backward-compatible-api-changes.md](./backward-compatible-api-changes.md) — Safe additive changes, breaking changes, sunset header strategy
+- [graphql-vs-rest-in-dotnet.md](./graphql-vs-rest-in-dotnet.md) — Hot Chocolate, DataLoader, N+1 problem, when GraphQL is worth it
+- [hypermedia-and-hateoas.md](./hypermedia-and-hateoas.md) — Level 3 REST, HAL/Siren formats, practical ROI analysis
 - [openapi-and-swagger.md](./openapi-and-swagger.md) — Swashbuckle vs NSwag, OpenAPI spec, versioned docs, client codegen
+- [problem-details-rfc7807.md](./problem-details-rfc7807.md) — RFC 7807, IExceptionHandler (.NET 8), ValidationProblemDetails
 - [rest-maturity-model.md](./rest-maturity-model.md) — Richardson maturity levels 0–3, HATEOAS in theory vs practice
 - [rest-vs-grpc.md](./rest-vs-grpc.md) — HTTP/1.1+JSON vs HTTP/2+Protobuf, streaming, browser compatibility
+
+### §8 Resilience Architecture
+- [circuit-breaker-design.md](./circuit-breaker-design.md) — Closed/Open/Half-Open states, failure ratio tuning, Polly v8
+- [fallback-and-graceful-degradation.md](./fallback-and-graceful-degradation.md) — Static fallback, stale cache, feature-flag degradation
+- [resilience-patterns-overview.md](./resilience-patterns-overview.md) — Retry, circuit breaker, timeout, bulkhead, fallback landscape
+- [retry-pattern-design.md](./retry-pattern-design.md) — Exponential backoff, jitter, idempotency, Polly v8 retry pipeline
+- [timeout-and-cancellation.md](./timeout-and-cancellation.md) — CancellationToken propagation, cascading timeouts, .NET 8 middleware
