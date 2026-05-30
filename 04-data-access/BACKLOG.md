@@ -23,8 +23,8 @@ When a question is created, mark it `[x]` and add a link to the file.
 
 ## Progress
 
-**Total:** 80 / 94
-**By difficulty:** 🟢 17/18 · 🟡 35/43 · 🔴 28/33
+**Total:** 90 / 94
+**By difficulty:** 🟢 18/18 · 🟡 39/43 · 🔴 33/33
 
 ---
 
@@ -154,19 +154,19 @@ When a question is created, mark it `[x]` and add a link to the file.
 ## §10 Migrations & Schema Management
 
 - [x] 🟢 [`ef-core-migrations-deep-dive.md`](./ef-core-migrations-deep-dive.md) — Migration file anatomy, snapshot role, migration history table, idempotent scripts
-- [ ] 🟡 `migrations-in-production.md` — Running at startup risks, migration bundles, idempotent SQL scripts, Blue/Green deployment
-- [ ] 🟡 `zero-downtime-migrations.md` — Expand-contract (parallel change) pattern, additive-only changes, non-breaking schema evolution
-- [ ] 🟡 `dbup-and-fluentmigrator.md` — SQL script-based migrations with DbUp, FluentMigrator DSL, comparison to EF Core migrations
-- [ ] 🔴 `migration-rollback-strategies.md` — Why EF Core Down() is unreliable, manual rollback scripts, point-in-time restore strategy
-- [ ] 🔴 `schema-first-vs-code-first.md` — Code-first (EF scaffold from code) vs database-first (reverse engineering), pros/cons
-- [ ] 🔴 `multi-tenant-schema-strategies.md` — Per-tenant DB vs shared DB with tenant_id vs per-tenant schema, migration considerations
-- [ ] 🔴 `database-versioning-tools-comparison.md` — EF Core vs DbUp vs Flyway vs Liquibase — state-based vs migration-based philosophy
+- [x] 🟡 [`migrations-in-production.md`](./migrations-in-production.md) — Running at startup risks, migration bundles, idempotent SQL scripts, Blue/Green deployment
+- [x] 🟡 [`zero-downtime-migrations.md`](./zero-downtime-migrations.md) — Expand-contract (parallel change) pattern, additive-only changes, non-breaking schema evolution
+- [x] 🟡 [`dbup-and-fluentmigrator.md`](./dbup-and-fluentmigrator.md) — SQL script-based migrations with DbUp, FluentMigrator DSL, comparison to EF Core migrations
+- [x] 🔴 [`migration-rollback-strategies.md`](./migration-rollback-strategies.md) — Why EF Core Down() is unreliable, manual rollback scripts, point-in-time restore strategy
+- [x] 🔴 [`schema-first-vs-code-first.md`](./schema-first-vs-code-first.md) — Code-first (EF scaffold from code) vs database-first (reverse engineering), pros/cons
+- [x] 🔴 [`multi-tenant-schema-strategies.md`](./multi-tenant-schema-strategies.md) — Per-tenant DB vs shared DB with tenant_id vs per-tenant schema, migration considerations
+- [x] 🔴 [`database-versioning-tools-comparison.md`](./database-versioning-tools-comparison.md) — EF Core vs DbUp vs Flyway vs Liquibase — state-based vs migration-based philosophy
 
 ---
 
 ## §11 Testing Data Access
 
-- [ ] 🟢 `in-memory-provider.md` — EF Core InMemory provider, what it can't do (transactions, SQL, constraints), when it's acceptable
+- [x] 🟢 [`in-memory-provider.md`](./in-memory-provider.md) — EF Core InMemory provider, what it can't do (transactions, SQL, constraints), when it's acceptable
 - [ ] 🟡 `sqlite-for-testing.md` — SQLite in-process for EF Core tests, closer to real SQL, limitations vs production SQL Server
 - [ ] 🟡 `testcontainers-for-data-access.md` — Testcontainers .NET, real SQL Server/PostgreSQL in Docker, integration test setup
 - [ ] 🟡 `repository-testing-patterns.md` — Testing repositories with a real provider vs mocking, what to test at which layer

@@ -106,3 +106,13 @@ _Questions are organized by sub-topic. See [BACKLOG.md](./BACKLOG.md) for the fu
 
 ### §10 Migrations & Schema Management
 - [ef-core-migrations-deep-dive.md](./ef-core-migrations-deep-dive.md) — Migration anatomy, ModelSnapshot, migration history table, idempotent scripts, bundles
+- [migrations-in-production.md](./migrations-in-production.md) — Startup migration risks, migration bundles, idempotent scripts, K8s Job pattern
+- [zero-downtime-migrations.md](./zero-downtime-migrations.md) — Expand-contract pattern, backwards-compatible migrations, online index operations
+- [dbup-and-fluentmigrator.md](./dbup-and-fluentmigrator.md) — SQL script migrations with DbUp, FluentMigrator C# DSL, comparison to EF Core
+- [migration-rollback-strategies.md](./migration-rollback-strategies.md) — Why Down() fails, compensating migrations, point-in-time restore
+- [schema-first-vs-code-first.md](./schema-first-vs-code-first.md) — Code-first vs database-first scaffolding, partial classes, DBA-owned schemas
+- [multi-tenant-schema-strategies.md](./multi-tenant-schema-strategies.md) — DB per tenant vs shared schema vs schema per tenant, EF Core global filters
+- [database-versioning-tools-comparison.md](./database-versioning-tools-comparison.md) — EF Core vs DbUp vs Flyway vs Liquibase, state-based vs migration-based
+
+### §11 Testing Data Access
+- [in-memory-provider.md](./in-memory-provider.md) — EF Core InMemory provider, limitations (no SQL/transactions/constraints), when acceptable
