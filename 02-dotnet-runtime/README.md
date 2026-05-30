@@ -4,7 +4,7 @@
 
 ## Questions
 
-_No questions added yet. Use the [question template](../_templates/question-template.md) to add one._
+Browse the index below for available runtime questions. Use the [question template](../_templates/question-template.md) to add new ones.
 
 ## Index
 
@@ -60,6 +60,18 @@ _No questions added yet. Use the [question template](../_templates/question-temp
 - [assembly-trimming.md](./assembly-trimming.md) — ILLink trimming, trim-safe patterns, reflection hazards, and NativeAOT readiness
 - [code-generation-attributes.md](./code-generation-attributes.md) — MethodImplOptions, SkipLocalsInit, and practical JIT/codegen hints
 - [jit-compilation-basics.md](./jit-compilation-basics.md) — RyuJIT, IL-to-native compilation, lazy method JIT, and startup trade-offs
+- [jit-diagnostics.md](./jit-diagnostics.md) — JIT disassembly, IR dumps, BenchmarkDotNet, PerfView, and tracing-based inspection
 - [jit-optimizations.md](./jit-optimizations.md) — Inlining, devirtualization, range-check elimination, loop hoisting, and SIMD-related optimizations
+- [intrinsics-and-simd.md](./intrinsics-and-simd.md) — Vector<T>, hardware intrinsics, ISA guards, and explicit SIMD optimization
+- [native-aot-constraints.md](./native-aot-constraints.md) — RequiresDynamicCode, reflection limits, interop caveats, and ILC warnings
+- [native-aot-overview.md](./native-aot-overview.md) — Full static compilation, startup benefits, trimming synergy, and source-generator-friendly design
+- [on-stack-replacement.md](./on-stack-replacement.md) — Loop patchpoints, Tier 0 to Tier 1 promotion, and live-frame transfer
+- [pgo-and-dynamic-pgo.md](./pgo-and-dynamic-pgo.md) — Static vs dynamic PGO, profiling data, and guarded devirtualization
 - [ready-to-run-overview.md](./ready-to-run-overview.md) — crossgen2, ReadyToRun images, IL fallback, composite mode, and startup trade-offs
 - [tiered-compilation.md](./tiered-compilation.md) — Tier 0, Tier 1, call counting, QuickJit, and OSR
+
+### §5 Threading Model
+- [synchronization-primitives-overview.md](./synchronization-primitives-overview.md) — lock/Monitor, Mutex, SemaphoreSlim, reset events, and selection trade-offs
+- [thread-vs-task.md](./thread-vs-task.md) — OS threads vs logical tasks, scheduling, and when raw Thread still matters
+- [threadpool-basics.md](./threadpool-basics.md) — CLR ThreadPool basics, worker vs I/O completion threads, and starvation risks
+- [threadpool-internals.md](./threadpool-internals.md) — Work-stealing queues, hill-climbing, thread injection, and backlog monitoring

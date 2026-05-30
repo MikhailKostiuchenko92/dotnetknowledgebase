@@ -23,8 +23,8 @@ When a question is created, mark it `[x]` and add a link to the file.
 
 ## Progress
 
-**Total:** 50 / 112
-**By difficulty:** 🟢 12/24 · 🟡 25/56 · 🔴 12/32
+**Total:** 60 / 112
+**By difficulty:** 🟢 15/24 · 🟡 28/56 · 🔴 17/32
 
 ---
 
@@ -93,21 +93,21 @@ When a question is created, mark it `[x]` and add a link to the file.
 - [x] 🟡 `jit-optimizations.md` — Inlining, loop unrolling, devirtualization, range-check elimination, dead-code elimination
 - [x] 🟡 `code-generation-attributes.md` — MethodImplOptions.AggressiveInlining/NoInlining/NoOptimization, SkipLocalsInit, AggressiveOptimization
 - [x] 🟡 `assembly-trimming.md` — ILLink linker, PublishTrimmed, RequiresUnreferencedCode, trim-unsafe patterns, analyzer
-- [ ] 🟡 `native-aot-overview.md` — Full static compilation, no JIT at runtime, reflection limitations, size/startup benefits
-- [ ] 🔴 `native-aot-constraints.md` — RequiresDynamicCode, source-generated JSON/regex, COM not supported, cross-OS publish
-- [ ] 🔴 `on-stack-replacement.md` — OSR internals, loop hot path promotion to Tier 1, .NET 7+ counter-based triggers
-- [ ] 🔴 `pgo-and-dynamic-pgo.md` — Profile-guided optimization, instrumented Tier 1, class-hierarchy probes, Guarded Devirt
-- [ ] 🔴 `intrinsics-and-simd.md` — System.Runtime.Intrinsics, Vector128/256/512\<T\>, Vector\<T\>, AdvSimd, hardware guards
-- [ ] 🔴 `jit-diagnostics.md` — DOTNET_JitDisasm, DOTNET_JitDump, BenchmarkDotNet disassembler, PerfView JIT events
+- [x] 🟡 [native-aot-overview.md](./native-aot-overview.md) — Full static compilation, no JIT at runtime, reflection limitations, size/startup benefits
+- [x] 🔴 [native-aot-constraints.md](./native-aot-constraints.md) — RequiresDynamicCode, source-generated JSON/regex, COM not supported, cross-OS publish
+- [x] 🔴 [on-stack-replacement.md](./on-stack-replacement.md) — OSR internals, loop hot path promotion to Tier 1, .NET 7+ counter-based triggers
+- [x] 🔴 [pgo-and-dynamic-pgo.md](./pgo-and-dynamic-pgo.md) — Profile-guided optimization, instrumented Tier 1, class-hierarchy probes, Guarded Devirt
+- [x] 🔴 [intrinsics-and-simd.md](./intrinsics-and-simd.md) — System.Runtime.Intrinsics, Vector128/256/512\<T\>, Vector\<T\>, AdvSimd, hardware guards
+- [x] 🔴 [jit-diagnostics.md](./jit-diagnostics.md) — DOTNET_JitDisasm, DOTNET_JitDump, BenchmarkDotNet disassembler, PerfView JIT events
 
 ---
 
 ## §5 Threading Model (14 questions)
 
-- [ ] 🟢 `thread-vs-task.md` — OS thread vs Task (TPL), Thread class usage, when to ever use raw Thread
-- [ ] 🟢 `threadpool-basics.md` — CLR ThreadPool, QueueUserWorkItem, I/O completion port threads, min/max thread counts
-- [ ] 🟢 `synchronization-primitives-overview.md` — lock, Monitor, Mutex, Semaphore — what each is and when to pick it
-- [ ] 🟡 `threadpool-internals.md` — Work-stealing deques, local vs global queue, hill-climbing algorithm, thread injection
+- [x] 🟢 [thread-vs-task.md](./thread-vs-task.md) — OS thread vs Task (TPL), Thread class usage, when to ever use raw Thread
+- [x] 🟢 [threadpool-basics.md](./threadpool-basics.md) — CLR ThreadPool, QueueUserWorkItem, I/O completion port threads, min/max thread counts
+- [x] 🟢 [synchronization-primitives-overview.md](./synchronization-primitives-overview.md) — lock, Monitor, Mutex, Semaphore — what each is and when to pick it
+- [x] 🟡 [threadpool-internals.md](./threadpool-internals.md) — Work-stealing deques, local vs global queue, hill-climbing algorithm, thread injection
 - [ ] 🟡 `thread-local-storage.md` — ThreadLocal\<T\>, [ThreadStatic], differences, when to use, thread-affine resources
 - [ ] 🟡 `synchronization-context.md` — What SynchronizationContext does, ASP.NET Classic vs Core vs WinForms vs null
 - [ ] 🟡 `semaphoreslim-and-manualresetevent.md` — SemaphoreSlim (async-compatible), ManualResetEventSlim, CountdownEvent
