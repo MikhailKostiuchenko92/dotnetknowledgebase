@@ -23,8 +23,8 @@ When a question is created, mark it `[x]` and add a link to the file.
 
 ## Progress
 
-**Total:** 25 / 120
-**By difficulty:** 🟢 4/24 · 🟡 14/54 · 🔴 7/42
+**Total:** 35 / 120
+**By difficulty:** 🟢 5/24 · 🟡 19/54 · 🔴 11/42
 
 ---
 
@@ -61,19 +61,19 @@ When a question is created, mark it `[x]` and add a link to the file.
 - [x] 🟡 [`database-replication.md`](./database-replication.md) — Primary-replica, synchronous vs asynchronous, read replicas, lag handling
 - [x] 🔴 [`read-write-splitting.md`](./read-write-splitting.md) — Routing reads to replicas, replication lag consistency issues, CQRS connection
 - [x] 🔴 [`multi-tenancy-strategies.md`](./multi-tenancy-strategies.md) — Schema-per-tenant, row-level isolation, separate databases, EF Core implications
-- [ ] 🟡 `time-series-databases.md` — When to use (InfluxDB, TimescaleDB, Azure Data Explorer), retention policies
-- [ ] 🟡 `polyglot-persistence.md` — Using the right DB per access pattern, data synchronization challenges
-- [ ] 🔴 `database-connection-pooling.md` — Pool size tuning, connection leaks, async vs sync, pgBouncer, ADO.NET pools
-- [ ] 🟡 `optimistic-vs-pessimistic-locking.md` — Use cases, row versioning, deadlock avoidance, EF Core concurrency tokens
-- [ ] 🔴 `event-sourcing-vs-crud.md` — Append-only log, replaying events, projections, snapshot pattern, trade-offs
+- [x] 🟡 [`time-series-databases.md`](./time-series-databases.md) — When to use (InfluxDB, TimescaleDB, Azure Data Explorer), retention policies
+- [x] 🟡 [`polyglot-persistence.md`](./polyglot-persistence.md) — Using the right DB per access pattern, data synchronization challenges
+- [x] 🔴 [`database-connection-pooling.md`](./database-connection-pooling.md) — Pool size tuning, connection leaks, async vs sync, pgBouncer, ADO.NET pools
+- [x] 🟡 [`optimistic-vs-pessimistic-locking.md`](./optimistic-vs-pessimistic-locking.md) — Use cases, row versioning, deadlock avoidance, EF Core concurrency tokens
+- [x] 🔴 [`event-sourcing-vs-crud.md`](./event-sourcing-vs-crud.md) — Append-only log, replaying events, projections, snapshot pattern, trade-offs
 
 ## 4. Caching
 
-- [ ] 🟢 `caching-strategies-overview.md` — Cache-aside, read-through, write-through, write-behind, when to use each
-- [ ] 🟡 `cache-invalidation-problem.md` — Why it's hard, TTL strategy, event-driven invalidation, cache stampede
-- [ ] 🟡 `redis-fundamentals.md` — Data structures (string, hash, sorted set, list), persistence (RDB/AOF), clustering
-- [ ] 🟡 `distributed-cache-vs-local-cache.md` — IMemoryCache vs IDistributedCache, consistency issues, latency
-- [ ] 🔴 `cache-eviction-policies.md` — LRU, LFU, FIFO, ARC — when each is appropriate, Redis policy configuration
+- [x] 🟢 [`caching-strategies-overview.md`](./caching-strategies-overview.md) — Cache-aside, read-through, write-through, write-behind, when to use each
+- [x] 🟡 [`cache-invalidation-problem.md`](./cache-invalidation-problem.md) — Why it's hard, TTL strategy, event-driven invalidation, cache stampede
+- [x] 🟡 [`redis-fundamentals.md`](./redis-fundamentals.md) — Data structures (string, hash, sorted set, list), persistence (RDB/AOF), clustering
+- [x] 🟡 [`distributed-cache-vs-local-cache.md`](./distributed-cache-vs-local-cache.md) — IMemoryCache vs IDistributedCache, consistency issues, latency
+- [x] 🔴 [`cache-eviction-policies.md`](./cache-eviction-policies.md) — LRU, LFU, FIFO, ARC — when each is appropriate, Redis policy configuration
 - [ ] 🟡 `cdn-fundamentals.md` — Edge caching, cache-control headers, stale-while-revalidate, purging strategies
 - [ ] 🔴 `cache-aside-in-aspnet-core.md` — IDistributedCache implementation, Redis provider, serialization, stampede prevention
 - [ ] 🔴 `bloom-filters-for-cache.md` — Probabilistic membership, false positive rate, use case (avoid DB lookup for non-existent keys)

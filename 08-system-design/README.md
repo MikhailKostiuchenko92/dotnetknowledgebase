@@ -32,9 +32,21 @@ Interview-ready deep-dives into distributed systems design, architecture pattern
 - [webhooks-vs-polling-vs-sse.md](./webhooks-vs-polling-vs-sse.md) — Push vs pull, HMAC signing, SSE with ASP.NET Core
 
 ### §3 Data Storage & Databases
+- [database-connection-pooling.md](./database-connection-pooling.md) — ADO.NET pool internals, pgBouncer, pool exhaustion, async patterns
 - [database-indexing-strategies.md](./database-indexing-strategies.md) — B-tree/hash indexes, composite, covering, selectivity, EF Core Fluent API
 - [database-replication.md](./database-replication.md) — Primary-replica, sync vs async replication, lag handling, read routing
 - [database-sharding.md](./database-sharding.md) — Horizontal partitioning, shard key selection, consistent hashing, hotspot
+- [event-sourcing-vs-crud.md](./event-sourcing-vs-crud.md) — Append-only event log, projections, snapshots, Marten library
 - [multi-tenancy-strategies.md](./multi-tenancy-strategies.md) — Per-DB / per-schema / row-level isolation, EF Core global query filters
+- [optimistic-vs-pessimistic-locking.md](./optimistic-vs-pessimistic-locking.md) — Row versioning, deadlock avoidance, EF Core concurrency tokens
+- [polyglot-persistence.md](./polyglot-persistence.md) — Right DB per access pattern, sync challenges, Outbox + CDC
 - [read-write-splitting.md](./read-write-splitting.md) — Replica routing, replication lag pitfalls, CQRS connection
 - [sql-vs-nosql.md](./sql-vs-nosql.md) — When to choose relational vs document/key-value/graph, polyglot persistence
+- [time-series-databases.md](./time-series-databases.md) — InfluxDB, TimescaleDB, Azure Data Explorer, retention policies
+
+### §4 Caching
+- [cache-eviction-policies.md](./cache-eviction-policies.md) — LRU, LFU, FIFO, ARC/TinyLFU; Redis maxmemory-policy configuration
+- [cache-invalidation-problem.md](./cache-invalidation-problem.md) — Why it's hard, TTL jitter, event-driven invalidation, cache stampede
+- [caching-strategies-overview.md](./caching-strategies-overview.md) — Cache-aside, read-through, write-through, write-behind in ASP.NET Core
+- [distributed-cache-vs-local-cache.md](./distributed-cache-vs-local-cache.md) — IMemoryCache vs IDistributedCache, HybridCache (.NET 9)
+- [redis-fundamentals.md](./redis-fundamentals.md) — Data structures, RDB/AOF persistence, Cluster, StackExchange.Redis
