@@ -23,8 +23,8 @@ When a question is created, mark it `[x]` and add a link to the file.
 
 ## Progress
 
-**Total:** 20 / 106
-**By difficulty:** 🟢 6/21 · 🟡 8/47 · 🔴 6/38
+**Total:** 30 / 106
+**By difficulty:** 🟢 6/21 · 🟡 18/47 · 🔴 6/38
 
 ---
 
@@ -53,14 +53,14 @@ When a question is created, mark it `[x]` and add a link to the file.
 - [x] 🟢 [`entity-vs-value-object.md`](./entity-vs-value-object.md) — Identity-based equality vs structural equality, immutability, C# record as VO
 - [x] 🟢 [`ubiquitous-language.md`](./ubiquitous-language.md) — Why shared language matters, building it with domain experts, impact on code naming
 - [x] 🟡 [`aggregate-design.md`](./aggregate-design.md) — Aggregate root, consistency boundary, one transaction per aggregate rule, size guidelines
-- [ ] 🟡 `bounded-context.md` — Context boundaries, same concept different meanings in different contexts, mapping
-- [ ] 🟡 `domain-events.md` — Raising domain events inside aggregate, dispatching in application layer, MediatR INotification
-- [ ] 🟡 `domain-services.md` — When to extract to domain service vs keep in aggregate, stateless operations, naming
-- [ ] 🟡 `repository-pattern.md` — Abstract persistence, domain-oriented interface, unit of work, EF Core implementation
-- [ ] 🟡 `specification-pattern.md` — Encapsulating query criteria, composable specs, ISpecification, EF Core integration
-- [ ] 🟡 `anemic-vs-rich-domain-model.md` — Fowler's anti-pattern critique, when rich model pays off, pragmatic trade-offs
-- [ ] 🟡 `context-mapping-patterns.md` — Published language, open-host service, customer-supplier, conformist, ACL
-- [ ] 🟡 `value-object-implementation.md` — C# record VO pattern, EF Core owned types, Money/Address/Email examples
+- [x] 🟡 [`bounded-context.md`](./bounded-context.md) — Context boundaries, same concept different meanings in different contexts, mapping
+- [x] 🟡 [`domain-events.md`](./domain-events.md) — Raising domain events inside aggregate, dispatching in application layer, MediatR INotification
+- [x] 🟡 [`domain-services.md`](./domain-services.md) — When to extract to domain service vs keep in aggregate, stateless operations, naming
+- [x] 🟡 [`repository-pattern.md`](./repository-pattern.md) — Abstract persistence, domain-oriented interface, unit of work, EF Core implementation
+- [x] 🟡 [`specification-pattern.md`](./specification-pattern.md) — Encapsulating query criteria, composable specs, ISpecification, EF Core integration
+- [x] 🟡 [`anemic-vs-rich-domain-model.md`](./anemic-vs-rich-domain-model.md) — Fowler's anti-pattern critique, when rich model pays off, pragmatic trade-offs
+- [x] 🟡 [`context-mapping-patterns.md`](./context-mapping-patterns.md) — Published language, open-host service, customer-supplier, conformist, ACL
+- [x] 🟡 [`value-object-implementation.md`](./value-object-implementation.md) — C# record VO pattern, EF Core owned types, Money/Address/Email examples
 - [ ] 🔴 `aggregate-invariants.md` — Always-valid domain model, enforcing invariants in constructors/methods, guard clauses
 - [ ] 🔴 `large-aggregate-splitting.md` — Signs of over-sized aggregates, how to decompose, eventual consistency across boundaries
 - [ ] 🔴 `domain-model-vs-persistence-model.md` — Separate domain and EF Core models, mapping strategies, cost vs benefit

@@ -26,6 +26,14 @@ _Questions are organized by sub-topic. See [BACKLOG.md](./BACKLOG.md) for the fu
 
 ### §2 Domain-Driven Design (DDD)
 - [aggregate-design.md](./aggregate-design.md) — Aggregate root, consistency boundary, one transaction per aggregate, size rules
+- [anemic-vs-rich-domain-model.md](./anemic-vs-rich-domain-model.md) — Fowler's anti-pattern, rich model trade-offs, EF Core with private setters
+- [bounded-context.md](./bounded-context.md) — Context boundaries, same concept different meanings, identifying boundaries
+- [context-mapping-patterns.md](./context-mapping-patterns.md) — Published Language, Open Host Service, partnership, full pattern catalog
 - [ddd-tactical-vs-strategic.md](./ddd-tactical-vs-strategic.md) — Strategic (bounded context, context map) vs tactical patterns (aggregate, entity, VO)
+- [domain-events.md](./domain-events.md) — Raising events in aggregates, SaveChanges dispatch, domain vs integration events
+- [domain-services.md](./domain-services.md) — Stateless cross-entity operations, vs application services, naming
 - [entity-vs-value-object.md](./entity-vs-value-object.md) — Identity-based vs structural equality, immutability, C# record as VO
+- [repository-pattern.md](./repository-pattern.md) — Domain-oriented interface, aggregate root per repo, EF Core implementation
+- [specification-pattern.md](./specification-pattern.md) — ISpecification, composable queries, Ardalis.Specification, EF Core
 - [ubiquitous-language.md](./ubiquitous-language.md) — Shared vocabulary with domain experts, impact on code naming
+- [value-object-implementation.md](./value-object-implementation.md) — C# record VOs, EF Core ComplexType vs OwnsOne, Money/Address/Email
