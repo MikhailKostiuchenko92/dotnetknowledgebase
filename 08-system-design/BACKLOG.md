@@ -23,8 +23,8 @@ When a question is created, mark it `[x]` and add a link to the file.
 
 ## Progress
 
-**Total:** 15 / 120
-**By difficulty:** 🟢 3/24 · 🟡 8/54 · 🔴 4/42
+**Total:** 25 / 120
+**By difficulty:** 🟢 4/24 · 🟡 14/54 · 🔴 7/42
 
 ---
 
@@ -48,19 +48,19 @@ When a question is created, mark it `[x]` and add a link to the file.
 - [x] 🟡 [`api-versioning-strategies.md`](./api-versioning-strategies.md) — URL path, header, query param, content negotiation; deprecation lifecycle
 - [x] 🟡 [`api-gateway-pattern.md`](./api-gateway-pattern.md) — Routing, auth, rate limiting, aggregation, BFF (Backend-for-Frontend)
 - [x] 🟡 [`grpc-in-dotnet.md`](./grpc-in-dotnet.md) — Protobuf, streaming modes (unary/server/client/bidirectional), deadlines, .NET specifics
-- [ ] 🔴 `graphql-design-tradeoffs.md` — N+1 problem, DataLoader, schema stitching, persisted queries, when NOT to use
-- [ ] 🟡 `webhooks-vs-polling-vs-sse.md` — Push vs pull, reliability guarantees, event delivery, retry logic
-- [ ] 🔴 `idempotency-in-apis.md` — Idempotency keys, at-least-once delivery, deduplication patterns
-- [ ] 🟡 `pagination-strategies.md` — Offset vs cursor-based, keyset pagination, pros/cons, large dataset behaviour
+- [x] 🔴 [`graphql-design-tradeoffs.md`](./graphql-design-tradeoffs.md) — N+1 problem, DataLoader, schema stitching, persisted queries, when NOT to use
+- [x] 🟡 [`webhooks-vs-polling-vs-sse.md`](./webhooks-vs-polling-vs-sse.md) — Push vs pull, reliability guarantees, event delivery, retry logic
+- [x] 🔴 [`idempotency-in-apis.md`](./idempotency-in-apis.md) — Idempotency keys, at-least-once delivery, deduplication patterns
+- [x] 🟡 [`pagination-strategies.md`](./pagination-strategies.md) — Offset vs cursor-based, keyset pagination, pros/cons, large dataset behaviour
 
 ## 3. Data Storage & Databases
 
-- [ ] 🟢 `sql-vs-nosql.md` — When to choose relational vs document/key-value/graph/columnar, trade-offs
-- [ ] 🟡 `database-indexing-strategies.md` — B-tree vs hash indexes, composite indexes, covering indexes, selectivity
-- [ ] 🟡 `database-sharding.md` — Horizontal partitioning, shard keys, hotspot problem, consistent hashing
-- [ ] 🟡 `database-replication.md` — Primary-replica, synchronous vs asynchronous, read replicas, lag handling
-- [ ] 🔴 `read-write-splitting.md` — Routing reads to replicas, replication lag consistency issues, CQRS connection
-- [ ] 🔴 `multi-tenancy-strategies.md` — Schema-per-tenant, row-level isolation, separate databases, EF Core implications
+- [x] 🟢 [`sql-vs-nosql.md`](./sql-vs-nosql.md) — When to choose relational vs document/key-value/graph/columnar, trade-offs
+- [x] 🟡 [`database-indexing-strategies.md`](./database-indexing-strategies.md) — B-tree vs hash indexes, composite indexes, covering indexes, selectivity
+- [x] 🟡 [`database-sharding.md`](./database-sharding.md) — Horizontal partitioning, shard keys, hotspot problem, consistent hashing
+- [x] 🟡 [`database-replication.md`](./database-replication.md) — Primary-replica, synchronous vs asynchronous, read replicas, lag handling
+- [x] 🔴 [`read-write-splitting.md`](./read-write-splitting.md) — Routing reads to replicas, replication lag consistency issues, CQRS connection
+- [x] 🔴 [`multi-tenancy-strategies.md`](./multi-tenancy-strategies.md) — Schema-per-tenant, row-level isolation, separate databases, EF Core implications
 - [ ] 🟡 `time-series-databases.md` — When to use (InfluxDB, TimescaleDB, Azure Data Explorer), retention policies
 - [ ] 🟡 `polyglot-persistence.md` — Using the right DB per access pattern, data synchronization challenges
 - [ ] 🔴 `database-connection-pooling.md` — Pool size tuning, connection leaks, async vs sync, pgBouncer, ADO.NET pools
