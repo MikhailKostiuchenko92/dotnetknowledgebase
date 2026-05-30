@@ -23,8 +23,8 @@ When a question is created, mark it `[x]` and add a link to the file.
 
 ## Progress
 
-**Total:** 100 / 106
-**By difficulty:** 🟢 20/21 · 🟡 47/47 · 🔴 33/38
+**Total:** 123 / 123
+**By difficulty:** 🟢 21/21 · 🟡 55/55 · 🔴 47/47
 
 ---
 
@@ -154,30 +154,30 @@ When a question is created, mark it `[x]` and add a link to the file.
 - [x] 🟡 [`circuit-breaker-design.md`](./circuit-breaker-design.md) — Closed/Open/Half-Open states, threshold tuning, Polly ResiliencePipeline
 - [x] 🟡 [`timeout-and-cancellation.md`](./timeout-and-cancellation.md) — CancellationToken propagation, timeout policy, cascading timeout risks
 - [x] 🟡 [`fallback-and-graceful-degradation.md`](./fallback-and-graceful-degradation.md) — Static fallback, stale cache, degraded mode, feature flags for resilience
-- [ ] 🔴 `resilience-in-dotnet-aspnet-core.md` — Microsoft.Extensions.Resilience, IHttpClientFactory + resilience handler
-- [ ] 🔴 `chaos-engineering-basics.md` — Chaos Monkey approach, fault injection, Azure Chaos Studio, resilience testing in CI
-- [ ] 🔴 `designing-for-partial-failure.md` — Assume everything fails, idempotent retries, compensating actions, partial success API
+- [x] 🔴 [`resilience-in-dotnet-aspnet-core.md`](./resilience-in-dotnet-aspnet-core.md) — Microsoft.Extensions.Resilience, IHttpClientFactory + resilience handler
+- [x] 🔴 [`chaos-engineering-basics.md`](./chaos-engineering-basics.md) — Chaos Monkey approach, fault injection, Azure Chaos Studio, resilience testing in CI
+- [x] 🔴 [`designing-for-partial-failure.md`](./designing-for-partial-failure.md) — Assume everything fails, idempotent retries, compensating actions, partial success API
 
 ---
 
 ## §9 Modular Monolith
 
-- [ ] 🟢 `monolith-types.md` — Big ball of mud vs well-structured vs modular monolith, when monolith beats microservices
-- [ ] 🟡 `modular-monolith-structure.md` — Module boundaries, internal vs exported API, enforcing isolation per module
-- [ ] 🟡 `modular-monolith-communication.md` — In-process events vs direct method calls, loose coupling within a process
-- [ ] 🟡 `strangler-fig-vs-modular-monolith.md` — Start modular, extract services incrementally, reversibility advantage
-- [ ] 🔴 `module-isolation-enforcement.md` — NetArchTest rules, package visibility, ArchUnit-style dependency constraints in CI
-- [ ] 🔴 `shared-infrastructure-in-modular-monolith.md` — Shared DB with separate schemas, shared outbox, shared auth, trade-offs
+- [x] 🟢 [`monolith-types.md`](./monolith-types.md) — Big ball of mud vs well-structured vs modular monolith, when monolith beats microservices
+- [x] 🟡 [`modular-monolith-structure.md`](./modular-monolith-structure.md) — Module boundaries, internal vs exported API, enforcing isolation per module
+- [x] 🟡 [`modular-monolith-communication.md`](./modular-monolith-communication.md) — In-process events vs direct method calls, loose coupling within a process
+- [x] 🟡 [`strangler-fig-vs-modular-monolith.md`](./strangler-fig-vs-modular-monolith.md) — Start modular, extract services incrementally, reversibility advantage
+- [x] 🔴 [`module-isolation-enforcement.md`](./module-isolation-enforcement.md) — NetArchTest rules, package visibility, ArchUnit-style dependency constraints in CI
+- [x] 🔴 [`shared-infrastructure-in-modular-monolith.md`](./shared-infrastructure-in-modular-monolith.md) — Shared DB with separate schemas, shared outbox, shared auth, trade-offs
 
 ---
 
 ## §10 Cross-Cutting Concerns
 
-- [ ] 🟢 `cross-cutting-concerns-overview.md` — What makes a concern "cross-cutting", common examples, strategies to handle
-- [ ] 🟢 `global-error-handling.md` — Middleware exception handling, IExceptionHandler (.NET 8), ProblemDetails factory, RFC 9457
-- [ ] 🟡 `validation-strategies.md` — FluentValidation vs DataAnnotations, where validation belongs (application vs domain)
-- [ ] 🟡 `audit-logging-architecture.md` — EF Core interceptors for audit trail, domain events as audit log, structured logging
-- [ ] 🟡 `authorization-patterns.md` — Resource-based auth, policy-based auth, IAuthorizationHandler, claims transformation
-- [ ] 🟡 `feature-flags-architecture.md` — Microsoft.FeatureManagement, trunk-based development, kill switch pattern, LaunchDarkly
-- [ ] 🔴 `aspect-oriented-programming.md` — AOP in .NET, Castle DynamicProxy, Decorator as AOP alternative, when each fits
-- [ ] 🔴 `outbox-pattern-architecture.md` — Why direct side effects are unreliable, transactional outbox, polling vs CDC relay
+- [x] 🟢 [`cross-cutting-concerns-overview.md`](./cross-cutting-concerns-overview.md) — What makes a concern "cross-cutting", common examples, strategies to handle
+- [x] 🟢 [`global-error-handling.md`](./global-error-handling.md) — Middleware exception handling, IExceptionHandler (.NET 8), ProblemDetails factory, RFC 9457
+- [x] 🟡 [`validation-strategies.md`](./validation-strategies.md) — FluentValidation vs DataAnnotations, where validation belongs (application vs domain)
+- [x] 🟡 [`audit-logging-architecture.md`](./audit-logging-architecture.md) — EF Core interceptors for audit trail, domain events as audit log, structured logging
+- [x] 🟡 [`authorization-patterns.md`](./authorization-patterns.md) — Resource-based auth, policy-based auth, IAuthorizationHandler, claims transformation
+- [x] 🟡 [`feature-flags-architecture.md`](./feature-flags-architecture.md) — Microsoft.FeatureManagement, trunk-based development, kill switch pattern, LaunchDarkly
+- [x] 🔴 [`aspect-oriented-programming.md`](./aspect-oriented-programming.md) — AOP in .NET, Castle DynamicProxy, Decorator as AOP alternative, when each fits
+- [x] 🔴 [`outbox-pattern-architecture.md`](./outbox-pattern-architecture.md) — Why direct side effects are unreliable, transactional outbox, polling vs CDC relay

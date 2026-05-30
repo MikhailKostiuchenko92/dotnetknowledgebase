@@ -107,8 +107,29 @@ _Questions are organized by sub-topic. See [BACKLOG.md](./BACKLOG.md) for the fu
 - [rest-vs-grpc.md](./rest-vs-grpc.md) — HTTP/1.1+JSON vs HTTP/2+Protobuf, streaming, browser compatibility
 
 ### §8 Resilience Architecture
+- [chaos-engineering-basics.md](./chaos-engineering-basics.md) — Fault injection, Simmy, Azure Chaos Studio, Game Day exercises
 - [circuit-breaker-design.md](./circuit-breaker-design.md) — Closed/Open/Half-Open states, failure ratio tuning, Polly v8
+- [designing-for-partial-failure.md](./designing-for-partial-failure.md) — Idempotent retries, compensating transactions, partial success API
 - [fallback-and-graceful-degradation.md](./fallback-and-graceful-degradation.md) — Static fallback, stale cache, feature-flag degradation
+- [resilience-in-dotnet-aspnet-core.md](./resilience-in-dotnet-aspnet-core.md) — Microsoft.Extensions.Resilience, standard handler, named pipelines
 - [resilience-patterns-overview.md](./resilience-patterns-overview.md) — Retry, circuit breaker, timeout, bulkhead, fallback landscape
 - [retry-pattern-design.md](./retry-pattern-design.md) — Exponential backoff, jitter, idempotency, Polly v8 retry pipeline
 - [timeout-and-cancellation.md](./timeout-and-cancellation.md) — CancellationToken propagation, cascading timeouts, .NET 8 middleware
+
+### §9 Modular Monolith
+- [modular-monolith-communication.md](./modular-monolith-communication.md) — In-process events vs direct interface calls, loose coupling
+- [modular-monolith-structure.md](./modular-monolith-structure.md) — Module boundaries, internal/exported API, DI registration per module
+- [module-isolation-enforcement.md](./module-isolation-enforcement.md) — NetArchTest rules, InternalsVisibleTo, CI architectural gates
+- [monolith-types.md](./monolith-types.md) — Big ball of mud vs well-structured vs modular monolith
+- [shared-infrastructure-in-modular-monolith.md](./shared-infrastructure-in-modular-monolith.md) — Shared DB schemas, outbox, auth — what to share vs isolate
+- [strangler-fig-vs-modular-monolith.md](./strangler-fig-vs-modular-monolith.md) — Migration path, reversibility advantage, extraction via interface swap
+
+### §10 Cross-Cutting Concerns
+- [aspect-oriented-programming.md](./aspect-oriented-programming.md) — Castle DynamicProxy, AspectInjector, Decorator vs AOP trade-offs
+- [audit-logging-architecture.md](./audit-logging-architecture.md) — EF Core interceptors, domain events as audit, structured logging, GDPR
+- [authorization-patterns.md](./authorization-patterns.md) — Resource-based, policy-based, IAuthorizationHandler, claims transformation
+- [cross-cutting-concerns-overview.md](./cross-cutting-concerns-overview.md) — Common examples, middleware/decorator/pipeline strategies
+- [feature-flags-architecture.md](./feature-flags-architecture.md) — Microsoft.FeatureManagement, kill switch, canary, trunk-based dev
+- [global-error-handling.md](./global-error-handling.md) — IExceptionHandler chain (.NET 8), ProblemDetails, RFC 9457
+- [outbox-pattern-architecture.md](./outbox-pattern-architecture.md) — Transactional outbox, polling relay vs CDC, at-least-once delivery
+- [validation-strategies.md](./validation-strategies.md) — FluentValidation vs DataAnnotations vs domain guard clauses
