@@ -23,8 +23,8 @@ When a question is created, mark it `[x]` and add a link to the file.
 
 ## Progress
 
-**Total:** 10 / 112
-**By difficulty:** 🟢 4/24 · 🟡 6/56 · 🔴 0/32
+**Total:** 20 / 112
+**By difficulty:** 🟢 7/24 · 🟡 10/56 · 🔴 3/32
 
 ---
 
@@ -40,19 +40,19 @@ When a question is created, mark it `[x]` and add a link to the file.
 - [x] 🟡 [`runtime-configuration.md`](./runtime-configuration.md) — runtimeconfig.json, DOTNET_ environment variables, AppContext switches, runtime options
 - [x] 🟡 [`strong-naming-and-signing.md`](./strong-naming-and-signing.md) — Strong name key pairs, why strong names matter, partial trust removal, Authenticode
 - [x] 🟡 [`clr-startup-sequence.md`](./clr-startup-sequence.md) — hostfxr → hostpolicy → coreclr, host models, startup hooks, runtime initialization
-- [ ] 🔴 `assembly-load-context-advanced.md` — ALC collectibility, unloading assemblies, Weaver pattern, dependency isolation pitfalls
-- [ ] 🔴 `runtime-host-model.md` — Custom hosting API, embedding .NET in native apps, IJsRuntime, .NET for mobile
+- [x] 🔴 [`assembly-load-context-advanced.md`](./assembly-load-context-advanced.md) — ALC collectibility, unloading assemblies, Weaver pattern, dependency isolation pitfalls
+- [x] 🔴 [`runtime-host-model.md`](./runtime-host-model.md) — Custom hosting API, embedding .NET in native apps, IJsRuntime, .NET for mobile
 
 ---
 
 ## §2 Garbage Collection (16 questions)
 
-- [ ] 🟢 `gc-fundamentals.md` — Mark-sweep-compact algorithm, GC roots, object reachability, managed heap overview
-- [ ] 🟢 `idisposable-and-using.md` — IDisposable pattern, using statement/declaration, deterministic cleanup vs GC finalization
-- [ ] 🟢 `gc-roots.md` — What counts as a GC root: stack, static fields, GC handles, CPU registers, finalizer queue
-- [ ] 🟡 `gc-generations.md` — Gen0/Gen1/Gen2, ephemeral segment, generational hypothesis, promotion mechanics
-- [ ] 🟡 `large-object-heap.md` — 85 000 byte threshold, LOH fragmentation, LOH compaction (.NET 4.5.1+, .NET Core switch)
-- [ ] 🟡 `gc-modes.md` — Workstation vs Server GC, concurrent vs background GC, when each applies
+- [x] 🟢 [`gc-fundamentals.md`](./gc-fundamentals.md) — Mark-sweep-compact algorithm, GC roots, object reachability, managed heap overview
+- [x] 🟢 [`idisposable-and-using.md`](./idisposable-and-using.md) — IDisposable pattern, using statement/declaration, deterministic cleanup vs GC finalization
+- [x] 🟢 [`gc-roots.md`](./gc-roots.md) — What counts as a GC root: stack, static fields, GC handles, CPU registers, finalizer queue
+- [x] 🟡 [`gc-generations.md`](./gc-generations.md) — Gen0/Gen1/Gen2, ephemeral segment, generational hypothesis, promotion mechanics
+- [x] 🟡 [`large-object-heap.md`](./large-object-heap.md) — 85 000 byte threshold, LOH fragmentation, LOH compaction (.NET 4.5.1+, .NET Core switch)
+- [x] 🟡 [`gc-modes.md`](./gc-modes.md) — Workstation vs Server GC, concurrent vs background GC, when each applies
 - [ ] 🟡 `gc-server-vs-workstation.md` — Heap count = CPU count, throughput vs latency, ASPNETCORE_HOSTINGSTARTUPASSEMBLIES
 - [ ] 🟡 `gc-finalization.md` — Finalizer thread, finalization queue, F-reachable queue, two-phase collection, resurrection
 - [ ] 🟡 `weak-references.md` — WeakReference\<T\>, short vs long weak refs, cache use case, TrackResurrection
