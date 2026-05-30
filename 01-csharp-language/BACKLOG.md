@@ -23,8 +23,8 @@ When a question is created, mark it `[x]` and add a link to the file.
 
 ## Progress
 
-**Total:** 100 / 137
-**By difficulty:** 🟢 16/24 · 🟡 61/64 · 🔴 23/49
+**Total:** 137 / 137
+**By difficulty:** 🟢 23/23 · 🟡 78/78 · 🔴 36/36
 
 ---
 
@@ -163,58 +163,58 @@ When a question is created, mark it `[x]` and add a link to the file.
 - [x] 🟡 [`nullable-reference-types.md`](./nullable-reference-types.md) — Annotation/warning contexts, project-level enablement
 - [x] 🟢 [`null-conditional-and-coalescing.md`](./null-conditional-and-coalescing.md) — `?.`, `??`, `??=` patterns
 - [x] 🟡 [`null-forgiving-operator.md`](./null-forgiving-operator.md) — `!` operator — when justified, when a smell
-- [ ] 🔴 `nullability-attributes.md` — `MaybeNull`, `NotNull`, `MemberNotNull`, etc.
-- [ ] 🟡 `argument-null-validation-patterns.md` — `ArgumentNullException.ThrowIfNull`, guards
-- [ ] 🔴 `nullable-in-generics.md` — `T?` for unconstrained generics, `default(T)` quirks
+- [x] 🔴 [`nullability-attributes.md`](./nullability-attributes.md) — `MaybeNull`, `NotNull`, `MemberNotNull`, etc.
+- [x] 🟡 [`argument-null-validation-patterns.md`](./argument-null-validation-patterns.md) — `ArgumentNullException.ThrowIfNull`, guards
+- [x] 🔴 [`nullable-in-generics.md`](./nullable-in-generics.md) — `T?` for unconstrained generics, `default(T)` quirks
 
 ## 13. Iterators, `yield`, ranges
 
-- [ ] 🟡 `yield-return-explained.md` — Compiler state machine, deferred execution
-- [ ] 🟡 `custom-iterators.md` — Implementing `IEnumerable<T>`, when `yield` shines
-- [ ] 🟢 `range-and-index-operators.md` — `^`, `..`, what types support them
-- [ ] 🔴 `iterator-vs-async-iterator.md` — `IEnumerable<T>` vs `IAsyncEnumerable<T>`
-- [ ] 🟡 `enumerator-vs-enumerable.md` — Roles, common confusion
+- [x] 🟡 [`yield-return-explained.md`](./yield-return-explained.md) — Compiler state machine, deferred execution
+- [x] 🟡 [`custom-iterators.md`](./custom-iterators.md) — Implementing `IEnumerable<T>`, when `yield` shines
+- [x] 🟢 [`range-and-index-operators.md`](./range-and-index-operators.md) — `^`, `..`, what types support them
+- [x] 🔴 [`iterator-vs-async-iterator.md`](./iterator-vs-async-iterator.md) — `IEnumerable<T>` vs `IAsyncEnumerable<T>`
+- [x] 🟡 [`enumerator-vs-enumerable.md`](./enumerator-vs-enumerable.md) — Roles, common confusion
 
 ## 14. Reflection, attributes, source generators
 
-- [ ] 🟡 `reflection-basics.md` — `Type`, `MethodInfo`, perf cost
-- [ ] 🟡 `custom-attributes.md` — Defining, reading, common framework attributes
-- [ ] 🔴 `reflection-vs-source-generators.md` — Trade-offs, AOT compatibility
-- [ ] 🔴 `dynamic-code-with-emit-vs-expression.md` — `Reflection.Emit`, `Expression.Compile`
-- [ ] 🔴 `source-generators-intro.md` — What they are, real examples (regex, logging, json)
-- [ ] 🟡 `caller-info-attributes.md` — `[CallerMemberName]`, `[CallerArgumentExpression]`
+- [x] 🟡 [`reflection-basics.md`](./reflection-basics.md) — `Type`, `MethodInfo`, perf cost
+- [x] 🟡 [`custom-attributes.md`](./custom-attributes.md) — Defining, reading, common framework attributes
+- [x] 🔴 [`reflection-vs-source-generators.md`](./reflection-vs-source-generators.md) — Trade-offs, AOT compatibility
+- [x] 🔴 [`dynamic-code-with-emit-vs-expression.md`](./dynamic-code-with-emit-vs-expression.md) — `Reflection.Emit`, `Expression.Compile`
+- [x] 🔴 [`source-generators-intro.md`](./source-generators-intro.md) — What they are, real examples (regex, logging, json)
+- [x] 🟡 [`caller-info-attributes.md`](./caller-info-attributes.md) — `[CallerMemberName]`, `[CallerArgumentExpression]`
 
 ## 15. Memory & performance
 
-- [ ] 🔴 `span-of-t.md` — What it is, why it's a `ref struct`, slicing
-- [ ] 🔴 `memory-of-t.md` — vs `Span<T>`, when heap-friendliness matters
-- [ ] 🔴 `stackalloc.md` — Safe `Span<T>` form, size limits
-- [ ] 🔴 `arraypool-and-memorypool.md` — Renting/returning, avoiding GC pressure
-- [ ] 🔴 `unsafe-and-pointers.md` — When `unsafe` is justified, `fixed` statement
-- [ ] 🔴 `pinning-and-gc-handles.md` — `GCHandle`, `fixed`, interop
-- [ ] 🔴 `aggressive-inlining-and-attributes.md` — `MethodImplOptions`, JIT inlining
+- [x] 🔴 [`span-of-t.md`](./span-of-t.md) — What it is, why it's a `ref struct`, slicing
+- [x] 🔴 [`memory-of-t.md`](./memory-of-t.md) — vs `Span<T>`, when heap-friendliness matters
+- [x] 🔴 [`stackalloc.md`](./stackalloc.md) — Safe `Span<T>` form, size limits
+- [x] 🔴 [`arraypool-and-memorypool.md`](./arraypool-and-memorypool.md) — Renting/returning, avoiding GC pressure
+- [x] 🔴 [`unsafe-and-pointers.md`](./unsafe-and-pointers.md) — When `unsafe` is justified, `fixed` statement
+- [x] 🔴 [`pinning-and-gc-handles.md`](./pinning-and-gc-handles.md) — `GCHandle`, `fixed`, interop
+- [x] 🔴 [`aggressive-inlining-and-attributes.md`](./aggressive-inlining-and-attributes.md) — `MethodImplOptions`, JIT inlining
 
 ## 16. Modern C# features (12 / 13)
 
-- [ ] 🟡 `primary-constructors.md` — Class & struct primary ctors, capture semantics
-- [ ] 🟡 `collection-expressions.md` — `[1, 2, 3]` syntax, spread operator `..`
-- [ ] 🟡 `required-members.md` — `required` keyword, `SetsRequiredMembers`
-- [ ] 🟢 `file-scoped-namespaces.md` — Why preferred, conversion
-- [ ] 🟡 `global-and-implicit-usings.md` — `global using`, `<ImplicitUsings>` SDK behavior
-- [ ] 🟢 `raw-string-literals.md` — `"""..."""`, interpolation in raw strings
-- [ ] 🟢 `target-typed-new.md` — `Foo f = new();` — when it helps/hurts readability
-- [ ] 🟡 `params-collections-csharp-13.md` — `params` for any collection type (C# 13)
+- [x] 🟡 [`primary-constructors.md`](./primary-constructors.md) — Class & struct primary ctors, capture semantics
+- [x] 🟡 [`collection-expressions.md`](./collection-expressions.md) — `[1, 2, 3]` syntax, spread operator `..`
+- [x] 🟡 [`required-members.md`](./required-members.md) — `required` keyword, `SetsRequiredMembers`
+- [x] 🟢 [`file-scoped-namespaces.md`](./file-scoped-namespaces.md) — Why preferred, conversion
+- [x] 🟡 [`global-and-implicit-usings.md`](./global-and-implicit-usings.md) — `global using`, `<ImplicitUsings>` SDK behavior
+- [x] 🟢 [`raw-string-literals.md`](./raw-string-literals.md) — `"""..."""`, interpolation in raw strings
+- [x] 🟢 [`target-typed-new.md`](./target-typed-new.md) — `Foo f = new();` — when it helps/hurts readability
+- [x] 🟡 [`params-collections-csharp-13.md`](./params-collections-csharp-13.md) — `params` for any collection type (C# 13)
 
 ## 17. Misc language mechanics
 
-- [ ] 🟢 `readonly-vs-const.md` — Compile-time vs runtime, versioning gotcha
-- [ ] 🟡 `static-constructor-timing.md` — `beforefieldinit`, when it runs
-- [ ] 🟡 `operator-overloading.md` — When appropriate, equality operators, conversion ops
-- [ ] 🟡 `implicit-vs-explicit-conversions.md` — When to define each, lossy conversions
-- [ ] 🟡 `checked-and-unchecked.md` — Overflow behavior, when to use
-- [ ] 🟢 `tuple-types-and-deconstruction.md` — `ValueTuple`, naming, `Deconstruct`
-- [ ] 🟡 `local-functions-vs-lambdas.md` — When to prefer each, allocation differences
-- [ ] 🟢 `using-aliases-and-using-static.md` — Modern uses, C# 12 alias-any-type feature
+- [x] 🟡 [`checked-and-unchecked.md`](./checked-and-unchecked.md) — Overflow behavior, when to use
+- [x] 🟡 [`implicit-vs-explicit-conversions.md`](./implicit-vs-explicit-conversions.md) — When to define each, lossy conversions
+- [x] 🟡 [`local-functions-vs-lambdas.md`](./local-functions-vs-lambdas.md) — When to prefer each, allocation differences
+- [x] 🟡 [`operator-overloading.md`](./operator-overloading.md) — When appropriate, equality operators, conversion ops
+- [x] 🟢 [`readonly-vs-const.md`](./readonly-vs-const.md) — Compile-time vs runtime, versioning gotcha
+- [x] 🟡 [`static-constructor-timing.md`](./static-constructor-timing.md) — `beforefieldinit`, when it runs
+- [x] 🟢 [`tuple-types-and-deconstruction.md`](./tuple-types-and-deconstruction.md) — `ValueTuple`, naming, `Deconstruct`
+- [x] 🟢 [`using-aliases-and-using-static.md`](./using-aliases-and-using-static.md) — Modern uses, C# 12 alias-any-type feature
 
 ---
 

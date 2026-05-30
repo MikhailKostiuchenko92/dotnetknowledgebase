@@ -142,3 +142,44 @@ See the [BACKLOG.md](./BACKLOG.md) for the full list of planned questions and cu
 - [null-forgiving-operator.md](./null-forgiving-operator.md) — What postfix `!` changes, justified uses, and common smells
 - [nullable-reference-types.md](./nullable-reference-types.md) — NRT annotations, warning contexts, flow analysis, and migration
 - [nullable-value-types.md](./nullable-value-types.md) — `Nullable<T>`, lifting, `HasValue`, boxing behavior
+
+### Reflection, Attributes & Source Generators
+
+- [caller-info-attributes.md](./caller-info-attributes.md) — Caller metadata injection, `CallerArgumentExpression`, and diagnostics helpers
+- [custom-attributes.md](./custom-attributes.md) — Defining metadata, `AttributeUsage`, and runtime retrieval
+- [dynamic-code-with-emit-vs-expression.md](./dynamic-code-with-emit-vs-expression.md) — `Reflection.Emit`, expression compilation, and AOT/runtime-codegen trade-offs
+- [reflection-basics.md](./reflection-basics.md) — `Type`, `MethodInfo`, `PropertyInfo`, activation, and AOT concerns
+- [reflection-vs-source-generators.md](./reflection-vs-source-generators.md) — Runtime metadata vs compile-time generation, trimming, and Native AOT trade-offs
+- [source-generators-intro.md](./source-generators-intro.md) — `IIncrementalGenerator`, `SyntaxProvider`, diagnostics, and BCL examples
+
+### Memory & Performance
+
+- [aggressive-inlining-and-attributes.md](./aggressive-inlining-and-attributes.md) — `MethodImpl` hints, `SkipLocalsInit`, and when low-level codegen tuning is justified
+- [arraypool-and-memorypool.md](./arraypool-and-memorypool.md) — Renting/returning buffers, ownership, and reducing GC pressure
+- [memory-of-t.md](./memory-of-t.md) — Heap-friendly buffer slices, async boundaries, and `.Span` usage rules
+- [pinning-and-gc-handles.md](./pinning-and-gc-handles.md) — `fixed`, `GCHandle`, fragmentation, and interop lifetime trade-offs
+- [span-of-t.md](./span-of-t.md) — `Span<T>`, slicing, `ReadOnlySpan<T>`, and zero-copy parsing
+- [stackalloc.md](./stackalloc.md) — Stack allocation with spans, hot-path buffers, and size limits
+- [unsafe-and-pointers.md](./unsafe-and-pointers.md) — `unsafe`, pointers, `fixed`, and when low-level code is justified
+
+### Modern C# Features
+
+- [collection-expressions.md](./collection-expressions.md) — C# 12 bracket syntax, spread elements, target typing, and custom builders
+- [file-scoped-namespaces.md](./file-scoped-namespaces.md) — Flatter namespace syntax, one-namespace-per-file rules, and `.editorconfig` enforcement
+- [global-and-implicit-usings.md](./global-and-implicit-usings.md) — `global using`, SDK-generated imports, and project-level control
+- [params-collections-csharp-13.md](./params-collections-csharp-13.md) — C# 13 `params` on collection types, call-site lowering, and API design trade-offs
+- [primary-constructors.md](./primary-constructors.md) — C# 12 constructor syntax, capture semantics, and good fit vs overuse
+- [raw-string-literals.md](./raw-string-literals.md) — Triple-quoted strings, interpolation, indentation stripping, and JSON/SQL scenarios
+- [required-members.md](./required-members.md) — `required`, `SetsRequiredMembers`, and object initialization contracts
+- [target-typed-new.md](./target-typed-new.md) — Omitting repeated type names when the target type is already clear
+
+### Misc Language Mechanics
+
+- [checked-and-unchecked.md](./checked-and-unchecked.md) — Overflow behavior, `OverflowException`, and when checked arithmetic is worth the safety
+- [implicit-vs-explicit-conversions.md](./implicit-vs-explicit-conversions.md) — Safe vs lossy conversions, casts, and checked conversion operators
+- [local-functions-vs-lambdas.md](./local-functions-vs-lambdas.md) — Recursion, captures, iterator helpers, and allocation trade-offs
+- [operator-overloading.md](./operator-overloading.md) — Natural operators, equality pairs, and conversion-operator design
+- [readonly-vs-const.md](./readonly-vs-const.md) — Compile-time constants, runtime immutability, `static readonly`, and versioning gotchas
+- [static-constructor-timing.md](./static-constructor-timing.md) — `beforefieldinit`, explicit static constructors, and one-time thread-safe initialization
+- [tuple-types-and-deconstruction.md](./tuple-types-and-deconstruction.md) — `ValueTuple`, named elements, custom `Deconstruct`, and when to prefer a real type
+- [using-aliases-and-using-static.md](./using-aliases-and-using-static.md) — Alias-any-type in C# 12, `using static`, and readability trade-offs
