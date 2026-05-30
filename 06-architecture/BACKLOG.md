@@ -23,23 +23,23 @@ When a question is created, mark it `[x]` and add a link to the file.
 
 ## Progress
 
-**Total:** 0 / 106
-**By difficulty:** 🟢 0/21 · 🟡 0/47 · 🔴 0/38
+**Total:** 10 / 106
+**By difficulty:** 🟢 3/21 · 🟡 7/47 · 🔴 0/38
 
 ---
 
 ## §1 Clean Architecture & Layering
 
-- [ ] 🟢 `layered-vs-clean-architecture.md` — N-tier layers vs Clean Architecture, dependency direction, why "Clean" avoids infrastructure coupling
-- [ ] 🟢 `dependency-inversion-in-architecture.md` — DIP at architectural level, policy vs detail, why high-level modules must not depend on low-level
-- [ ] 🟢 `ports-and-adapters.md` — Hexagonal architecture, driving vs driven adapters, application port = interface
-- [ ] 🟡 `clean-architecture-in-dotnet.md` — Domain / Application / Infrastructure / Presentation layers, project reference rules, .NET solution layout
-- [ ] 🟡 `application-layer-responsibilities.md` — Use cases, orchestration logic, no business rules here, CQRS integration
-- [ ] 🟡 `domain-layer-design.md` — Pure domain model, no framework dependencies, rich vs anemic comparison
-- [ ] 🟡 `infrastructure-layer-design.md` — Implementing domain interfaces with EF Core, HTTP clients, messaging
-- [ ] 🟡 `onion-architecture.md` — Concentric rings model, similarities and differences vs Clean Architecture, common misconceptions
-- [ ] 🟡 `vertical-slice-architecture.md` — Feature folders, co-locating handler/validator/response, Jimmy Bogard's approach
-- [ ] 🟡 `modular-monolith-design.md` — Bounded context modules, public vs internal APIs, migration path to microservices
+- [x] 🟢 [`layered-vs-clean-architecture.md`](./layered-vs-clean-architecture.md) — N-tier layers vs Clean Architecture, dependency direction, why "Clean" avoids infrastructure coupling
+- [x] 🟢 [`dependency-inversion-in-architecture.md`](./dependency-inversion-in-architecture.md) — DIP at architectural level, policy vs detail, why high-level modules must not depend on low-level
+- [x] 🟢 [`ports-and-adapters.md`](./ports-and-adapters.md) — Hexagonal architecture, driving vs driven adapters, application port = interface
+- [x] 🟡 [`clean-architecture-in-dotnet.md`](./clean-architecture-in-dotnet.md) — Domain / Application / Infrastructure / Presentation layers, project reference rules, .NET solution layout
+- [x] 🟡 [`application-layer-responsibilities.md`](./application-layer-responsibilities.md) — Use cases, orchestration logic, no business rules here, CQRS integration
+- [x] 🟡 [`domain-layer-design.md`](./domain-layer-design.md) — Pure domain model, no framework dependencies, rich vs anemic comparison
+- [x] 🟡 [`infrastructure-layer-design.md`](./infrastructure-layer-design.md) — Implementing domain interfaces with EF Core, HTTP clients, messaging
+- [x] 🟡 [`onion-architecture.md`](./onion-architecture.md) — Concentric rings model, similarities and differences vs Clean Architecture, common misconceptions
+- [x] 🟡 [`vertical-slice-architecture.md`](./vertical-slice-architecture.md) — Feature folders, co-locating handler/validator/response, Jimmy Bogard's approach
+- [x] 🟡 [`modular-monolith-design.md`](./modular-monolith-design.md) — Bounded context modules, public vs internal APIs, migration path to microservices
 - [ ] 🔴 `fitness-functions.md` — Architectural fitness functions, NetArchTest / ArchUnit-style rules, enforcing constraints in CI
 - [ ] 🔴 `architecture-decision-records.md` — ADR format, when to document a decision, adr-tools, living documentation
 - [ ] 🔴 `anticorruption-layer.md` — Translating between bounded contexts, preventing model pollution from external systems
