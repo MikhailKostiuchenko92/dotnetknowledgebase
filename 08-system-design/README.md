@@ -72,7 +72,19 @@ Interview-ready deep-dives into distributed systems design, architecture pattern
 - [throttling-vs-backpressure.md](./throttling-vs-backpressure.md) — Cooperative flow control, System.Threading.Channels, TCP analogy
 
 ### §7 Classic System Design Problems
+- [design-api-gateway.md](./design-api-gateway.md) — YARP routing, auth middleware, rate limiting, circuit breaking, SSL termination
+- [design-chat-system.md](./design-chat-system.md) — WebSocket fan-out, Cassandra message storage, read receipts, presence, group chat
+- [design-distributed-cache.md](./design-distributed-cache.md) — Consistent hashing ring, quorum N/W/R, LRU/LFU eviction, Redis cluster
+- [design-file-storage-service.md](./design-file-storage-service.md) — Chunking, deduplication, presigned S3 URLs, CDN, delta sync
+- [design-job-scheduler.md](./design-job-scheduler.md) — Leader election, SELECT SKIP LOCKED claim, heartbeat, DAG dependencies
 - [design-key-value-store.md](./design-key-value-store.md) — Consistent hashing, replication, quorum reads/writes, LSM-tree
+- [design-news-feed.md](./design-news-feed.md) — Hybrid fan-out (write + read), celebrity problem, Redis timeline, ranking
 - [design-notification-system.md](./design-notification-system.md) — Push/email/SMS fan-out, templates, delivery tracking, priority queues
+- [design-payment-system.md](./design-payment-system.md) — Idempotency keys, double-entry ledger, gateway timeout handling, PCI DSS
 - [design-rate-limiter.md](./design-rate-limiter.md) — Tier-aware token bucket, Redis Lua, fail-open strategy, response headers
+- [design-search-autocomplete.md](./design-search-autocomplete.md) — Trie top-K, Redis sorted sets per prefix, ranking decay, CDN edge caching
 - [design-url-shortener.md](./design-url-shortener.md) — Base-62 encoding, 301 vs 302, caching, analytics pipeline
+
+### §8 Microservices & Service Architecture
+- [monolith-vs-microservices.md](./monolith-vs-microservices.md) — When to split, modular monolith, Conway's Law, distributed monolith anti-pattern
+- [service-discovery.md](./service-discovery.md) — Client-side vs server-side, Consul, Kubernetes DNS, crash detection, health probes

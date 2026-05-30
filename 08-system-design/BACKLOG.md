@@ -23,8 +23,8 @@ When a question is created, mark it `[x]` and add a link to the file.
 
 ## Progress
 
-**Total:** 55 / 120
-**By difficulty:** 🟢 7/24 · 🟡 30/54 · 🔴 18/42
+**Total:** 65 / 120
+**By difficulty:** 🟢 8/24 · 🟡 33/54 · 🔴 24/42
 
 ---
 
@@ -107,19 +107,19 @@ When a question is created, mark it `[x]` and add a link to the file.
 - [x] 🟡 [`design-rate-limiter.md`](./design-rate-limiter.md) — Full end-to-end design: storage, algorithm, distributed counters, API design
 - [x] 🟡 [`design-notification-system.md`](./design-notification-system.md) — Push/email/SMS fanout, template management, delivery tracking, scale
 - [x] 🟡 [`design-key-value-store.md`](./design-key-value-store.md) — In-memory + persistence, consistent hashing, replication, GET/PUT/DELETE
-- [ ] 🔴 `design-distributed-cache.md` — Cache cluster, consistent hashing ring, replication factor, eviction, client library
-- [ ] 🔴 `design-search-autocomplete.md` — Trie vs inverted index, prefix matching, ranking, caching top queries
-- [ ] 🔴 `design-news-feed.md` — Fan-out on write vs read, celebrity problem, timeline storage, ranking
-- [ ] 🔴 `design-chat-system.md` — WebSocket vs long-polling, message storage, read receipts, group chats, presence
-- [ ] 🔴 `design-payment-system.md` — Idempotency, exactly-once semantics, ledger, reconciliation, PCI DSS implications
-- [ ] 🔴 `design-job-scheduler.md` — Cron triggers, distributed locking (leader election), retry, DAG dependencies
-- [ ] 🟡 `design-api-gateway.md` — Routing table, auth middleware, rate limiting, circuit breaking, SSL termination
-- [ ] 🔴 `design-file-storage-service.md` — Chunking, deduplication, metadata store, CDN integration, presigned URLs
+- [x] 🔴 [`design-distributed-cache.md`](./design-distributed-cache.md) — Cache cluster, consistent hashing ring, replication factor, eviction, client library
+- [x] 🔴 [`design-search-autocomplete.md`](./design-search-autocomplete.md) — Trie vs inverted index, prefix matching, ranking, caching top queries
+- [x] 🔴 [`design-news-feed.md`](./design-news-feed.md) — Fan-out on write vs read, celebrity problem, timeline storage, ranking
+- [x] 🔴 [`design-chat-system.md`](./design-chat-system.md) — WebSocket vs long-polling, message storage, read receipts, group chats, presence
+- [x] 🔴 [`design-payment-system.md`](./design-payment-system.md) — Idempotency, exactly-once semantics, ledger, reconciliation, PCI DSS implications
+- [x] 🔴 [`design-job-scheduler.md`](./design-job-scheduler.md) — Cron triggers, distributed locking (leader election), retry, DAG dependencies
+- [x] 🟡 [`design-api-gateway.md`](./design-api-gateway.md) — Routing table, auth middleware, rate limiting, circuit breaking, SSL termination
+- [x] 🔴 [`design-file-storage-service.md`](./design-file-storage-service.md) — Chunking, deduplication, metadata store, CDN integration, presigned URLs
 
 ## 8. Microservices & Service Architecture
 
-- [ ] 🟢 `monolith-vs-microservices.md` — When to split, operational overhead, data isolation, team topology
-- [ ] 🟡 `service-discovery.md` — Client-side vs server-side discovery, Consul, Kubernetes DNS, health checks
+- [x] 🟢 [`monolith-vs-microservices.md`](./monolith-vs-microservices.md) — When to split, operational overhead, data isolation, team topology
+- [x] 🟡 [`service-discovery.md`](./service-discovery.md) — Client-side vs server-side discovery, Consul, Kubernetes DNS, health checks
 - [ ] 🟡 `sidecar-pattern.md` — Service mesh (Istio/Dapr/Linkerd), sidecar vs in-process, observability injection
 - [ ] 🟡 `strangler-fig-pattern.md` — Gradual monolith migration, facade routing, feature flags, dual-write
 - [ ] 🔴 `domain-driven-microservices.md` — Bounded contexts as service boundaries, anti-corruption layer, shared kernel
