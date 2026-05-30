@@ -23,8 +23,8 @@ When a question is created, mark it `[x]` and add a link to the file.
 
 ## Progress
 
-**Total:** 90 / 137
-**By difficulty:** 🟢 14/24 · 🟡 54/64 · 🔴 22/49
+**Total:** 100 / 137
+**By difficulty:** 🟢 16/24 · 🟡 61/64 · 🔴 23/49
 
 ---
 
@@ -147,22 +147,22 @@ When a question is created, mark it `[x]` and add a link to the file.
 - [x] 🟡 [`record-struct-vs-record-class.md`](./record-struct-vs-record-class.md) — Differences, defaults, perf
 - [x] 🟡 [`readonly-struct.md`](./readonly-struct.md) — Defensive copies, when to use
 - [x] 🟡 [`init-only-properties.md`](./init-only-properties.md) — `init` accessors, immutability patterns
-- [ ] 🟡 `with-expressions-and-non-destructive-mutation.md` — How `with` works
-- [ ] 🟡 `value-equality-in-records.md` — Generated `Equals`/`GetHashCode`, customization
+- [x] 🟡 [`with-expressions-and-non-destructive-mutation.md`](./with-expressions-and-non-destructive-mutation.md) — How `with` works
+- [x] 🟡 [`value-equality-in-records.md`](./value-equality-in-records.md) — Generated `Equals`/`GetHashCode`, customization
 
 ## 11. Pattern matching & switch
 
-- [ ] 🟡 `pattern-matching-overview.md` — Type, property, positional, relational, list patterns
-- [ ] 🟡 `switch-expressions.md` — vs switch statements, exhaustiveness
-- [ ] 🟡 `property-and-positional-patterns.md` — Destructuring with `Deconstruct`
-- [ ] 🔴 `list-patterns.md` — C# 11 list patterns, slicing
-- [ ] 🟢 `is-vs-as-vs-cast.md` — Differences, perf, pattern variants
+- [x] 🟡 [`pattern-matching-overview.md`](./pattern-matching-overview.md) — Type, property, positional, relational, list patterns
+- [x] 🟡 [`switch-expressions.md`](./switch-expressions.md) — vs switch statements, exhaustiveness
+- [x] 🟡 [`property-and-positional-patterns.md`](./property-and-positional-patterns.md) — Destructuring with `Deconstruct`
+- [x] 🔴 [`list-patterns.md`](./list-patterns.md) — C# 11 list patterns, slicing
+- [x] 🟢 [`is-vs-as-vs-cast.md`](./is-vs-as-vs-cast.md) — Differences, perf, pattern variants
 
 ## 12. Nullability & null handling
 
-- [ ] 🟡 `nullable-reference-types.md` — Annotation/warning contexts, project-level enablement
-- [ ] 🟢 `null-conditional-and-coalescing.md` — `?.`, `??`, `??=` patterns
-- [ ] 🟡 `null-forgiving-operator.md` — `!` operator — when justified, when a smell
+- [x] 🟡 [`nullable-reference-types.md`](./nullable-reference-types.md) — Annotation/warning contexts, project-level enablement
+- [x] 🟢 [`null-conditional-and-coalescing.md`](./null-conditional-and-coalescing.md) — `?.`, `??`, `??=` patterns
+- [x] 🟡 [`null-forgiving-operator.md`](./null-forgiving-operator.md) — `!` operator — when justified, when a smell
 - [ ] 🔴 `nullability-attributes.md` — `MaybeNull`, `NotNull`, `MemberNotNull`, etc.
 - [ ] 🟡 `argument-null-validation-patterns.md` — `ArgumentNullException.ThrowIfNull`, guards
 - [ ] 🔴 `nullable-in-generics.md` — `T?` for unconstrained generics, `default(T)` quirks

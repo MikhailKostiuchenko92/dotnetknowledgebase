@@ -56,6 +56,34 @@ Content is generated and maintained with the help of [Claude Code](https://claud
 
 ---
 
+## 🔎 Featured C# Question Index
+
+### Records, Structs & Immutability
+
+- [init-only-properties.md](./01-csharp-language/init-only-properties.md) — `init`, `required`, object initialization, and immutable models
+- [readonly-struct.md](./01-csharp-language/readonly-struct.md) — Immutability contracts, defensive copies, and `in` parameters
+- [record-struct-vs-record-class.md](./01-csharp-language/record-struct-vs-record-class.md) — Value vs reference record semantics, copying, boxing, and defaults
+- [records-vs-classes.md](./01-csharp-language/records-vs-classes.md) — Value equality, compiler-generated members, `with`, and DTO/value-object use cases
+- [value-equality-in-records.md](./01-csharp-language/value-equality-in-records.md) — Generated equality members, runtime-type checks, and customization guidance
+- [with-expressions-and-non-destructive-mutation.md](./01-csharp-language/with-expressions-and-non-destructive-mutation.md) — `with` copying mechanics, non-destructive updates, and shallow-copy caveats
+
+### Pattern Matching & Switch
+
+- [is-vs-as-vs-cast.md](./01-csharp-language/is-vs-as-vs-cast.md) — Type checks, safe casts, exception behavior, and `is T value`
+- [list-patterns.md](./01-csharp-language/list-patterns.md) — C# 11+ sequence shape matching, slices, and switch-based routing
+- [pattern-matching-overview.md](./01-csharp-language/pattern-matching-overview.md) — Constant, type, relational, logical, property, positional, and list patterns
+- [property-and-positional-patterns.md](./01-csharp-language/property-and-positional-patterns.md) — Named-member matching, `Deconstruct`, nesting, and composition
+- [switch-expressions.md](./01-csharp-language/switch-expressions.md) — Value-oriented branching, arm ordering, guards, and exhaustiveness
+
+### Nullability & Null Handling
+
+- [null-conditional-and-coalescing.md](./01-csharp-language/null-conditional-and-coalescing.md) — `?.`, `?[]`, `??`, `??=`, short-circuiting, and defaults
+- [null-forgiving-operator.md](./01-csharp-language/null-forgiving-operator.md) — What postfix `!` changes, justified uses, and common smells
+- [nullable-reference-types.md](./01-csharp-language/nullable-reference-types.md) — NRT annotations, warning contexts, flow analysis, and migration
+- [nullable-value-types.md](./01-csharp-language/nullable-value-types.md) — `Nullable<T>`, lifting, `HasValue`, boxing behavior
+
+---
+
 ## 📝 Content Templates
 
 Reusable templates live in [`_templates/`](./_templates/):

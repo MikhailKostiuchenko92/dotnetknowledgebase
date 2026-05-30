@@ -125,3 +125,20 @@ See the [BACKLOG.md](./BACKLOG.md) for the full list of planned questions and cu
 - [readonly-struct.md](./readonly-struct.md) — Immutability contracts, defensive copies, and `in` parameters
 - [record-struct-vs-record-class.md](./record-struct-vs-record-class.md) — Value vs reference record semantics, copying, boxing, and defaults
 - [records-vs-classes.md](./records-vs-classes.md) — Value equality, compiler-generated members, `with`, and DTO/value-object use cases
+- [value-equality-in-records.md](./value-equality-in-records.md) — Generated equality members, runtime-type checks, and customization guidance
+- [with-expressions-and-non-destructive-mutation.md](./with-expressions-and-non-destructive-mutation.md) — `with` copying mechanics, non-destructive updates, and shallow-copy caveats
+
+### Pattern Matching & Switch
+
+- [is-vs-as-vs-cast.md](./is-vs-as-vs-cast.md) — Type checks, safe casts, exception behavior, and `is T value`
+- [list-patterns.md](./list-patterns.md) — C# 11+ sequence shape matching, slices, and switch-based routing
+- [pattern-matching-overview.md](./pattern-matching-overview.md) — Constant, type, relational, logical, property, positional, and list patterns
+- [property-and-positional-patterns.md](./property-and-positional-patterns.md) — Named-member matching, `Deconstruct`, nesting, and composition
+- [switch-expressions.md](./switch-expressions.md) — Value-oriented branching, arm ordering, guards, and exhaustiveness
+
+### Nullability & Null Handling
+
+- [null-conditional-and-coalescing.md](./null-conditional-and-coalescing.md) — `?.`, `?[]`, `??`, `??=`, short-circuiting, and defaults
+- [null-forgiving-operator.md](./null-forgiving-operator.md) — What postfix `!` changes, justified uses, and common smells
+- [nullable-reference-types.md](./nullable-reference-types.md) — NRT annotations, warning contexts, flow analysis, and migration
+- [nullable-value-types.md](./nullable-value-types.md) — `Nullable<T>`, lifting, `HasValue`, boxing behavior
