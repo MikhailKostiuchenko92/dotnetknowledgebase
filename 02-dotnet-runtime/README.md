@@ -85,3 +85,17 @@ Browse the index below for available runtime questions. Use the [question templa
 - [volatile-and-memory-barriers.md](./volatile-and-memory-barriers.md) — CPU reordering, `volatile`, `Volatile.Read/Write`, full fences, and visibility vs atomicity
 - [task-parallel-library-internals.md](./task-parallel-library-internals.md) — `TaskScheduler`, continuations, task creation options, work-stealing, and `ValueTask` internals
 - [parallel-and-plinq.md](./parallel-and-plinq.md) — `Parallel.For`, `Parallel.ForEachAsync`, PLINQ, ordering, and degree-of-parallelism trade-offs
+
+### §6 Async/Await Internals
+- [async-await-overview.md](./async-await-overview.md) — what `async`/`await` does, TAP, and why `await` does not create a new thread
+- [task-and-valuetask.md](./task-and-valuetask.md) — `Task<T>` vs `ValueTask<T>`, allocation trade-offs, and `IValueTaskSource<T>`
+- [configureawait.md](./configureawait.md) — `ConfigureAwait(false)`, context capture, library guidance, and .NET 8 options
+- [async-void.md](./async-void.md) — why `async void` is dangerous, exception flow, and valid event-handler usage
+- [iasyncenumerable.md](./iasyncenumerable.md) — `IAsyncEnumerable<T>`, `await foreach`, async iterators, and cancellation
+- [cancellation-patterns.md](./cancellation-patterns.md) — `CancellationToken`, linked tokens, callbacks, and timeout patterns
+- [task-completion-source.md](./task-completion-source.md) — `TaskCompletionSource<T>`, callback bridging, and safe continuation scheduling
+- [async-streams.md](./async-streams.md) — async iterators, channel-backed streaming, backpressure, and `IAsyncDisposable`
+- [task-exception-handling.md](./task-exception-handling.md) — `AggregateException`, `WhenAll`, unobserved tasks, and stack-trace preservation
+- [async-state-machine.md](./async-state-machine.md) — generated `IAsyncStateMachine`, `MoveNext`, builders, and allocation behavior
+- [async-context-propagation.md](./async-context-propagation.md) — `AsyncLocal<T>`, `ExecutionContext`, flow suppression, and tracing context
+- [deadlock-in-async.md](./deadlock-in-async.md) — classic `.Result`/`.Wait()` deadlocks, why they happen, and how to avoid them

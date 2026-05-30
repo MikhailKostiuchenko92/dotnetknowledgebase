@@ -23,8 +23,8 @@ When a question is created, mark it `[x]` and add a link to the file.
 
 ## Progress
 
-**Total:** 70 / 112
-**By difficulty:** 🟢 15/24 · 🟡 34/56 · 🔴 21/32
+**Total:** 82 / 112
+**By difficulty:** 🟢 17/24 · 🟡 41/56 · 🔴 24/32
 
 ---
 
@@ -123,18 +123,18 @@ When a question is created, mark it `[x]` and add a link to the file.
 
 ## §6 Async/Await Internals (12 questions)
 
-- [ ] 🟢 `async-await-overview.md` — What async/await does, Task-based async pattern, no new thread misconception
-- [ ] 🟢 `task-and-valuetask.md` — Task\<T\> vs ValueTask\<T\>, allocation trade-offs, when ValueTask is appropriate
-- [ ] 🟡 `configureawait.md` — ConfigureAwait(false), SynchronizationContext capture, library code rule, .NET 5+ Console behavior
-- [ ] 🟡 `async-void.md` — Why async void is dangerous, unhandled exceptions, fire-and-forget pattern, event handlers
-- [ ] 🟡 `iasyncenumerable.md` — IAsyncEnumerable\<T\>, await foreach, async yield return, cancellation with WithCancellation
-- [ ] 🟡 `cancellation-patterns.md` — CancellationToken design, CancellationTokenSource, linked tokens, cooperative cancellation
-- [ ] 🟡 `task-completion-source.md` — TaskCompletionSource\<T\>, bridging callbacks to tasks, SetResult/TrySetResult
-- [ ] 🟡 `async-streams.md` — Async iterators, IAsyncEnumerable\<T\> producer, channel-based streaming, backpressure
-- [ ] 🟡 `task-exception-handling.md` — AggregateException unwrapping, UnobservedTaskException, await vs .Result, WhenAll failure
-- [ ] 🔴 `async-state-machine.md` — Compiler-generated IAsyncStateMachine, MoveNext, state fields, heap allocation per await
-- [ ] 🔴 `async-context-propagation.md` — AsyncLocal\<T\>, ExecutionContext, flow suppression, logical call context
-- [ ] 🔴 `deadlock-in-async.md` — Classic .Result/.Wait() deadlock, why it happens, ConfigureAwait, async-all-the-way rule
+- [x] 🟢 [async-await-overview.md](./async-await-overview.md) — What async/await does, Task-based async pattern, no new thread misconception
+- [x] 🟢 [task-and-valuetask.md](./task-and-valuetask.md) — Task\<T\> vs ValueTask\<T\>, allocation trade-offs, when ValueTask is appropriate
+- [x] 🟡 [configureawait.md](./configureawait.md) — ConfigureAwait(false), SynchronizationContext capture, library code rule, .NET 5+ Console behavior
+- [x] 🟡 [async-void.md](./async-void.md) — Why async void is dangerous, unhandled exceptions, fire-and-forget pattern, event handlers
+- [x] 🟡 [iasyncenumerable.md](./iasyncenumerable.md) — IAsyncEnumerable\<T\>, await foreach, async yield return, cancellation with WithCancellation
+- [x] 🟡 [cancellation-patterns.md](./cancellation-patterns.md) — CancellationToken design, CancellationTokenSource, linked tokens, cooperative cancellation
+- [x] 🟡 [task-completion-source.md](./task-completion-source.md) — TaskCompletionSource\<T\>, bridging callbacks to tasks, SetResult/TrySetResult
+- [x] 🟡 [async-streams.md](./async-streams.md) — Async iterators, IAsyncEnumerable\<T\> producer, channel-based streaming, backpressure
+- [x] 🟡 [task-exception-handling.md](./task-exception-handling.md) — AggregateException unwrapping, UnobservedTaskException, await vs .Result, WhenAll failure
+- [x] 🔴 [async-state-machine.md](./async-state-machine.md) — Compiler-generated IAsyncStateMachine, MoveNext, state fields, heap allocation per await
+- [x] 🔴 [async-context-propagation.md](./async-context-propagation.md) — AsyncLocal\<T\>, ExecutionContext, flow suppression, logical call context
+- [x] 🔴 [deadlock-in-async.md](./deadlock-in-async.md) — Classic .Result/.Wait() deadlock, why it happens, ConfigureAwait, async-all-the-way rule
 
 ---
 
