@@ -23,8 +23,8 @@ When a question is created, mark it `[x]` and add a link to the file.
 
 ## Progress
 
-**Total:** 10 / 94
-**By difficulty:** 🟢 3/18 · 🟡 5/43 · 🔴 2/33
+**Total:** 20 / 94
+**By difficulty:** 🟢 5/18 · 🟡 10/43 · 🔴 5/33
 
 ---
 
@@ -40,21 +40,21 @@ When a question is created, mark it `[x]` and add a link to the file.
 - [x] 🟡 [`owned-entities.md`](./owned-entities.md) — Owned entity types, table splitting, ComplexType (.NET 8), value objects in EF Core
 - [x] 🔴 [`ef-core-inheritance.md`](./ef-core-inheritance.md) — TPH vs TPT vs TPC strategies, discriminator column config, query and performance trade-offs
 - [x] 🔴 [`shadow-properties.md`](./shadow-properties.md) — Shadow properties, EF.Property<T>(), audit timestamps, tenant ID without polluting domain model
-- [ ] 🔴 `value-converters.md` — IValueConverter, built-in converters, JSON columns (.NET 7+), enum-to-string, Money type
-- [ ] 🔴 `global-query-filters.md` — HasQueryFilter, soft delete pattern, multi-tenancy filter, IgnoreQueryFilters()
+- [x] 🔴 [`value-converters.md`](./value-converters.md) — IValueConverter, built-in converters, JSON columns (.NET 7+), enum-to-string, Money type
+- [x] 🔴 [`global-query-filters.md`](./global-query-filters.md) — HasQueryFilter, soft delete pattern, multi-tenancy filter, IgnoreQueryFilters()
 
 ---
 
 ## §2 EF Core Querying
 
-- [ ] 🟢 `iqueryable-vs-ienumerable.md` — Deferred execution, client vs server evaluation, when the SQL query actually executes
-- [ ] 🟢 `basic-linq-queries.md` — Where/Select/OrderBy/GroupBy translation to SQL, common gotchas in LINQ-to-EF
-- [ ] 🟡 `projections-and-select.md` — Anonymous type vs DTO projections, columns fetched, AutoMapper ProjectTo<T>
-- [ ] 🟡 `filtered-include.md` — Include().Where() (.NET 5+), ThenInclude, AsSplitQuery with includes, performance notes
-- [ ] 🟡 `raw-sql-in-ef-core.md` — FromSqlRaw, FromSqlInterpolated, SqlQuery<T> (.NET 7+), ExecuteSqlRaw, SQL injection safety
-- [ ] 🟡 `compiled-queries.md` — EF.CompileQuery / EF.CompileAsyncQuery, overhead of LINQ translation, when to use
-- [ ] 🟡 `pagination-patterns.md` — OFFSET/FETCH vs keyset (cursor) pagination, IQueryable, performance at high page numbers
-- [ ] 🔴 `client-side-evaluation.md` — When EF Core falls back to client eval, how to detect via logging, avoiding memory blowups
+- [x] 🟢 [`iqueryable-vs-ienumerable.md`](./iqueryable-vs-ienumerable.md) — Deferred execution, client vs server evaluation, when the SQL query actually executes
+- [x] 🟢 [`basic-linq-queries.md`](./basic-linq-queries.md) — Where/Select/OrderBy/GroupBy translation to SQL, common gotchas in LINQ-to-EF
+- [x] 🟡 [`projections-and-select.md`](./projections-and-select.md) — Anonymous type vs DTO projections, columns fetched, AutoMapper ProjectTo<T>
+- [x] 🟡 [`filtered-include.md`](./filtered-include.md) — Include().Where() (.NET 5+), ThenInclude, AsSplitQuery with includes, performance notes
+- [x] 🟡 [`raw-sql-in-ef-core.md`](./raw-sql-in-ef-core.md) — FromSqlRaw, FromSqlInterpolated, SqlQuery<T> (.NET 7+), ExecuteSqlRaw, SQL injection safety
+- [x] 🟡 [`compiled-queries.md`](./compiled-queries.md) — EF.CompileQuery / EF.CompileAsyncQuery, overhead of LINQ translation, when to use
+- [x] 🟡 [`pagination-patterns.md`](./pagination-patterns.md) — OFFSET/FETCH vs keyset (cursor) pagination, IQueryable, performance at high page numbers
+- [x] 🔴 [`client-side-evaluation.md`](./client-side-evaluation.md) — When EF Core falls back to client eval, how to detect via logging, avoiding memory blowups
 - [ ] 🔴 `split-queries.md` — AsSplitQuery, cartesian explosion with multi-level includes, trade-offs vs single query
 - [ ] 🔴 `complex-query-patterns.md` — CTEs and window functions via raw SQL, what EF Core LINQ can't translate, hybrid approach
 

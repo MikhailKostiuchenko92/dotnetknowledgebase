@@ -17,5 +17,17 @@ _Questions are organized by sub-topic. See [BACKLOG.md](./BACKLOG.md) for the fu
 - [ef-core-migrations.md](./ef-core-migrations.md) — Migration anatomy, snapshot, migration bundles, CI/CD-safe deployment
 - [ef-core-relationships.md](./ef-core-relationships.md) — One-to-many, one-to-one, many-to-many, cascade delete configuration
 - [ef-core-seeding.md](./ef-core-seeding.md) — HasData vs migration SQL vs app-level seeders, limitations and when to use each
+- [global-query-filters.md](./global-query-filters.md) — HasQueryFilter, soft delete, multi-tenancy, IgnoreQueryFilters()
 - [owned-entities.md](./owned-entities.md) — OwnsOne/OwnsMany, table splitting, ComplexType (.NET 8), DDD value objects
 - [shadow-properties.md](./shadow-properties.md) — Shadow properties for audit/tenancy, EF.Property<T>(), interceptor-based audit trail
+- [value-converters.md](./value-converters.md) — IValueConverter, JSON columns (.NET 7+), enum-to-string, ValueComparer
+
+### §2 EF Core Querying
+- [basic-linq-queries.md](./basic-linq-queries.md) — Where/Select/OrderBy/GroupBy SQL translation, string methods, EF.Functions, gotchas
+- [client-side-evaluation.md](./client-side-evaluation.md) — When EF Core falls back to C#, detection via logging, EF Core 3+ throwing behaviour
+- [compiled-queries.md](./compiled-queries.md) — EF.CompileQuery/CompileAsyncQuery, translation overhead, restrictions
+- [filtered-include.md](./filtered-include.md) — Include().Where()/.Take(), ThenInclude, AsSplitQuery, cartesian explosion
+- [iqueryable-vs-ienumerable.md](./iqueryable-vs-ienumerable.md) — Deferred execution, expression tree vs delegate, when SQL executes
+- [pagination-patterns.md](./pagination-patterns.md) — Offset Skip/Take vs keyset (cursor) pagination, composite cursor pattern
+- [projections-and-select.md](./projections-and-select.md) — DTO projections, AutoMapper ProjectTo<T>, navigation JOINs without Include
+- [raw-sql-in-ef-core.md](./raw-sql-in-ef-core.md) — FromSqlRaw/Interpolated, SqlQuery<T> (.NET 7+), ExecuteSqlRaw, SQL injection safety
