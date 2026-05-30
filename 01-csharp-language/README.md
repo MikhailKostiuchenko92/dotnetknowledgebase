@@ -53,4 +53,23 @@ See the [BACKLOG.md](./BACKLOG.md) for the full list of planned questions and cu
 
 - [covariance-and-contravariance.md](./covariance-and-contravariance.md) — `in`/`out`, variance rules, array covariance danger
 - [generic-constraints.md](./generic-constraints.md) — `where` clauses, `struct`/`class`/`new()`/interface constraints
+- [generic-method-vs-generic-class.md](./generic-method-vs-generic-class.md) — When to make a method vs class generic, type parameter scope
+- [generic-type-inference.md](./generic-type-inference.md) — Compiler inference rules, return-type limits, partial inference
 - [generics-basics.md](./generics-basics.md) — Type parameters, JIT specialization, generic classes vs methods
+- [static-members-in-generic-types.md](./static-members-in-generic-types.md) — Per-closed-type statics, static abstract members, generic math
+
+### Delegates, Events & Lambdas
+
+- [delegates-explained.md](./delegates-explained.md) — `Action`/`Func`/`Predicate`, delegate as object, method groups
+- [event-memory-leaks.md](./event-memory-leaks.md) — Subscriber leaks, weak events, explicit unsubscription patterns
+- [events-vs-delegates.md](./events-vs-delegates.md) — `event` access restrictions, add/remove accessors, conventions
+- [expression-trees.md](./expression-trees.md) — `Expression<Func<T>>`, AST nodes, EF Core translation, dynamic build
+### Async / Await / Tasks
+
+- [async-await-fundamentals.md](./async-await-fundamentals.md) — State machine lowering, `await` suspension, synchronous fast path
+- [configure-await-false.md](./configure-await-false.md) — Context capture, deadlock prevention, library vs app code, .NET 8 options
+- [synchronization-context.md](./synchronization-context.md) — WPF/WinForms/ASP.NET Classic/Core behavior, `AsyncLocal` vs SC
+- [task-vs-thread.md](./task-vs-thread.md) — Thread pool vs raw thread, when to use `new Thread`, `LongRunning`
+- [task-vs-valuetask.md](./task-vs-valuetask.md) — Synchronous fast path, allocation savings, single-await rule
+- [lambda-expressions-and-closures.md](./lambda-expressions-and-closures.md) — Closure class generation, loop-variable bug, `static` lambda
+- [multicast-delegates.md](./multicast-delegates.md) — Invocation list, return value discard, exception isolation

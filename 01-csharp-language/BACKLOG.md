@@ -23,8 +23,8 @@ When a question is created, mark it `[x]` and add a link to the file.
 
 ## Progress
 
-**Total:** 35 / 137
-**By difficulty:** 🟢 9/24 · 🟡 19/64 · 🔴 7/49
+**Total:** 50 / 137
+**By difficulty:** 🟢 13/24 · 🟡 26/64 · 🔴 13/49
 
 ---
 
@@ -74,27 +74,27 @@ When a question is created, mark it `[x]` and add a link to the file.
 - [x] 🟢 [`generics-basics.md`](./generics-basics.md) — Type parameters, why generics exist
 - [x] 🟡 [`generic-constraints.md`](./generic-constraints.md) — `where T : class/struct/new()/IComparable/...`
 - [x] 🔴 [`covariance-and-contravariance.md`](./covariance-and-contravariance.md) — `in`/`out`, real-world examples, array covariance
-- [ ] 🟡 `generic-method-vs-generic-class.md` — When to put generics where
-- [ ] 🟡 `generic-type-inference.md` — When the compiler can/can't infer
-- [ ] 🔴 `static-members-in-generic-types.md` — Per-closed-type statics, generic math (`INumber<T>`)
+- [x] 🟡 [`generic-method-vs-generic-class.md`](./generic-method-vs-generic-class.md) — When to put generics where
+- [x] 🟡 [`generic-type-inference.md`](./generic-type-inference.md) — When the compiler can/can't infer
+- [x] 🔴 [`static-members-in-generic-types.md`](./static-members-in-generic-types.md) — Per-closed-type statics, generic math (`INumber<T>`)
 
 ## 5. Delegates, events, lambdas
 
-- [ ] 🟢 `delegates-explained.md` — What they are, `Action`/`Func`/`Predicate`
-- [ ] 🟡 `multicast-delegates.md` — Invocation list, return values, exceptions
-- [ ] 🟡 `events-vs-delegates.md` — Why events exist, encapsulation, conventions
-- [ ] 🔴 `event-memory-leaks.md` — Subscriber leaks, weak events, unsubscribe patterns
-- [ ] 🟡 `lambda-expressions-and-closures.md` — Captured variables, allocation cost, bugs
-- [ ] 🔴 `expression-trees.md` — `Expression<Func<T>>`, EF usage, building dynamically
-- [ ] 🟢 `func-vs-action-vs-predicate.md` — When to use each, return semantics
+- [x] 🟢 [`delegates-explained.md`](./delegates-explained.md) — What they are, `Action`/`Func`/`Predicate`
+- [x] 🟡 [`multicast-delegates.md`](./multicast-delegates.md) — Invocation list, return values, exceptions
+- [x] 🟡 [`events-vs-delegates.md`](./events-vs-delegates.md) — Why events exist, encapsulation, conventions
+- [x] 🔴 [`event-memory-leaks.md`](./event-memory-leaks.md) — Subscriber leaks, weak events, unsubscribe patterns
+- [x] 🟡 [`lambda-expressions-and-closures.md`](./lambda-expressions-and-closures.md) — Captured variables, allocation cost, bugs
+- [x] 🔴 [`expression-trees.md`](./expression-trees.md) — `Expression<Func<T>>`, EF usage, building dynamically
+- [x] 🟢 [`func-vs-action-vs-predicate.md`](./func-vs-action-vs-predicate.md) — When to use each, return semantics
 
 ## 6. Async / await / Tasks
 
-- [ ] 🟡 `async-await-fundamentals.md` — State machine, continuation, what `async` does
-- [ ] 🟡 `task-vs-thread.md` — Abstraction, when not to use threads directly
-- [ ] 🔴 `task-vs-valuetask.md` — When `ValueTask` helps, allocation savings, restrictions
-- [ ] 🔴 `configure-await-false.md` — When/why, library vs app code, .NET 6+ behavior
-- [ ] 🔴 `synchronization-context.md` — ASP.NET classic vs Core, WPF/WinForms, continuations
+- [x] 🟡 [`async-await-fundamentals.md`](./async-await-fundamentals.md) — State machine, continuation, what `async` does
+- [x] 🟡 [`task-vs-thread.md`](./task-vs-thread.md) — Abstraction, when not to use threads directly
+- [x] 🔴 [`task-vs-valuetask.md`](./task-vs-valuetask.md) — When `ValueTask` helps, allocation savings, restrictions
+- [x] 🔴 [`configure-await-false.md`](./configure-await-false.md) — When/why, library vs app code, .NET 6+ behavior
+- [x] 🔴 [`synchronization-context.md`](./synchronization-context.md) — ASP.NET classic vs Core, WPF/WinForms, continuations
 - [ ] 🟡 `async-void-pitfalls.md` — Why to avoid, only-for-event-handlers rule
 - [ ] 🔴 `deadlocks-with-result-and-wait.md` — `.Result`/`.Wait()` deadlock, how to fix
 - [ ] 🟡 `cancellation-tokens.md` — Cooperative cancellation, propagation, `OperationCanceledException`
