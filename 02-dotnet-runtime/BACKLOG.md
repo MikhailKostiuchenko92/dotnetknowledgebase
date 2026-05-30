@@ -3,6 +3,8 @@
 Master list of planned questions for the `02-dotnet-runtime` section.
 Use this file as the single source of truth for what to add next.
 
+> ✅ COMPLETE — all 112 questions for `02-dotnet-runtime` are now written.
+
 ## How to use with Claude Code
 
 - **Add one:** _"add a dotnet-runtime question on `gc-generations` from BACKLOG.md"_
@@ -23,8 +25,8 @@ When a question is created, mark it `[x]` and add a link to the file.
 
 ## Progress
 
-**Total:** 98 / 112
-**By difficulty:** 🟢 21/24 · 🟡 49/56 · 🔴 28/32
+**Total:** 112 / 112
+**By difficulty:** 🟢 24/24 · 🟡 56/56 · 🔴 32/32
 
 ---
 
@@ -108,16 +110,16 @@ When a question is created, mark it `[x]` and add a link to the file.
 - [x] 🟢 [threadpool-basics.md](./threadpool-basics.md) — CLR ThreadPool, QueueUserWorkItem, I/O completion port threads, min/max thread counts
 - [x] 🟢 [synchronization-primitives-overview.md](./synchronization-primitives-overview.md) — lock, Monitor, Mutex, Semaphore — what each is and when to pick it
 - [x] 🟡 [threadpool-internals.md](./threadpool-internals.md) — Work-stealing deques, local vs global queue, hill-climbing algorithm, thread injection
-- [ ] 🟡 `thread-local-storage.md` — ThreadLocal\<T\>, [ThreadStatic], differences, when to use, thread-affine resources
-- [ ] 🟡 `synchronization-context.md` — What SynchronizationContext does, ASP.NET Classic vs Core vs WinForms vs null
-- [ ] 🟡 `semaphoreslim-and-manualresetevent.md` — SemaphoreSlim (async-compatible), ManualResetEventSlim, CountdownEvent
-- [ ] 🟡 `concurrent-collections.md` — ConcurrentDictionary, ConcurrentQueue, ConcurrentBag, ConcurrentStack — internals and gotchas
-- [ ] 🟡 `channel-t.md` — System.Threading.Channels, BoundedChannel vs UnboundedChannel, producer-consumer pattern
-- [ ] 🟡 `reader-writer-lock.md` — ReaderWriterLockSlim, upgradeable read lock, lock convoy, read-heavy workloads
-- [ ] 🔴 `spinlock-and-interlocked.md` — SpinLock, SpinWait, Interlocked CAS, ABA problem, when spinning beats blocking
-- [ ] 🔴 `volatile-and-memory-barriers.md` — volatile keyword, Thread.MemoryBarrier, Volatile.Read/Write, CPU reordering
-- [ ] 🔴 `task-parallel-library-internals.md` — TaskScheduler, work-stealing, continuation chaining, TaskCreationOptions
-- [ ] 🔴 `parallel-and-plinq.md` — Parallel.For/ForEach partitioning, PLINQ AsParallel, degree of parallelism, ordering cost
+- [x] 🟡 [thread-local-storage.md](./thread-local-storage.md) — ThreadLocal\<T\>, [ThreadStatic], differences, when to use, thread-affine resources
+- [x] 🟡 [synchronization-context.md](./synchronization-context.md) — What SynchronizationContext does, ASP.NET Classic vs Core vs WinForms vs null
+- [x] 🟡 [semaphoreslim-and-manualresetevent.md](./semaphoreslim-and-manualresetevent.md) — SemaphoreSlim (async-compatible), ManualResetEventSlim, CountdownEvent
+- [x] 🟡 [concurrent-collections.md](./concurrent-collections.md) — ConcurrentDictionary, ConcurrentQueue, ConcurrentBag, ConcurrentStack — internals and gotchas
+- [x] 🟡 [channel-t.md](./channel-t.md) — System.Threading.Channels, BoundedChannel vs UnboundedChannel, producer-consumer pattern
+- [x] 🟡 [reader-writer-lock.md](./reader-writer-lock.md) — ReaderWriterLockSlim, upgradeable read lock, lock convoy, read-heavy workloads
+- [x] 🔴 [spinlock-and-interlocked.md](./spinlock-and-interlocked.md) — SpinLock, SpinWait, Interlocked CAS, ABA problem, when spinning beats blocking
+- [x] 🔴 [volatile-and-memory-barriers.md](./volatile-and-memory-barriers.md) — volatile keyword, Thread.MemoryBarrier, Volatile.Read/Write, CPU reordering
+- [x] 🔴 [task-parallel-library-internals.md](./task-parallel-library-internals.md) — TaskScheduler, work-stealing, continuation chaining, TaskCreationOptions
+- [x] 🔴 [parallel-and-plinq.md](./parallel-and-plinq.md) — Parallel.For/ForEach partitioning, PLINQ AsParallel, degree of parallelism, ordering cost
 
 ---
 
@@ -164,26 +166,24 @@ When a question is created, mark it `[x]` and add a link to the file.
 
 ---
 
-## §9 Diagnostics & Performance Tooling (10 questions)
+## §9 Diagnostics & Observability (8 questions)
 
-- [ ] 🟢 `dotnet-diagnostics-tools.md` — dotnet-counters, dotnet-trace, dotnet-dump, dotnet-gcdump, dotnet-monitor overview
-- [ ] 🟢 `benchmarkdotnet-basics.md` — BenchmarkDotNet setup, [Benchmark], MemoryDiagnoser, Job configs, how to interpret results
-- [ ] 🟡 `eventsource-and-etw.md` — EventSource, EventListener, ETW providers, semantic logging, well-known .NET providers
-- [ ] 🟡 `activity-and-opentelemetry.md` — Activity/ActivitySource, DiagnosticSource, OTel .NET SDK, W3C TraceContext
-- [ ] 🟡 `dotnet-metrics.md` — System.Diagnostics.Metrics, Meter/Counter/Histogram, IMeterFactory (.NET 8), Prometheus export
-- [ ] 🟡 `gc-diagnostics.md` — GC ETW events, dotnet-gcdump, heap dump analysis, GCMemoryInfo, Gen2 fragmentation
-- [ ] 🟡 `loggermessage-source-gen.md` — LoggerMessage.Define vs source-gen [LoggerMessage], zero-allocation logging, performance
-- [ ] 🔴 `jit-diagnostics-deep.md` — DOTNET_JitDisasm, DOTNET_JitDump, PerfView JIT events, inlining decisions, BenchmarkDotNet disasm
-- [ ] 🔴 `profiling-approaches.md` — Sampling vs instrumentation profiling, VS Profiler, dotTrace, async call stacks, wall time vs CPU
-- [ ] 🔴 `production-diagnostics.md` — Dump collection (createdump, procdump), EventPipe, live counters, .NET Monitor sidecar
+- [x] 🟢 [dotnet-diagnostics-tools.md](./dotnet-diagnostics-tools.md) — `dotnet-counters`, `dotnet-trace`, `dotnet-dump`, `dotnet-gcdump`, `dotnet-stack`
+- [x] 🟡 [event-source-and-etw.md](./event-source-and-etw.md) — `EventSource`, ETW/EventPipe, `EventListener`, keywords, and channels
+- [x] 🟡 [activity-and-opentelemetry.md](./activity-and-opentelemetry.md) — `Activity`, `ActivitySource`, TraceContext, baggage, and OpenTelemetry
+- [x] 🟡 [metrics-api.md](./metrics-api.md) — `Meter`, `Counter<T>`, `Histogram<T>`, `ObservableGauge<T>`, and `IMeterFactory`
+- [x] 🟡 [memory-profiling-and-leaks.md](./memory-profiling-and-leaks.md) — leak patterns, heap analysis, `dotnet-gcdump`, `dotnet-dump`, disposal verification
+- [x] 🟡 [exception-monitoring-in-production.md](./exception-monitoring-in-production.md) — unhandled exceptions, unobserved tasks, structured logging, telemetry SDKs
+- [x] 🔴 [performance-counters-and-eventpipe.md](./performance-counters-and-eventpipe.md) — EventPipe providers, `DiagnosticsClient`, runtime providers, profiler attachment
+- [x] 🔴 [benchmarkdotnet-basics.md](./benchmarkdotnet-basics.md) — BenchmarkDotNet setup, params, diagnosers, baselines, and common pitfalls
 
 ---
 
-## §10 Runtime Deployment & Configuration (6 questions)
+## §10 Deployment & Runtime Configuration (6 questions)
 
-- [ ] 🟢 `dotnet-versioning-model.md` — SemVer in .NET, TFM (net8.0, net9.0), RID catalog, version compatibility rules
-- [ ] 🟢 `self-contained-vs-framework-dependent.md` — FDD vs SCD deployment, side-by-side installs, trimming applicability, size trade-offs
-- [ ] 🟡 `single-file-apps.md` — PublishSingleFile, extraction behavior, native binaries bundling, debugging single-file
-- [ ] 🟡 `cross-platform-considerations.md` — RuntimeInformation, OSPlatform guards, path separator, P/Invoke on Linux/macOS
-- [ ] 🟡 `globalization-modes.md` — ICU vs NLS, invariant globalization mode (DOTNET_SYSTEM_GLOBALIZATION_INVARIANT), WASM impact
-- [ ] 🔴 `trimming-and-aot-compatibility.md` — RequiresUnreferencedCode, RequiresDynamicCode, trim analyzers, making libraries trim-safe
+- [x] 🟢 [self-contained-vs-framework-dependent.md](./self-contained-vs-framework-dependent.md) — Framework-dependent vs self-contained deployment, single-file, trimming, Native AOT
+- [x] 🟡 [runtime-identifier-and-rid-graph.md](./runtime-identifier-and-rid-graph.md) — RID syntax, fallback graph, portable vs specific RIDs, runtime asset selection
+- [x] 🟡 [multi-targeting-and-tfms.md](./multi-targeting-and-tfms.md) — TFMs, multi-targeting, preprocessor symbols, platform analyzers, NuGet selection
+- [x] 🟡 [dotnet-publish-and-build-outputs.md](./dotnet-publish-and-build-outputs.md) — `dotnet build` vs `dotnet publish`, apphost, ReadyToRun, publish structure
+- [x] 🟡 [containers-and-dotnet.md](./containers-and-dotnet.md) — SDK container publish, base images, chiseled images, container-aware GC
+- [x] 🟢 [dotnet-versioning-and-support.md](./dotnet-versioning-and-support.md) — .NET release cadence, LTS/STS, `.NET Standard`, `global.json`

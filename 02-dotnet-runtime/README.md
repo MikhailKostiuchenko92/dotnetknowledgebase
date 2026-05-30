@@ -119,3 +119,21 @@ Browse the index below for available runtime questions. Use the [question templa
 - [function-pointers-in-csharp.md](./function-pointers-in-csharp.md) — `delegate*`, unmanaged call conventions, and `SuppressGCTransition`
 - [source-generated-pinvoke.md](./source-generated-pinvoke.md) — compile-time P/Invoke stubs, AOT safety, and migration from `DllImport`
 - [native-memory-management.md](./native-memory-management.md) — `NativeMemory`, HGlobal/CoTaskMem, span reinterpretation, and ownership
+
+### §9 Diagnostics & Observability
+- [dotnet-diagnostics-tools.md](./dotnet-diagnostics-tools.md) — `dotnet-counters`, `dotnet-trace`, `dotnet-dump`, `dotnet-gcdump`, and `dotnet-stack`
+- [event-source-and-etw.md](./event-source-and-etw.md) — `EventSource`, ETW/EventPipe, `EventListener`, keywords, channels, and filtering
+- [activity-and-opentelemetry.md](./activity-and-opentelemetry.md) — `Activity`, `ActivitySource`, W3C TraceContext, baggage, and OpenTelemetry wiring
+- [metrics-api.md](./metrics-api.md) — `Meter`, counters, histograms, gauges, `IMeterFactory`, and custom metrics
+- [memory-profiling-and-leaks.md](./memory-profiling-and-leaks.md) — Heap analysis, leak patterns, GC dumps, full dumps, and weak associations
+- [exception-monitoring-in-production.md](./exception-monitoring-in-production.md) — Unhandled exceptions, unobserved tasks, structured logging, and telemetry SDKs
+- [performance-counters-and-eventpipe.md](./performance-counters-and-eventpipe.md) — EventPipe, runtime providers, `DiagnosticsClient`, and profiler attachment
+- [benchmarkdotnet-basics.md](./benchmarkdotnet-basics.md) — BenchmarkDotNet setup, params, diagnosers, baselines, and benchmarking pitfalls
+
+### §10 Deployment & Runtime Configuration
+- [self-contained-vs-framework-dependent.md](./self-contained-vs-framework-dependent.md) — FDD vs SCD, single-file publishing, trimming, and Native AOT trade-offs
+- [runtime-identifier-and-rid-graph.md](./runtime-identifier-and-rid-graph.md) — RID syntax, fallback graph, portable vs non-portable RIDs, and native asset selection
+- [multi-targeting-and-tfms.md](./multi-targeting-and-tfms.md) — TFMs, multi-targeting, preprocessor symbols, and platform compatibility analyzers
+- [dotnet-publish-and-build-outputs.md](./dotnet-publish-and-build-outputs.md) — `dotnet build` vs `dotnet publish`, apphost, ReadyToRun, and publish output structure
+- [containers-and-dotnet.md](./containers-and-dotnet.md) — SDK container publishing, base images, chiseled images, and container-aware GC
+- [dotnet-versioning-and-support.md](./dotnet-versioning-and-support.md) — LTS vs STS, `.NET Standard`, `global.json`, and support lifecycle
