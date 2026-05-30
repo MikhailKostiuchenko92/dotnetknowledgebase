@@ -96,6 +96,15 @@ Interview-ready deep-dives into distributed systems design, architecture pattern
 - [strangler-fig-pattern.md](./strangler-fig-pattern.md) — Incremental migration, dual-write, CDC, canary routing, cutover checklist
 
 ### §9 Observability & Reliability
+- [chaos-engineering.md](./chaos-engineering.md) — Steady-state hypothesis, blast radius, Chaos Mesh, Azure Chaos Studio
+- [graceful-degradation-patterns.md](./graceful-degradation-patterns.md) — Stale cache fallback, Polly fallback pipeline, feature flags, shed load
+- [health-checks-in-aspnet-core.md](./health-checks-in-aspnet-core.md) — IHealthCheck, liveness/readiness/startup, Kubernetes probe config
 - [metrics-and-alerting.md](./metrics-and-alerting.md) — RED/USE, Prometheus histograms, alert rules, SLO burn rate
 - [observability-three-pillars.md](./observability-three-pillars.md) — Logs, metrics, traces, OpenTelemetry unified pipeline
+- [slos-slas-error-budgets.md](./slos-slas-error-budgets.md) — SLI/SLO/SLA, error budget, multi-window burn rate alerts
 - [structured-logging-patterns.md](./structured-logging-patterns.md) — Serilog, correlation IDs, PII scrubbing, log aggregation
+
+### §10 Performance & Scalability Patterns
+- [async-io-and-throughput.md](./async-io-and-throughput.md) — Kestrel async I/O, thread pool, I/O completion ports, Pipelines
+- [connection-pooling-at-scale.md](./connection-pooling-at-scale.md) — SocketsHttpHandler, DB pool sizing formula, PgBouncer
+- [load-balancing-strategies.md](./load-balancing-strategies.md) — Round-robin, least-connections, consistent hashing, L4 vs L7

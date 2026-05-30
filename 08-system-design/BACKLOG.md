@@ -23,8 +23,8 @@ When a question is created, mark it `[x]` and add a link to the file.
 
 ## Progress
 
-**Total:** 75 / 120
-**By difficulty:** 🟢 9/24 · 🟡 37/54 · 🔴 29/42
+**Total:** 85 / 120
+**By difficulty:** 🟢 10/24 · 🟡 41/54 · 🔴 34/42
 
 ---
 
@@ -132,16 +132,16 @@ When a question is created, mark it `[x]` and add a link to the file.
 - [x] 🟢 [`observability-three-pillars.md`](./observability-three-pillars.md) — Logs, metrics, traces — what each answers, OpenTelemetry as the standard
 - [x] 🟡 [`structured-logging-patterns.md`](./structured-logging-patterns.md) — Serilog/NLog, log levels, correlation IDs, PII scrubbing, log aggregation
 - [x] 🟡 [`metrics-and-alerting.md`](./metrics-and-alerting.md) — RED (Rate/Errors/Duration), USE (Utilization/Saturation/Errors), Prometheus/Grafana
-- [ ] 🟡 `health-checks-in-aspnet-core.md` — `IHealthCheck`, liveness vs readiness vs startup probes, Kubernetes integration
-- [ ] 🔴 `slos-slas-error-budgets.md` — SLI/SLO/SLA definitions, error budget burn rate, toil vs reliability work
-- [ ] 🔴 `chaos-engineering.md` — Principles, blast radius, steady-state hypothesis, tools (Chaos Monkey, Azure Chaos Studio)
-- [ ] 🟡 `graceful-degradation-patterns.md` — Fallbacks, stale data serving, feature flags, dependency timeouts
+- [x] 🟡 [`health-checks-in-aspnet-core.md`](./health-checks-in-aspnet-core.md) — `IHealthCheck`, liveness vs readiness vs startup probes, Kubernetes integration
+- [x] 🔴 [`slos-slas-error-budgets.md`](./slos-slas-error-budgets.md) — SLI/SLO/SLA definitions, error budget burn rate, toil vs reliability work
+- [x] 🔴 [`chaos-engineering.md`](./chaos-engineering.md) — Principles, blast radius, steady-state hypothesis, tools (Chaos Monkey, Azure Chaos Studio)
+- [x] 🟡 [`graceful-degradation-patterns.md`](./graceful-degradation-patterns.md) — Fallbacks, stale data serving, feature flags, dependency timeouts
 
 ## 10. Performance & Scalability Patterns
 
-- [ ] 🟢 `load-balancing-strategies.md` — Round-robin, least-connections, IP-hash, weighted, health-based
-- [ ] 🟡 `connection-pooling-at-scale.md` — HTTP keep-alive, gRPC connection management, database pool sizing formula
-- [ ] 🟡 `async-io-and-throughput.md` — Why async matters for web servers, Kestrel thread model, I/O completion ports
+- [x] 🟢 [`load-balancing-strategies.md`](./load-balancing-strategies.md) — Round-robin, least-connections, IP-hash, weighted, health-based
+- [x] 🟡 [`connection-pooling-at-scale.md`](./connection-pooling-at-scale.md) — HTTP keep-alive, gRPC connection management, database pool sizing formula
+- [x] 🟡 [`async-io-and-throughput.md`](./async-io-and-throughput.md) — Why async matters for web servers, Kestrel thread model, I/O completion ports
 - [ ] 🔴 `backpressure-patterns.md` — Bounded queues, `Channel<T>` back-pressure, TCP receive buffer, drop vs block
 - [ ] 🔴 `cqrs-and-read-models.md` — Command/query separation, separate read DB, eventual consistency, projection rebuild
 - [ ] 🟡 `bulkhead-pattern.md` — Isolating failures, thread pool partitioning, Polly `Bulkhead`, resource limits
