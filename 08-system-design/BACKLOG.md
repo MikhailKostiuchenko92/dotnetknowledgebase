@@ -23,8 +23,8 @@ When a question is created, mark it `[x]` and add a link to the file.
 
 ## Progress
 
-**Total:** 5 / 120
-**By difficulty:** 🟢 2/24 · 🟡 3/54 · 🔴 0/42
+**Total:** 15 / 120
+**By difficulty:** 🟢 3/24 · 🟡 8/54 · 🔴 4/42
 
 ---
 
@@ -35,19 +35,19 @@ When a question is created, mark it `[x]` and add a link to the file.
 - [x] 🟡 [`cap-theorem.md`](./cap-theorem.md) — CAP theorem, CP vs AP systems, network partition tolerance, practical examples
 - [x] 🟡 [`pacelc-theorem.md`](./pacelc-theorem.md) — Extension of CAP: latency vs consistency trade-off even without partition
 - [x] 🟡 [`eventual-consistency.md`](./eventual-consistency.md) — What it means, read-your-writes, monotonic reads, causal consistency
-- [ ] 🔴 `strong-vs-eventual-consistency-patterns.md` — CRDT, vector clocks, last-write-wins, conflict resolution
-- [ ] 🟡 `latency-numbers.md` — L1/L2 cache, RAM, SSD, network round trips — orders of magnitude every engineer should know
-- [ ] 🟢 `single-points-of-failure.md` — Identifying SPOFs, redundancy strategies, active-active vs active-passive
-- [ ] 🟡 `fault-tolerance-vs-high-availability.md` — Graceful degradation, bulkhead pattern, circuit breaker
-- [ ] 🔴 `distributed-transactions.md` — 2PC, saga pattern (choreography vs orchestration), outbox pattern
+- [x] 🔴 [`strong-vs-eventual-consistency-patterns.md`](./strong-vs-eventual-consistency-patterns.md) — CRDT, vector clocks, last-write-wins, conflict resolution
+- [x] 🟡 [`latency-numbers.md`](./latency-numbers.md) — L1/L2 cache, RAM, SSD, network round trips — orders of magnitude every engineer should know
+- [x] 🟢 [`single-points-of-failure.md`](./single-points-of-failure.md) — Identifying SPOFs, redundancy strategies, active-active vs active-passive
+- [x] 🟡 [`fault-tolerance-vs-high-availability.md`](./fault-tolerance-vs-high-availability.md) — Graceful degradation, bulkhead pattern, circuit breaker
+- [x] 🔴 [`distributed-transactions.md`](./distributed-transactions.md) — 2PC, saga pattern (choreography vs orchestration), outbox pattern
 
 ## 2. APIs & Communication
 
-- [ ] 🟢 `rest-api-design-principles.md` — Resources, HTTP verbs, status codes, idempotency, versioning strategies
-- [ ] 🟡 `rest-vs-grpc-vs-graphql.md` — Trade-offs: payload size, contract, streaming, browser support, .NET tooling
-- [ ] 🟡 `api-versioning-strategies.md` — URL path, header, query param, content negotiation; deprecation lifecycle
-- [ ] 🟡 `api-gateway-pattern.md` — Routing, auth, rate limiting, aggregation, BFF (Backend-for-Frontend)
-- [ ] 🟡 `grpc-in-dotnet.md` — Protobuf, streaming modes (unary/server/client/bidirectional), deadlines, .NET specifics
+- [x] 🟢 [`rest-api-design-principles.md`](./rest-api-design-principles.md) — Resources, HTTP verbs, status codes, idempotency, versioning strategies
+- [x] 🟡 [`rest-vs-grpc-vs-graphql.md`](./rest-vs-grpc-vs-graphql.md) — Trade-offs: payload size, contract, streaming, browser support, .NET tooling
+- [x] 🟡 [`api-versioning-strategies.md`](./api-versioning-strategies.md) — URL path, header, query param, content negotiation; deprecation lifecycle
+- [x] 🟡 [`api-gateway-pattern.md`](./api-gateway-pattern.md) — Routing, auth, rate limiting, aggregation, BFF (Backend-for-Frontend)
+- [x] 🟡 [`grpc-in-dotnet.md`](./grpc-in-dotnet.md) — Protobuf, streaming modes (unary/server/client/bidirectional), deadlines, .NET specifics
 - [ ] 🔴 `graphql-design-tradeoffs.md` — N+1 problem, DataLoader, schema stitching, persisted queries, when NOT to use
 - [ ] 🟡 `webhooks-vs-polling-vs-sse.md` — Push vs pull, reliability guarantees, event delivery, retry logic
 - [ ] 🔴 `idempotency-in-apis.md` — Idempotency keys, at-least-once delivery, deduplication patterns
