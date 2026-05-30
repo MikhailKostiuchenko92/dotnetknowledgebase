@@ -23,8 +23,8 @@ When a question is created, mark it `[x]` and add a link to the file.
 
 ## Progress
 
-**Total:** 70 / 94
-**By difficulty:** 🟢 15/18 · 🟡 31/43 · 🔴 24/33
+**Total:** 80 / 94
+**By difficulty:** 🟢 17/18 · 🟡 35/43 · 🔴 28/33
 
 ---
 
@@ -135,25 +135,25 @@ When a question is created, mark it `[x]` and add a link to the file.
 - [x] 🔴 [`index-design-patterns.md`](./index-design-patterns.md) — Composite index column ordering, include columns, filtered indexes, missing index DMVs
 - [x] 🔴 [`query-hints-and-optimizer.md`](./query-hints-and-optimizer.md) — NOLOCK risks (dirty reads), READPAST, UPDLOCK, FORCESEEK — when hints help vs hurt
 - [x] 🔴 [`database-partitioning.md`](./database-partitioning.md) — Table partitioning by range/list, partition pruning, horizontal vs vertical partitioning
-- [ ] 🔴 `full-text-search.md` — SQL Server FTS vs LIKE/ILIKE, CONTAINS/FREETEXT, when to prefer Elasticsearch, .NET integration
-- [ ] 🔴 `query-performance-tuning-workflow.md` — Systematic approach: slow query log → execution plan → index → query rewrite → schema
+- [x] 🔴 [`full-text-search.md`](./full-text-search.md) — SQL Server FTS vs LIKE/ILIKE, CONTAINS/FREETEXT, when to prefer Elasticsearch, .NET integration
+- [x] 🔴 [`query-performance-tuning-workflow.md`](./query-performance-tuning-workflow.md) — Systematic approach: slow query log → execution plan → index → query rewrite → schema
 
 ---
 
 ## §9 Repository & Unit of Work Patterns
 
-- [ ] 🟢 `repository-pattern-basics.md` — Why repository, domain-oriented interface, hiding persistence technology from domain
-- [ ] 🟡 `unit-of-work-pattern.md` — Transaction boundary abstraction, IUnitOfWork, why DbContext already implements UoW
-- [ ] 🟡 `generic-vs-specific-repository.md` — IRepository<T> pros/cons, specific repositories per aggregate, combining both
-- [ ] 🟡 `repository-with-ef-core.md` — Whether to wrap DbContext, value of the abstraction, integration with CQRS read side
-- [ ] 🔴 `repository-anti-patterns.md` — Leaking IQueryable, repository-over-repository, unnecessary abstraction, testability false promise
-- [ ] 🔴 `specification-pattern-data-access.md` — ISpecification<T> with EF Core, composable specifications, Ardalis.Specification
+- [x] 🟢 [`repository-pattern-basics.md`](./repository-pattern-basics.md) — Why repository, domain-oriented interface, hiding persistence technology from domain
+- [x] 🟡 [`unit-of-work-pattern.md`](./unit-of-work-pattern.md) — Transaction boundary abstraction, IUnitOfWork, why DbContext already implements UoW
+- [x] 🟡 [`generic-vs-specific-repository.md`](./generic-vs-specific-repository.md) — IRepository<T> pros/cons, specific repositories per aggregate, combining both
+- [x] 🟡 [`repository-with-ef-core.md`](./repository-with-ef-core.md) — Whether to wrap DbContext, value of the abstraction, integration with CQRS read side
+- [x] 🔴 [`repository-anti-patterns.md`](./repository-anti-patterns.md) — Leaking IQueryable, repository-over-repository, unnecessary abstraction, testability false promise
+- [x] 🔴 [`specification-pattern-data-access.md`](./specification-pattern-data-access.md) — ISpecification<T> with EF Core, composable specifications, Ardalis.Specification
 
 ---
 
 ## §10 Migrations & Schema Management
 
-- [ ] 🟢 `ef-core-migrations-deep-dive.md` — Migration file anatomy, snapshot role, migration history table, idempotent scripts
+- [x] 🟢 [`ef-core-migrations-deep-dive.md`](./ef-core-migrations-deep-dive.md) — Migration file anatomy, snapshot role, migration history table, idempotent scripts
 - [ ] 🟡 `migrations-in-production.md` — Running at startup risks, migration bundles, idempotent SQL scripts, Blue/Green deployment
 - [ ] 🟡 `zero-downtime-migrations.md` — Expand-contract (parallel change) pattern, additive-only changes, non-breaking schema evolution
 - [ ] 🟡 `dbup-and-fluentmigrator.md` — SQL script-based migrations with DbUp, FluentMigrator DSL, comparison to EF Core migrations

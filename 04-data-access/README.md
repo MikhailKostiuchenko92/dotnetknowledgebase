@@ -93,3 +93,16 @@ _Questions are organized by sub-topic. See [BACKLOG.md](./BACKLOG.md) for the fu
 - [sql-join-types.md](./sql-join-types.md) — INNER/LEFT/RIGHT/FULL OUTER/CROSS JOIN, LEFT JOIN + WHERE trap
 - [sql-vs-nosql-for-dotnet.md](./sql-vs-nosql-for-dotnet.md) — NoSQL categories, when SQL wins, Redis/MongoDB/.NET integration
 - [stored-procedures-vs-orm.md](./stored-procedures-vs-orm.md) — Plan caching, security isolation, SP vs LINQ trade-offs, when to choose each
+- [full-text-search.md](./full-text-search.md) — SQL Server FTS, CONTAINS/FREETEXT, vs LIKE, Elasticsearch/.NET integration
+- [query-performance-tuning-workflow.md](./query-performance-tuning-workflow.md) — Identify → baseline → plan analysis → index/rewrite → validate → monitor
+
+### §9 Repository & Unit of Work Patterns
+- [generic-vs-specific-repository.md](./generic-vs-specific-repository.md) — IRepository<T> pros/cons, hybrid pattern, avoiding IQueryable leakage
+- [repository-anti-patterns.md](./repository-anti-patterns.md) — IQueryable leak, repo-over-repo, unnecessary abstraction, testability false promise
+- [repository-pattern-basics.md](./repository-pattern-basics.md) — Domain-oriented interface, EF Core implementation, in-memory fake for unit tests
+- [repository-with-ef-core.md](./repository-with-ef-core.md) — When to wrap DbContext, CQRS read side, clean architecture DI wiring
+- [specification-pattern-data-access.md](./specification-pattern-data-access.md) — ISpecification<T>, EF Core evaluator, Ardalis.Specification, composable queries
+- [unit-of-work-pattern.md](./unit-of-work-pattern.md) — IUnitOfWork, DbContext as UoW, coordinating repositories, explicit transactions
+
+### §10 Migrations & Schema Management
+- [ef-core-migrations-deep-dive.md](./ef-core-migrations-deep-dive.md) — Migration anatomy, ModelSnapshot, migration history table, idempotent scripts, bundles
