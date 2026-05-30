@@ -23,8 +23,8 @@ When a question is created, mark it `[x]` and add a link to the file.
 
 ## Progress
 
-**Total:** 10 / 106
-**By difficulty:** 🟢 3/21 · 🟡 7/47 · 🔴 0/38
+**Total:** 20 / 106
+**By difficulty:** 🟢 6/21 · 🟡 8/47 · 🔴 6/38
 
 ---
 
@@ -40,19 +40,19 @@ When a question is created, mark it `[x]` and add a link to the file.
 - [x] 🟡 [`onion-architecture.md`](./onion-architecture.md) — Concentric rings model, similarities and differences vs Clean Architecture, common misconceptions
 - [x] 🟡 [`vertical-slice-architecture.md`](./vertical-slice-architecture.md) — Feature folders, co-locating handler/validator/response, Jimmy Bogard's approach
 - [x] 🟡 [`modular-monolith-design.md`](./modular-monolith-design.md) — Bounded context modules, public vs internal APIs, migration path to microservices
-- [ ] 🔴 `fitness-functions.md` — Architectural fitness functions, NetArchTest / ArchUnit-style rules, enforcing constraints in CI
-- [ ] 🔴 `architecture-decision-records.md` — ADR format, when to document a decision, adr-tools, living documentation
-- [ ] 🔴 `anticorruption-layer.md` — Translating between bounded contexts, preventing model pollution from external systems
-- [ ] 🔴 `shared-kernel-vs-separate-ways.md` — DDD integration patterns: shared kernel, customer-supplier, conformist, ACL, separate ways
+- [x] 🔴 [`fitness-functions.md`](./fitness-functions.md) — Architectural fitness functions, NetArchTest / ArchUnit-style rules, enforcing constraints in CI
+- [x] 🔴 [`architecture-decision-records.md`](./architecture-decision-records.md) — ADR format, when to document a decision, adr-tools, living documentation
+- [x] 🔴 [`anticorruption-layer.md`](./anticorruption-layer.md) — Translating between bounded contexts, preventing model pollution from external systems
+- [x] 🔴 [`shared-kernel-vs-separate-ways.md`](./shared-kernel-vs-separate-ways.md) — DDD integration patterns: shared kernel, customer-supplier, conformist, ACL, separate ways
 
 ---
 
 ## §2 Domain-Driven Design (DDD)
 
-- [ ] 🟢 `ddd-tactical-vs-strategic.md` — Strategic (bounded context, context map) vs tactical patterns (aggregate, entity, VO)
-- [ ] 🟢 `entity-vs-value-object.md` — Identity-based equality vs structural equality, immutability, C# record as VO
-- [ ] 🟢 `ubiquitous-language.md` — Why shared language matters, building it with domain experts, impact on code naming
-- [ ] 🟡 `aggregate-design.md` — Aggregate root, consistency boundary, one transaction per aggregate rule, size guidelines
+- [x] 🟢 [`ddd-tactical-vs-strategic.md`](./ddd-tactical-vs-strategic.md) — Strategic (bounded context, context map) vs tactical patterns (aggregate, entity, VO)
+- [x] 🟢 [`entity-vs-value-object.md`](./entity-vs-value-object.md) — Identity-based equality vs structural equality, immutability, C# record as VO
+- [x] 🟢 [`ubiquitous-language.md`](./ubiquitous-language.md) — Why shared language matters, building it with domain experts, impact on code naming
+- [x] 🟡 [`aggregate-design.md`](./aggregate-design.md) — Aggregate root, consistency boundary, one transaction per aggregate rule, size guidelines
 - [ ] 🟡 `bounded-context.md` — Context boundaries, same concept different meanings in different contexts, mapping
 - [ ] 🟡 `domain-events.md` — Raising domain events inside aggregate, dispatching in application layer, MediatR INotification
 - [ ] 🟡 `domain-services.md` — When to extract to domain service vs keep in aggregate, stateless operations, naming
