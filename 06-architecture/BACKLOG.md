@@ -23,8 +23,8 @@ When a question is created, mark it `[x]` and add a link to the file.
 
 ## Progress
 
-**Total:** 70 / 106
-**By difficulty:** 🟢 14/21 · 🟡 33/47 · 🔴 23/38
+**Total:** 80 / 106
+**By difficulty:** 🟢 15/21 · 🟡 37/47 · 🔴 28/38
 
 ---
 
@@ -111,19 +111,19 @@ When a question is created, mark it `[x]` and add a link to the file.
 - [x] 🟡 [`strangler-fig-pattern.md`](./strangler-fig-pattern.md) — Incrementally replacing a monolith, proxy routing, per-feature migration
 - [x] 🟡 [`sidecar-and-ambassador-patterns.md`](./sidecar-and-ambassador-patterns.md) — Cross-cutting sidecar, proxy ambassador, Dapr, Envoy use cases
 - [x] 🟡 [`service-mesh-basics.md`](./service-mesh-basics.md) — Istio/Linkerd concepts, mTLS, traffic management, mesh observability
-- [ ] 🟡 `health-checks-in-microservices.md` — Readiness vs liveness vs startup probes, ASP.NET Core health checks
-- [ ] 🔴 `data-ownership-in-microservices.md` — Each service owns its DB, no shared schema, integration via events/APIs
-- [ ] 🔴 `microservices-testing-strategies.md` — Consumer-driven contracts, Pact, test pyramid for distributed systems
-- [ ] 🔴 `bulkhead-and-isolation.md` — Resource isolation between services, Polly Isolation, thread-pool bulkhead
-- [ ] 🔴 `choreography-vs-orchestration.md` — Event choreography benefits/risks, orchestration clarity vs coupling trade-off
-- [ ] 🔴 `microservices-security-patterns.md` — Service-to-service auth, JWT propagation, mTLS, zero-trust in microservices
-- [ ] 🔴 `distributed-tracing-patterns.md` — W3C trace context, correlation IDs, OpenTelemetry in microservices, Jaeger
+- [x] 🟡 [`health-checks-in-microservices.md`](./health-checks-in-microservices.md) — Readiness vs liveness vs startup probes, ASP.NET Core health checks
+- [x] 🔴 [`data-ownership-in-microservices.md`](./data-ownership-in-microservices.md) — Each service owns its DB, no shared schema, integration via events/APIs
+- [x] 🔴 [`microservices-testing-strategies.md`](./microservices-testing-strategies.md) — Consumer-driven contracts, Pact, test pyramid for distributed systems
+- [x] 🔴 [`bulkhead-and-isolation.md`](./bulkhead-and-isolation.md) — Resource isolation between services, Polly Isolation, thread-pool bulkhead
+- [x] 🔴 [`choreography-vs-orchestration.md`](./choreography-vs-orchestration.md) — Event choreography benefits/risks, orchestration clarity vs coupling trade-off
+- [x] 🔴 [`microservices-security-patterns.md`](./microservices-security-patterns.md) — Service-to-service auth, JWT propagation, mTLS, zero-trust in microservices
+- [x] 🔴 [`distributed-tracing-patterns.md`](./distributed-tracing-patterns.md) — W3C trace context, correlation IDs, OpenTelemetry in microservices, Jaeger
 
 ---
 
 ## §6 Mediator & Pipeline Patterns
 
-- [ ] 🟢 `mediator-pattern.md` — GoF mediator, decoupling sender from receiver, MediatR as mediator, when to use
+- [x] 🟢 [`mediator-pattern.md`](./mediator-pattern.md) — GoF mediator, decoupling sender from receiver, MediatR as mediator, when to use
 - [ ] 🟡 `mediatr-setup-and-usage.md` — DI registration, IRequest/IRequestHandler, INotification, assembly scanning
 - [ ] 🟡 `cross-cutting-via-pipeline.md` — Validation, logging, caching, transaction behaviors in MediatR pipeline
 - [ ] 🟡 `notification-vs-request.md` — INotification fan-out vs IRequest single handler, publish vs send semantics

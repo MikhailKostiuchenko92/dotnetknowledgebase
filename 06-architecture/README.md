@@ -58,14 +58,24 @@ _Questions are organized by sub-topic. See [BACKLOG.md](./BACKLOG.md) for the fu
 
 ### §5 Microservices Patterns
 - [api-gateway-pattern.md](./api-gateway-pattern.md) — BFF, aggregation, auth offloading, YARP configuration
+- [bulkhead-and-isolation.md](./bulkhead-and-isolation.md) — Polly ConcurrencyLimiter, SemaphoreSlim isolation, sizing
+- [choreography-vs-orchestration.md](./choreography-vs-orchestration.md) — Saga event choreography vs MassTransit state machine orchestration
+- [data-ownership-in-microservices.md](./data-ownership-in-microservices.md) — DB per service, API composition, event-based replication
+- [distributed-tracing-patterns.md](./distributed-tracing-patterns.md) — OpenTelemetry, W3C traceparent, Jaeger, custom spans
 - [distributed-transaction-patterns.md](./distributed-transaction-patterns.md) — 2PC failure, Saga choreography/orchestration, Outbox pattern
+- [health-checks-in-microservices.md](./health-checks-in-microservices.md) — Readiness/liveness/startup probes, IHealthCheck, Kubernetes probes
 - [inter-service-communication.md](./inter-service-communication.md) — REST vs gRPC vs messaging, temporal coupling, failure modes
+- [microservices-security-patterns.md](./microservices-security-patterns.md) — JWT propagation, client credentials, mTLS, zero-trust
+- [microservices-testing-strategies.md](./microservices-testing-strategies.md) — Pact consumer/provider, test pyramid, TestContainers
 - [microservices-vs-monolith.md](./microservices-vs-monolith.md) — Trade-offs, Conway's Law, modular monolith, fallacies
-- [service-decomposition-strategies.md](./service-decomposition-strategies.md) — By capability vs subdomain, Strangler Fig phases, data migration
-- [service-discovery.md](./service-discovery.md) — Client-side vs server-side, Kubernetes DNS, Consul, health checks
+- [service-decomposition-strategies.md](./service-decomposition-strategies.md) — By capability, DDD subdomain, Strangler Fig phases, data migration
+- [service-discovery.md](./service-discovery.md) — Client/server-side, Kubernetes DNS, Consul, .NET 9 ServiceDiscovery
 - [service-mesh-basics.md](./service-mesh-basics.md) — Istio/Linkerd, data/control plane, mTLS, traffic management
 - [sidecar-and-ambassador-patterns.md](./sidecar-and-ambassador-patterns.md) — Sidecar cross-cutting concerns, Ambassador outbound proxy, Dapr
 - [strangler-fig-pattern.md](./strangler-fig-pattern.md) — YARP proxy, incremental extraction, dual-write, data migration
+
+### §6 Mediator & Pipeline Patterns
+- [mediator-pattern.md](./mediator-pattern.md) — GoF Mediator, MediatR routing, decoupling controllers from handlers
 - [event-driven-projections.md](./event-driven-projections.md) — Catch-up vs persistent subscriptions, competing consumers, projection reset
 - [event-schema-evolution.md](./event-schema-evolution.md) — Upcasters, versioned event names, forward/backward compatibility
 - [event-sourcing-and-cqrs.md](./event-sourcing-and-cqrs.md) — Complementary but independent, when to combine, decision framework
