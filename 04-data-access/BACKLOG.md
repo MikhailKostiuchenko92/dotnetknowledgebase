@@ -23,23 +23,23 @@ When a question is created, mark it `[x]` and add a link to the file.
 
 ## Progress
 
-**Total:** 0 / 94
-**By difficulty:** 🟢 0/18 · 🟡 0/43 · 🔴 0/33
+**Total:** 10 / 94
+**By difficulty:** 🟢 3/18 · 🟡 5/43 · 🔴 2/33
 
 ---
 
 ## §1 EF Core Fundamentals
 
-- [ ] 🟢 `dbcontext-overview.md` — DbContext lifecycle, DbSet<T>, registration in DI, scoped vs transient lifetime pitfalls
-- [ ] 🟢 `ef-core-conventions.md` — Primary key detection, FK naming conventions, data type mapping, shadow FK
-- [ ] 🟢 `data-annotations-vs-fluent-api.md` — [Key]/[Required]/[MaxLength] vs modelBuilder.Entity<>(), when to choose each
-- [ ] 🟡 `ef-core-relationships.md` — One-to-one, one-to-many, many-to-many config, cascade delete, navigation properties
-- [ ] 🟡 `ef-core-configuration.md` — IEntityTypeConfiguration<T>, assembly scanning, separating config from DbContext
-- [ ] 🟡 `ef-core-migrations.md` — Add-Migration, Update-Database, migration file anatomy, snapshot file, CI/CD integration
-- [ ] 🟡 `ef-core-seeding.md` — HasData seeding, custom migration seeding, environment-specific seed data strategies
-- [ ] 🟡 `owned-entities.md` — Owned entity types, table splitting, ComplexType (.NET 8), value objects in EF Core
-- [ ] 🔴 `ef-core-inheritance.md` — TPH vs TPT vs TPC strategies, discriminator column config, query and performance trade-offs
-- [ ] 🔴 `shadow-properties.md` — Shadow properties, EF.Property<T>(), audit timestamps, tenant ID without polluting domain model
+- [x] 🟢 [`dbcontext-overview.md`](./dbcontext-overview.md) — DbContext lifecycle, DbSet<T>, registration in DI, scoped vs transient lifetime pitfalls
+- [x] 🟢 [`ef-core-conventions.md`](./ef-core-conventions.md) — Primary key detection, FK naming conventions, data type mapping, shadow FK
+- [x] 🟢 [`data-annotations-vs-fluent-api.md`](./data-annotations-vs-fluent-api.md) — [Key]/[Required]/[MaxLength] vs modelBuilder.Entity<>(), when to choose each
+- [x] 🟡 [`ef-core-relationships.md`](./ef-core-relationships.md) — One-to-one, one-to-many, many-to-many config, cascade delete, navigation properties
+- [x] 🟡 [`ef-core-configuration.md`](./ef-core-configuration.md) — IEntityTypeConfiguration<T>, assembly scanning, separating config from DbContext
+- [x] 🟡 [`ef-core-migrations.md`](./ef-core-migrations.md) — Add-Migration, Update-Database, migration file anatomy, snapshot file, CI/CD integration
+- [x] 🟡 [`ef-core-seeding.md`](./ef-core-seeding.md) — HasData seeding, custom migration seeding, environment-specific seed data strategies
+- [x] 🟡 [`owned-entities.md`](./owned-entities.md) — Owned entity types, table splitting, ComplexType (.NET 8), value objects in EF Core
+- [x] 🔴 [`ef-core-inheritance.md`](./ef-core-inheritance.md) — TPH vs TPT vs TPC strategies, discriminator column config, query and performance trade-offs
+- [x] 🔴 [`shadow-properties.md`](./shadow-properties.md) — Shadow properties, EF.Property<T>(), audit timestamps, tenant ID without polluting domain model
 - [ ] 🔴 `value-converters.md` — IValueConverter, built-in converters, JSON columns (.NET 7+), enum-to-string, Money type
 - [ ] 🔴 `global-query-filters.md` — HasQueryFilter, soft delete pattern, multi-tenancy filter, IgnoreQueryFilters()
 

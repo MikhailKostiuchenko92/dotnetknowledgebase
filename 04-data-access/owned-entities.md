@@ -1,0 +1,205 @@
+# Owned Entities in EF Core
+
+**Category:** Data Access / EF Core
+**Difficulty:** 🟡 Middle
+**Tags:** `ef-core`, `owned-entities`, `value-objects`, `table-splitting`, `complex-types`, `ddd`
+
+## Question
+
+> What are owned entity types in EF Core? How do `OwnsOne` and `OwnsMany` work, and how do they support the Value Object pattern from DDD? What changed with `ComplexType` in .NET 8?
+
+## Short Answer
+
+Owned entities are types that don't have their own identity — they exist only as part of an owning entity. EF Core maps them using `OwnsOne` (single instance) or `OwnsMany` (collection) and stores columns in the owner's table by default (table splitting), or in a separate table with a shared PK. They're the primary tool for mapping DDD Value Objects (like `Money`, `Address`, `Email`) to relational columns without creating a separate identity-bearing table. In .NET 8, `ComplexType` was introduced as a simpler alternative for value objects that only ever live in the owner's table and don't need navigation.
+
+## Detailed Explanation
+
+### The Problem They Solve
+
+You have an `Order` with a shipping `Address`. The address has no independent identity — it only makes sense in the context of the order. You don't want a separate `Addresses` table with an FK (that's an entity, not a value object). You want the address columns directly in the `Orders` table.
+
+### `OwnsOne` — Single Owned Instance
+
+```csharp
+public class Order
+{
+    public int Id { get; set; }
+    public Address ShippingAddress { get; set; } = null!;
+}
+
+public class Address
+{
+    public string Street { get; set; } = string.Empty;
+    public string City   { get; set; } = string.Empty;
+    public string PostCode { get; set; } = string.Empty;
+}
+```
+
+Configuration:
+
+```csharp
+builder.OwnsOne(o => o.ShippingAddress, addr =>
+{
+    addr.Property(a => a.Street).HasMaxLength(200);
+    addr.Property(a => a.City).HasMaxLength(100);
+    addr.Property(a => a.PostCode).HasMaxLength(20);
+    // Column names default to "ShippingAddress_Street", etc.
+    addr.Property(a => a.Street).HasColumnName("shipping_street");  // optional rename
+});
+```
+
+Generated SQL schema (stored in the owner's table):
+
+```sql
+CREATE TABLE Orders (
+    Id            INT PRIMARY KEY,
+    shipping_street   NVARCHAR(200),
+    ShippingAddress_City     NVARCHAR(100),
+    ShippingAddress_PostCode NVARCHAR(20)
+);
+```
+
+### `OwnsMany` — Collection of Owned Instances
+
+For collections (e.g., a list of `OrderNote` entries that aren't standalone entities):
+
+```csharp
+builder.OwnsMany(o => o.Notes, note =>
+{
+    note.WithOwner().HasForeignKey("OrderId");
+    note.Property<int>("Id").ValueGeneratedOnAdd();  // shadow PK
+    note.HasKey("Id");
+    note.Property(n => n.Text).HasMaxLength(500);
+    note.ToTable("OrderNotes");    // must be a separate table for collections
+});
+```
+
+> **Note:** `OwnsMany` **always** requires a separate table — you can't store a collection of rows in the owner's single row.
+
+### Separate Table for `OwnsOne` (Table Splitting)
+
+You can also map an `OwnsOne` to a separate table that shares the same PK as the owner — useful for large nullable owned objects you want to load separately:
+
+```csharp
+builder.OwnsOne(o => o.ExtendedDetails, d => d.ToTable("OrderExtendedDetails"));
+// OrderExtendedDetails.Id = Orders.Id (shared PK)
+```
+
+### `ComplexType` in EF Core 8+
+
+`ComplexType` is a lighter-weight alternative to owned entities for value objects that:
+- Always live in the owner's table (no separate table support).
+- Cannot be `null` (a complex type instance always has a value).
+- Don't need navigation properties back to the owner.
+- Don't need a PK or shadow property.
+
+```csharp
+[ComplexType]
+public class Money
+{
+    public decimal Amount   { get; set; }
+    public string Currency  { get; set; } = string.Empty;
+}
+
+public class Order
+{
+    public int Id { get; set; }
+    public Money Price { get; set; } = new();  // never null
+}
+```
+
+No Fluent API needed when using the `[ComplexType]` attribute. Columns are added to the owner's table automatically.
+
+### `OwnsOne` vs `ComplexType` vs Separate Entity
+
+| Feature | `OwnsOne` | `ComplexType` (.NET 8) | Separate Entity |
+|---------|-----------|------------------------|-----------------|
+| Nullable | ✅ | ❌ (always has value) | ✅ |
+| Separate table | ✅ optional | ❌ | ✅ required |
+| Navigation to owner | ✅ | ❌ | ✅ |
+| Collection support | Via `OwnsMany` | ❌ | ✅ |
+| Explicit PK needed | Shadow PK | ❌ | ✅ |
+| Performance | Slightly more overhead | Minimal | FK JOIN |
+
+### Value Object Pattern (DDD)
+
+Owned entities map naturally to DDD Value Objects — types defined by their attributes, not identity:
+
+```csharp
+// C# record as immutable value object
+public record Address(string Street, string City, string PostCode);
+
+public class Order
+{
+    public int Id { get; private set; }
+    public Address ShippingAddress { get; private set; }
+    // ...
+}
+```
+
+EF Core can map a record type as owned — records have a parameterless constructor generated by the compiler (for deconstruction), which EF Core uses for materialization. You may need `OwnsOne` with explicit property mapping since records don't have settable properties by default.
+
+## Code Example
+
+```csharp
+// Domain: value objects as records
+public record Money(decimal Amount, string Currency);
+public record Address(string Street, string City, string PostCode);
+
+public class Order
+{
+    public int     Id      { get; private set; }
+    public Money   Price   { get; private set; } = new(0, "USD");
+    public Address Billing { get; private set; } = new("", "", "");
+
+    private Order() { }  // EF Core needs this
+
+    public static Order Create(Money price, Address billing) =>
+        new() { Price = price, Billing = billing };
+}
+
+// EF Core Configuration
+public sealed class OrderConfiguration : IEntityTypeConfiguration<Order>
+{
+    public void Configure(EntityTypeBuilder<Order> builder)
+    {
+        builder.HasKey(o => o.Id);
+
+        builder.OwnsOne(o => o.Price, m =>
+        {
+            m.Property(x => x.Amount).HasPrecision(19, 4).HasColumnName("price_amount");
+            m.Property(x => x.Currency).HasMaxLength(3).HasColumnName("price_currency");
+        });
+
+        builder.OwnsOne(o => o.Billing, addr =>
+        {
+            addr.Property(x => x.Street).HasMaxLength(200).HasColumnName("billing_street");
+            addr.Property(x => x.City).HasMaxLength(100).HasColumnName("billing_city");
+            addr.Property(x => x.PostCode).HasMaxLength(20).HasColumnName("billing_postcode");
+        });
+    }
+}
+```
+
+## Common Follow-up Questions
+
+- Can you query owned entities directly (e.g., `db.Set<Address>()`)? Why or why not?
+- What happens to owned entity columns if the owner is `null` — are they nullable or do they throw?
+- How does EF Core handle updating an owned entity — does it track it as a separate entity?
+- What is the difference between `OwnsOne` with a separate table and a true dependent entity with an FK?
+- How do you use owned entities with JSON column mapping (`ToJson()`) in EF Core 7+?
+
+## Common Mistakes / Pitfalls
+
+- **Querying `db.Set<OwnedType>()`**: Owned entities cannot be directly queried via `DbSet<T>` — they have no independent existence. Query via the owner.
+- **Null owned entities**: If an `OwnsOne` property is `null`, EF Core stores `NULL` in all owned columns. On load, it may return a non-null object with all-null properties (a "ghost object"). Guard against this in your domain.
+- **`OwnsMany` in the owner's table**: Collections can't be stored in the owner's row — EF Core will throw at model build. Always call `.ToTable()` for `OwnsMany`.
+- **Mutating value objects via direct property access**: If your `Address` has settable properties, EF Core can update them — but value objects should be immutable. Use private setters or records.
+- **Forgetting private parameterless constructor**: EF Core needs to materialise owned entities. Without a no-arg constructor (private is fine), loading from the database throws.
+
+## References
+
+- [Owned entity types — Microsoft Learn](https://learn.microsoft.com/en-us/ef/core/modeling/owned-entities)
+- [Complex types — Microsoft Learn (.NET 8)](https://learn.microsoft.com/en-us/ef/core/modeling/complex-types)
+- [JSON columns — Microsoft Learn](https://learn.microsoft.com/en-us/ef/core/what-is-new/ef-core-7.0/whatsnew#json-columns)
+- [See: value-converters.md](./value-converters.md)
