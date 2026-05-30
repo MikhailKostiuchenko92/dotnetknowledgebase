@@ -1,0 +1,183 @@
+# 📋 Architecture — Question Backlog
+
+Master list of planned questions for the `06-architecture` section.
+Use this file as the single source of truth for what to add next.
+
+## How to use with Claude Code
+
+- **Add one:** _"add an architecture question on `cqrs-fundamentals` from BACKLOG.md"_
+- **Add a group:** _"add all questions from the 'Clean Architecture' group in BACKLOG.md"_
+- **Continue:** _"pick the next 5 unwritten questions from BACKLOG.md and create them"_
+- **Status check:** _"compare BACKLOG.md against existing files in `06-architecture/` and tell me what's missing"_
+
+When a question is created, mark it `[x]` and add a link to the file.
+
+## Conventions
+
+- **Filename:** kebab-case, exactly as listed below.
+- **Difficulty:** 🟢 Junior • 🟡 Middle • 🔴 Senior
+- **Template:** `_templates/question-template.md`
+- **Commit:** `feat(architecture): add question on <topic>`
+
+---
+
+## Progress
+
+**Total:** 0 / 106
+**By difficulty:** 🟢 0/21 · 🟡 0/47 · 🔴 0/38
+
+---
+
+## §1 Clean Architecture & Layering
+
+- [ ] 🟢 `layered-vs-clean-architecture.md` — N-tier layers vs Clean Architecture, dependency direction, why "Clean" avoids infrastructure coupling
+- [ ] 🟢 `dependency-inversion-in-architecture.md` — DIP at architectural level, policy vs detail, why high-level modules must not depend on low-level
+- [ ] 🟢 `ports-and-adapters.md` — Hexagonal architecture, driving vs driven adapters, application port = interface
+- [ ] 🟡 `clean-architecture-in-dotnet.md` — Domain / Application / Infrastructure / Presentation layers, project reference rules, .NET solution layout
+- [ ] 🟡 `application-layer-responsibilities.md` — Use cases, orchestration logic, no business rules here, CQRS integration
+- [ ] 🟡 `domain-layer-design.md` — Pure domain model, no framework dependencies, rich vs anemic comparison
+- [ ] 🟡 `infrastructure-layer-design.md` — Implementing domain interfaces with EF Core, HTTP clients, messaging
+- [ ] 🟡 `onion-architecture.md` — Concentric rings model, similarities and differences vs Clean Architecture, common misconceptions
+- [ ] 🟡 `vertical-slice-architecture.md` — Feature folders, co-locating handler/validator/response, Jimmy Bogard's approach
+- [ ] 🟡 `modular-monolith-design.md` — Bounded context modules, public vs internal APIs, migration path to microservices
+- [ ] 🔴 `fitness-functions.md` — Architectural fitness functions, NetArchTest / ArchUnit-style rules, enforcing constraints in CI
+- [ ] 🔴 `architecture-decision-records.md` — ADR format, when to document a decision, adr-tools, living documentation
+- [ ] 🔴 `anticorruption-layer.md` — Translating between bounded contexts, preventing model pollution from external systems
+- [ ] 🔴 `shared-kernel-vs-separate-ways.md` — DDD integration patterns: shared kernel, customer-supplier, conformist, ACL, separate ways
+
+---
+
+## §2 Domain-Driven Design (DDD)
+
+- [ ] 🟢 `ddd-tactical-vs-strategic.md` — Strategic (bounded context, context map) vs tactical patterns (aggregate, entity, VO)
+- [ ] 🟢 `entity-vs-value-object.md` — Identity-based equality vs structural equality, immutability, C# record as VO
+- [ ] 🟢 `ubiquitous-language.md` — Why shared language matters, building it with domain experts, impact on code naming
+- [ ] 🟡 `aggregate-design.md` — Aggregate root, consistency boundary, one transaction per aggregate rule, size guidelines
+- [ ] 🟡 `bounded-context.md` — Context boundaries, same concept different meanings in different contexts, mapping
+- [ ] 🟡 `domain-events.md` — Raising domain events inside aggregate, dispatching in application layer, MediatR INotification
+- [ ] 🟡 `domain-services.md` — When to extract to domain service vs keep in aggregate, stateless operations, naming
+- [ ] 🟡 `repository-pattern.md` — Abstract persistence, domain-oriented interface, unit of work, EF Core implementation
+- [ ] 🟡 `specification-pattern.md` — Encapsulating query criteria, composable specs, ISpecification, EF Core integration
+- [ ] 🟡 `anemic-vs-rich-domain-model.md` — Fowler's anti-pattern critique, when rich model pays off, pragmatic trade-offs
+- [ ] 🟡 `context-mapping-patterns.md` — Published language, open-host service, customer-supplier, conformist, ACL
+- [ ] 🟡 `value-object-implementation.md` — C# record VO pattern, EF Core owned types, Money/Address/Email examples
+- [ ] 🔴 `aggregate-invariants.md` — Always-valid domain model, enforcing invariants in constructors/methods, guard clauses
+- [ ] 🔴 `large-aggregate-splitting.md` — Signs of over-sized aggregates, how to decompose, eventual consistency across boundaries
+- [ ] 🔴 `domain-model-vs-persistence-model.md` — Separate domain and EF Core models, mapping strategies, cost vs benefit
+- [ ] 🔴 `event-storming.md` — Workshop technique, domain events → commands → aggregates → bounded contexts, hotspot discovery
+- [ ] 🔴 `ddd-and-microservices.md` — One service per bounded context (usually), when to break the rule, context map to service map
+- [ ] 🔴 `ddd-anti-patterns.md` — Entity-service naming trap, database-driven design, persistence bleeding into domain
+
+---
+
+## §3 CQRS
+
+- [ ] 🟢 `cqrs-fundamentals.md` — Command/Query Responsibility Segregation, Bertrand Meyer's CQS origin, Greg Young's evolution
+- [ ] 🟢 `command-vs-query.md` — What makes a command vs a query, void vs return value, side effects contract
+- [ ] 🟡 `cqrs-with-mediatr.md` — IRequest / IRequestHandler, notifications, MediatR DI setup, request pipeline
+- [ ] 🟡 `cqrs-read-models.md` — Denormalized projections, separate read DB strategy, updating read models from events
+- [ ] 🟡 `cqrs-write-models.md` — Command handler loads aggregate, executes, persists, publishes domain events
+- [ ] 🟡 `pipeline-behaviors.md` — IPipelineBehavior, ordering, validation/logging/caching/transaction use cases
+- [ ] 🟡 `cqrs-without-event-sourcing.md` — CQRS on a single relational DB, DB views, EF Core split for read/write
+- [ ] 🔴 `cqrs-consistency-challenges.md` — Eventual consistency between write model and read projection, stale read handling
+- [ ] 🔴 `cqrs-and-ddd.md` — Command → aggregate → domain events → projection, how DDD and CQRS compose in .NET
+- [ ] 🔴 `task-based-ui-and-cqrs.md` — Why CRUD UIs fight CQRS, intention-revealing commands, task-based UX design
+
+---
+
+## §4 Event Sourcing
+
+- [ ] 🟢 `event-sourcing-fundamentals.md` — Store events not state, replay to rebuild, append-only log, audit built-in
+- [ ] 🟡 `event-store-design.md` — Events table schema, optimistic concurrency with stream version, aggregate streams
+- [ ] 🟡 `projections-and-read-models.md` — Synchronous vs async projections, catch-up subscriptions, projection rebuilds
+- [ ] 🟡 `event-sourcing-in-dotnet.md` — EventStoreDB, Marten (PostgreSQL), custom implementation patterns
+- [ ] 🟡 `snapshots-in-event-sourcing.md` — When to snapshot, snapshot strategy, loading state with and without snapshot
+- [ ] 🔴 `event-sourcing-vs-traditional.md` — Audit log benefit, temporal queries, debugging advantages, operational complexity cost
+- [ ] 🔴 `event-schema-evolution.md` — Upcasting, versioned events, forward/backward compatibility, schema registry
+- [ ] 🔴 `event-sourcing-pitfalls.md` — Stale projections in UI, long streams, wrong granularity, testing complexity
+- [ ] 🔴 `event-sourcing-and-cqrs.md` — Complementary but independent — can use each without the other, when to combine
+- [ ] 🔴 `event-driven-projections.md` — Catch-up vs persistent subscriptions, competing consumers, projection reset strategy
+
+---
+
+## §5 Microservices Patterns
+
+- [ ] 🟢 `microservices-vs-monolith.md` — Trade-offs, Conway's law, when monolith is the right choice, common fallacies
+- [ ] 🟢 `service-decomposition-strategies.md` — Decompose by business capability vs subdomain, strangler fig, start small
+- [ ] 🟢 `inter-service-communication.md` — Sync (REST / gRPC) vs async (messaging), latency, coupling, failure modes
+- [ ] 🟡 `api-gateway-pattern.md` — BFF (Backend for Frontend), aggregation, auth offloading, YARP, Azure API Management
+- [ ] 🟡 `service-discovery.md` — Client-side vs server-side, Consul, Kubernetes DNS, health checks integration
+- [ ] 🟡 `distributed-transaction-patterns.md` — Why 2PC fails in microservices, saga, outbox, compensating transactions
+- [ ] 🟡 `strangler-fig-pattern.md` — Incrementally replacing a monolith, proxy routing, per-feature migration
+- [ ] 🟡 `sidecar-and-ambassador-patterns.md` — Cross-cutting sidecar, proxy ambassador, Dapr, Envoy use cases
+- [ ] 🟡 `service-mesh-basics.md` — Istio/Linkerd concepts, mTLS, traffic management, mesh observability
+- [ ] 🟡 `health-checks-in-microservices.md` — Readiness vs liveness vs startup probes, ASP.NET Core health checks
+- [ ] 🔴 `data-ownership-in-microservices.md` — Each service owns its DB, no shared schema, integration via events/APIs
+- [ ] 🔴 `microservices-testing-strategies.md` — Consumer-driven contracts, Pact, test pyramid for distributed systems
+- [ ] 🔴 `bulkhead-and-isolation.md` — Resource isolation between services, Polly Isolation, thread-pool bulkhead
+- [ ] 🔴 `choreography-vs-orchestration.md` — Event choreography benefits/risks, orchestration clarity vs coupling trade-off
+- [ ] 🔴 `microservices-security-patterns.md` — Service-to-service auth, JWT propagation, mTLS, zero-trust in microservices
+- [ ] 🔴 `distributed-tracing-patterns.md` — W3C trace context, correlation IDs, OpenTelemetry in microservices, Jaeger
+
+---
+
+## §6 Mediator & Pipeline Patterns
+
+- [ ] 🟢 `mediator-pattern.md` — GoF mediator, decoupling sender from receiver, MediatR as mediator, when to use
+- [ ] 🟡 `mediatr-setup-and-usage.md` — DI registration, IRequest/IRequestHandler, INotification, assembly scanning
+- [ ] 🟡 `cross-cutting-via-pipeline.md` — Validation, logging, caching, transaction behaviors in MediatR pipeline
+- [ ] 🟡 `notification-vs-request.md` — INotification fan-out vs IRequest single handler, publish vs send semantics
+- [ ] 🔴 `mediatr-performance-considerations.md` — Reflection overhead, micro-benchmark results, when to avoid MediatR
+- [ ] 🔴 `command-validation-pipeline.md` — FluentValidation + IPipelineBehavior, ValidationException, Result pattern alternatives
+
+---
+
+## §7 API Design & Versioning
+
+- [ ] 🟢 `rest-maturity-model.md` — Richardson maturity levels 0–3, HATEOAS in theory vs practice, pragmatic REST
+- [ ] 🟢 `rest-vs-grpc.md` — HTTP/1.1+JSON vs HTTP/2+Protobuf, streaming, browser compatibility, when gRPC wins
+- [ ] 🟢 `api-versioning-strategies.md` — URL path, query string, header, content negotiation — trade-offs of each
+- [ ] 🟡 `api-versioning-in-aspnet-core.md` — Asp.Versioning package, version sets, MapToApiVersion, deprecation workflow
+- [ ] 🟡 `openapi-and-swagger.md` — Swashbuckle vs NSwag, OpenAPI spec, API client codegen, versioned docs
+- [ ] 🟡 `problem-details-rfc7807.md` — ProblemDetails, ValidationProblemDetails, IExceptionHandler (.NET 8), type URIs
+- [ ] 🟡 `backward-compatible-api-changes.md` — Safe additive changes, breaking changes, deprecation strategy, sunset header
+- [ ] 🔴 `api-contract-testing.md` — Consumer-driven contracts, Pact .NET, verifying provider without integration tests
+- [ ] 🔴 `graphql-vs-rest-in-dotnet.md` — Hot Chocolate, DataLoader, n+1 problem, when GraphQL complexity is justified
+- [ ] 🔴 `hypermedia-and-hateoas.md` — Level 3 REST, self-descriptive messages, Siren/HAL formats, practical ROI
+
+---
+
+## §8 Resilience Architecture
+
+- [ ] 🟢 `resilience-patterns-overview.md` — Retry, circuit breaker, timeout, bulkhead, fallback — the landscape of resilience
+- [ ] 🟢 `retry-pattern-design.md` — Exponential backoff, jitter, idempotency requirement, Polly v8 retry pipeline
+- [ ] 🟡 `circuit-breaker-design.md` — Closed/Open/Half-Open states, threshold tuning, Polly ResiliencePipeline
+- [ ] 🟡 `timeout-and-cancellation.md` — CancellationToken propagation, timeout policy, cascading timeout risks
+- [ ] 🟡 `fallback-and-graceful-degradation.md` — Static fallback, stale cache, degraded mode, feature flags for resilience
+- [ ] 🔴 `resilience-in-dotnet-aspnet-core.md` — Microsoft.Extensions.Resilience, IHttpClientFactory + resilience handler
+- [ ] 🔴 `chaos-engineering-basics.md` — Chaos Monkey approach, fault injection, Azure Chaos Studio, resilience testing in CI
+- [ ] 🔴 `designing-for-partial-failure.md` — Assume everything fails, idempotent retries, compensating actions, partial success API
+
+---
+
+## §9 Modular Monolith
+
+- [ ] 🟢 `monolith-types.md` — Big ball of mud vs well-structured vs modular monolith, when monolith beats microservices
+- [ ] 🟡 `modular-monolith-structure.md` — Module boundaries, internal vs exported API, enforcing isolation per module
+- [ ] 🟡 `modular-monolith-communication.md` — In-process events vs direct method calls, loose coupling within a process
+- [ ] 🟡 `strangler-fig-vs-modular-monolith.md` — Start modular, extract services incrementally, reversibility advantage
+- [ ] 🔴 `module-isolation-enforcement.md` — NetArchTest rules, package visibility, ArchUnit-style dependency constraints in CI
+- [ ] 🔴 `shared-infrastructure-in-modular-monolith.md` — Shared DB with separate schemas, shared outbox, shared auth, trade-offs
+
+---
+
+## §10 Cross-Cutting Concerns
+
+- [ ] 🟢 `cross-cutting-concerns-overview.md` — What makes a concern "cross-cutting", common examples, strategies to handle
+- [ ] 🟢 `global-error-handling.md` — Middleware exception handling, IExceptionHandler (.NET 8), ProblemDetails factory, RFC 9457
+- [ ] 🟡 `validation-strategies.md` — FluentValidation vs DataAnnotations, where validation belongs (application vs domain)
+- [ ] 🟡 `audit-logging-architecture.md` — EF Core interceptors for audit trail, domain events as audit log, structured logging
+- [ ] 🟡 `authorization-patterns.md` — Resource-based auth, policy-based auth, IAuthorizationHandler, claims transformation
+- [ ] 🟡 `feature-flags-architecture.md` — Microsoft.FeatureManagement, trunk-based development, kill switch pattern, LaunchDarkly
+- [ ] 🔴 `aspect-oriented-programming.md` — AOP in .NET, Castle DynamicProxy, Decorator as AOP alternative, when each fits
+- [ ] 🔴 `outbox-pattern-architecture.md` — Why direct side effects are unreliable, transactional outbox, polling vs CDC relay
