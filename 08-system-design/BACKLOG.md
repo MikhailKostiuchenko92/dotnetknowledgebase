@@ -23,8 +23,8 @@ When a question is created, mark it `[x]` and add a link to the file.
 
 ## Progress
 
-**Total:** 45 / 120
-**By difficulty:** 🟢 6/24 · 🟡 24/54 · 🔴 15/42
+**Total:** 55 / 120
+**By difficulty:** 🟢 7/24 · 🟡 30/54 · 🔴 18/42
 
 ---
 
@@ -94,19 +94,19 @@ When a question is created, mark it `[x]` and add a link to the file.
 
 ## 6. Rate Limiting & Throttling
 
-- [ ] 🟢 `rate-limiting-concepts.md` — Why rate limiting, per-user vs global, response codes (429), headers (`Retry-After`)
-- [ ] 🟡 `rate-limiting-algorithms.md` — Token bucket, leaky bucket, fixed window, sliding window — trade-offs
-- [ ] 🟡 `rate-limiting-in-aspnet-core.md` — .NET 7+ `RateLimiter` middleware, `FixedWindowLimiter`, `SlidingWindowLimiter`, `TokenBucketLimiter`
-- [ ] 🔴 `distributed-rate-limiting.md` — Redis-backed counters, Lua scripts for atomicity, key design, multi-region challenges
-- [ ] 🟡 `circuit-breaker-pattern.md` — States (closed/open/half-open), Polly implementation, integration with rate limiting
-- [ ] 🔴 `throttling-vs-backpressure.md` — Client-side vs server-side control, reactive streams, TCP congestion analogy
+- [x] 🟢 [`rate-limiting-concepts.md`](./rate-limiting-concepts.md) — Why rate limiting, per-user vs global, response codes (429), headers (`Retry-After`)
+- [x] 🟡 [`rate-limiting-algorithms.md`](./rate-limiting-algorithms.md) — Token bucket, leaky bucket, fixed window, sliding window — trade-offs
+- [x] 🟡 [`rate-limiting-in-aspnet-core.md`](./rate-limiting-in-aspnet-core.md) — .NET 7+ `RateLimiter` middleware, `FixedWindowLimiter`, `SlidingWindowLimiter`, `TokenBucketLimiter`
+- [x] 🔴 [`distributed-rate-limiting.md`](./distributed-rate-limiting.md) — Redis-backed counters, Lua scripts for atomicity, key design, multi-region challenges
+- [x] 🟡 [`circuit-breaker-pattern.md`](./circuit-breaker-pattern.md) — States (closed/open/half-open), Polly implementation, integration with rate limiting
+- [x] 🔴 [`throttling-vs-backpressure.md`](./throttling-vs-backpressure.md) — Client-side vs server-side control, reactive streams, TCP congestion analogy
 
 ## 7. Classic System Design Problems
 
-- [ ] 🟡 `design-url-shortener.md` — Hash generation, collision handling, redirects, analytics, expiry
-- [ ] 🟡 `design-rate-limiter.md` — Full end-to-end design: storage, algorithm, distributed counters, API design
-- [ ] 🟡 `design-notification-system.md` — Push/email/SMS fanout, template management, delivery tracking, scale
-- [ ] 🟡 `design-key-value-store.md` — In-memory + persistence, consistent hashing, replication, GET/PUT/DELETE
+- [x] 🟡 [`design-url-shortener.md`](./design-url-shortener.md) — Hash generation, collision handling, redirects, analytics, expiry
+- [x] 🟡 [`design-rate-limiter.md`](./design-rate-limiter.md) — Full end-to-end design: storage, algorithm, distributed counters, API design
+- [x] 🟡 [`design-notification-system.md`](./design-notification-system.md) — Push/email/SMS fanout, template management, delivery tracking, scale
+- [x] 🟡 [`design-key-value-store.md`](./design-key-value-store.md) — In-memory + persistence, consistent hashing, replication, GET/PUT/DELETE
 - [ ] 🔴 `design-distributed-cache.md` — Cache cluster, consistent hashing ring, replication factor, eviction, client library
 - [ ] 🔴 `design-search-autocomplete.md` — Trie vs inverted index, prefix matching, ranking, caching top queries
 - [ ] 🔴 `design-news-feed.md` — Fan-out on write vs read, celebrity problem, timeline storage, ranking

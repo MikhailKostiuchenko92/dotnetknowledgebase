@@ -62,3 +62,17 @@ Interview-ready deep-dives into distributed systems design, architecture pattern
 - [message-broker-overview.md](./message-broker-overview.md) — Queues, pub/sub, ACK, DLQ fundamentals; RabbitMQ, Kafka, Azure Service Bus
 - [outbox-pattern.md](./outbox-pattern.md) — Transactional outbox, polling vs CDC relay, EF Core + MassTransit implementation
 - [pub-sub-vs-message-queue.md](./pub-sub-vs-message-queue.md) — Point-to-point vs fan-out, RabbitMQ exchange types, Azure Service Bus topics
+
+### §6 Rate Limiting & Throttling
+- [circuit-breaker-pattern.md](./circuit-breaker-pattern.md) — Closed/Open/Half-Open states, Polly v8, Microsoft.Extensions.Resilience
+- [distributed-rate-limiting.md](./distributed-rate-limiting.md) — Redis Lua scripts, sliding window counter, multi-region challenges
+- [rate-limiting-algorithms.md](./rate-limiting-algorithms.md) — Token bucket, leaky bucket, fixed window, sliding window — trade-offs
+- [rate-limiting-concepts.md](./rate-limiting-concepts.md) — Per-user vs global limits, HTTP 429, Retry-After header
+- [rate-limiting-in-aspnet-core.md](./rate-limiting-in-aspnet-core.md) — .NET 7+ RateLimiter middleware, policies, custom rejection response
+- [throttling-vs-backpressure.md](./throttling-vs-backpressure.md) — Cooperative flow control, System.Threading.Channels, TCP analogy
+
+### §7 Classic System Design Problems
+- [design-key-value-store.md](./design-key-value-store.md) — Consistent hashing, replication, quorum reads/writes, LSM-tree
+- [design-notification-system.md](./design-notification-system.md) — Push/email/SMS fan-out, templates, delivery tracking, priority queues
+- [design-rate-limiter.md](./design-rate-limiter.md) — Tier-aware token bucket, Redis Lua, fail-open strategy, response headers
+- [design-url-shortener.md](./design-url-shortener.md) — Base-62 encoding, 301 vs 302, caching, analytics pipeline
