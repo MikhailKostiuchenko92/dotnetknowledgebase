@@ -25,6 +25,32 @@ See the [BACKLOG.md](./BACKLOG.md) for the full list of planned questions and cu
 
 ### Strings
 
+- [string-comparison-and-culture.md](./string-comparison-and-culture.md) — Ordinal vs Cultural, Turkish-I problem, `StringComparer`
 - [string-immutability.md](./string-immutability.md) — Why strings are immutable, allocation implications
 - [string-interning.md](./string-interning.md) — Intern pool mechanics, when to use/avoid `string.Intern`
+- [string-interpolation-vs-format.md](./string-interpolation-vs-format.md) — `$""`, `string.Format`, interpolated handlers (.NET 6+)
 - [stringbuilder-vs-string-concatenation.md](./stringbuilder-vs-string-concatenation.md) — O(n²) vs O(n), decision guide, .NET 6+ alternatives
+- [utf8-strings-and-rune.md](./utf8-strings-and-rune.md) — `u8` literals, `Rune`, surrogate pairs, encoding gotchas
+
+### Collections & LINQ
+
+- [aggregate-and-reductions.md](./aggregate-and-reductions.md) — `Aggregate`, fold/reduce, `MinBy`/`MaxBy`, accumulator patterns
+- [array-vs-list-vs-linkedlist.md](./array-vs-list-vs-linkedlist.md) — Complexity, cache locality, when to pick each
+- [concurrent-collections.md](./concurrent-collections.md) — `ConcurrentDictionary`, `ConcurrentQueue`, `BlockingCollection`, lock-striping
+- [deferred-vs-immediate-execution.md](./deferred-vs-immediate-execution.md) — Lazy LINQ, materialization triggers, multiple enumeration
+- [dictionary-internals.md](./dictionary-internals.md) — Hash buckets, collision chaining, load factor, rehashing
+- [groupby-and-tolookup.md](./groupby-and-tolookup.md) — Deferred vs immediate grouping, `IGrouping`, O(1) key lookup
+- [hashset-vs-sortedset.md](./hashset-vs-sortedset.md) — O(1) vs O(log n), set operations, `GetViewBetween`
+- [ienumerable-vs-icollection-vs-ilist.md](./ienumerable-vs-icollection-vs-ilist.md) — Interface hierarchy, read-only counterparts, API design
+- [ienumerable-vs-iqueryable.md](./ienumerable-vs-iqueryable.md) — Expression trees, EF Core client vs server evaluation
+- [frozencollections.md](./frozencollections.md) — `FrozenDictionary`/`FrozenSet` (.NET 8), perfect hash, startup lookup
+- [immutablecollections.md](./immutablecollections.md) — `ImmutableArray` vs `ImmutableList`, structural sharing, thread safety
+- [linq-common-pitfalls.md](./linq-common-pitfalls.md) — Multiple enumeration, closure capture, side effects, N+1
+- [linq-method-vs-query-syntax.md](./linq-method-vs-query-syntax.md) — Compiler equivalence, method-only operators, `let` clause
+- [select-vs-selectmany.md](./select-vs-selectmany.md) — One-to-one projection vs one-to-many flattening
+
+### Generics
+
+- [covariance-and-contravariance.md](./covariance-and-contravariance.md) — `in`/`out`, variance rules, array covariance danger
+- [generic-constraints.md](./generic-constraints.md) — `where` clauses, `struct`/`class`/`new()`/interface constraints
+- [generics-basics.md](./generics-basics.md) — Type parameters, JIT specialization, generic classes vs methods

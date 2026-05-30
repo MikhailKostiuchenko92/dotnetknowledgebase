@@ -23,8 +23,8 @@ When a question is created, mark it `[x]` and add a link to the file.
 
 ## Progress
 
-**Total:** 15 / 137
-**By difficulty:** 🟢 4/24 · 🟡 9/64 · 🔴 2/49
+**Total:** 35 / 137
+**By difficulty:** 🟢 9/24 · 🟡 19/64 · 🔴 7/49
 
 ---
 
@@ -48,32 +48,32 @@ When a question is created, mark it `[x]` and add a link to the file.
 - [x] 🟢 [`string-immutability.md`](./string-immutability.md) — Why strings are immutable, implications
 - [x] 🟡 [`string-interning.md`](./string-interning.md) — Intern pool, `string.Intern`, pros/cons
 - [x] 🟡 [`stringbuilder-vs-string-concatenation.md`](./stringbuilder-vs-string-concatenation.md) — When to use, perf benchmarks
-- [ ] 🟡 `string-comparison-and-culture.md` — `Ordinal` vs `Culture`, `IgnoreCase`, common bugs
-- [ ] 🟢 `string-interpolation-vs-format.md` — `$""`, `string.Format`, interpolated handlers (.NET 6+)
-- [ ] 🔴 `utf8-strings-and-rune.md` — `u8` literals, `Rune`, encoding gotchas
+- [x] 🟡 [`string-comparison-and-culture.md`](./string-comparison-and-culture.md) — `Ordinal` vs `Culture`, `IgnoreCase`, common bugs
+- [x] 🟢 [`string-interpolation-vs-format.md`](./string-interpolation-vs-format.md) — `$""`, `string.Format`, interpolated handlers (.NET 6+)
+- [x] 🔴 [`utf8-strings-and-rune.md`](./utf8-strings-and-rune.md) — `u8` literals, `Rune`, encoding gotchas
 
 ## 3. Collections & LINQ
 
-- [ ] 🟢 `array-vs-list-vs-linkedlist.md` — When to pick which, complexity
-- [ ] 🟡 `dictionary-internals.md` — Hash buckets, collisions, load factor
-- [ ] 🟡 `hashset-vs-sortedset.md` — Complexity, ordering, dedupe patterns
-- [ ] 🟡 `ienumerable-vs-icollection-vs-ilist.md` — Hierarchy, when to expose what
-- [ ] 🔴 `ienumerable-vs-iqueryable.md` — Deferred execution, expression trees, EF Core impact
-- [ ] 🟡 `deferred-vs-immediate-execution.md` — Lazy LINQ, `ToList`/`ToArray` triggers
-- [ ] 🟢 `linq-method-vs-query-syntax.md` — Equivalence, readability trade-offs
-- [ ] 🟡 `linq-common-pitfalls.md` — Multiple enumeration, side effects, captured variables
-- [ ] 🟢 `select-vs-selectmany.md` — Projection vs flattening, examples
-- [ ] 🟡 `groupby-and-tolookup.md` — Differences, when to use each
-- [ ] 🟡 `aggregate-and-reductions.md` — `Aggregate`, `Sum`, `Min`, accumulator patterns
-- [ ] 🔴 `concurrent-collections.md` — `ConcurrentDictionary`, `ConcurrentBag`, `BlockingCollection`
-- [ ] 🟡 `immutablecollections.md` — `ImmutableArray`, `ImmutableList`, when to use
-- [ ] 🟡 `frozencollections.md` — `FrozenDictionary`/`FrozenSet` (.NET 8), perf use cases
+- [x] 🟢 [`array-vs-list-vs-linkedlist.md`](./array-vs-list-vs-linkedlist.md) — When to pick which, complexity
+- [x] 🟡 [`dictionary-internals.md`](./dictionary-internals.md) — Hash buckets, collisions, load factor
+- [x] 🟡 [`hashset-vs-sortedset.md`](./hashset-vs-sortedset.md) — Complexity, ordering, dedupe patterns
+- [x] 🟡 [`ienumerable-vs-icollection-vs-ilist.md`](./ienumerable-vs-icollection-vs-ilist.md) — Hierarchy, when to expose what
+- [x] 🔴 [`ienumerable-vs-iqueryable.md`](./ienumerable-vs-iqueryable.md) — Deferred execution, expression trees, EF Core impact
+- [x] 🟡 [`deferred-vs-immediate-execution.md`](./deferred-vs-immediate-execution.md) — Lazy LINQ, `ToList`/`ToArray` triggers
+- [x] 🟢 [`linq-method-vs-query-syntax.md`](./linq-method-vs-query-syntax.md) — Equivalence, readability trade-offs
+- [x] 🟡 [`linq-common-pitfalls.md`](./linq-common-pitfalls.md) — Multiple enumeration, side effects, captured variables
+- [x] 🟢 [`select-vs-selectmany.md`](./select-vs-selectmany.md) — Projection vs flattening, examples
+- [x] 🟡 [`groupby-and-tolookup.md`](./groupby-and-tolookup.md) — Differences, when to use each
+- [x] 🟡 [`aggregate-and-reductions.md`](./aggregate-and-reductions.md) — `Aggregate`, `Sum`, `Min`, accumulator patterns
+- [x] 🔴 [`concurrent-collections.md`](./concurrent-collections.md) — `ConcurrentDictionary`, `ConcurrentBag`, `BlockingCollection`
+- [x] 🟡 [`immutablecollections.md`](./immutablecollections.md) — `ImmutableArray`, `ImmutableList`, when to use
+- [x] 🟡 [`frozencollections.md`](./frozencollections.md) — `FrozenDictionary`/`FrozenSet` (.NET 8), perf use cases
 
 ## 4. Generics
 
-- [ ] 🟢 `generics-basics.md` — Type parameters, why generics exist
-- [ ] 🟡 `generic-constraints.md` — `where T : class/struct/new()/IComparable/...`
-- [ ] 🔴 `covariance-and-contravariance.md` — `in`/`out`, real-world examples, array covariance
+- [x] 🟢 [`generics-basics.md`](./generics-basics.md) — Type parameters, why generics exist
+- [x] 🟡 [`generic-constraints.md`](./generic-constraints.md) — `where T : class/struct/new()/IComparable/...`
+- [x] 🔴 [`covariance-and-contravariance.md`](./covariance-and-contravariance.md) — `in`/`out`, real-world examples, array covariance
 - [ ] 🟡 `generic-method-vs-generic-class.md` — When to put generics where
 - [ ] 🟡 `generic-type-inference.md` — When the compiler can/can't infer
 - [ ] 🔴 `static-members-in-generic-types.md` — Per-closed-type statics, generic math (`INumber<T>`)
