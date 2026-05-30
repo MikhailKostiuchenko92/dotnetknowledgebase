@@ -23,8 +23,8 @@ When a question is created, mark it `[x]` and add a link to the file.
 
 ## Progress
 
-**Total:** 20 / 112
-**By difficulty:** 🟢 7/24 · 🟡 10/56 · 🔴 3/32
+**Total:** 30 / 112
+**By difficulty:** 🟢 7/24 · 🟡 15/56 · 🔴 8/32
 
 ---
 
@@ -53,16 +53,16 @@ When a question is created, mark it `[x]` and add a link to the file.
 - [x] 🟡 [`gc-generations.md`](./gc-generations.md) — Gen0/Gen1/Gen2, ephemeral segment, generational hypothesis, promotion mechanics
 - [x] 🟡 [`large-object-heap.md`](./large-object-heap.md) — 85 000 byte threshold, LOH fragmentation, LOH compaction (.NET 4.5.1+, .NET Core switch)
 - [x] 🟡 [`gc-modes.md`](./gc-modes.md) — Workstation vs Server GC, concurrent vs background GC, when each applies
-- [ ] 🟡 `gc-server-vs-workstation.md` — Heap count = CPU count, throughput vs latency, ASPNETCORE_HOSTINGSTARTUPASSEMBLIES
-- [ ] 🟡 `gc-finalization.md` — Finalizer thread, finalization queue, F-reachable queue, two-phase collection, resurrection
-- [ ] 🟡 `weak-references.md` — WeakReference\<T\>, short vs long weak refs, cache use case, TrackResurrection
-- [ ] 🟡 `suppress-finalize.md` — GC.SuppressFinalize, Dispose + finalizer pattern, SafeHandle as better alternative
-- [ ] 🟡 `memory-pressure-and-gc-collect.md` — GC.AddMemoryPressure, GC.Collect pitfalls, LatencyMode (LowLatency, SustainedLowLatency)
-- [ ] 🔴 `gc-handles.md` — GCHandle types: Normal/Pinned/WeakShort/WeakLong/WeakTrackResurrection, use cases, leaks
-- [ ] 🔴 `object-pinning.md` — Pinned handles vs fixed keyword, GC compaction disruption, MemoryMarshal.GetArrayDataReference
-- [ ] 🔴 `pinned-object-heap.md` — POH introduced in .NET 5, no compaction needed, buffers use case, vs Pinned GCHandle
-- [ ] 🔴 `gc-segments-and-regions.md` — Heap segments, regions GC (.NET 6+), commit vs reserve, dynamic heap sizing
-- [ ] 🔴 `gc-notifications-and-monitoring.md` — RegisterForFullGCNotification, GC.GetGCMemoryInfo, EventSource GC events, ETW
+- [x] 🟡 [`gc-server-vs-workstation.md`](./gc-server-vs-workstation.md) — Per-CPU heap model, heap count, throughput vs latency, container-aware defaults
+- [x] 🟡 [`gc-finalization.md`](./gc-finalization.md) — Finalizer thread, finalization queue, F-reachable queue, two-phase collection, resurrection
+- [x] 🟡 [`weak-references.md`](./weak-references.md) — WeakReference<T>, short vs long weak refs, cache use case, ConditionalWeakTable
+- [x] 🟡 [`suppress-finalize.md`](./suppress-finalize.md) — GC.SuppressFinalize, Dispose + finalizer pattern, SafeHandle as better alternative
+- [x] 🟡 [`memory-pressure-and-gc-collect.md`](./memory-pressure-and-gc-collect.md) — AddMemoryPressure, induced GC pitfalls, latency modes, NoGCRegion
+- [x] 🔴 [`gc-handles.md`](./gc-handles.md) — GCHandle types, use cases, interop cookies, leaks from not freeing handles
+- [x] 🔴 [`object-pinning.md`](./object-pinning.md) — `fixed` vs pinned handles, compaction holes, pinning trade-offs, zero-overhead access
+- [x] 🔴 [`pinned-object-heap.md`](./pinned-object-heap.md) — POH in .NET 5+, pinned array allocation, long-lived I/O buffer use cases
+- [x] 🔴 [`gc-segments-and-regions.md`](./gc-segments-and-regions.md) — Segment-based GC vs regions, commit vs reserve, .NET 6+ region model
+- [x] 🔴 [`gc-notifications-and-monitoring.md`](./gc-notifications-and-monitoring.md) — Full GC notifications, GCMemoryInfo, ETW, counters, monitoring
 
 ---
 

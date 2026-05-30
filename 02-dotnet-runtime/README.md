@@ -23,9 +23,19 @@ _No questions added yet. Use the [question template](../_templates/question-temp
 - [strong-naming-and-signing.md](./strong-naming-and-signing.md) — Strong name key pairs, PublicKeyToken, Authenticode vs strong naming
 
 ### §2 Garbage Collection
+- [gc-finalization.md](./gc-finalization.md) — Finalizer thread, finalization queue, F-reachable queue, resurrection, Dispose interaction
 - [gc-fundamentals.md](./gc-fundamentals.md) — Mark-sweep-compact, GC roots, reachability, why not reference counting
 - [gc-generations.md](./gc-generations.md) — Gen0/Gen1/Gen2, ephemeral segment, generational hypothesis, promotion
+- [gc-handles.md](./gc-handles.md) — GCHandle types, interop cookies, pinned vs weak handles, leak risks
 - [gc-modes.md](./gc-modes.md) — Workstation vs Server GC, background GC, container configuration
+- [gc-notifications-and-monitoring.md](./gc-notifications-and-monitoring.md) — Full GC notifications, GCMemoryInfo, ETW, counters, production monitoring
 - [gc-roots.md](./gc-roots.md) — Stack, static fields, GC handles, CPU registers, finalizer queue
+- [gc-segments-and-regions.md](./gc-segments-and-regions.md) — Segments vs regions, reserve vs commit, .NET 6+ heap layout
+- [gc-server-vs-workstation.md](./gc-server-vs-workstation.md) — Per-CPU heaps, throughput vs latency, ASP.NET Core and containers
 - [idisposable-and-using.md](./idisposable-and-using.md) — IDisposable, using statement/declaration, SafeHandle, IAsyncDisposable
 - [large-object-heap.md](./large-object-heap.md) — 85,000-byte threshold, fragmentation, compaction, ArrayPool mitigation
+- [memory-pressure-and-gc-collect.md](./memory-pressure-and-gc-collect.md) — AddMemoryPressure, induced GC pitfalls, latency modes, NoGCRegion
+- [object-pinning.md](./object-pinning.md) — `fixed` vs pinned handles, heap holes, when pinning is necessary
+- [pinned-object-heap.md](./pinned-object-heap.md) — POH, pinned array allocation, long-lived I/O buffers
+- [suppress-finalize.md](./suppress-finalize.md) — Why SuppressFinalize exists, Dispose pattern, SafeHandle guidance
+- [weak-references.md](./weak-references.md) — WeakReference<T>, TrackResurrection, ConditionalWeakTable, caches
