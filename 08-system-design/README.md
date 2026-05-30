@@ -45,8 +45,20 @@ Interview-ready deep-dives into distributed systems design, architecture pattern
 - [time-series-databases.md](./time-series-databases.md) — InfluxDB, TimescaleDB, Azure Data Explorer, retention policies
 
 ### §4 Caching
+- [bloom-filters-for-cache.md](./bloom-filters-for-cache.md) — Probabilistic membership, false-positive rate, cache penetration prevention
+- [cache-aside-in-aspnet-core.md](./cache-aside-in-aspnet-core.md) — Production-grade cache-aside: key versioning, stampede lock, HybridCache (.NET 9)
 - [cache-eviction-policies.md](./cache-eviction-policies.md) — LRU, LFU, FIFO, ARC/TinyLFU; Redis maxmemory-policy configuration
 - [cache-invalidation-problem.md](./cache-invalidation-problem.md) — Why it's hard, TTL jitter, event-driven invalidation, cache stampede
 - [caching-strategies-overview.md](./caching-strategies-overview.md) — Cache-aside, read-through, write-through, write-behind in ASP.NET Core
+- [cdn-fundamentals.md](./cdn-fundamentals.md) — Edge caching, Cache-Control headers, stale-while-revalidate, purging
 - [distributed-cache-vs-local-cache.md](./distributed-cache-vs-local-cache.md) — IMemoryCache vs IDistributedCache, HybridCache (.NET 9)
 - [redis-fundamentals.md](./redis-fundamentals.md) — Data structures, RDB/AOF persistence, Cluster, StackExchange.Redis
+
+### §5 Messaging & Event-Driven Architecture
+- [at-least-once-vs-exactly-once.md](./at-least-once-vs-exactly-once.md) — Delivery guarantees, idempotent consumers, deduplication table pattern
+- [dead-letter-queues.md](./dead-letter-queues.md) — Poison messages, retry strategies, DLQ monitoring, replay patterns
+- [event-driven-architecture.md](./event-driven-architecture.md) — Domain vs integration events, choreography vs orchestration, MassTransit Saga
+- [kafka-vs-rabbitmq.md](./kafka-vs-rabbitmq.md) — Log model vs smart broker, partitions, consumer groups, when to use each
+- [message-broker-overview.md](./message-broker-overview.md) — Queues, pub/sub, ACK, DLQ fundamentals; RabbitMQ, Kafka, Azure Service Bus
+- [outbox-pattern.md](./outbox-pattern.md) — Transactional outbox, polling vs CDC relay, EF Core + MassTransit implementation
+- [pub-sub-vs-message-queue.md](./pub-sub-vs-message-queue.md) — Point-to-point vs fan-out, RabbitMQ exchange types, Azure Service Bus topics

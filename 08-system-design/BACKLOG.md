@@ -23,8 +23,8 @@ When a question is created, mark it `[x]` and add a link to the file.
 
 ## Progress
 
-**Total:** 35 / 120
-**By difficulty:** 🟢 5/24 · 🟡 19/54 · 🔴 11/42
+**Total:** 45 / 120
+**By difficulty:** 🟢 6/24 · 🟡 24/54 · 🔴 15/42
 
 ---
 
@@ -74,21 +74,23 @@ When a question is created, mark it `[x]` and add a link to the file.
 - [x] 🟡 [`redis-fundamentals.md`](./redis-fundamentals.md) — Data structures (string, hash, sorted set, list), persistence (RDB/AOF), clustering
 - [x] 🟡 [`distributed-cache-vs-local-cache.md`](./distributed-cache-vs-local-cache.md) — IMemoryCache vs IDistributedCache, consistency issues, latency
 - [x] 🔴 [`cache-eviction-policies.md`](./cache-eviction-policies.md) — LRU, LFU, FIFO, ARC — when each is appropriate, Redis policy configuration
-- [ ] 🟡 `cdn-fundamentals.md` — Edge caching, cache-control headers, stale-while-revalidate, purging strategies
-- [ ] 🔴 `cache-aside-in-aspnet-core.md` — IDistributedCache implementation, Redis provider, serialization, stampede prevention
-- [ ] 🔴 `bloom-filters-for-cache.md` — Probabilistic membership, false positive rate, use case (avoid DB lookup for non-existent keys)
+- [x] 🟡 [`cdn-fundamentals.md`](./cdn-fundamentals.md) — Edge caching, cache-control headers, stale-while-revalidate, purging strategies
+- [x] 🔴 [`cache-aside-in-aspnet-core.md`](./cache-aside-in-aspnet-core.md) — IDistributedCache implementation, Redis provider, serialization, stampede prevention
+- [x] 🔴 [`bloom-filters-for-cache.md`](./bloom-filters-for-cache.md) — Probabilistic membership, false positive rate, use case (avoid DB lookup for non-existent keys)
 
 ## 5. Messaging & Event-Driven Architecture
 
-- [ ] 🟢 `message-queue-vs-pub-sub.md` — Point-to-point vs fan-out, competing consumers, Azure Service Bus vs Event Grid
-- [ ] 🟡 `at-least-once-vs-exactly-once.md` — Delivery guarantees, idempotent consumers, de-duplication
+- [x] 🟢 [`message-broker-overview.md`](./message-broker-overview.md) — Broker concepts: queues, pub/sub, ACK, DLQ, MassTransit, RabbitMQ, Azure Service Bus
+- [x] 🟡 [`pub-sub-vs-message-queue.md`](./pub-sub-vs-message-queue.md) — Point-to-point vs fan-out, competing consumers, Azure Service Bus vs Event Grid
+- [x] 🟡 [`at-least-once-vs-exactly-once.md`](./at-least-once-vs-exactly-once.md) — Delivery guarantees, idempotent consumers, de-duplication
+- [x] 🟡 [`kafka-vs-rabbitmq.md`](./kafka-vs-rabbitmq.md) — Kafka log model vs RabbitMQ exchanges; partitions, consumer groups, when to use each
 - [ ] 🟡 `kafka-fundamentals.md` — Partitions, consumer groups, offsets, retention, log compaction, ordering guarantees
 - [ ] 🟡 `azure-service-bus-patterns.md` — Queues vs topics, sessions, dead-letter queue, message lock, scheduled messages
-- [ ] 🔴 `outbox-pattern.md` — Transactional outbox, polling vs CDC, at-least-once delivery guarantee, EF Core implementation
+- [x] 🔴 [`outbox-pattern.md`](./outbox-pattern.md) — Transactional outbox, polling vs CDC, at-least-once delivery guarantee, EF Core implementation
 - [ ] 🔴 `saga-pattern.md` — Choreography vs orchestration, compensating transactions, failure handling, MassTransit/.NET
-- [ ] 🟡 `event-driven-vs-request-response.md` — Decoupling, async workflows, debugging challenges, eventual consistency
+- [x] 🔴 [`event-driven-architecture.md`](./event-driven-architecture.md) — Domain vs integration events, choreography vs orchestration, when EDA hurts
 - [ ] 🔴 `ordering-in-distributed-systems.md` — Sequence numbers, Lamport clocks, Kafka partition ordering, why global order is expensive
-- [ ] 🟡 `dead-letter-queue-patterns.md` — Poison messages, retry strategies, monitoring, alerting, requeue patterns
+- [x] 🟡 [`dead-letter-queues.md`](./dead-letter-queues.md) — Poison messages, retry strategies, monitoring, alerting, requeue patterns
 
 ## 6. Rate Limiting & Throttling
 
