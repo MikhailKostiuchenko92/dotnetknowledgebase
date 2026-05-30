@@ -23,23 +23,23 @@ When a question is created, mark it `[x]` and add a link to the file.
 
 ## Progress
 
-**Total:** 0 / 112
-**By difficulty:** 🟢 0/24 · 🟡 0/56 · 🔴 0/32
+**Total:** 10 / 112
+**By difficulty:** 🟢 4/24 · 🟡 6/56 · 🔴 0/32
 
 ---
 
 ## §1 CLR Fundamentals (12 questions)
 
-- [ ] 🟢 `clr-execution-model.md` — What is the CLR? IL → JIT → native execution pipeline, managed execution overview
-- [ ] 🟢 `managed-vs-unmanaged-code.md` — Managed vs unmanaged distinction, CIL, type-safe verifiable code, unsafe keyword
-- [ ] 🟢 `assembly-anatomy.md` — Assembly manifest, modules, metadata, MSIL, PE format overview
-- [ ] 🟢 `global-assembly-cache.md` — GAC in .NET Framework, why it was removed in .NET Core, side-by-side versioning
-- [ ] 🟡 `assembly-loading-and-binding.md` — Assembly resolution rules, binding redirects, load contexts, probing
-- [ ] 🟡 `assembly-load-context-basics.md` — AssemblyLoadContext, default/isolated ALCs, plugin loading pattern
-- [ ] 🟡 `appdomain-removal.md` — AppDomain in .NET Framework vs .NET Core, migration to AssemblyLoadContext, process isolation
-- [ ] 🟡 `runtime-configuration.md` — runtimeconfig.json, DOTNET_ environment variables, AppContext switches, runtime options
-- [ ] 🟡 `strong-naming-and-signing.md` — Strong name key pairs, why strong names matter, partial trust removal, Authenticode
-- [ ] 🟡 `clr-startup-sequence.md` — hostfxr → hostpolicy → coreclr, host models, startup hooks, runtime initialization
+- [x] 🟢 [`clr-execution-model.md`](./clr-execution-model.md) — What is the CLR? IL → JIT → native execution pipeline, managed execution overview
+- [x] 🟢 [`managed-vs-unmanaged-code.md`](./managed-vs-unmanaged-code.md) — Managed vs unmanaged distinction, CIL, type-safe verifiable code, unsafe keyword
+- [x] 🟢 [`assembly-anatomy.md`](./assembly-anatomy.md) — Assembly manifest, modules, metadata, MSIL, PE format overview
+- [x] 🟢 [`global-assembly-cache.md`](./global-assembly-cache.md) — GAC in .NET Framework, why it was removed in .NET Core, side-by-side versioning
+- [x] 🟡 [`assembly-loading-and-binding.md`](./assembly-loading-and-binding.md) — Assembly resolution rules, binding redirects, load contexts, probing
+- [x] 🟡 [`assembly-load-context-basics.md`](./assembly-load-context-basics.md) — AssemblyLoadContext, default/isolated ALCs, plugin loading pattern
+- [x] 🟡 [`appdomain-removal.md`](./appdomain-removal.md) — AppDomain in .NET Framework vs .NET Core, migration to AssemblyLoadContext, process isolation
+- [x] 🟡 [`runtime-configuration.md`](./runtime-configuration.md) — runtimeconfig.json, DOTNET_ environment variables, AppContext switches, runtime options
+- [x] 🟡 [`strong-naming-and-signing.md`](./strong-naming-and-signing.md) — Strong name key pairs, why strong names matter, partial trust removal, Authenticode
+- [x] 🟡 [`clr-startup-sequence.md`](./clr-startup-sequence.md) — hostfxr → hostpolicy → coreclr, host models, startup hooks, runtime initialization
 - [ ] 🔴 `assembly-load-context-advanced.md` — ALC collectibility, unloading assemblies, Weaver pattern, dependency isolation pitfalls
 - [ ] 🔴 `runtime-host-model.md` — Custom hosting API, embedding .NET in native apps, IJsRuntime, .NET for mobile
 
