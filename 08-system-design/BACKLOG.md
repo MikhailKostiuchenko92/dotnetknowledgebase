@@ -23,8 +23,8 @@ When a question is created, mark it `[x]` and add a link to the file.
 
 ## Progress
 
-**Total:** 65 / 120
-**By difficulty:** 🟢 8/24 · 🟡 33/54 · 🔴 24/42
+**Total:** 75 / 120
+**By difficulty:** 🟢 9/24 · 🟡 37/54 · 🔴 29/42
 
 ---
 
@@ -120,18 +120,18 @@ When a question is created, mark it `[x]` and add a link to the file.
 
 - [x] 🟢 [`monolith-vs-microservices.md`](./monolith-vs-microservices.md) — When to split, operational overhead, data isolation, team topology
 - [x] 🟡 [`service-discovery.md`](./service-discovery.md) — Client-side vs server-side discovery, Consul, Kubernetes DNS, health checks
-- [ ] 🟡 `sidecar-pattern.md` — Service mesh (Istio/Dapr/Linkerd), sidecar vs in-process, observability injection
-- [ ] 🟡 `strangler-fig-pattern.md` — Gradual monolith migration, facade routing, feature flags, dual-write
-- [ ] 🔴 `domain-driven-microservices.md` — Bounded contexts as service boundaries, anti-corruption layer, shared kernel
-- [ ] 🟡 `inter-service-communication.md` — Synchronous (gRPC/REST) vs asynchronous (messaging), coupling analysis
-- [ ] 🔴 `distributed-tracing.md` — Correlation IDs, OpenTelemetry, sampling strategies, trace context propagation in .NET
-- [ ] 🔴 `service-mesh-vs-api-gateway.md` — East-west vs north-south traffic, Dapr in .NET, when a mesh is overkill
+- [x] 🟡 [`sidecar-pattern.md`](./sidecar-pattern.md) — Service mesh (Istio/Dapr/Linkerd), sidecar vs in-process, observability injection
+- [x] 🟡 [`strangler-fig-pattern.md`](./strangler-fig-pattern.md) — Gradual monolith migration, facade routing, feature flags, dual-write
+- [x] 🔴 [`domain-driven-microservices.md`](./domain-driven-microservices.md) — Bounded contexts as service boundaries, anti-corruption layer, shared kernel
+- [x] 🟡 [`inter-service-communication.md`](./inter-service-communication.md) — Synchronous (gRPC/REST) vs asynchronous (messaging), coupling analysis
+- [x] 🔴 [`distributed-tracing.md`](./distributed-tracing.md) — Correlation IDs, OpenTelemetry, sampling strategies, trace context propagation in .NET
+- [x] 🔴 [`service-mesh-vs-api-gateway.md`](./service-mesh-vs-api-gateway.md) — East-west vs north-south traffic, Dapr in .NET, when a mesh is overkill
 
 ## 9. Observability & Reliability
 
-- [ ] 🟢 `observability-three-pillars.md` — Logs, metrics, traces — what each answers, OpenTelemetry as the standard
-- [ ] 🟡 `structured-logging-patterns.md` — Serilog/NLog, log levels, correlation IDs, PII scrubbing, log aggregation
-- [ ] 🟡 `metrics-and-alerting.md` — RED (Rate/Errors/Duration), USE (Utilization/Saturation/Errors), Prometheus/Grafana
+- [x] 🟢 [`observability-three-pillars.md`](./observability-three-pillars.md) — Logs, metrics, traces — what each answers, OpenTelemetry as the standard
+- [x] 🟡 [`structured-logging-patterns.md`](./structured-logging-patterns.md) — Serilog/NLog, log levels, correlation IDs, PII scrubbing, log aggregation
+- [x] 🟡 [`metrics-and-alerting.md`](./metrics-and-alerting.md) — RED (Rate/Errors/Duration), USE (Utilization/Saturation/Errors), Prometheus/Grafana
 - [ ] 🟡 `health-checks-in-aspnet-core.md` — `IHealthCheck`, liveness vs readiness vs startup probes, Kubernetes integration
 - [ ] 🔴 `slos-slas-error-budgets.md` — SLI/SLO/SLA definitions, error budget burn rate, toil vs reliability work
 - [ ] 🔴 `chaos-engineering.md` — Principles, blast radius, steady-state hypothesis, tools (Chaos Monkey, Azure Chaos Studio)

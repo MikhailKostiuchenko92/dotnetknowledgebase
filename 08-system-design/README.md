@@ -86,5 +86,16 @@ Interview-ready deep-dives into distributed systems design, architecture pattern
 - [design-url-shortener.md](./design-url-shortener.md) — Base-62 encoding, 301 vs 302, caching, analytics pipeline
 
 ### §8 Microservices & Service Architecture
+- [distributed-tracing.md](./distributed-tracing.md) — W3C traceparent, OpenTelemetry spans, sampling strategies, log correlation
+- [domain-driven-microservices.md](./domain-driven-microservices.md) — Bounded contexts, anti-corruption layer, shared kernel, context map
+- [inter-service-communication.md](./inter-service-communication.md) — REST vs gRPC vs messaging, temporal coupling, Polly resilience
 - [monolith-vs-microservices.md](./monolith-vs-microservices.md) — When to split, modular monolith, Conway's Law, distributed monolith anti-pattern
 - [service-discovery.md](./service-discovery.md) — Client-side vs server-side, Consul, Kubernetes DNS, crash detection, health probes
+- [service-mesh-vs-api-gateway.md](./service-mesh-vs-api-gateway.md) — East-west vs north-south, Istio vs Dapr, when a mesh is overkill
+- [sidecar-pattern.md](./sidecar-pattern.md) — Envoy, Dapr building blocks, in-process vs sidecar trade-offs
+- [strangler-fig-pattern.md](./strangler-fig-pattern.md) — Incremental migration, dual-write, CDC, canary routing, cutover checklist
+
+### §9 Observability & Reliability
+- [metrics-and-alerting.md](./metrics-and-alerting.md) — RED/USE, Prometheus histograms, alert rules, SLO burn rate
+- [observability-three-pillars.md](./observability-three-pillars.md) — Logs, metrics, traces, OpenTelemetry unified pipeline
+- [structured-logging-patterns.md](./structured-logging-patterns.md) — Serilog, correlation IDs, PII scrubbing, log aggregation
