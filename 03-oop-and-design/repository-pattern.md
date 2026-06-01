@@ -125,5 +125,5 @@ public static class Program
 ## References
 - [Infrastructure persistence layer design](https://learn.microsoft.com/en-us/dotnet/architecture/microservices/microservice-ddd-cqrs-patterns/infrastructure-persistence-layer-design)
 - [DbContext in EF Core](https://learn.microsoft.com/en-us/ef/core/dbcontext-configuration/)
-- [Repository and Unit of Work Pattern](https://learn.microsoft.com/en-us/aspnet/mvc/overview/older-versions/getting-started-with-ef-5-in-mvc4/implementing-the-repository-and-unit-of-work-patterns-in-an-asp-net-mvc-application)
+- [Infrastructure persistence layer implementation with Entity Framework Core](https://learn.microsoft.com/en-us/dotnet/architecture/microservices/microservice-ddd-cqrs-patterns/infrastructure-persistence-layer-implementation-entity-framework-core)
 - [Repository](https://martinfowler.com/eaaCatalog/repository.html)

@@ -63,6 +63,29 @@ public sealed class InMemoryRepository<T> : IRepository<T>
     public IReadOnlyList<T> GetAll() => _items;
 }
 
+public sealed class LoggingRepositoryDecorator<T>(IRepository<T> inner) : IRepository<T>
+{
+    public void Add(T item)
+    {
+        Console.WriteLine($"[log] adding {typeof(T).Name}");
+        inner.Add(item);
+    }
+
+    public IReadOnlyList<T> GetAll() => inner.GetAll();
+}
+
+public sealed class MetricsRepositoryDecorator<T>(IRepository<T> inner) : IRepository<T>
+{
+    public void Add(T item)
+    {
+        var started = DateTime.UtcNow;
+        inner.Add(item);
+        Console.WriteLine($"[metrics] {(DateTime.UtcNow - started).TotalMilliseconds:N2} ms");
+    }
+
+    public IReadOnlyList<T> GetAll() => inner.GetAll();
+}
+
 public sealed record Customer(string Name);
 public sealed record Order(int Id);
 
@@ -79,15 +102,16 @@ internal static class Program
         var customerRepository = provider.GetRequiredService<IRepository<Customer>>();
         var orderRepository = provider.GetRequiredService<IRepository<Order>>();
 
+        IRepository<Order> decoratedOrderRepository = new MetricsRepositoryDecorator<Order>(
+            new LoggingRepositoryDecorator<Order>(orderRepository));
+
         customerRepository.Add(new Customer("Mila"));
-        orderRepository.Add(new Order(42));
+        decoratedOrderRepository.Add(new Order(42));
 
         Console.WriteLine(customerRepository.GetAll()[0].Name);
-        Console.WriteLine(orderRepository.GetAll()[0].Id);
+        Console.WriteLine(decoratedOrderRepository.GetAll()[0].Id);
 
-        // With Scrutor, open-generic decorators can be chained like this:
-        // services.Decorate(typeof(IRepository<>), typeof(LoggingRepository<>));
-        // services.Decorate(typeof(IRepository<>), typeof(CachingRepository<>));
+        // Scrutor can apply the same decorator chain open-generically to every IRepository<T>.
     }
 }
 ```

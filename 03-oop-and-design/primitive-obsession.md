@@ -1,83 +1,59 @@
-# What is Primitive Obsession?
+# Primitive Obsession
 
 **Category:** OOP & Design / Anti-Patterns & Code Smells
 **Difficulty:** 🟡 Middle
 **Tags:** `primitive-obsession`, `value-object`, `type-safety`, `refactoring`
 
 ## Question
-> What is primitive obsession, why is it dangerous, and how would you refactor it in C#?
+> What is primitive obsession, and how do value objects help replace raw strings, numbers, and IDs with safer domain concepts?
 
 ## Short Answer
-Primitive obsession means using raw strings, integers, decimals, and booleans for domain concepts that deserve their own types. It looks simple at first, but it weakens validation, makes invalid states easy to represent, and spreads the same rules across the codebase. A common fix is to introduce value objects so the domain becomes more explicit and type-safe.
+Primitive obsession means modeling important domain concepts with raw primitives like `string`, `int`, or `decimal` everywhere. That seems simple at first, but it spreads validation rules, weakens type safety, and makes invalid states easier to create. A common fix is introducing value objects such as `EmailAddress`, `Money`, or `CustomerId` so the type system carries more domain meaning.
 
 ## Detailed Explanation
-### What it is
-Primitive obsession happens when domain concepts are modeled as basic language types instead of meaningful abstractions. Examples include using `string` for email addresses, `decimal` for money, `int` for customer IDs, or `bool` flags to represent workflow states. The code compiles, but the model stops communicating intent.
-
-The core problem is not that primitives are bad. The problem is that **the business meaning disappears**. If a method takes three `string` values, the compiler cannot tell whether they are an email, a country code, and a ZIP code or three unrelated pieces of text.
+### What the smell looks like
+Primitive obsession shows up when many parameters or properties technically compile but communicate almost nothing about business meaning. If a method takes three strings, are they an email, a country code, and an order ID, or something else? The compiler cannot help much because every string is interchangeable.
 
 | Primitive-based design | Value-object design |
 | --- | --- |
-| Rules are repeated in many places | Rules are centralized in one type |
-| Parameters are ambiguous | Types document intent |
-| Invalid combinations compile easily | Type mismatches fail earlier |
-| Refactoring is harder | Domain language becomes clearer |
+| `string email` | `EmailAddress email` |
+| `decimal amount` | `Money amount` |
+| `string customerId` | `CustomerId customerId` |
 
-### Why it becomes dangerous
-Primitive obsession usually leads to duplicated validation. One controller trims emails, another service checks them with a regex, and a background job forgets validation entirely. Now the same concept behaves differently depending on who created it.
+The problem is not that primitives are bad. The problem is using them for concepts that have rules, identity, formatting, and invariants of their own. Once that happens, validation logic gets duplicated across controllers, services, and repositories.
 
-It also creates subtle bugs. Passing a gross amount where a net amount was expected, or swapping `billingEmail` and `shippingEmail`, will still compile if both are strings. The compiler loses the ability to help you.
+### Why value objects help
+A value object wraps a primitive or a small set of primitives and enforces rules in one place. For example, an `EmailAddress` type can normalize casing, reject obviously invalid input, and prevent accidental mix-ups with unrelated strings. A `Money` type can keep currency and amount together so you do not accidentally add euros to dollars.
 
-> Warning: primitive obsession is especially risky in distributed systems and APIs because invalid or inconsistent data can travel far before anyone notices the bug.
+This improves type safety and readability. A method signature with value objects tells you the domain language directly, not just the storage representation. It also centralizes rules so they are not re-implemented inconsistently throughout the codebase.
 
-### Why value objects are the usual fix
-In DDD terms, a **value object** models a concept defined by its value rather than identity. `EmailAddress`, `Money`, `Percentage`, or `CustomerId` are good candidates. A value object can validate itself on creation, enforce formatting rules, and expose intention-revealing behavior.
+> Warning: introducing value objects blindly can become over-engineering. Wrap concepts that carry real rules or meaning, not every single integer in the system.
 
-C# makes this pleasant with `record` and `record struct`. For lightweight immutable concepts, a `readonly record struct` often works well. It gives value semantics while keeping the code concise.
+### How to refactor safely
+A common path is to start where bugs already happen: IDs getting mixed up, email validation duplicated, or money calculations using naked decimals. Replace one primitive at a time and let the new type expose obvious operations. In modern C#, `record struct` or `readonly record struct` is often a good fit for lightweight immutable value objects.
+
+A useful interview point is that value objects are not just “nicer types.” They change where rules live. Instead of every caller remembering how to validate or compare the value, the type itself owns that logic.
 
 ### Trade-offs and when not to overdo it
-Introducing value objects has costs. Serialization, EF Core mapping, and JSON converters can become a little more involved. Over-modeling every primitive can also create noise. A loop counter does not need to become `IterationIndex`.
+Value objects add some ceremony. Serialization, EF Core mapping, and model binding may need configuration. Teams that do not share the design intent may also create inconsistent wrappers. But when the domain meaning matters, the benefits usually outweigh the cost: fewer invalid combinations, clearer APIs, and code that reads in business terms rather than storage terms.
 
-A good interview answer shows balance: use value objects for domain concepts with business rules, invariants, formatting, or high semantic importance. Do not wrap primitives just to satisfy a pattern.
-
-### Incremental refactoring approach
-A safe path is to start with the most error-prone primitive, such as `EmailAddress` or `Money`. Replace it at API boundaries, then move inward. Once one concept becomes explicit, many downstream signatures become clearer automatically. That is the real benefit: not more types, but **better domain communication and safer code**.
+The balanced answer is that primitive obsession is a smell when primitives erase domain meaning. Value objects fix that by making important concepts explicit and validated at the type level.
 
 ## Code Example
 ```csharp
-namespace InterviewKnowledgeBase.Examples;
+using System;
 
-using System.Globalization;
+namespace InterviewKnowledgeBase.OopAndDesign;
 
 internal static class Program
 {
     private static void Main()
     {
-        // Bad: nothing stops callers from swapping or mis-formatting these primitives.
-        Console.WriteLine(BadRegistrationService.Register("not-an-email", "100.50"));
+        var email = EmailAddress.Create(" Person@Example.com ");
+        var price = new Money(120m, "USD");
 
-        // Refactored: value objects make intent explicit and validate early.
-        var email = new EmailAddress("ada@example.com");
-        var credit = Money.FromString("100.50");
-        Console.WriteLine(GoodRegistrationService.Register(email, credit));
-    }
-}
-
-internal static class BadRegistrationService
-{
-    public static string Register(string email, string creditLimit)
-    {
-        // Bad: validation and parsing happen far away from the concept itself.
-        return $"Registered {email} with limit {creditLimit}";
-    }
-}
-
-internal static class GoodRegistrationService
-{
-    public static string Register(EmailAddress email, Money creditLimit)
-    {
-        // Good: invalid values are rejected before this method is called.
-        return $"Registered {email.Value} with limit {creditLimit.Amount:C}";
+        Console.WriteLine(email.Value);
+        Console.WriteLine(price);
     }
 }
 
@@ -85,47 +61,43 @@ internal readonly record struct EmailAddress
 {
     public string Value { get; }
 
-    public EmailAddress(string value)
+    private EmailAddress(string value) => Value = value;
+
+    public static EmailAddress Create(string input)
     {
-        if (string.IsNullOrWhiteSpace(value) || !value.Contains('@'))
+        string normalized = input.Trim().ToLowerInvariant();
+
+        if (!normalized.Contains('@'))
         {
-            throw new ArgumentException("Email address is invalid.", nameof(value));
+            throw new ArgumentException("Invalid email address.", nameof(input));
         }
 
-        Value = value.Trim();
+        return new EmailAddress(normalized); // Validation lives in one place.
     }
 }
 
-internal readonly record struct Money(decimal Amount)
+internal readonly record struct Money(decimal Amount, string Currency)
 {
-    public static Money FromString(string value)
-    {
-        if (!decimal.TryParse(value, NumberStyles.Number, CultureInfo.InvariantCulture, out decimal amount) || amount < 0)
-        {
-            throw new ArgumentException("Money value is invalid.", nameof(value));
-        }
-
-        return new Money(amount);
-    }
+    public override string ToString() => $"{Amount:0.00} {Currency}";
 }
 ```
 
 ## Common Follow-up Questions
-- What makes a value object different from an entity?
-- Which domain concepts are the best candidates for value objects?
-- How would you map value objects with EF Core?
-- When does wrapping primitives become over-engineering?
-- How can primitive obsession lead to production bugs even when the code compiles?
+- How do value objects differ from entities?
+- Which domain concepts are worth wrapping first?
+- What is the cost of using value objects with EF Core or Web APIs?
+- Can primitive obsession exist even in strongly typed languages like C#?
+- When does wrapping primitives become unnecessary complexity?
 
 ## Common Mistakes / Pitfalls
-- Replacing every primitive in the codebase, including trivial technical values with no domain meaning.
-- Creating wrapper types that add no validation or behavior, so the design becomes noisier without benefits.
-- Leaving public constructors too permissive, which still allows invalid states.
-- Forgetting about serialization, EF Core configuration, or JSON converters when introducing value objects.
-- Using mutable value objects, which weakens predictability and equality semantics.
+- Wrapping trivial values with no rules just to look “DDD-friendly.”
+- Creating value objects but still exposing raw mutable primitives everywhere else.
+- Forgetting normalization rules, so logically equal values compare as different.
+- Using primitives in method signatures and value objects only in persistence models.
+- Treating a value object like an entity and giving it identity-based behavior.
 
 ## References
 - [Primitive Obsession](https://refactoring.guru/smells/primitive-obsession)
-- [Records in C#](https://learn.microsoft.com/dotnet/csharp/fundamentals/types/records)
-- [Implementing value objects](https://learn.microsoft.com/en-us/dotnet/architecture/microservices/microservice-ddd-cqrs-patterns/implement-value-objects)
-- [Value Object](https://martinfowler.com/eaaCatalog/valueObject.html)
+- [Value objects](https://martinfowler.com/bliki/ValueObject.html)
+- [C# record types](https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/types/records)
+- [Implement value objects](https://learn.microsoft.com/en-us/dotnet/architecture/microservices/microservice-ddd-cqrs-patterns/implement-value-objects)

@@ -1,4 +1,4 @@
-# Source Generators in .NET Design
+# Source Generators in Design
 
 **Category:** OOP & Design / Compile-Time Design
 **Difficulty:** 🔴 Senior

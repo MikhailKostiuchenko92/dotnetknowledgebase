@@ -1,130 +1,98 @@
-# What is Shotgun Surgery?
+# Shotgun Surgery
 
 **Category:** OOP & Design / Anti-Patterns & Code Smells
 **Difficulty:** 🟡 Middle
 **Tags:** `shotgun-surgery`, `code-smell`, `SRP`, `refactoring`
 
 ## Question
-> What is shotgun surgery in code, why does it usually indicate an SRP problem, and how would you fix it?
+> What is shotgun surgery, and why does a small business change sometimes force edits across controllers, services, repositories, and UI code?
 
 ## Short Answer
-Shotgun surgery is a code smell where one small requirement change forces edits in many scattered places. It usually means behavior that should live in one module is duplicated across layers or split across the wrong abstractions, which is often a Single Responsibility Principle problem. The fix is to identify the changing concept and centralize it behind one cohesive policy, type, or boundary.
+Shotgun surgery is a code smell where one logical change requires many small edits scattered across the system. It usually means a responsibility is split across the wrong boundaries, so the code changes together but is not located together. The fix is to centralize the changing concept behind one abstraction and refactor incrementally, often using SRP, Extract Class, and Move Method.
 
 ## Detailed Explanation
-### What it is
-Shotgun surgery happens when a single change request causes a lot of small edits across unrelated files. For example, changing a discount rule might require updates in an API controller, an application service, a report formatter, and an export job. None of those changes are hard individually, but together they make the system fragile.
+### What the smell looks like
+If a single rule change sends you on a repo-wide search-and-replace trip, that is shotgun surgery. A new tax rule might require updates in controllers, pricing services, export jobs, report formatters, and validation code. The problem is not simply that several layers are involved; the problem is that one concept has been duplicated or partially embedded in many places.
 
-The smell matters because change is the real unit of design quality. If one business rule is scattered everywhere, the codebase is telling you that the rule has no proper home.
+| Situation | Healthy design | Shotgun surgery smell |
+| --- | --- | --- |
+| One pricing rule changes | Update one policy/service | Update many unrelated files |
+| One validation rule changes | Update one validator/value object | Touch controller, service, DB mapper, UI |
+| One output format changes | Update one formatter | Edit every caller manually |
 
-| Symptom | Likely underlying issue |
-| --- | --- |
-| Same rule updated in many classes | Logic is duplicated or misplaced |
-| Small requirement triggers broad retesting | Boundaries do not isolate change |
-| Easy to miss one edit | Knowledge is scattered across layers |
-| Frequent regression after business changes | No single source of truth |
+The deeper issue is usually an SRP violation. Code that should change for one reason has been spread across multiple modules that have other reasons to change as well.
 
-### Why it often points to SRP problems
-SRP is about having one reason to change. If a pricing rule affects controllers, repositories, email templates, and scheduled jobs directly, those components now all change for the same business reason. That means responsibilities are not well separated.
+### Why it happens
+Shotgun surgery often appears after copy-paste optimization. A rule is added in one place, then duplicated “just for now” in another layer. Over time, different parts of the system each own a slice of the same concept. Another cause is leaky architecture: presentation, application, and domain layers all know too much about the same business rule.
 
-A common cause is mixing business policy with delivery concerns. Controllers should handle HTTP, repositories should handle persistence, and notification services should send notifications. If each of them also knows how to calculate discounts or determine customer priority, the design invites shotgun surgery.
+This smell increases risk because developers must remember every location that needs updating. Missing one location creates inconsistent behavior, which is often worse than a total failure because it may only affect some paths.
 
-> Warning: teams often respond by "being careful" during releases, but careful people cannot compensate forever for a design where the same rule lives in five places.
-
-### Real-world impact
-The biggest danger is incomplete change. A developer updates three places and forgets the fourth, so the UI shows one price while an export file or invoice shows another. These are exactly the kinds of bugs that pass compilation and sometimes even basic tests.
-
-Shotgun surgery also increases coordination cost. Multiple teams may own different parts of the codebase, so a simple business change turns into a cross-team delivery problem. That slows down releases and makes the system resistant to change.
+> Warning: not every multi-file change is shotgun surgery. Real cross-cutting concerns sometimes require coordinated edits. The smell is about unnecessary scattering of one concept, not about any change that spans layers.
 
 ### How to fix it
-Start by asking: **what concept is changing together?** That might be a pricing policy, a validation rule, a state transition, or a formatting rule. Then centralize that behavior into one cohesive component.
+Start by naming the thing that changes together. Is it a discount policy, a tax rule, a formatting strategy, or a validation concept? Then move the logic behind one stable abstraction. That might be a value object, a policy class, a strategy, or a domain method.
 
-Typical fixes include:
+The key refactorings are usually:
+- **Extract Class** for the shared responsibility.
+- **Move Method** to the object that owns the rule.
+- **Introduce Interface/Strategy** if multiple variants exist.
 
-- Extracting a domain service or policy object.
-- Moving duplicated logic into an entity or value object.
-- Introducing a shared formatter or mapper when representation rules are duplicated.
-- Reorganizing modules so the rule has one clear owner.
+After centralization, callers should depend on the abstraction, not re-implement the rule. That turns a scattered set of edits into one focused change.
 
-The goal is not to eliminate all collaboration. The goal is to make each business rule editable in one place.
-
-### Trade-offs
-Do not overreact by creating a giant shared helper full of unrelated rules. That just turns shotgun surgery into a God class. Centralize by business concept, not by convenience. In interviews, the strongest answer connects the smell directly to scattered responsibility and then explains how a single source of truth reduces regression risk.
+### Practical interview framing
+A good answer connects the smell to change coupling. Modules that change together should usually be designed together. Shotgun surgery is the signal that the architecture does not line up with the way the business evolves.
 
 ## Code Example
 ```csharp
-namespace InterviewKnowledgeBase.Examples;
+using System;
+
+namespace InterviewKnowledgeBase.OopAndDesign;
 
 internal static class Program
 {
     private static void Main()
     {
-        var customer = new Customer("Ada", isPremium: true, orderTotal: 1_000m);
+        var policy = new TaxPolicy(0.20m);
+        var service = new InvoiceService(policy);
+        var exporter = new InvoiceExporter(policy);
 
-        Console.WriteLine(BadCheckoutController.GetDiscount(customer));
-        Console.WriteLine(BadInvoiceService.GetDiscount(customer));
-
-        var policy = new DiscountPolicy();
-        Console.WriteLine(GoodCheckoutController.GetDiscount(customer, policy));
-        Console.WriteLine(GoodInvoiceService.GetDiscount(customer, policy));
+        Console.WriteLine(service.CalculateTotal(100m));
+        Console.WriteLine(exporter.Export(100m));
     }
 }
 
-internal sealed record Customer(string Name, bool IsPremium, decimal OrderTotal);
-
-internal static class BadCheckoutController
+internal sealed class TaxPolicy(decimal rate)
 {
-    public static decimal GetDiscount(Customer customer)
-    {
-        // Bad: business rule duplicated in the API layer.
-        return customer.IsPremium && customer.OrderTotal >= 500m ? 0.15m : 0.05m;
-    }
+    public decimal Apply(decimal netAmount) => netAmount * (1 + rate); // One place to change the rule.
 }
 
-internal static class BadInvoiceService
+internal sealed class InvoiceService(TaxPolicy taxPolicy)
 {
-    public static decimal GetDiscount(Customer customer)
-    {
-        // Bad: same rule duplicated in another layer.
-        return customer.IsPremium && customer.OrderTotal >= 500m ? 0.15m : 0.05m;
-    }
+    public decimal CalculateTotal(decimal netAmount) => taxPolicy.Apply(netAmount);
 }
 
-internal sealed class DiscountPolicy
+internal sealed class InvoiceExporter(TaxPolicy taxPolicy)
 {
-    public decimal Calculate(Customer customer)
-    {
-        // Good: one source of truth for the changing rule.
-        return customer.IsPremium && customer.OrderTotal >= 500m ? 0.15m : 0.05m;
-    }
-}
-
-internal static class GoodCheckoutController
-{
-    public static decimal GetDiscount(Customer customer, DiscountPolicy policy) => policy.Calculate(customer);
-}
-
-internal static class GoodInvoiceService
-{
-    public static decimal GetDiscount(Customer customer, DiscountPolicy policy) => policy.Calculate(customer);
+    public string Export(decimal netAmount) => $"Exported total: {taxPolicy.Apply(netAmount):0.00}";
 }
 ```
 
 ## Common Follow-up Questions
-- How is shotgun surgery different from duplicated code?
-- Why is this smell often related to the Single Responsibility Principle?
-- Which refactorings are most useful when the same rule is scattered across layers?
-- How can tests help detect and prevent shotgun-surgery regressions?
+- How is shotgun surgery related to SRP and cohesion?
 - What is the difference between shotgun surgery and divergent change?
+- Which refactorings help most when you see this smell?
+- Why is copy-paste business logic a common cause?
+- How do you tell the difference between valid cross-cutting change and a real smell?
 
 ## Common Mistakes / Pitfalls
-- Centralizing all unrelated logic into one helper class and creating a new God class.
-- Fixing only one duplicated instance of a rule and leaving other copies behind.
-- Assuming the smell is about file count only instead of looking at change coupling.
-- Putting business policy into controllers or repositories because it is "easy for now."
-- Ignoring representation duplication in exports, reports, and background jobs.
+- Calling every multi-file change shotgun surgery even when the architecture legitimately spans concerns.
+- Creating an abstraction with the right name but leaving duplicated logic in place.
+- Refactoring too broadly instead of first centralizing the exact thing that changes.
+- Hiding scattered rules behind static helpers that do not really restore ownership.
+- Ignoring tests and missing one behavior path during consolidation.
 
 ## References
 - [Shotgun Surgery](https://refactoring.guru/smells/shotgun-surgery)
-- [Large Class](https://refactoring.guru/smells/large-class)
-- [Moving Features Between Objects](https://refactoring.guru/refactoring/techniques/moving-features-between-objects)
-- [Common Web Application Architectures](https://learn.microsoft.com/en-us/dotnet/architecture/modern-web-apps-azure/common-web-application-architectures)
+- [Single Responsibility Principle](https://learn.microsoft.com/en-us/dotnet/architecture/modern-web-apps-azure/architectural-principles)
+- [Move Method](https://refactoring.guru/move-method)
+- [Extract Class](https://refactoring.guru/extract-class)

@@ -1,4 +1,4 @@
-# Generics Fundamentals in C#
+# Generics Fundamentals
 
 **Category:** OOP & Design / Generics & Type-Level Patterns
 **Difficulty:** 🟢 Junior

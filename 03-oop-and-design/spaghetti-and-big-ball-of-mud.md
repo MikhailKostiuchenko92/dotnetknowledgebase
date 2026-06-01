@@ -29,7 +29,7 @@ Once that pattern repeats for months or years, the codebase stops expressing cle
 > Warning: the common mistake is deciding to “rewrite it properly.” A rewrite throws away hard-earned behavior knowledge and often replaces a known mess with a new unstable mess.
 
 ### A realistic starting point for cleanup
-The first goal is not elegance. It is control. You need one seam where new code can live without changing everything else. That is why the strangler-fig pattern is such a common recovery strategy. Put a façade, adapter, or routing layer in front of a messy legacy area. Route one use case through the new path while the old path still works for the बाकी behavior.
+The first goal is not elegance. It is control. You need one seam where new code can live without changing everything else. That is why the strangler-fig pattern is such a common recovery strategy. Put a façade, adapter, or routing layer in front of a messy legacy area. Route one use case through the new path while the old path still works for the remaining behavior.
 
 A typical sequence is:
 1. Pick one business capability, not the whole system.

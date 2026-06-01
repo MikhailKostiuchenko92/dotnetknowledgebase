@@ -1,4 +1,4 @@
-# Generic Constraints in C#
+# Generic Constraints
 
 **Category:** OOP & Design / Generics & Type-Level Patterns
 **Difficulty:** 🟡 Middle

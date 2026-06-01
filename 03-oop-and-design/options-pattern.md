@@ -59,10 +59,21 @@ namespace InterviewExamples;
 public sealed class GitHubOptions
 {
     [Required]
+    [Url]
     public string BaseUrl { get; init; } = string.Empty;
 
     [Range(1, 60)]
     public int TimeoutSeconds { get; init; }
+}
+
+public sealed class SingletonConsumer(IOptions<GitHubOptions> options)
+{
+    public void Print() => Console.WriteLine($"Default: {options.Value.BaseUrl}");
+}
+
+public sealed class ScopedConsumer(IOptionsSnapshot<GitHubOptions> snapshot)
+{
+    public void Print() => Console.WriteLine($"Snapshot: {snapshot.Get("Public").TimeoutSeconds}s");
 }
 
 internal static class Program
@@ -72,24 +83,36 @@ internal static class Program
         var configuration = new ConfigurationBuilder()
             .AddInMemoryCollection(new Dictionary<string, string?>
             {
+                ["GitHub:Default:BaseUrl"] = "https://api.github.com",
+                ["GitHub:Default:TimeoutSeconds"] = "10",
                 ["GitHub:Public:BaseUrl"] = "https://api.github.com",
-                ["GitHub:Public:TimeoutSeconds"] = "10"
+                ["GitHub:Public:TimeoutSeconds"] = "15"
             })
             .Build();
 
         var services = new ServiceCollection();
+
+        services.AddOptions<GitHubOptions>()
+            .Bind(configuration.GetSection("GitHub:Default"))
+            .ValidateDataAnnotations();
 
         services.AddOptions<GitHubOptions>("Public")
             .Bind(configuration.GetSection("GitHub:Public"))
             .ValidateDataAnnotations()
             .Validate(options => Uri.IsWellFormedUriString(options.BaseUrl, UriKind.Absolute), "BaseUrl must be absolute.");
 
-        using var provider = services.BuildServiceProvider();
+        services.AddSingleton<SingletonConsumer>();
+        services.AddScoped<ScopedConsumer>();
+
+        using var provider = services.BuildServiceProvider(validateScopes: true);
+
+        provider.GetRequiredService<SingletonConsumer>().Print();
 
         var monitor = provider.GetRequiredService<IOptionsMonitor<GitHubOptions>>();
-        var publicOptions = monitor.Get("Public"); // Named options.
+        Console.WriteLine($"Monitor: {monitor.Get("Public").BaseUrl}"); // Named options + reload-friendly API.
 
-        Console.WriteLine($"{publicOptions.BaseUrl} ({publicOptions.TimeoutSeconds}s)");
+        using var scope = provider.CreateScope();
+        scope.ServiceProvider.GetRequiredService<ScopedConsumer>().Print();
     }
 }
 ```

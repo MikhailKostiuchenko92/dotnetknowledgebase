@@ -8,7 +8,7 @@
 > What is a type-safe builder pattern in C#, and how can phantom types or type-state generics enforce mandatory build steps at compile time?
 
 ## Short Answer
-A type-safe builder encodes build progress in the type system so invalid construction paths do not compile. Instead of checking at runtime whether required properties were set, each builder step returns a new generic state, and only the fully configured state exposes `Build()`. This reduces a whole class of runtime bugs, but it also makes the API more complex than a classic builder.
+A type-safe builder encodes build progress in the type system so invalid construction paths do not compile. Instead of checking at runtime whether required properties were set, each builder step returns a new generic state, and only the fully configured state exposes `Build()`. This reduces a whole class of runtime bugs, and it is especially useful when required members alone cannot model ordered mandatory steps. The trade-off is that the API becomes more complex than a classic builder.
 
 ## Detailed Explanation
 ### What type-state and phantom types mean here

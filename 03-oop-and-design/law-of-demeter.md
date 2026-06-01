@@ -1,116 +1,114 @@
-# What is the Law of Demeter?
+# Law of Demeter
 
 **Category:** OOP & Design / Anti-Patterns & Code Smells
 **Difficulty:** 🟡 Middle
 **Tags:** `law-of-demeter`, `tell-dont-ask`, `coupling`, `fluent-api`
 
 ## Question
-> What is the Law of Demeter, how does it relate to Tell Don't Ask, and are there exceptions like fluent APIs?
+> What is the Law of Demeter, how does it relate to Tell Don’t Ask, and why are fluent APIs often considered an intentional exception?
 
 ## Short Answer
-The Law of Demeter says an object should talk only to its close collaborators instead of navigating deep object graphs. In practice, code like `order.Customer.Address.CountryCode` increases coupling because callers need to know too much about internal structure. Tell Don't Ask is closely related: prefer telling an object what you want done instead of pulling data out and deciding externally, while fluent APIs are a common intentional exception because the chain is part of one designed abstraction.
+The Law of Demeter says an object should talk mainly to its close collaborators instead of reaching deeply through object graphs like `order.Customer.Address.City`. The goal is reducing coupling so internal structure changes do not ripple everywhere. It is closely related to Tell Don’t Ask, but fluent APIs are often acceptable because the chain is part of one deliberate interface rather than a leak through many internal objects.
 
 ## Detailed Explanation
 ### What the Law of Demeter means
-The Law of Demeter is often summarized as **"only talk to your immediate friends."** A method should usually call methods on:
-
-- itself,
-- its parameters,
-- objects it creates,
-- and its direct fields or collaborators.
-
-The warning sign is a long navigation chain such as `order.Customer.Address.Country.Code`. That means the caller depends on the internal structure of several objects, not just on `order`.
+The classic summary is “only talk to your immediate friends.” In practice, it means a method should avoid navigating through multiple layers of internal structure to get something done. Code like `order.Customer.Address.GetPostalCode()` exposes knowledge of the whole object graph. If any intermediate shape changes, callers break.
 
 | Style | Example | Coupling impact |
 | --- | --- | --- |
-| Ask through object graph | `order.Customer.Address.CountryCode` | Caller knows too much about internals |
-| Tell the object | `order.GetShippingCountryCode()` | Boundary stays stable |
+| Ask through graph | `order.Customer.Address.City` | High coupling to structure |
+| Tell object what to do | `order.GetShippingCity()` | Lower coupling |
+| Fluent interface | `query.Where(...).OrderBy(...)` | Usually intentional, stable chain |
 
-### Why it matters
-The real issue is not line length. It is coupling. If `Customer` stops exposing `Address`, or `Address` gets split into `BillingAddress` and `ShippingAddress`, many callers break. The more code reaches through a graph, the more ripple effects you get from internal refactoring.
+The law is about dependency direction, not banning dots. One method call can still violate the spirit if it exposes too much structure, and several dots can be fine if they are part of one abstraction boundary.
 
-This is why the principle overlaps with **Tell Don't Ask**. When callers repeatedly extract state and make decisions elsewhere, behavior is living in the wrong place. If an `Order` knows how to determine its shipping destination, the caller should tell the order to provide that answer or perform the action.
+### Relationship to Tell Don’t Ask
+Tell Don’t Ask says you should tell an object what outcome you need instead of pulling out its data and making decisions elsewhere. The Law of Demeter supports that style. If every caller drills into nested objects to make decisions, behavior gets scattered and encapsulation weakens.
 
-> Warning: blindly exposing object graphs through getters may look convenient, but it leaks structure and makes internal changes expensive.
+For example, instead of writing logic based on `order.Customer.IsVip` and `order.Total`, you might ask `order.CalculateShipping()`. That keeps the rule inside the object or aggregate that understands the domain.
 
-### Method chaining versus LoD
-A common interview trap is assuming all chaining violates the rule. That is not true. Fluent APIs such as LINQ or `builder.WithX().WithY().Build()` are usually designed as a single abstraction. Each method intentionally returns the same conceptual object, so the chain does not necessarily reveal deep internal structure.
+> Warning: the Law of Demeter is a heuristic, not a rigid syntax rule. Refactoring every property access into a method can create useless forwarding methods and make the design worse.
 
-The key question is: **am I traversing unrelated domain objects, or am I using one fluent interface on purpose?**
+### Why fluent APIs are usually fine
+Fluent APIs such as LINQ, builders, and options configuration often look like Demeter violations because they chain many calls. But the difference is that the chain is intentionally designed as one cohesive interface. Each method returns another object representing the same abstraction or a closely related stage in the same DSL.
 
-- `query.Where(...).OrderBy(...).Select(...)` is usually fine.
-- `order.Customer.Address.Country.GetVatRules().Rate` is usually suspicious.
+That is very different from reaching into `order.Customer.Address.Country.Code` because you know too much about the internals of several unrelated objects. Fluent chains are usually stable because the library authors designed them as a public surface. Deep object-graph navigation is brittle because it relies on accidental exposure.
 
-### When not to apply it rigidly
-Like many design principles, this one is heuristic, not law in the legal sense. Sometimes reading a simple property from a child object is completely reasonable, especially in DTOs, view models, or serialization shapes. Also, adding forwarding methods everywhere can create noisy pass-through APIs if there is no real behavior to protect.
+### Trade-offs and practical use
+If you apply the law too aggressively, you can end up with thin pass-through methods everywhere. If you ignore it completely, small model changes cause widespread breakage. The practical balance is to watch for repeated graph traversal, especially when decision-making logic depends on internal state of other objects.
 
-The point is to prevent **knowledge leakage**. If callers must understand too much about nested structures to do their job, your model is probably exposing the wrong boundary.
-
-### Practical refactoring moves
-Typical fixes include moving behavior closer to the data, adding intention-revealing methods, and collapsing message chains behind a clearer API. Refactorings like Move Method and Hide Delegate are common here. In a good interview answer, mention that LoD reduces coupling, Tell Don't Ask keeps behavior where it belongs, and fluent APIs are a deliberate exception when the chain represents one abstraction.
+In interviews, a strong answer is: the Law of Demeter reduces coupling by discouraging deep navigation through internals. It aligns with Tell Don’t Ask. Fluent APIs are usually an intentional exception because the chain itself is the public abstraction.
 
 ## Code Example
 ```csharp
-namespace InterviewKnowledgeBase.Examples;
+using System;
+
+namespace InterviewKnowledgeBase.OopAndDesign;
 
 internal static class Program
 {
     private static void Main()
     {
-        Order order = new(new Customer(new Address("NL")));
+        var order = new Order(new Customer(new Address("Kyiv")));
 
-        Console.WriteLine($"Bad: {BadShippingCalculator.GetVatRegion(order)}");
-        Console.WriteLine($"Good: {GoodShippingCalculator.GetVatRegion(order)}");
+        Console.WriteLine(order.GetShippingCity());
 
-        // Fluent API chains are often intentional because they stay within one abstraction.
-        string[] result = ["ada", "grace", "linus"];
-        Console.WriteLine(string.Join(", ", result.Where(name => name.Length > 3).Select(name => name.ToUpperInvariant())));
+        var report = new ReportBuilder()
+            .WithTitle("Orders")
+            .WithFormat("csv")
+            .Build(); // Fluent API: intentional and cohesive.
+
+        Console.WriteLine(report);
     }
 }
 
-internal sealed record Order(Customer Customer)
-{
-    public string GetShippingCountryCode() => Customer.Address.CountryCode; // Better: one stable entry point.
-}
-
+internal sealed record Address(string City);
 internal sealed record Customer(Address Address);
-internal sealed record Address(string CountryCode);
 
-internal static class BadShippingCalculator
+internal sealed class Order(Customer customer)
 {
-    public static string GetVatRegion(Order order)
-    {
-        // Bad: message chain exposes the full object graph to the caller.
-        return order.Customer.Address.CountryCode == "NL" ? "EU" : "Other";
-    }
+    private Customer Customer { get; } = customer;
+
+    public string GetShippingCity() => Customer.Address.City; // Internal traversal stays inside the object.
 }
 
-internal static class GoodShippingCalculator
+internal sealed class ReportBuilder
 {
-    public static string GetVatRegion(Order order)
+    private string _title = "Untitled";
+    private string _format = "txt";
+
+    public ReportBuilder WithTitle(string title)
     {
-        // Good: the caller asks Order for what it needs instead of traversing internals.
-        return order.GetShippingCountryCode() == "NL" ? "EU" : "Other";
+        _title = title;
+        return this;
     }
+
+    public ReportBuilder WithFormat(string format)
+    {
+        _format = format;
+        return this;
+    }
+
+    public string Build() => $"Report: {_title} ({_format})";
 }
 ```
 
 ## Common Follow-up Questions
-- How is the Law of Demeter related to Tell Don't Ask?
-- What is a message chain smell?
-- When is a fluent API chain acceptable?
-- Does the Law of Demeter apply the same way to DTOs and domain models?
-- What refactorings help reduce Demeter violations?
-- Can too many forwarding methods become a smell of their own?
+- Is the Law of Demeter just “don’t use dots”?
+- How does it relate to Tell Don’t Ask and encapsulation?
+- Why are fluent APIs usually not considered harmful here?
+- When do forwarding methods become over-engineering?
+- How can LoD violations increase change ripple across a codebase?
 
 ## Common Mistakes / Pitfalls
-- Treating every method chain as a violation without checking whether it is one intentional abstraction.
-- Adding trivial pass-through methods everywhere and making the API noisier than necessary.
-- Exposing deep object graphs through getters and then wondering why refactors ripple widely.
-- Using Tell Don't Ask as an excuse to hide simple data access that is perfectly reasonable in DTOs.
-- Focusing on syntax length instead of the real issue, which is coupling and leaked structure.
+- Treating any chained call as automatically bad without looking at the abstraction boundary.
+- Exposing nested internals widely and letting callers make business decisions on them.
+- Adding lots of pass-through methods that do not improve encapsulation or intent.
+- Confusing DTO projection code with rich domain behavior and applying the law blindly everywhere.
+- Assuming a single method call is always safe even if it leaks too much structure.
 
 ## References
-- [Tell Don't Ask](https://martinfowler.com/bliki/TellDontAsk.html)
-- [Message Chains](https://refactoring.guru/smells/message-chains)
-- [Moving Features Between Objects](https://refactoring.guru/refactoring/techniques/moving-features-between-objects)
+- [The Law of Demeter](https://www.c-sharpcorner.com/article/the-law-of-demeter/)
+- [TellDontAsk](https://martinfowler.com/bliki/TellDontAsk.html)
+- [Fluent interfaces](https://martinfowler.com/bliki/FluentInterface.html)
+- [Encapsulation - C# Programming Guide](https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/object-oriented/)

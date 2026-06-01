@@ -21,36 +21,29 @@ A shared kernel is a small, explicitly shared part of the model used by two or m
 
 The downside is coupling. Any change to the shared kernel requires coordination, versioning discipline, and trust between teams. If the shared part grows too much, it becomes a stealth monolith.
 
-### Anti-corruption layer
+### Anti-corruption layer, open host service, and published language
 An anti-corruption layer protects one context from another context’s model. Instead of importing external types directly, the consuming context translates them into its own concepts. This is especially useful when integrating with legacy systems, vendor software, or upstream contexts with different semantics.
 
-### Open host service and published language
 An open host service exposes a well-defined protocol for other contexts to consume. A published language is the shared contract or vocabulary used in that integration, such as a stable set of message schemas, API formats, or event contracts.
 
-Together, these patterns help a context present itself clearly to other contexts without exposing its internal model directly.
-
-| Pattern | Main idea | Main trade-off |
+| Pattern | Main benefit | Main risk |
 | --- | --- | --- |
-| Shared kernel | Share a small part of the model | Stronger coupling |
-| Anti-corruption layer | Translate and isolate foreign models | Extra code and maintenance |
-| Open host service | Offer a stable integration surface | Requires contract governance |
-| Published language | Define explicit shared contract terms | Versioning and compatibility work |
+| Shared kernel | Reuse of truly common concepts | Tight coupling between teams |
+| Anti-corruption layer | Protects domain language and autonomy | Extra translation code |
+| Open host service | Stable public integration surface | Versioning and compatibility burden |
+| Published language | Shared contract for many consumers | Governance can slow change |
 
-### How to choose between patterns
-Use a shared kernel only when the shared concepts are small, stable, and jointly owned. Use an anti-corruption layer when one model would otherwise damage another. Use an open host service when you want multiple consumers to integrate through a stable boundary. Use a published language when contract clarity matters more than internal model exposure.
+### Trade-offs and when to choose each
+A shared kernel fits only when the shared model is small and both teams can coordinate closely. An ACL is safer when one side is legacy, vendor-controlled, or semantically different. Open host service and published language fit when one context intentionally serves many consumers and wants a stable external contract.
 
-> Warning: the easiest short-term integration is often direct type sharing across contexts, but that usually creates the worst long-term coupling.
+> Warning: the mistake is not choosing the “wrong pattern name.” The mistake is integrating bounded contexts casually through shared tables, copied DTOs, or leaked domain entities until boundaries become meaningless.
 
-### Internals and architectural consequences
-These patterns affect code structure, deployment, and team autonomy. ACLs create translators and dedicated integration models. Open host services require versioned contracts and compatibility strategy. Shared kernels need coordination and careful scope control. Published languages often live in schemas, message definitions, or API contracts rather than in shared domain classes.
-
-### Trade-offs and when not to overdesign
-Not every integration needs a formal context map document, but every serious integration benefits from explicit boundary thinking. Small systems may start with simple APIs, but as teams and models diverge, explicit context mapping becomes much more valuable.
-
-Senior-level maturity is recognizing that integration is a modeling problem, not just a transport problem.
+The senior-level answer is to tie the choice to team autonomy, rate of change, and failure tolerance—not to pattern popularity.
 
 ## Code Example
 ```csharp
+using System;
+
 namespace DomainDrivenDesignSamples;
 
 // Published language from another context.
@@ -104,6 +97,6 @@ public static class Program
 
 ## References
 - [Bounded Context](https://martinfowler.com/bliki/BoundedContext.html)
+- [Ubiquitous Language](https://martinfowler.com/bliki/UbiquitousLanguage.html)
 - [Anti-Corruption Layer](https://learn.microsoft.com/en-us/azure/architecture/patterns/anti-corruption-layer)
-- [Open Host Service](https://martinfowler.com/bliki/OpenHostService.html)
-- [Published Language](https://martinfowler.com/bliki/PublishedLanguage.html)
+- [DDD Resources](https://www.domainlanguage.com/ddd/)

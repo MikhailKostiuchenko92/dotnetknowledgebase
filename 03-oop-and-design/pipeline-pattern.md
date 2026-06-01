@@ -47,10 +47,47 @@ Use the pipeline pattern when you have cross-cutting behavior applied to many re
 ```csharp
 using System;
 using System.Collections.Generic;
-using System.Threading;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace InterviewExamples;
+
+public sealed class HttpLikeContext
+{
+    public string Path { get; init; } = "/";
+    public bool IsAuthenticated { get; init; }
+}
+
+public delegate Task RequestDelegate(HttpLikeContext context);
+
+public interface IMiddleware
+{
+    Task InvokeAsync(HttpLikeContext context, RequestDelegate next);
+}
+
+public sealed class LoggingMiddleware : IMiddleware
+{
+    public async Task InvokeAsync(HttpLikeContext context, RequestDelegate next)
+    {
+        Console.WriteLine($"Before middleware: {context.Path}");
+        await next(context);
+        Console.WriteLine($"After middleware: {context.Path}");
+    }
+}
+
+public sealed class AuthMiddleware : IMiddleware
+{
+    public Task InvokeAsync(HttpLikeContext context, RequestDelegate next)
+    {
+        if (!context.IsAuthenticated)
+        {
+            Console.WriteLine("Short-circuited by auth middleware.");
+            return Task.CompletedTask;
+        }
+
+        return next(context);
+    }
+}
 
 public interface IPipelineBehavior<TRequest, TResponse>
 {
@@ -61,65 +98,41 @@ public sealed class LoggingBehavior<TRequest, TResponse> : IPipelineBehavior<TRe
 {
     public async Task<TResponse> Handle(TRequest request, Func<Task<TResponse>> next)
     {
-        Console.WriteLine($"Before: {typeof(TRequest).Name}");
-        var response = await next(); // Continue to the next step.
-        Console.WriteLine($"After: {typeof(TRequest).Name}");
+        Console.WriteLine($"Before behavior: {typeof(TRequest).Name}");
+        var response = await next();
+        Console.WriteLine($"After behavior: {typeof(TRequest).Name}");
         return response;
-    }
-}
-
-public sealed class ValidationBehavior : IPipelineBehavior<CreateUserCommand, string>
-{
-    public Task<string> Handle(CreateUserCommand request, Func<Task<string>> next)
-    {
-        if (string.IsNullOrWhiteSpace(request.Name))
-        {
-            return Task.FromResult("Validation failed."); // Short-circuit the pipeline.
-        }
-
-        return next();
     }
 }
 
 public sealed record CreateUserCommand(string Name);
 
-internal static class Pipeline
-{
-    public static Task<TResponse> Execute<TRequest, TResponse>(
-        TRequest request,
-        IReadOnlyList<IPipelineBehavior<TRequest, TResponse>> behaviors,
-        Func<TRequest, Task<TResponse>> handler)
-    {
-        var index = -1;
-
-        Task<TResponse> Next()
-        {
-            index++;
-            return index < behaviors.Count
-                ? behaviors[index].Handle(request, Next)
-                : handler(request);
-        }
-
-        return Next();
-    }
-}
-
 internal static class Program
 {
     private static async Task Main()
     {
-        var behaviors = new List<IPipelineBehavior<CreateUserCommand, string>>
+        IMiddleware[] middlewares = [new LoggingMiddleware(), new AuthMiddleware()];
+
+        RequestDelegate endpoint = context =>
         {
-            new LoggingBehavior<CreateUserCommand, string>(),
-            new ValidationBehavior()
+            Console.WriteLine($"Endpoint reached for {context.Path}");
+            return Task.CompletedTask;
         };
 
-        var result = await Pipeline.Execute(
-            new CreateUserCommand("Mila"),
-            behaviors,
-            command => Task.FromResult($"Created user: {command.Name}"));
+        RequestDelegate httpPipeline = middlewares
+            .Reverse()
+            .Aggregate(endpoint, (next, middleware) => context => middleware.InvokeAsync(context, next));
 
-        Console.WriteLine(result);
+        await httpPipeline(new HttpLikeContext { Path = "/users", IsAuthenticated = true });
+
+        IPipelineBehavior<CreateUserCommand, string>[] behaviors = [new LoggingBehavior<CreateUserCommand, string>()];
+        Func<Task<string>> handler = () => Task.FromResult("Created user: Mila");
+
+        Func<Task<string>> requestPipeline = behaviors
+            .Reverse()
+            .Aggregate(handler, (next, behavior) => () => behavior.Handle(new CreateUserCommand("Mila"), next));
+
+        Console.WriteLine(await requestPipeline());
     }
 }
 ```

@@ -45,12 +45,12 @@ Use these patterns when the repeated shape is stable and shared across many type
 ## Code Example
 ```csharp
 using System;
-using System.Collections.Generic;
-using System.Linq;
+using System.Collections.Concurrent;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace InterviewExamples;
 
-public sealed record Result<T>(bool IsSuccess, T? Value, string? Error)
+public readonly record struct Result<T>(bool IsSuccess, T? Value, string? Error)
 {
     public static Result<T> Success(T value) => new(true, value, null);
     public static Result<T> Failure(string error) => new(false, default, error);
@@ -58,16 +58,18 @@ public sealed record Result<T>(bool IsSuccess, T? Value, string? Error)
 
 public interface IRepository<T>
 {
-    void Add(T item);
-    IReadOnlyList<T> GetAll();
+    Result<T> Add(T item);
 }
 
 public sealed class InMemoryRepository<T> : IRepository<T>
 {
-    private readonly List<T> _items = [];
+    private readonly ConcurrentBag<T> _items = [];
 
-    public void Add(T item) => _items.Add(item);
-    public IReadOnlyList<T> GetAll() => _items;
+    public Result<T> Add(T item)
+    {
+        _items.Add(item);
+        return Result<T>.Success(item);
+    }
 }
 
 public abstract class Builder<TSelf> where TSelf : Builder<TSelf>
@@ -77,7 +79,7 @@ public abstract class Builder<TSelf> where TSelf : Builder<TSelf>
     public TSelf WithName(string name)
     {
         Name = name;
-        return (TSelf)this; // CRTP makes this fluent in derived builders.
+        return (TSelf)this; // CRTP keeps the fluent API strongly typed.
     }
 }
 
@@ -92,14 +94,16 @@ internal static class Program
 {
     private static void Main()
     {
-        IRepository<User> repository = new InMemoryRepository<User>();
+        var services = new ServiceCollection();
+
+        // One open-generic registration handles IRepository<User>, IRepository<Order>, etc.
+        services.AddSingleton(typeof(IRepository<>), typeof(InMemoryRepository<>));
+
+        using var provider = services.BuildServiceProvider();
+
+        var repository = provider.GetRequiredService<IRepository<User>>();
         var user = new UserBuilder().WithName("Mila").Build();
-
-        repository.Add(user);
-
-        var result = repository.GetAll().Any()
-            ? Result<User>.Success(repository.GetAll()[0])
-            : Result<User>.Failure("No users found.");
+        var result = repository.Add(user);
 
         Console.WriteLine(result.IsSuccess ? result.Value : result.Error);
     }

@@ -32,13 +32,10 @@ Records are often the first choice in modern C#. They provide value-based equali
 
 However, records are not magic. You still need validation, normalization, and sometimes custom members. For example, an email address value object may need to trim whitespace, normalize casing rules carefully, and reject invalid formats.
 
-### Validation and factories
+### Validation and collection wrapping
 Validation should happen at creation time so invalid instances never exist. You can use a constructor, a static factory, or a `TryCreate` method depending on your error-handling style. Domain-specific validation belongs here, not scattered across consumers.
 
-### Wrapping collections safely
-Collection-valued value objects require extra care. If a value object exposes a mutable list, callers can change its state after construction, which breaks immutability and may break equality. The usual fix is defensive copying plus an immutable or read-only representation.
-
-Equality for collections should usually be structural and order-aware or order-insensitive based on domain meaning. The default equality of many collection types is reference equality, which is often wrong for a value object.
+Collection-valued value objects require extra care. If a value object exposes a mutable list, callers can change its state after construction, which breaks immutability and may break equality. The usual fix is defensive copying plus an immutable or read-only representation. Equality for collections should then be structural and based on domain meaning, not reference identity.
 
 > Warning: a record that contains a mutable collection is not automatically a safe value object. You still need to control mutation and define the right collection equality semantics.
 
@@ -49,6 +46,11 @@ The right implementation level depends on domain importance, not on a generic st
 
 ## Code Example
 ```csharp
+using System;
+using System.Collections.Generic;
+using System.Collections.Immutable;
+using System.Linq;
+
 namespace DomainDrivenDesignSamples;
 
 public sealed class Money : IEquatable<Money>
@@ -78,35 +80,43 @@ public sealed class Money : IEquatable<Money>
     public override bool Equals(object? obj) => Equals(obj as Money);
     public override int GetHashCode() => HashCode.Combine(Amount, Currency);
 
+    public static Money operator +(Money left, Money right)
+    {
+        if (left.Currency != right.Currency)
+        {
+            throw new InvalidOperationException("Currencies must match.");
+        }
+
+        return new Money(left.Amount + right.Amount, left.Currency);
+    }
+
     public static bool operator ==(Money? left, Money? right) => Equals(left, right);
     public static bool operator !=(Money? left, Money? right) => !Equals(left, right);
 }
 
-public sealed record EmailAddress
+public sealed record Tags
 {
-    public string Value { get; }
-
-    public EmailAddress(string value)
+    public Tags(IEnumerable<string> values)
     {
-        if (string.IsNullOrWhiteSpace(value) || !value.Contains('@'))
-        {
-            throw new ArgumentException("Invalid email address.", nameof(value));
-        }
-
-        Value = value.Trim();
+        Values = values
+            .Where(x => !string.IsNullOrWhiteSpace(x))
+            .Select(x => x.Trim().ToUpperInvariant())
+            .Distinct()
+            .ToImmutableArray(); // Defensive copy plus immutable storage.
     }
+
+    public ImmutableArray<string> Values { get; }
 }
 
 public static class Program
 {
     public static void Main()
     {
-        var money1 = new Money(10m, "usd");
-        var money2 = new Money(10m, "USD");
-        var email = new EmailAddress("admin@example.com");
+        var total = new Money(10m, "usd") + new Money(5m, "USD");
+        var tags = new Tags(["new", "sale", "sale"]);
 
-        Console.WriteLine(money1 == money2); // True because equality is structural.
-        Console.WriteLine(email.Value);
+        Console.WriteLine(total == new Money(15m, "USD")); // Structural equality.
+        Console.WriteLine(string.Join(", ", tags.Values));
     }
 }
 ```
@@ -119,14 +129,14 @@ public static class Program
 - When would `record struct` be a reasonable choice?
 
 ## Common Mistakes / Pitfalls
-- Forgetting to normalize input, so logically equal values compare as different.
-- Exposing mutable collections from a value object.
-- Overloading `==` without keeping it consistent with `Equals` and `GetHashCode`.
-- Assuming record equality automatically handles deep equality for nested mutable collections.
-- Allowing invalid value objects to be constructed and relying on callers to validate later.
+- Exposing mutable properties or lists from a value object.
+- Forgetting to normalize or validate values at creation time.
+- Overloading operators without keeping them consistent with equality semantics.
+- Assuming records automatically solve collection equality.
+- Including fields in equality that the business does not actually consider part of the value.
 
 ## References
-- [Implement value equality](https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/statements-expressions-operators/how-to-define-value-equality-for-a-type)
-- [Introduction to record types in C#](https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/types/records)
+- [Implement value objects](https://learn.microsoft.com/en-us/dotnet/architecture/microservices/microservice-ddd-cqrs-patterns/implement-value-objects)
+- [C# record types](https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/types/records)
 - [IEquatable<T> Interface](https://learn.microsoft.com/en-us/dotnet/api/system.iequatable-1)
-- [Value Object](https://martinfowler.com/bliki/ValueObject.html)
+- [How to define value equality for a type](https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/statements-expressions-operators/how-to-define-value-equality-for-a-type)
